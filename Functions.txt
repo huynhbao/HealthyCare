@@ -1,0 +1,23 @@
+Functions
+
+1 login (done)
+2 register (done)
+3 viewProfile,updateProfile 
+Customer
+4 createSympton,updateSymptom
+5 searchDoctorByMajor
+6 searchDoctorByName
+7 createBooking, confirmBooking(Doctor)
+8 createFeedbacks
+Doctor
+9** updateSchedule
+10 getNoticeFromBooking
+Admin
+11 manageAccount
+	+Ban or Unban Account
+	+Delete Account
+12 manageFeedbacks
+	+deleteFeedbacks	 
+ 
+
+
