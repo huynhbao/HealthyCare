@@ -1,0 +1,14 @@
+D:\Hung\PRN292\HealthyCare\HealthyCare\bin\Debug\HealthyCare.exe.config
+D:\Hung\PRN292\HealthyCare\HealthyCare\bin\Debug\HealthyCare.exe
+D:\Hung\PRN292\HealthyCare\HealthyCare\bin\Debug\HealthyCare.pdb
+D:\Hung\PRN292\HealthyCare\HealthyCare\obj\Debug\HealthyCare.csprojAssemblyReference.cache
+D:\Hung\PRN292\HealthyCare\HealthyCare\obj\Debug\HealthyCare.frmLogin.resources
+D:\Hung\PRN292\HealthyCare\HealthyCare\obj\Debug\HealthyCare.Properties.Resources.resources
+D:\Hung\PRN292\HealthyCare\HealthyCare\obj\Debug\HealthyCare.csproj.GenerateResource.cache
+D:\Hung\PRN292\HealthyCare\HealthyCare\obj\Debug\HealthyCare.csproj.CoreCompileInputs.cache
+D:\Hung\PRN292\HealthyCare\HealthyCare\obj\Debug\HealthyCare.exe
+D:\Hung\PRN292\HealthyCare\HealthyCare\obj\Debug\HealthyCare.pdb
+D:\Hung\PRN292\HealthyCare\HealthyCare\bin\Debug\Dapper.dll
+D:\Hung\PRN292\HealthyCare\HealthyCare\bin\Debug\Dapper.xml
+D:\Hung\PRN292\HealthyCare\HealthyCare\obj\Debug\HealthyCare.frmRegister.resources
+D:\Hung\PRN292\HealthyCare\HealthyCare\obj\Debug\HealthyCare.csproj.CopyComplete
