@@ -38,7 +38,7 @@
     </Reference>
     <Reference Include="DarkUI, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\Desktop\DarkUI.dll</HintPath>
+      <HintPath>bin\Debug\DarkUI.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />

@@ -83,5 +83,26 @@ namespace BussinessObject
                 throw new Exception(se.Message);
             }
         }
+
+        public bool UpadteProfile(User user)
+        {
+            string SQL = "Update Users set password=@password, fullName=@fullName, address=@address, email=@email, phone=@phone, gender=@gender WHERE idUser=@idUser";
+
+            SqlParameter idUser = new SqlParameter("@idUser", user.UserID);
+            SqlParameter password = new SqlParameter("@password", user.Password);
+            SqlParameter fullName = new SqlParameter("@fullName", user.FullName);
+            SqlParameter address = new SqlParameter("@address", user.Address);
+            SqlParameter email = new SqlParameter("@email", user.Email);
+            SqlParameter phone = new SqlParameter("@phone", user.Phone);
+            SqlParameter gender = new SqlParameter("@gender", user.Gender);
+            try
+            {
+                return DataProvider.ExecuteNonQuery(SQL, CommandType.Text, idUser, password, fullName, address, email, phone, gender);
+            }
+            catch (SqlException se)
+            {
+                throw new Exception(se.Message);
+            }
+        }
     }
 }

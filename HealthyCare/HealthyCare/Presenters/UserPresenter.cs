@@ -21,10 +21,6 @@ namespace HealthyCare.Presenters
         public UserPresenter(IUser view)
         {
             userView = view;
-        }
-
-        public void ConnectModelAndView()
-        {
             user.UserID = userView.UserID;
             user.Password = userView.Password;
 
@@ -35,19 +31,21 @@ namespace HealthyCare.Presenters
             user.Email = userView.Email;
             user.Phone = userView.Phone;
             user.Gender = userView.Gender;
-
         }
 
         public User CheckLogin()
         {
-            ConnectModelAndView();
             return userData.Login(user.UserID, user.Password);
         }
 
         public bool CheckRegister()
         {
-            ConnectModelAndView();
             return userData.Register(user);
+        }
+
+        public bool UpadteProfile()
+        {
+            return userData.UpadteProfile(user);
         }
 
     }
