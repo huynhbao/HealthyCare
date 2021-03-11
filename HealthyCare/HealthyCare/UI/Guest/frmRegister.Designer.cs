@@ -32,7 +32,6 @@ namespace HealthyCare
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmRegister));
             this.label1 = new System.Windows.Forms.Label();
             this.txtFullname = new System.Windows.Forms.TextBox();
-            this.txtGender = new System.Windows.Forms.TextBox();
             this.txtAddress = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -55,6 +54,8 @@ namespace HealthyCare
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.btnSubmit = new DarkUI.Controls.DarkButton();
+            this.rbMale = new System.Windows.Forms.RadioButton();
+            this.rbFemale = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -75,13 +76,6 @@ namespace HealthyCare
             this.txtFullname.Name = "txtFullname";
             this.txtFullname.Size = new System.Drawing.Size(246, 20);
             this.txtFullname.TabIndex = 6;
-            // 
-            // txtGender
-            // 
-            this.txtGender.Location = new System.Drawing.Point(461, 158);
-            this.txtGender.Name = "txtGender";
-            this.txtGender.Size = new System.Drawing.Size(246, 20);
-            this.txtGender.TabIndex = 7;
             // 
             // txtAddress
             // 
@@ -294,11 +288,37 @@ namespace HealthyCare
             this.btnSubmit.Text = "Submit";
             this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
+            // rbMale
+            // 
+            this.rbMale.AutoSize = true;
+            this.rbMale.Checked = true;
+            this.rbMale.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.rbMale.Location = new System.Drawing.Point(462, 159);
+            this.rbMale.Name = "rbMale";
+            this.rbMale.Size = new System.Drawing.Size(48, 17);
+            this.rbMale.TabIndex = 24;
+            this.rbMale.TabStop = true;
+            this.rbMale.Text = "Male";
+            this.rbMale.UseVisualStyleBackColor = true;
+            // 
+            // rbFemale
+            // 
+            this.rbFemale.AutoSize = true;
+            this.rbFemale.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.rbFemale.Location = new System.Drawing.Point(568, 159);
+            this.rbFemale.Name = "rbFemale";
+            this.rbFemale.Size = new System.Drawing.Size(59, 17);
+            this.rbFemale.TabIndex = 24;
+            this.rbFemale.Text = "Female";
+            this.rbFemale.UseVisualStyleBackColor = true;
+            // 
             // frmRegister
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 547);
+            this.Controls.Add(this.rbFemale);
+            this.Controls.Add(this.rbMale);
             this.Controls.Add(this.btnSubmit);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -321,7 +341,6 @@ namespace HealthyCare
             this.Controls.Add(this.txtPhone);
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.txtAddress);
-            this.Controls.Add(this.txtGender);
             this.Controls.Add(this.txtFullname);
             this.Controls.Add(this.label1);
             this.Name = "frmRegister";
@@ -336,7 +355,6 @@ namespace HealthyCare
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtFullname;
-        private System.Windows.Forms.TextBox txtGender;
         private System.Windows.Forms.TextBox txtAddress;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Panel panel1;
@@ -359,5 +377,7 @@ namespace HealthyCare
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private DarkUI.Controls.DarkButton btnSubmit;
+        private System.Windows.Forms.RadioButton rbMale;
+        private System.Windows.Forms.RadioButton rbFemale;
     }
 }

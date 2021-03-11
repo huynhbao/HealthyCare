@@ -24,11 +24,11 @@ namespace HealthyCare
         public string UserID { get => txtUserID.Text; set => txtUserID.Text = value; }
         public string Password { get => txtPassword.Text; set => txtPassword.Text = value; }
         public string FullName { get => txtFullname.Text; set => txtFullname.Text = value; }
-        public string Gender { get => txtGender.Text; set => txtGender.Text = value; }
+        public bool Gender { get => getGender(); set => getGender(); }
         public string Email { get => txtEmail.Text; set => txtEmail.Text = value; }
         public string Address { get => txtAddress.Text; set => txtAddress.Text = value; }
         public string Phone { get => txtPhone.Text; set => txtPhone.Text = value; }
-
+        
 
         private UserPresenter presenter;
         private void btnSubmit_Click(object sender, EventArgs e)
@@ -49,9 +49,17 @@ namespace HealthyCare
         }
         void Clear()
         {
-            txtFullname.Text = txtGender.Text = txtAddress.Text = txtEmail.Text = txtUserID.Text = txtPassword.Text = txtConfirm.Text = txtPhone.Text = "";
+            txtFullname.Text = txtAddress.Text = txtEmail.Text = txtUserID.Text = txtPassword.Text = txtConfirm.Text = txtPhone.Text = "";
         }
 
+        bool getGender()
+        {
+            if (rbMale.Checked)
+            {
+                return true;
+            }
+            return false;
+        }
         
     }
 }

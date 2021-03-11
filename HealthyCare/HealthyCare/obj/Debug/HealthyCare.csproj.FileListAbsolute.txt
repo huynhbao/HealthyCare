@@ -15,10 +15,8 @@ D:\Hung\PRN292\HealthyCare\HealthyCare\obj\Debug\HealthyCare.csproj.CopyComplete
 C:\Users\HuynhBao\source\repos\HealthyCare\HealthyCare\HealthyCare\bin\Debug\HealthyCare.exe.config
 C:\Users\HuynhBao\source\repos\HealthyCare\HealthyCare\HealthyCare\bin\Debug\HealthyCare.exe
 C:\Users\HuynhBao\source\repos\HealthyCare\HealthyCare\HealthyCare\bin\Debug\HealthyCare.pdb
-C:\Users\HuynhBao\source\repos\HealthyCare\HealthyCare\HealthyCare\bin\Debug\Dapper.dll
 C:\Users\HuynhBao\source\repos\HealthyCare\HealthyCare\HealthyCare\bin\Debug\Dapper.xml
 C:\Users\HuynhBao\source\repos\HealthyCare\HealthyCare\HealthyCare\obj\Debug\HealthyCare.csprojAssemblyReference.cache
-C:\Users\HuynhBao\source\repos\HealthyCare\HealthyCare\HealthyCare\obj\Debug\HealthyCare.frmLogin.resources
 C:\Users\HuynhBao\source\repos\HealthyCare\HealthyCare\HealthyCare\obj\Debug\HealthyCare.frmRegister.resources
 C:\Users\HuynhBao\source\repos\HealthyCare\HealthyCare\HealthyCare\obj\Debug\HealthyCare.Properties.Resources.resources
 C:\Users\HuynhBao\source\repos\HealthyCare\HealthyCare\HealthyCare\obj\Debug\HealthyCare.csproj.GenerateResource.cache
@@ -28,3 +26,10 @@ C:\Users\HuynhBao\source\repos\HealthyCare\HealthyCare\HealthyCare\obj\Debug\Hea
 C:\Users\HuynhBao\source\repos\HealthyCare\HealthyCare\HealthyCare\obj\Debug\HealthyCare.pdb
 C:\Users\HuynhBao\source\repos\HealthyCare\HealthyCare\HealthyCare\bin\Debug\BussinessObject.dll
 C:\Users\HuynhBao\source\repos\HealthyCare\HealthyCare\HealthyCare\bin\Debug\BussinessObject.pdb
+C:\Users\HuynhBao\source\repos\HealthyCare\HealthyCare\HealthyCare\bin\Debug\DarkUI.dll
+C:\Users\HuynhBao\source\repos\HealthyCare\HealthyCare\HealthyCare\obj\Debug\HealthyCare.UI.Admin.frmAdmin.resources
+C:\Users\HuynhBao\source\repos\HealthyCare\HealthyCare\HealthyCare\obj\Debug\HealthyCare.UI.Admin.frmCreateDoctor.resources
+C:\Users\HuynhBao\source\repos\HealthyCare\HealthyCare\HealthyCare\bin\Debug\DataProvider.dll
+C:\Users\HuynhBao\source\repos\HealthyCare\HealthyCare\HealthyCare\bin\Debug\DataProvider.pdb
+C:\Users\HuynhBao\source\repos\HealthyCare\HealthyCare\HealthyCare\obj\Debug\HealthyCare.UI.Doctor.frmDoctor.resources
+C:\Users\HuynhBao\source\repos\HealthyCare\HealthyCare\HealthyCare\obj\Debug\HealthyCare.UI.G.frmLogin.resources

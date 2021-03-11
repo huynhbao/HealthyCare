@@ -1,5 +1,5 @@
 ﻿
-namespace HealthyCare
+namespace HealthyCare.UI.G
 {
     partial class frmLogin
     {
@@ -60,9 +60,9 @@ namespace HealthyCare
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label1.Location = new System.Drawing.Point(369, 153);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(287, 55);
+            this.label1.Size = new System.Drawing.Size(143, 55);
             this.label1.TabIndex = 8;
-            this.label1.Text = "***Login***";
+            this.label1.Text = "Login";
             // 
             // darkLabel1
             // 

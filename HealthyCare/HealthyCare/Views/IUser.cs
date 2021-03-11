@@ -12,7 +12,7 @@ namespace HealthyCare.Views
         string UserID { get; set; }
         string Password { get; set; }
         string FullName { get; set; }
-        string Gender { get; set; }
+        bool Gender { get; set; }
         string Email { get; set; }
         string Address { get; set; }
         string Phone { get; set; }

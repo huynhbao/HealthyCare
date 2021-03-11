@@ -36,6 +36,10 @@
     <Reference Include="Dapper, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Dapper.2.0.78\lib\net461\Dapper.dll</HintPath>
     </Reference>
+    <Reference Include="DarkUI, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Desktop\DarkUI.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
@@ -50,35 +54,67 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="frmLogin.cs">
+    <Compile Include="Presenters\DoctorPresenter.cs" />
+    <Compile Include="UI\Admin\frmAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmLogin.Designer.cs">
+    <Compile Include="UI\Admin\frmAdmin.Designer.cs">
+      <DependentUpon>frmAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Admin\frmCreateDoctor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Admin\frmCreateDoctor.Designer.cs">
+      <DependentUpon>frmCreateDoctor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Doctor\frmDoctor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Doctor\frmDoctor.Designer.cs">
+      <DependentUpon>frmDoctor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Doctor\frmViewBooking.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Doctor\frmViewBooking.Designer.cs">
+      <DependentUpon>frmViewBooking.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Doctor\frmViewFeedbacks.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Doctor\frmViewFeedbacks.Designer.cs">
+      <DependentUpon>frmViewFeedbacks.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Guest\frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Guest\frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmRegister.cs">
+    <Compile Include="UI\Guest\frmRegister.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmRegister.Designer.cs">
+    <Compile Include="UI\Guest\frmRegister.Designer.cs">
       <DependentUpon>frmRegister.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmDoctor.cs">
+    <Compile Include="UI\User\frmEditProfile.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmDoctor.Designer.cs">
-      <DependentUpon>frmDoctor.cs</DependentUpon>
+    <Compile Include="UI\User\frmEditProfile.Designer.cs">
+      <DependentUpon>frmEditProfile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\User\frmViewProfile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\User\frmViewProfile.Designer.cs">
+      <DependentUpon>frmViewProfile.cs</DependentUpon>
     </Compile>
     <Compile Include="Utils\MyUtils.cs" />
     <Compile Include="Presenters\UserPresenter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\IDoctor.cs" />
     <Compile Include="Views\IUser.cs" />
-    <EmbeddedResource Include="frmLogin.resx">
-      <DependentUpon>frmLogin.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmRegister.resx">
-      <DependentUpon>frmRegister.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -88,6 +124,21 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UI\Admin\frmAdmin.resx">
+      <DependentUpon>frmAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Admin\frmCreateDoctor.resx">
+      <DependentUpon>frmCreateDoctor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Doctor\frmDoctor.resx">
+      <DependentUpon>frmDoctor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Guest\frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Guest\frmRegister.resx">
+      <DependentUpon>frmRegister.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

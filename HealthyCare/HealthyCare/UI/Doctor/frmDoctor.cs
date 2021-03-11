@@ -1,4 +1,4 @@
-﻿using BussinessObject.Entities;
+﻿
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,8 +9,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace HealthyCare
+namespace HealthyCare.UI.Doctor
 {
+    using BussinessObject.Entities;
+
     public partial class frmDoctor : Form
     {
         User user = null;
@@ -19,5 +21,7 @@ namespace HealthyCare
             InitializeComponent();
             this.user = user;
         }
+
+
     }
 }

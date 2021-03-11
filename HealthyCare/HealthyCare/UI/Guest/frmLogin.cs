@@ -14,8 +14,14 @@ using System.Windows.Forms;
 using HealthyCare.Utils;
 using DarkUI.Forms;
 
-namespace HealthyCare
+
+
+namespace HealthyCare.UI.G
 {
+    using BussinessObject.Entities;
+    using HealthyCare.UI.Admin;
+    using HealthyCare.UI.Doctor;
+
     public partial class frmLogin : DarkForm, IUser
     {
         private UserPresenter presenter;
@@ -29,7 +35,7 @@ namespace HealthyCare
         public string UserID { get => txtUsername.Text; set => txtUsername.Text = value; }
         public string Password { get => txtPassword.Text; set => txtPassword.Text = value; }
         string IUser.FullName { get => null; set => value = null; }
-        string IUser.Gender { get => null; set => value = null; }
+        bool IUser.Gender { get => false; set => value = false; }
         string IUser.Email { get => null; set => value = null; }
         string IUser.Address { get => null; set => value = null; }
         string IUser.Phone { get => null; set => value = null; }
@@ -44,7 +50,8 @@ namespace HealthyCare
                 switch (roleID)
                 {
                     case "1":
-                        
+                        frmAdmin frmAdmin = new frmAdmin(user);
+                        frmAdmin.Show();
                         break;
                     case "2":
                         frmDoctor frmDoctor = new frmDoctor(user);

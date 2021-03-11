@@ -12,69 +12,76 @@ namespace BussinessObject
 {
     public class UserData
     {
-        string strConnection = ConfigurationManager.ConnectionStrings["LangBam4.0"].ConnectionString;
-
         public User Login(string UserID, string Password)
         {
             User user = null;
-
-            SqlConnection cnn = new SqlConnection(strConnection);
-            string SQL = "select fullName " +
+            string sql = "select fullName, address, email, phone, gender, idRole " +
                 "from Users where idUser=@ID AND password=@Password";
-            SqlCommand cmd = new SqlCommand(SQL, cnn);
-            cmd.Parameters.AddWithValue("@ID", UserID);
-            cmd.Parameters.AddWithValue("@Password", Password);
+            SqlParameter UserIDParam = new SqlParameter("@ID", UserID);
+            SqlParameter PasswordParam = new SqlParameter("@Password", Password);
+            SqlDataReader rd = DataProvider.ExecuteQueryWithDataReader(sql, CommandType.Text, UserIDParam, PasswordParam);
+            if (rd.HasRows)
+            {
+                if (rd.Read())
+                {
+                    user = new User()
+                    {
+                        FullName = rd[0].ToString(),
+                        Address = rd[1].ToString(),
+                        Email = rd[2].ToString(),
+                        Phone = rd[3].ToString(),
+                        Gender = bool.Parse(rd[4].ToString()),
+                        Role = Role(rd[5].ToString()),
+                    };
+                }
+            }
+
+            return user;
+        }
+
+        private Role Role(string idRole)
+        {
+            Role role = null;
+
+            string sql = "select nameRole " +
+                "from Roles where idRole=@ID";
+            SqlParameter RoleIDParam = new SqlParameter("@ID", idRole);
+            SqlDataReader rd = DataProvider.ExecuteQueryWithDataReader(sql, CommandType.Text, RoleIDParam);
+            if (rd.HasRows)
+            {
+                if (rd.Read())
+                {
+                    role = new Role()
+                    {
+                        RoleID = idRole,
+                        RoleName = rd[0].ToString(),
+                    };
+                }
+            }
+
+            return role;
+        }
+
+        public bool Register(User user)
+        {
+            string SQL = "INSERT Users(idUser, password, fullName, address, email, phone, gender, idRole) VALUES(@idUser, @password, @fullName, @address, @email, @phone, @gender, @idRole)";
+
+            SqlParameter idUser = new SqlParameter("@idUser", user.UserID);
+            SqlParameter password = new SqlParameter("@password", user.Password);
+            SqlParameter fullName = new SqlParameter("@fullName", user.FullName);
+            SqlParameter address = new SqlParameter("@address", user.Address);
+            SqlParameter email = new SqlParameter("@email", user.Email);
+            SqlParameter phone = new SqlParameter("@phone", user.Phone);
+            SqlParameter gender = new SqlParameter("@gender", user.Gender);
+            SqlParameter idRole = new SqlParameter("@idRole", "3");
             try
             {
-                if (cnn.State == ConnectionState.Closed)
-                {
-                    cnn.Open();
-                }
-                SqlDataReader reader = cmd.ExecuteReader();
-                if (reader.Read())
-                {
-                    if (reader.HasRows)
-                    {
-                        if (user == null)
-                        {
-                            user = new User();
-                        }
-                        user.FullName = reader[0].ToString();
-                    }
-                }
+                return DataProvider.ExecuteNonQuery(SQL, CommandType.Text, idUser, password, fullName, address, email, phone, gender, idRole);
             }
             catch (SqlException se)
             {
                 throw new Exception(se.Message);
             }
-            finally
-            {
-                cnn.Close();
-            }
-            return user;
-        }
-
-        public bool Register(User user)
-        {
-            SqlConnection cnn = new SqlConnection(strConnection);
-            string SQL = "INSERT Users VALUES(@idUser, @password, @fullName, @address, @email, @phone, @idGender, @idRole)";
-            SqlCommand cmd = new SqlCommand(SQL, cnn);
-            cmd.Parameters.AddWithValue("@idUser", user.UserID);
-            cmd.Parameters.AddWithValue("@password", user.Password);
-            cmd.Parameters.AddWithValue("@fullName", user.FullName);
-            cmd.Parameters.AddWithValue("@address", user.Address);
-            cmd.Parameters.AddWithValue("@email", user.Email);
-            cmd.Parameters.AddWithValue("@phone", user.Phone);
-            cmd.Parameters.AddWithValue("@idGender", user.Gender);
-            cmd.Parameters.AddWithValue("@idRole", "R1");
-
-            if (cnn.State == ConnectionState.Closed)
-            {
-                cnn.Open();
-            }
-
-            int count = cmd.ExecuteNonQuery();
-            return (count > 0);
         }
     }
 }

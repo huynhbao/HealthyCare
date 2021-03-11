@@ -1,5 +1,4 @@
-﻿using BussinessObject.Entities;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -9,15 +8,22 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace HealthyCare
+namespace HealthyCare.UI.Admin
 {
-    public partial class frmDoctor : Form
+    using BussinessObject.Entities;
+
+    public partial class frmAdmin : Form
     {
         User user = null;
-        public frmDoctor(User user)
+        public frmAdmin(User user)
         {
             InitializeComponent();
             this.user = user;
+        }
+
+        private void btnCreateDoctor_Click(object sender, EventArgs e)
+        {
+            new frmCreateDoctor().ShowDialog();
         }
     }
 }
