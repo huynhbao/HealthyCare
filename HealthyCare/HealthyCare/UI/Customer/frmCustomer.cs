@@ -9,11 +9,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace HealthyCare.UI.User
+namespace HealthyCare.UI.Customer
 {
-    public partial class frmEditProfile : DarkForm
+    public partial class frmCustomer : DarkForm
     {
-        public frmEditProfile()
+        public frmCustomer()
         {
             InitializeComponent();
         }

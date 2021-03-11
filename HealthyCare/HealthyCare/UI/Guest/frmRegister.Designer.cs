@@ -280,6 +280,7 @@ namespace HealthyCare
             // 
             // btnSubmit
             // 
+            this.btnSubmit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSubmit.Location = new System.Drawing.Point(593, 474);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Padding = new System.Windows.Forms.Padding(5);

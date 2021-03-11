@@ -139,6 +139,12 @@
     <EmbeddedResource Include="UI\Guest\frmRegister.resx">
       <DependentUpon>frmRegister.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\User\frmEditProfile.resx">
+      <DependentUpon>frmEditProfile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\User\frmViewProfile.resx">
+      <DependentUpon>frmViewProfile.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

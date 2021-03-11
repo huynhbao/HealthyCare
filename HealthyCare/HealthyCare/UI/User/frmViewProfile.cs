@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DarkUI.Forms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,7 +11,7 @@ using System.Windows.Forms;
 
 namespace HealthyCare.UI.User
 {
-    public partial class frmViewProfile : Form
+    public partial class frmViewProfile : DarkForm
     {
         public frmViewProfile()
         {

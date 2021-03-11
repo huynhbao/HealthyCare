@@ -72,7 +72,9 @@ namespace HealthyCare.UI.G
         private void btnRegister_Click(object sender, EventArgs e)
         {
             frmRegister register = new frmRegister();
-            register.ShowDialog();
+            register.Show();
+
+            Hide();
         }
 
        
