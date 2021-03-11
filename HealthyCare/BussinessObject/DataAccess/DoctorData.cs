@@ -13,7 +13,6 @@ namespace BussinessObject.DataAccess
     {
         public bool Register(Doctor doctor)
         {
-
             string SqlCertificate = "INSERT Certificate(name) OUTPUT INSERTED.idCertificate VALUES(@name)";
             SqlParameter certificateName = new SqlParameter("@name", doctor.Certificate.name);
             doctor.Certificate.certificateID = DataProvider.ExecuteNonQueryLastInsertedId(SqlCertificate, CommandType.Text, certificateName);
