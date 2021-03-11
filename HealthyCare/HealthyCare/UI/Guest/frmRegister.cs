@@ -11,6 +11,9 @@ using System.Data.SqlClient;
 using HealthyCare.Views;
 using HealthyCare.Presenters;
 using DarkUI.Forms;
+using HealthyCare.Utils;
+using System.Text.RegularExpressions;
+using HealthyCare.UI.G;
 
 namespace HealthyCare
 {
@@ -33,9 +36,17 @@ namespace HealthyCare
         private UserPresenter presenter;
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            if (txtUserID.Text == "" || txtPassword.Text == "")
+            Regex rgMail = new Regex(MyUtils.EMAIL_FORMAT);
+            Regex rgPhone = new Regex(MyUtils.PHONE_FORMAT );
+            if (txtUserID.Text == "" || txtAddress.Text == "" || txtEmail.Text == "" || txtPhone.Text == "" || txtFullname.Text == "" || txtPassword.Text == "" || txtConfirm.Text == "")
                 MessageBox.Show("Please fill sandatory fields");
-            else if (txtPassword.Text != txtConfirm.Text)
+            else if (!rgMail.IsMatch(txtEmail.Text)) 
+                MessageBox.Show("Email is not correct.");
+            else if (!rgPhone.IsMatch(txtPhone.Text))
+                MessageBox.Show("Phone is not correct.");
+            else if(txtPhone.Text.Length !=10)
+                MessageBox.Show("Phone must have 10 number");
+            else if(txtPassword.Text != txtConfirm.Text)
                 MessageBox.Show("Password do not match");
             else
             {
@@ -44,7 +55,7 @@ namespace HealthyCare
                 string s = (check == true ? "successful" : "fail");
                 MessageBox.Show("Register " + s);
                 Clear();
-                this.Hide();
+                LoginForm();
             }
         }
         void Clear()
@@ -59,6 +70,13 @@ namespace HealthyCare
                 return true;
             }
             return false;
+        }
+
+        void LoginForm()
+        {
+            frmLogin frm = new frmLogin();
+            frm.Show();
+            Close();
         }
         
     }

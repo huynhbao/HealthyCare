@@ -56,6 +56,11 @@ namespace HealthyCare.UI.Admin
             this.txtFullname = new System.Windows.Forms.TextBox();
             this.rbFemale = new System.Windows.Forms.RadioButton();
             this.txtCertificate = new System.Windows.Forms.TextBox();
+            this.darkLabel9 = new DarkUI.Controls.DarkLabel();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.darkLabel10 = new DarkUI.Controls.DarkLabel();
+            this.label7 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -74,7 +79,7 @@ namespace HealthyCare.UI.Admin
             // 
             // btnSubmit
             // 
-            this.btnSubmit.Location = new System.Drawing.Point(590, 433);
+            this.btnSubmit.Location = new System.Drawing.Point(590, 465);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Padding = new System.Windows.Forms.Padding(5);
             this.btnSubmit.Size = new System.Drawing.Size(115, 34);
@@ -106,7 +111,7 @@ namespace HealthyCare.UI.Admin
             // 
             this.label4.AutoSize = true;
             this.label4.ForeColor = System.Drawing.Color.Red;
-            this.label4.Location = new System.Drawing.Point(710, 396);
+            this.label4.Location = new System.Drawing.Point(710, 428);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(11, 13);
             this.label4.TabIndex = 45;
@@ -116,7 +121,7 @@ namespace HealthyCare.UI.Admin
             // 
             this.label3.AutoSize = true;
             this.label3.ForeColor = System.Drawing.Color.Red;
-            this.label3.Location = new System.Drawing.Point(710, 358);
+            this.label3.Location = new System.Drawing.Point(710, 390);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(11, 13);
             this.label3.TabIndex = 44;
@@ -126,7 +131,7 @@ namespace HealthyCare.UI.Admin
             // 
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.Color.Red;
-            this.label2.Location = new System.Drawing.Point(710, 317);
+            this.label2.Location = new System.Drawing.Point(710, 349);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(11, 13);
             this.label2.TabIndex = 43;
@@ -137,7 +142,7 @@ namespace HealthyCare.UI.Admin
             this.pictureBox1.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.ErrorImage")));
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.InitialImage = null;
-            this.pictureBox1.Location = new System.Drawing.Point(73, 64);
+            this.pictureBox1.Location = new System.Drawing.Point(73, 75);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(206, 214);
             this.pictureBox1.TabIndex = 42;
@@ -148,7 +153,7 @@ namespace HealthyCare.UI.Admin
             this.darkLabel7.AutoSize = true;
             this.darkLabel7.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.darkLabel7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.darkLabel7.Location = new System.Drawing.Point(316, 304);
+            this.darkLabel7.Location = new System.Drawing.Point(316, 336);
             this.darkLabel7.Name = "darkLabel7";
             this.darkLabel7.Size = new System.Drawing.Size(119, 25);
             this.darkLabel7.TabIndex = 40;
@@ -170,7 +175,7 @@ namespace HealthyCare.UI.Admin
             this.darkLabel8.AutoSize = true;
             this.darkLabel8.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.darkLabel8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.darkLabel8.Location = new System.Drawing.Point(243, 383);
+            this.darkLabel8.Location = new System.Drawing.Point(243, 415);
             this.darkLabel8.Name = "darkLabel8";
             this.darkLabel8.Size = new System.Drawing.Size(192, 25);
             this.darkLabel8.TabIndex = 41;
@@ -181,7 +186,7 @@ namespace HealthyCare.UI.Admin
             this.darkLabel6.AutoSize = true;
             this.darkLabel6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.darkLabel6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.darkLabel6.Location = new System.Drawing.Point(323, 345);
+            this.darkLabel6.Location = new System.Drawing.Point(323, 377);
             this.darkLabel6.Name = "darkLabel6";
             this.darkLabel6.Size = new System.Drawing.Size(112, 25);
             this.darkLabel6.TabIndex = 38;
@@ -233,7 +238,7 @@ namespace HealthyCare.UI.Admin
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(458, 351);
+            this.txtPassword.Location = new System.Drawing.Point(458, 383);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(246, 20);
@@ -241,7 +246,7 @@ namespace HealthyCare.UI.Admin
             // 
             // txtConfirm
             // 
-            this.txtConfirm.Location = new System.Drawing.Point(459, 389);
+            this.txtConfirm.Location = new System.Drawing.Point(459, 421);
             this.txtConfirm.Name = "txtConfirm";
             this.txtConfirm.PasswordChar = '*';
             this.txtConfirm.Size = new System.Drawing.Size(246, 20);
@@ -249,7 +254,7 @@ namespace HealthyCare.UI.Admin
             // 
             // txtUserID
             // 
-            this.txtUserID.Location = new System.Drawing.Point(458, 310);
+            this.txtUserID.Location = new System.Drawing.Point(458, 342);
             this.txtUserID.Name = "txtUserID";
             this.txtUserID.Size = new System.Drawing.Size(246, 20);
             this.txtUserID.TabIndex = 31;
@@ -257,7 +262,7 @@ namespace HealthyCare.UI.Admin
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel1.Location = new System.Drawing.Point(27, 284);
+            this.panel1.Location = new System.Drawing.Point(27, 329);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(747, 4);
             this.panel1.TabIndex = 30;
@@ -303,16 +308,70 @@ namespace HealthyCare.UI.Admin
             // 
             // txtCertificate
             // 
-            this.txtCertificate.Location = new System.Drawing.Point(91, 433);
+            this.txtCertificate.Location = new System.Drawing.Point(96, 465);
             this.txtCertificate.Name = "txtCertificate";
             this.txtCertificate.Size = new System.Drawing.Size(100, 20);
             this.txtCertificate.TabIndex = 51;
+            // 
+            // darkLabel9
+            // 
+            this.darkLabel9.AutoSize = true;
+            this.darkLabel9.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.darkLabel9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.darkLabel9.Location = new System.Drawing.Point(329, 281);
+            this.darkLabel9.Name = "darkLabel9";
+            this.darkLabel9.Size = new System.Drawing.Size(106, 25);
+            this.darkLabel9.TabIndex = 53;
+            this.darkLabel9.Text = "Specialty:";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(459, 287);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(246, 20);
+            this.textBox1.TabIndex = 52;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.Red;
+            this.label1.Location = new System.Drawing.Point(710, 294);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(11, 13);
+            this.label1.TabIndex = 54;
+            this.label1.Text = "*";
+            // 
+            // darkLabel10
+            // 
+            this.darkLabel10.AutoSize = true;
+            this.darkLabel10.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.darkLabel10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.darkLabel10.Location = new System.Drawing.Point(299, 9);
+            this.darkLabel10.Name = "darkLabel10";
+            this.darkLabel10.Size = new System.Drawing.Size(172, 55);
+            this.darkLabel10.TabIndex = 55;
+            this.darkLabel10.Text = "Doctor";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.ForeColor = System.Drawing.Color.Red;
+            this.label7.Location = new System.Drawing.Point(710, 250);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(11, 13);
+            this.label7.TabIndex = 56;
+            this.label7.Text = "*";
             // 
             // frmCreateDoctor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 512);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.darkLabel10);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.darkLabel9);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.txtCertificate);
             this.Controls.Add(this.rbFemale);
             this.Controls.Add(this.rbMale);
@@ -376,5 +435,10 @@ namespace HealthyCare.UI.Admin
         private System.Windows.Forms.TextBox txtFullname;
         private System.Windows.Forms.RadioButton rbFemale;
         private System.Windows.Forms.TextBox txtCertificate;
+        private DarkUI.Controls.DarkLabel darkLabel9;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label1;
+        private DarkUI.Controls.DarkLabel darkLabel10;
+        private System.Windows.Forms.Label label7;
     }
 }

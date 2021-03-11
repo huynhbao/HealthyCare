@@ -16,10 +16,10 @@ namespace HealthyCare.UI.Doctor
     public partial class frmDoctor : Form
     {
         User user = null;
-        public frmDoctor(User user)
+        public frmDoctor()
         {
             InitializeComponent();
-            this.user = user;
+            user = LoginInfo.user;
         }
 
 

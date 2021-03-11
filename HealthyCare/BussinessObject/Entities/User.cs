@@ -16,5 +16,11 @@ namespace BussinessObject.Entities
         public string Address { get; set; }
         public string Phone { get; set; }
         public Role Role { get; set; }
+        public bool Status { get; set; }
+    }
+
+    public static class LoginInfo
+    {
+        public static User user { get; set; }
     }
 }

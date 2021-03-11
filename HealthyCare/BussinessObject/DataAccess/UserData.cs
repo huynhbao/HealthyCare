@@ -15,7 +15,7 @@ namespace BussinessObject
         public User Login(string UserID, string Password)
         {
             User user = null;
-            string sql = "select fullName, address, email, phone, gender, idRole " +
+            string sql = "select fullName, address, email, phone, gender, idRole, status " +
                 "from Users where idUser=@ID AND password=@Password";
             SqlParameter UserIDParam = new SqlParameter("@ID", UserID);
             SqlParameter PasswordParam = new SqlParameter("@Password", Password);
@@ -26,12 +26,14 @@ namespace BussinessObject
                 {
                     user = new User()
                     {
+                        UserID = UserID,
                         FullName = rd[0].ToString(),
                         Address = rd[1].ToString(),
                         Email = rd[2].ToString(),
                         Phone = rd[3].ToString(),
                         Gender = bool.Parse(rd[4].ToString()),
                         Role = Role(rd[5].ToString()),
+                        Status = bool.Parse(rd[6].ToString()),
                     };
                 }
             }
@@ -86,18 +88,16 @@ namespace BussinessObject
 
         public bool UpadteProfile(User user)
         {
-            string SQL = "Update Users set password=@password, fullName=@fullName, address=@address, email=@email, phone=@phone, gender=@gender WHERE idUser=@idUser";
+            string SQL = "Update Users set fullName=@fullName, address=@address, phone=@phone, gender=@gender WHERE idUser=@idUser";
 
             SqlParameter idUser = new SqlParameter("@idUser", user.UserID);
-            SqlParameter password = new SqlParameter("@password", user.Password);
             SqlParameter fullName = new SqlParameter("@fullName", user.FullName);
             SqlParameter address = new SqlParameter("@address", user.Address);
-            SqlParameter email = new SqlParameter("@email", user.Email);
             SqlParameter phone = new SqlParameter("@phone", user.Phone);
             SqlParameter gender = new SqlParameter("@gender", user.Gender);
             try
             {
-                return DataProvider.ExecuteNonQuery(SQL, CommandType.Text, idUser, password, fullName, address, email, phone, gender);
+                return DataProvider.ExecuteNonQuery(SQL, CommandType.Text, idUser, fullName, address, phone, gender);
             }
             catch (SqlException se)
             {

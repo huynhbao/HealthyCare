@@ -67,6 +67,12 @@
     <Compile Include="UI\Admin\frmCreateDoctor.Designer.cs">
       <DependentUpon>frmCreateDoctor.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\Customer\frmCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Customer\frmCustomer.Designer.cs">
+      <DependentUpon>frmCustomer.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Doctor\frmDoctor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -130,6 +136,9 @@
     <EmbeddedResource Include="UI\Admin\frmCreateDoctor.resx">
       <DependentUpon>frmCreateDoctor.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\Customer\frmCustomer.resx">
+      <DependentUpon>frmCustomer.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\Doctor\frmDoctor.resx">
       <DependentUpon>frmDoctor.cs</DependentUpon>
     </EmbeddedResource>
@@ -138,6 +147,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Guest\frmRegister.resx">
       <DependentUpon>frmRegister.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\User\frmEditProfile.resx">
+      <DependentUpon>frmEditProfile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\User\frmViewProfile.resx">
+      <DependentUpon>frmViewProfile.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

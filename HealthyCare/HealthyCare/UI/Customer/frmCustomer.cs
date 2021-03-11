@@ -1,4 +1,6 @@
-﻿using System;
+﻿using DarkUI.Forms;
+using HealthyCare.UI.User;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,22 +10,22 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace HealthyCare.UI.Admin
+namespace HealthyCare.UI.Customer
 {
     using BussinessObject.Entities;
-
-    public partial class frmAdmin : Form
+    public partial class frmCustomer : DarkForm
     {
         User user = null;
-        public frmAdmin()
+        public frmCustomer()
         {
             InitializeComponent();
             user = LoginInfo.user;
         }
 
-        private void btnCreateDoctor_Click(object sender, EventArgs e)
+        private void btnMyProfile_Click(object sender, EventArgs e)
         {
-            new frmCreateDoctor().ShowDialog();
+            frmViewProfile frm = new frmViewProfile();
+            frm.ShowDialog();
         }
     }
 }

@@ -1,1 +1,2 @@
-Check validate 2 register
+Update chưa refresh
+validate login, update

@@ -23,9 +23,6 @@ namespace HealthyCare.Presenters
             userView = view;
             user.UserID = userView.UserID;
             user.Password = userView.Password;
-
-            user.UserID = userView.UserID;
-            user.Password = userView.Password;
             user.FullName = userView.FullName;
             user.Address = userView.Address;
             user.Email = userView.Email;
