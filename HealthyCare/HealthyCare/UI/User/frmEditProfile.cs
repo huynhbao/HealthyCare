@@ -22,15 +22,28 @@ namespace HealthyCare.UI.User
         {
             user = LoginInfo.user;
             InitializeComponent();
+            LoadData();
+        }
+
+        private void LoadData()
+        {
             txtFullname.Text = user.FullName;
             _ = GetGender;
             lbEmail.Text = user.Email;
             txtAddress.Text = user.Address;
             txtPhone.Text = user.Phone;
+            if (user.Gender)
+            {
+                rbMale.Checked = true;
+            }
+            else
+            {
+                rbFemale.Checked = true;
+            }
         }
 
-        public string UserID { get => user.UserID; set => value = user.UserID; }
-        public string Password { get => user.Password; set => value = user.Password; }
+        public string UserID { get; set; }
+        public string Password { get; set; }
         public string FullName { get => txtFullname.Text; set => txtFullname.Text = value; }
         public bool Gender { get => GetGender; set => value = GetGender; }
         public string Email { get => user.Email; set => lbEmail.Text = value; }

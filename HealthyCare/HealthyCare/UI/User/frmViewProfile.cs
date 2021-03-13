@@ -23,42 +23,30 @@ namespace HealthyCare.UI.User
         {
             InitializeComponent();
             user = LoginInfo.user;
+            LoadData();
+        }
+
+        private void LoadData()
+        {
             lbProfile.Text = "Hello, " + user.UserID;
             lbFullName.Text = user.FullName;
-            _ = GetGender;
             lbEmail.Text = user.Email;
             lbAddress.Text = user.Address;
             lbPhone.Text = user.Phone;
-        }
-
-
-        bool GetGender
-        {
-            get {
-                if (rbMale.Checked)
-                {
-                    return true;
-                }
-                return false;
-            }
-            set
+            if (user.Gender)
             {
-                if (user.Gender)
-                {
-                    rbMale.Checked = true;
-                } else
-                {
-                    rbFemale.Checked = true;
-                }
-                
+                rbMale.Checked = true;
             }
-            
+            else
+            {
+                rbFemale.Checked = true;
+            }
         }
-
         private void btnEdit_Click(object sender, EventArgs e)
         {
             frmEditProfile frm = new frmEditProfile();
             frm.ShowDialog();
+            LoadData();
         }
     }
 

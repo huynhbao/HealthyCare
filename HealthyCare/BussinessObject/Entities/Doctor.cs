@@ -13,13 +13,17 @@ namespace BussinessObject.Entities
 
     public class Certificate
     {
-        public int certificateID { get; set; }
-        public string name { get; set; }
+        public int CertificateID { get; set; }
+        public string Name { get; set; }
 
-        public Certificate(int certificateID, string name)
+        public Certificate(int CertificateID, string name)
         {
-            this.certificateID = certificateID;
-            this.name = name;
+            this.CertificateID = CertificateID;
+            this.Name = name;
+        }
+
+        public Certificate()
+        {
         }
     }
 }

@@ -55,6 +55,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Presenters\DoctorPresenter.cs" />
+    <Compile Include="Presenters\LoginPresneter.cs" />
+    <Compile Include="Presenters\RegisterPresenter.cs" />
     <Compile Include="UI\Admin\frmAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -129,6 +131,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="UI\Admin\frmAdmin.resx">
       <DependentUpon>frmAdmin.cs</DependentUpon>
@@ -178,6 +181,18 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sign-out.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logout-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\home-2-64.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

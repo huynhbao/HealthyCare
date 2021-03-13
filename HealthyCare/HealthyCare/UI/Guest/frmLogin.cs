@@ -25,7 +25,7 @@ namespace HealthyCare.UI.G
 
     public partial class frmLogin : DarkForm, IUser
     {
-        private UserPresenter presenter;
+        private LoginPresneter presenter;
         public frmLogin()
         {
             InitializeComponent();
@@ -43,7 +43,7 @@ namespace HealthyCare.UI.G
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            presenter = new UserPresenter(this);
+            presenter = new LoginPresneter(this);
             User user = presenter.CheckLogin();
             if (user != null)
             {

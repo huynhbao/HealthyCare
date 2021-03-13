@@ -33,7 +33,7 @@ namespace HealthyCare
         public string Phone { get => txtPhone.Text; set => txtPhone.Text = value; }
         
 
-        private UserPresenter presenter;
+        private RegisterPresenter presenter;
         private void btnSubmit_Click(object sender, EventArgs e)
         {
             Regex rgMail = new Regex(MyUtils.EMAIL_FORMAT);
@@ -50,7 +50,7 @@ namespace HealthyCare
                 MessageBox.Show("Password do not match");
             else
             {
-                presenter = new UserPresenter(this);
+                presenter = new RegisterPresenter(this);
                 bool check = presenter.CheckRegister();
                 string s = (check == true ? "successful" : "fail");
                 MessageBox.Show("Register " + s);
