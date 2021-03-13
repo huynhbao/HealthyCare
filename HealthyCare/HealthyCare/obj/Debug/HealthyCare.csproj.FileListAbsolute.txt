@@ -68,3 +68,5 @@ D:\Hung\PRN292\Projects\HealthyCare\HealthyCare\HealthyCare\obj\Debug\HealthyCar
 C:\Users\HuynhBao\source\repos\HealthyCare\HealthyCare\HealthyCare\obj\Debug\HealthyCare.UI.Customer.frmCustomer.resources
 C:\Users\HuynhBao\source\repos\HealthyCare\HealthyCare\HealthyCare\obj\Debug\HealthyCare.UI.User.frmEditProfile.resources
 C:\Users\HuynhBao\source\repos\HealthyCare\HealthyCare\HealthyCare\obj\Debug\HealthyCare.UI.User.frmViewProfile.resources
+C:\Users\HuynhBao\source\repos\HealthyCare\HealthyCare\HealthyCare\obj\Debug\HealthyCare.UI.Customer.frmDoctorDetail.resources
+C:\Users\HuynhBao\source\repos\HealthyCare\HealthyCare\HealthyCare\bin\Debug\FontAwesome.Sharp.dll

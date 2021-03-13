@@ -91,5 +91,22 @@ namespace BussinessObject.DataAccess
             }
             return result;
         }
+
+        public int GetNumOfBooking(string DoctorID)
+        {
+            int result = 0;
+
+            string sql = "select count(*) from Booking where idUser=@idUser";
+            SqlParameter DoctorIDParam = new SqlParameter("@idUser", DoctorID);
+            SqlDataReader rd = DataProvider.ExecuteQueryWithDataReader(sql, CommandType.Text, DoctorIDParam);
+            if (rd.HasRows)
+            {
+                if (rd.Read())
+                {
+                    result = int.Parse(rd[0].ToString());
+                }
+            }
+            return result;
+        }
     }
 }

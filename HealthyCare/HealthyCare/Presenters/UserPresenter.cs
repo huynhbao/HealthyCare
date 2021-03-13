@@ -46,5 +46,9 @@ namespace HealthyCare.Presenters
             return doctorData.GetDoctorList();
         }
 
+        public int GetNumOfBooking(string DoctorID)
+        {
+            return doctorData.GetNumOfBooking(DoctorID);
+        }
     }
 }

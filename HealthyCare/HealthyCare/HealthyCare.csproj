@@ -40,6 +40,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\Debug\DarkUI.dll</HintPath>
     </Reference>
+    <Reference Include="FontAwesome.Sharp, Version=5.15.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\FontAwesome.Sharp.5.15.3\lib\net472\FontAwesome.Sharp.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
@@ -74,6 +77,12 @@
     </Compile>
     <Compile Include="UI\Customer\frmCustomer.Designer.cs">
       <DependentUpon>frmCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Customer\frmDoctorDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Customer\frmDoctorDetail.Designer.cs">
+      <DependentUpon>frmDoctorDetail.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\Doctor\frmDoctor.cs">
       <SubType>Form</SubType>
@@ -142,6 +151,9 @@
     <EmbeddedResource Include="UI\Customer\frmCustomer.resx">
       <DependentUpon>frmCustomer.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\Customer\frmDoctorDetail.resx">
+      <DependentUpon>frmDoctorDetail.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\Doctor\frmDoctor.resx">
       <DependentUpon>frmDoctor.cs</DependentUpon>
     </EmbeddedResource>
@@ -157,6 +169,7 @@
     <EmbeddedResource Include="UI\User\frmViewProfile.resx">
       <DependentUpon>frmViewProfile.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -196,6 +209,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\doctor-logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\app-logo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
