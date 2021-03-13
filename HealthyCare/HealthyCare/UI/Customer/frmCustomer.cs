@@ -38,6 +38,11 @@ namespace HealthyCare.UI.Customer
             user = LoginInfo.user;
             userPresenter = new UserPresenter(this);
             setActiveComponent(btnHome, pbHome);
+
+            listView1.View = View.Details;
+            listView1.Columns.Add("Doctor List");
+            listView1.Columns[0].Width = 200;
+
             LoadData();
         }
 
@@ -48,6 +53,21 @@ namespace HealthyCare.UI.Customer
             dgvDoctorList.Columns["Password"].Visible = false;
             dgvDoctorList.Columns["Role"].Visible = false;
             dgvDoctorList.Columns["Status"].Visible = false;
+
+
+            
+            ListViewItem lstviewItem;
+            ImageList lstviewItemImageList = new ImageList();
+            
+            foreach (Doctor doctor in list)
+            {
+                string doctorID = doctor.UserID;
+                lstviewItem = new ListViewItem(doctor.FullName);
+                lstviewItemImageList.ImageSize = new Size(40, 40);
+                lstviewItemImageList.Images.Add(doctorID, Properties.Resources.doctor_logo);
+                listView1.SmallImageList = lstviewItemImageList;
+                listView1.Items.Add(doctor.FullName, doctorID);
+            }
         }
         
         private void btnMyProfile_Click(object sender, EventArgs e)
