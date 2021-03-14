@@ -60,36 +60,65 @@ namespace BussinessObject.DataAccess
             return certificate;
         }
 
-        public List<Doctor> GetDoctorList()
+        private Major GetMajor(string majorID)
         {
-            List<Doctor> result = null;
+            Major major = null;
 
-            string sql = "select idUser, fullName, address, email, phone, gender, idCertificate " +
-                "from Users where idRole=@idRole";
-            SqlParameter RoleIDParam = new SqlParameter("@idRole", "2");
-            SqlDataReader rd = DataProvider.ExecuteQueryWithDataReader(sql, CommandType.Text, RoleIDParam);
+            string sql = "select name " +
+                "from Major where majorID=@majorID";
+            SqlParameter majorIDParam = new SqlParameter("@majorID", majorID);
+            SqlDataReader rd = DataProvider.ExecuteQueryWithDataReader(sql, CommandType.Text, majorIDParam);
             if (rd.HasRows)
             {
-                while (rd.Read())
+                if (rd.Read())
                 {
-                    Doctor doctor = new Doctor
+                    major = new Major
                     {
-                        UserID = rd[0].ToString(),
-                        FullName = rd[1].ToString(),
-                        Gender = bool.Parse(rd[5].ToString()),
-                        Email = rd[3].ToString(),
-                        Address = rd[2].ToString(),
-                        Phone = rd[4].ToString(),
-                        Certificate = GetCertificate(int.Parse(rd[6].ToString())),
+                        MajorID = majorID,
+                        Name = rd[0].ToString(),
                     };
-                    if (result == null)
-                    {
-                        result = new List<Doctor>();
-                    }
-                    result.Add(doctor);
                 }
             }
-            return result;
+
+            return major;
+        }
+
+        public DataSet GetDoctors()
+        {
+
+            string sql = "select idUser, fullName, address, email, phone, gender, idCertificate, majorID " +
+                "from Users where idRole=@idRole; SELECT majorID, name FROM Major";
+            SqlParameter RoleIDParam = new SqlParameter("@idRole", "2");
+            DataSet dt = DataProvider.ExecuteQueryWithDataSet(sql, CommandType.Text, RoleIDParam);
+            return dt;
+        }
+
+        public Doctor GetDoctorByID(string DoctorID)
+        {
+            Doctor doctor = null;
+
+            string sql = "select fullName, address, email, phone, gender, idCertificate, majorID " +
+                "from Users where idUser=@DoctorID AND status = 1";
+            SqlParameter DoctorIDParam = new SqlParameter("@DoctorID", DoctorID);
+            SqlDataReader rd = DataProvider.ExecuteQueryWithDataReader(sql, CommandType.Text, DoctorIDParam);
+            if (rd.HasRows)
+            {
+                if (rd.Read())
+                {
+                    doctor = new Doctor()
+                    {
+                        UserID = DoctorID,
+                        FullName = rd[0].ToString(),
+                        Address = rd[1].ToString(),
+                        Email = rd[2].ToString(),
+                        Phone = rd[3].ToString(),
+                        Gender = bool.Parse(rd[4].ToString()),
+                        Certificate = GetCertificate(int.Parse(rd[5].ToString())),
+                        Major = GetMajor(rd[6].ToString())
+                    };
+                }
+            }
+            return doctor;
         }
 
         public int GetNumOfBooking(string DoctorID)

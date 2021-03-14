@@ -84,6 +84,12 @@
     <Compile Include="UI\Customer\frmDoctorDetail.Designer.cs">
       <DependentUpon>frmDoctorDetail.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\Customer\frmHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Customer\frmHistory.Designer.cs">
+      <DependentUpon>frmHistory.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Doctor\frmDoctor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -153,6 +159,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Customer\frmDoctorDetail.resx">
       <DependentUpon>frmDoctorDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Customer\frmHistory.resx">
+      <DependentUpon>frmHistory.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Doctor\frmDoctor.resx">
       <DependentUpon>frmDoctor.cs</DependentUpon>

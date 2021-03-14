@@ -41,14 +41,29 @@ namespace HealthyCare.Presenters
             return check;
         }
 
-        public List<Doctor> ListDoctor()
+        public DataSet GetDoctors()
         {
-            return doctorData.GetDoctorList();
+            return doctorData.GetDoctors();
+        }
+
+        public DataSet GetBooking()
+        {
+            return userData.GetBooking(user.UserID);
+        }
+
+        public Doctor GetDoctorByID(string doctorID)
+        {
+            return doctorData.GetDoctorByID(doctorID);
         }
 
         public int GetNumOfBooking(string DoctorID)
         {
             return doctorData.GetNumOfBooking(DoctorID);
+        }
+
+        public bool BookDoctor(string DoctorID)
+        {
+            return userData.BookDoctor(DoctorID, user.UserID, DateTime.Now);
         }
     }
 }

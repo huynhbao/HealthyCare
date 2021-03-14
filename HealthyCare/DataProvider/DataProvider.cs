@@ -31,6 +31,21 @@ public static class DataProvider
         da.Fill(ds);
         return ds;
     }
+
+    public static DataTable ExecuteQueryWithDataTable(string strSQL,
+        CommandType cmdType,
+        params SqlParameter[] param)
+    {
+        SqlConnection cnn = new SqlConnection(getConnectionString());
+        SqlCommand cmd = new SqlCommand(strSQL, cnn);
+        cmd.CommandType = cmdType;
+        cmd.Parameters.AddRange(param);
+        SqlDataAdapter da = new SqlDataAdapter(cmd);
+        DataTable ds = new DataTable();
+        da.Fill(ds);
+        return ds;
+    }
+
     public static SqlDataReader ExecuteQueryWithDataReader(string strSQL,
         CommandType cmdType, params SqlParameter[] param)
     {

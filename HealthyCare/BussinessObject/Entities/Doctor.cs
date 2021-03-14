@@ -9,6 +9,7 @@ namespace BussinessObject.Entities
     public class Doctor : User
     {
         public Certificate Certificate;
+        public Major Major;
     }
 
     public class Certificate
@@ -16,14 +17,31 @@ namespace BussinessObject.Entities
         public int CertificateID { get; set; }
         public string Name { get; set; }
 
-        public Certificate(int CertificateID, string name)
+        public Certificate(int CertificateID, string Name)
         {
             this.CertificateID = CertificateID;
-            this.Name = name;
+            this.Name = Name;
         }
 
         public Certificate()
         {
         }
+    }
+
+    public class Major
+    {
+        public string MajorID { get; set; }
+        public string Name { get; set; }
+
+        public Major(string MajorID, string Name)
+        {
+            this.MajorID = MajorID;
+            this.Name = Name;
+        }
+
+        public Major()
+        {
+        }
+
     }
 }

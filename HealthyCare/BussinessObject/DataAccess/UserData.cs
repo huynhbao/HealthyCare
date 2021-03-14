@@ -104,5 +104,32 @@ namespace BussinessObject
                 throw new Exception(se.Message);
             }
         }
+
+        public bool BookDoctor(string DoctorID, string UserID, DateTime now)
+        {
+            string SQL = "INSERT Booking(idUser, idDoctor, bookingDate, status) VALUES(@idUser, @idDoctor, @bookingDate, @status)";
+
+            SqlParameter idUser = new SqlParameter("@idUser", UserID);
+            SqlParameter idDoctor = new SqlParameter("@idDoctor", DoctorID);
+            SqlParameter bookingDate = new SqlParameter("@bookingDate", now);
+            SqlParameter status = new SqlParameter("@status", 1);
+            try
+            {
+                return DataProvider.ExecuteNonQuery(SQL, CommandType.Text, idUser, idDoctor, bookingDate, status);
+            }
+            catch (SqlException se)
+            {
+                throw new Exception(se.Message);
+            }
+        }
+
+        public DataSet GetBooking(string UserID)
+        {
+
+            string sql = "SELECT idBooking, bookingDate, b.status, idDoctor, fullName FROM Booking b, Users u WHERE b.idUser=@idUser AND b.idDoctor=u.idUser";
+            SqlParameter RoleIDParam = new SqlParameter("@idUser", UserID);
+            DataSet dt = DataProvider.ExecuteQueryWithDataSet(sql, CommandType.Text, RoleIDParam);
+            return dt;
+        }
     }
 }
