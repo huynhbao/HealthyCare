@@ -13,11 +13,17 @@ using System.Windows.Forms;
 
 namespace HealthyCare.UI.Customer
 {
-    public partial class frmHistory : DarkForm, IUser
+    public partial class frmHistory : DarkForm, IHistory
     {
         UserPresenter userPresenter = null;
         DataSet dsHistory;
 
+        public void GetHistory(DataSet dsHistory)
+        {
+            this.dsHistory = dsHistory;
+            dgvHistory.DataSource = dsHistory.Tables[0];
+            dgvHistory.Sort(dgvHistory.Columns["bookingDate"], ListSortDirection.Descending);
+        }
 
         public frmHistory()
         {
@@ -28,18 +34,73 @@ namespace HealthyCare.UI.Customer
 
         void LoadData()
         {
-            dsHistory = userPresenter.GetBooking();
-
-            dgvHistory.DataSource = dsHistory.Tables[0];
-            dgvHistory.Columns[1].DefaultCellStyle.Format = "dd/MM/yyyy HH:mm";
+            userPresenter.GetHistory();
         }
 
-        string IUser.UserID { get; set; }
-        string IUser.Password { get; set; }
-        string IUser.FullName { get; set; }
-        bool IUser.Gender { get; set; }
-        string IUser.Email { get; set; }
-        string IUser.Address { get; set; }
-        string IUser.Phone { get; set; }
+        private void dgvHistory_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            dgvHistory.Columns["bookingDate"].DefaultCellStyle.Format = "dd/MM/yyyy HH:mm";
+            if (dgvHistory.Columns[e.ColumnIndex].Name.Equals("status"))
+            {
+                int bookingStatus = (int) e.Value;
+                switch (bookingStatus)
+                {
+                    case 1:
+                        e.Value = "Waiting";
+                        break;
+                    case 2:
+                        e.Value = "Confirmed";
+                        break;
+                    case 3:
+                        e.Value = "Done";
+                        break;
+                    case 4:
+                        e.Value = "Canceled";
+                        break;
+
+                }
+            }
+        }
+
+        private void btnCancelBooking_Click(object sender, EventArgs e)
+        {
+            if (dgvHistory.SelectedRows.Count > 0)
+            {
+                int bookingID = int.Parse(dgvHistory.SelectedRows[0].Cells[0].Value.ToString());
+                DataTable dtHistory = dsHistory.Tables[0];
+                DataRow dr = dtHistory.Rows[dgvHistory.SelectedRows[0].Index];
+                int status = int.Parse(dr["status"].ToString());
+
+                switch (status)
+                {
+                    case 1:
+                        userPresenter.CancelBooking(bookingID);
+                        break;
+                    case 2:
+                        MessageBox.Show("This booking has been confirmed.", "Message");
+                        break;
+                    case 3:
+                        MessageBox.Show("This booking has been done.", "Message");
+                        break;
+                    case 4:
+                        MessageBox.Show("This booking has been canceled.", "Message");
+                        break;
+
+                }
+
+            }
+            
+        }
+
+        void IHistory.CancelBooking(bool check)
+        {
+            if (check)
+            {
+                MessageBox.Show("Canceled Sucessful", "Message");
+                LoadData();
+            } else {
+                MessageBox.Show("Cannot Cancel", "Message");
+            }
+        }
     }
 }

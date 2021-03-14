@@ -11,21 +11,21 @@ namespace HealthyCare.Presenters
 {
     class LoginPresneter
     {
-        User user = null;
-        private IUser userView;
+        ILogin userView;
         UserData userData = new UserData();
+        string UserID, Password = "";
 
-        public LoginPresneter(IUser view)
+        public LoginPresneter(ILogin view)
         {
-            user = new User();
             userView = view;
-            user.UserID = userView.UserID;
-            user.Password = userView.Password;
+            UserID = view.UserID;
+            Password = view.Password;
         }
 
-        public User CheckLogin()
+        public void CheckLogin()
         {
-            return userData.Login(user.UserID, user.Password);
+            User userObj = userData.Login(UserID, Password);
+            userView.Login(userObj);
         }
     }
 }

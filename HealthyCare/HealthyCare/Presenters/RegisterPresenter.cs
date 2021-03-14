@@ -12,25 +12,26 @@ namespace HealthyCare.Presenters
     class RegisterPresenter
     {
         User user = null;
-        private IUser userView;
+        private IRegister registerView;
         UserData userData = new UserData();
 
-        public RegisterPresenter(IUser view)
+        public RegisterPresenter(IRegister view)
         {
             user = new User();
-            userView = view;
-            user.UserID = userView.UserID;
-            user.Password = userView.Password;
-            user.FullName = userView.FullName;
-            user.Address = userView.Address;
-            user.Email = userView.Email;
-            user.Phone = userView.Phone;
-            user.Gender = userView.Gender;
+            registerView = view;
+            user.UserID = registerView.UserID;
+            user.Password = registerView.Password;
+            user.FullName = registerView.FullName;
+            user.Address = registerView.Address;
+            user.Email = registerView.Email;
+            user.Phone = registerView.Phone;
+            user.Gender = registerView.Gender;
         }
 
-        public bool CheckRegister()
+        public void CheckRegister()
         {
-            return userData.Register(user);
+            int check = userData.Register(user);
+            registerView.Register(check);
         }
 
     }

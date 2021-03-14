@@ -1,7 +1,4 @@
-Update chưa refresh
 validate login, update
 
-Thêm column status
-Set status booking
-
-Tối 20h
+Check nếu đang booking thì ko đc book
+Sửa major

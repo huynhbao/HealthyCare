@@ -64,25 +64,45 @@ namespace BussinessObject
             return role;
         }
 
-        public bool Register(User user)
+        public int Register(User user)
         {
-            string SQL = "INSERT Users(idUser, password, fullName, address, email, phone, gender, idRole) VALUES(@idUser, @password, @fullName, @address, @email, @phone, @gender, @idRole)";
-
-            SqlParameter idUser = new SqlParameter("@idUser", user.UserID);
-            SqlParameter password = new SqlParameter("@password", user.Password);
-            SqlParameter fullName = new SqlParameter("@fullName", user.FullName);
-            SqlParameter address = new SqlParameter("@address", user.Address);
-            SqlParameter email = new SqlParameter("@email", user.Email);
-            SqlParameter phone = new SqlParameter("@phone", user.Phone);
-            SqlParameter gender = new SqlParameter("@gender", user.Gender);
-            SqlParameter idRole = new SqlParameter("@idRole", "3");
-            try
+            bool checkExist = false;
+            string SQLCheck = "SELECT idUser FROM Users WHERE idUser=@idUser";
+            SqlParameter idUserParam = new SqlParameter("@idUser", user.UserID);
+            SqlDataReader rd = DataProvider.ExecuteQueryWithDataReader(SQLCheck, CommandType.Text, idUserParam);
+            if (rd.HasRows)
             {
-                return DataProvider.ExecuteNonQuery(SQL, CommandType.Text, idUser, password, fullName, address, email, phone, gender, idRole);
+                if (rd.Read())
+                {
+                    checkExist = true;
+                }
             }
-            catch (SqlException se)
+
+            if (!checkExist)
             {
-                throw new Exception(se.Message);
+
+                string SQL = "INSERT Users(idUser, password, fullName, address, email, phone, gender, idRole) VALUES(@idUser, @password, @fullName, @address, @email, @phone, @gender, @idRole)";
+
+                SqlParameter idUser = new SqlParameter("@idUser", user.UserID);
+                SqlParameter password = new SqlParameter("@password", user.Password);
+                SqlParameter fullName = new SqlParameter("@fullName", user.FullName);
+                SqlParameter address = new SqlParameter("@address", user.Address);
+                SqlParameter email = new SqlParameter("@email", user.Email);
+                SqlParameter phone = new SqlParameter("@phone", user.Phone);
+                SqlParameter gender = new SqlParameter("@gender", user.Gender);
+                SqlParameter idRole = new SqlParameter("@idRole", "3");
+                try
+                {
+                    DataProvider.ExecuteNonQuery(SQL, CommandType.Text, idUser, password, fullName, address, email, phone, gender, idRole);
+                    return 0;
+                }
+                catch (SqlException se)
+                {
+                    return 2;
+                }
+            } else
+            {
+                return 1;
             }
         }
 
@@ -123,13 +143,29 @@ namespace BussinessObject
             }
         }
 
-        public DataSet GetBooking(string UserID)
+        public DataSet GetHistory(string UserID)
         {
 
-            string sql = "SELECT idBooking, bookingDate, b.status, idDoctor, fullName FROM Booking b, Users u WHERE b.idUser=@idUser AND b.idDoctor=u.idUser";
+            string sql = "SELECT idBooking, bookingDate, idDoctor, fullName, b.status FROM Booking b, Users u WHERE b.idUser=@idUser AND b.idDoctor=u.idUser";
             SqlParameter RoleIDParam = new SqlParameter("@idUser", UserID);
             DataSet dt = DataProvider.ExecuteQueryWithDataSet(sql, CommandType.Text, RoleIDParam);
             return dt;
+        }
+
+        public bool SetStatusBooking(int BookingID, int status)
+        {
+            string SQL = "Update Booking set status=@staus WHERE idBooking=@idBooking";
+
+            SqlParameter BookingIDParam = new SqlParameter("@idBooking", BookingID);
+            SqlParameter StatusParam = new SqlParameter("@staus", status);
+            try
+            {
+                return DataProvider.ExecuteNonQuery(SQL, CommandType.Text, BookingIDParam, StatusParam);
+            }
+            catch (SqlException se)
+            {
+                throw new Exception(se.Message);
+            }
         }
     }
 }

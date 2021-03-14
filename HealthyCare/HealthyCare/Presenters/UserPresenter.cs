@@ -16,7 +16,9 @@ namespace HealthyCare.Presenters
     class UserPresenter
     {
         User user = null;
-        private IUser userView;
+        IUser userView;
+        IHistory historyView;
+        ICustomer customerView;
         UserData userData = new UserData();
         DoctorData doctorData = new DoctorData();
 
@@ -24,6 +26,18 @@ namespace HealthyCare.Presenters
         {
             user = LoginInfo.user;
             userView = view;
+        }
+
+        public UserPresenter(IHistory view)
+        {
+            user = LoginInfo.user;
+            historyView = view;
+        }
+
+        public UserPresenter(ICustomer view)
+        {
+            user = LoginInfo.user;
+            customerView = view;
         }
 
         public void ConnectModelAndView()
@@ -41,19 +55,21 @@ namespace HealthyCare.Presenters
             return check;
         }
 
-        public DataSet GetDoctors()
+        public void GetDoctors()
         {
-            return doctorData.GetDoctors();
+            DataSet data = doctorData.GetDoctors();
+            customerView.GetDoctors(data);
         }
 
-        public DataSet GetBooking()
+        public void GetHistory()
         {
-            return userData.GetBooking(user.UserID);
+            historyView.GetHistory(userData.GetHistory(user.UserID));
         }
 
-        public Doctor GetDoctorByID(string doctorID)
+        public void GetDoctorByID(string doctorID)
         {
-            return doctorData.GetDoctorByID(doctorID);
+            Doctor doctor = doctorData.GetDoctorByID(doctorID);
+            customerView.GetDoctorByID(doctor);
         }
 
         public int GetNumOfBooking(string DoctorID)
@@ -61,9 +77,16 @@ namespace HealthyCare.Presenters
             return doctorData.GetNumOfBooking(DoctorID);
         }
 
-        public bool BookDoctor(string DoctorID)
+        public void BookDoctor(string DoctorID)
         {
-            return userData.BookDoctor(DoctorID, user.UserID, DateTime.Now);
+            bool check = userData.BookDoctor(DoctorID, user.UserID, DateTime.Now);
+            customerView.BookDoctor(check);
+        }
+
+        public void CancelBooking(int bookingID)
+        {
+            bool check = userData.SetStatusBooking(bookingID, 4);
+            historyView.CancelBooking(check);
         }
     }
 }

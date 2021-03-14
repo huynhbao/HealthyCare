@@ -23,7 +23,7 @@ namespace HealthyCare.UI.G
     using HealthyCare.UI.Doctor;
     using HealthyCare.UI.Customer;
 
-    public partial class frmLogin : DarkForm, IUser
+    public partial class frmLogin : DarkForm, ILogin
     {
         private LoginPresneter presenter;
         public frmLogin()
@@ -35,16 +35,25 @@ namespace HealthyCare.UI.G
 
         public string UserID { get => txtUsername.Text; set => txtUsername.Text = value; }
         public string Password { get => txtPassword.Text; set => txtPassword.Text = value; }
-        string IUser.FullName { get => null; set => value = null; }
-        bool IUser.Gender { get => false; set => value = false; }
-        string IUser.Email { get => null; set => value = null; }
-        string IUser.Address { get => null; set => value = null; }
-        string IUser.Phone { get => null; set => value = null; }
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
             presenter = new LoginPresneter(this);
-            User user = presenter.CheckLogin();
+            presenter.CheckLogin();
+        }
+
+        
+
+        private void btnRegister_Click(object sender, EventArgs e)
+        {
+            frmRegister register = new frmRegister();
+            register.Show();
+
+            Hide();
+        }
+
+        void ILogin.Login(User user)
+        {
             if (user != null)
             {
                 string roleID = user.Role.RoleID;
@@ -65,22 +74,12 @@ namespace HealthyCare.UI.G
                         break;
                 }
                 Hide();
-            } else
+            }
+            else
             {
                 MessageBox.Show("Fail");
             }
         }
 
-        
-
-        private void btnRegister_Click(object sender, EventArgs e)
-        {
-            frmRegister register = new frmRegister();
-            register.Show();
-
-            Hide();
-        }
-
-       
     }
 }

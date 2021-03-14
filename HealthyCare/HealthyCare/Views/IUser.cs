@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 
 namespace HealthyCare.Views
 {
-
     public interface IUser
     {
         string UserID { get; set; }
@@ -16,5 +15,6 @@ namespace HealthyCare.Views
         string Email { get; set; }
         string Address { get; set; }
         string Phone { get; set; }
+
     }
 }

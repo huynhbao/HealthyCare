@@ -17,7 +17,7 @@ using HealthyCare.UI.G;
 
 namespace HealthyCare
 {
-    public partial class frmRegister : DarkForm, IUser
+    public partial class frmRegister : DarkForm, IRegister
     {
         public frmRegister()
         {
@@ -51,11 +51,7 @@ namespace HealthyCare
             else
             {
                 presenter = new RegisterPresenter(this);
-                bool check = presenter.CheckRegister();
-                string s = (check == true ? "successful" : "fail");
-                MessageBox.Show("Register " + s);
-                Clear();
-                LoginForm();
+                presenter.CheckRegister();
             }
         }
         void Clear()
@@ -78,6 +74,30 @@ namespace HealthyCare
             frm.Show();
             Close();
         }
-        
+
+        void IRegister.Register(int status)
+        {
+            string s;
+            switch (status)
+            {
+                case 0:
+                    s = "Successful";
+                    MessageBox.Show("Register " + s);
+                    Clear();
+                    LoginForm();
+                    break;
+                case 1:
+                    s = "Duplicated";
+                    MessageBox.Show("Register " + s);
+                    break;
+                default:
+                    s = "Error";
+                    MessageBox.Show("Register " + s);
+                    break;
+            }
+            
+            
+            
+        }
     }
 }

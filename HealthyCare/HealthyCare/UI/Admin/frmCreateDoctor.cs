@@ -16,7 +16,7 @@ using System.Text.RegularExpressions;
 
 namespace HealthyCare.UI.Admin
 {
-    public partial class frmCreateDoctor : DarkForm, IDoctor
+    public partial class frmCreateDoctor : DarkForm, ICreateDoctor
     {
         public frmCreateDoctor()
         {
@@ -59,11 +59,15 @@ namespace HealthyCare.UI.Admin
             else
             {
                 DoctorPresenter presenter = new DoctorPresenter(this);
-                bool check = presenter.CheckRegister();
-                string s = (check == true ? "successful" : "fail");
-                MessageBox.Show("Register " + s);
-                this.Hide();
+                presenter.Register();
             }
+        }
+
+        void ICreateDoctor.Register(bool isCreated)
+        {
+            string s = (isCreated == true ? "successful" : "fail");
+            MessageBox.Show("Register " + s);
+            this.Hide();
         }
     }
 }
