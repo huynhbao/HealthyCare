@@ -1,4 +1,8 @@
 validate login, update
 
-Check nếu đang booking thì ko đc book
-Sửa major
+16/03
+	Check nếu đang booking thì ko đc book
+	Sửa major
+
+	chia manage user, doctor
+	search function (name, gender)
