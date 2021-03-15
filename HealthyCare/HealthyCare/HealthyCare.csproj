@@ -57,6 +57,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Presenters\AdminPresenter.cs" />
     <Compile Include="Presenters\DoctorPresenter.cs" />
     <Compile Include="Presenters\LoginPresneter.cs" />
     <Compile Include="Presenters\RegisterPresenter.cs" />

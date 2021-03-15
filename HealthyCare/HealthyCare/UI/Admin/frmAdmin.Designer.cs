@@ -53,6 +53,7 @@ namespace HealthyCare.UI.Admin
             this.dgvUser.Size = new System.Drawing.Size(776, 190);
             this.dgvUser.TabIndex = 1;
             this.dgvUser.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvUser_CellFormatting);
+            this.dgvUser.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgvUser_DataBindingComplete);
             // 
             // btnDeleteUser
             // 

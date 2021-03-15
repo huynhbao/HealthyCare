@@ -12,19 +12,20 @@ namespace HealthyCare.UI.Admin
 {
     using BussinessObject.Entities;
     using HealthyCare.Presenters;
+    using HealthyCare.Utils;
     using HealthyCare.Views;
 
     public partial class frmAdmin : Form, IAdmin
     {
         User user = null;
-        UserPresenter userPresenter = null;
+        AdminPresenter userPresenter = null;
         private DataSet dsAdmin;
         private DataTable dtAdmin;
         public frmAdmin()
         {
             InitializeComponent();
             user = LoginInfo.user;
-            userPresenter = new UserPresenter(this);
+            userPresenter = new AdminPresenter(this);
             LoadData();
         }
         public void LoadData()
@@ -40,23 +41,51 @@ namespace HealthyCare.UI.Admin
         {
             dsAdmin = data;
             dtAdmin = dsAdmin.Tables[0];
+            MyUtils.ConvertColumnType(ref dtAdmin, "status", typeof(int));
+            MyUtils.ConvertColumnType(ref dtAdmin, "gender", typeof(int));
             dgvUser.DataSource = dtAdmin;
+            dgvUser.CellFormatting += DgvUser_CellFormatting;
         }
-        private void dgvUser_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+
+        private void DgvUser_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
             if (dgvUser.Columns[e.ColumnIndex].Name.Equals("status"))
             {
-                bool userStatus = bool.Parse(e.Value.ToString());
-                switch (userStatus)
+                if (e.Value != null)
                 {
-                    case true:
-                        e.Value = "Active";
-                        break;
-                    case false:
-                        e.Value = "Inactive";
-                        break;
+                    int status = int.Parse(e.Value.ToString());
+                    switch (status)
+                    {
+                        case 1:
+                            e.Value = "Active";
+                            break;
+                        case 0:
+                            e.Value = "Inactive";
+                            break;
+                    }
                 }
             }
+
+            if (dgvUser.Columns[e.ColumnIndex].Name.Equals("gender"))
+            {
+                if (e.Value != null)
+                {
+                    int status = int.Parse(e.Value.ToString());
+                    switch (status)
+                    {
+                        case 1:
+                            e.Value = "Male";
+                            break;
+                        case 0:
+                            e.Value = "Female";
+                            break;
+                    }
+                }
+            }
+        }
+
+        private void dgvUser_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
         }
         private void btnDeleteUser_Click(object sender, EventArgs e)
         {
@@ -98,6 +127,11 @@ namespace HealthyCare.UI.Admin
             {
                 MessageBox.Show("Cannot Delete", "Message");
             }
+        }
+
+        private void dgvUser_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            
         }
     }
 }
