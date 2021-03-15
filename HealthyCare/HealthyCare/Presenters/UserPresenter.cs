@@ -17,9 +17,11 @@ namespace HealthyCare.Presenters
     {
         User user = null;
         IUser userView;
+        IAdmin adminView;
         IHistory historyView;
         ICustomer customerView;
         UserData userData = new UserData();
+        AdminData adminData = new AdminData();
         DoctorData doctorData = new DoctorData();
 
         public UserPresenter(IUser view)
@@ -39,7 +41,11 @@ namespace HealthyCare.Presenters
             user = LoginInfo.user;
             customerView = view;
         }
-
+        public UserPresenter(IAdmin view)
+        {
+            user = LoginInfo.user;
+            adminView = view;
+        }
         public void ConnectModelAndView()
         {
             user.FullName = userView.FullName;
@@ -60,7 +66,16 @@ namespace HealthyCare.Presenters
             DataSet data = doctorData.GetDoctors();
             customerView.GetDoctors(data);
         }
-
+        public void GetUsers()
+        {
+            DataSet data = adminData.GetUsers();
+            adminView.GetUsers(data);
+        }
+        public void DeleteUser(String userID)
+        {
+            bool check = adminData.DeleteUser(userID, 0);
+            adminView.DeleteUser(check);
+        }
         public void GetHistory()
         {
             historyView.GetHistory(userData.GetHistory(user.UserID));

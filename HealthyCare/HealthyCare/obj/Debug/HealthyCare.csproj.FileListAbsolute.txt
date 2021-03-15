@@ -71,3 +71,9 @@ C:\Users\HuynhBao\source\repos\HealthyCare\HealthyCare\HealthyCare\obj\Debug\Hea
 C:\Users\HuynhBao\source\repos\HealthyCare\HealthyCare\HealthyCare\obj\Debug\HealthyCare.UI.Customer.frmDoctorDetail.resources
 C:\Users\HuynhBao\source\repos\HealthyCare\HealthyCare\HealthyCare\bin\Debug\FontAwesome.Sharp.dll
 C:\Users\HuynhBao\source\repos\HealthyCare\HealthyCare\HealthyCare\obj\Debug\HealthyCare.UI.Customer.frmHistory.resources
+D:\fpt\PRN292\Project\HealthyCare\HealthyCare\HealthyCare\bin\Debug\FontAwesome.Sharp.dll
+D:\fpt\PRN292\Project\HealthyCare\HealthyCare\HealthyCare\obj\Debug\HealthyCare.UI.Customer.frmCustomer.resources
+D:\fpt\PRN292\Project\HealthyCare\HealthyCare\HealthyCare\obj\Debug\HealthyCare.UI.Customer.frmDoctorDetail.resources
+D:\fpt\PRN292\Project\HealthyCare\HealthyCare\HealthyCare\obj\Debug\HealthyCare.UI.Customer.frmHistory.resources
+D:\fpt\PRN292\Project\HealthyCare\HealthyCare\HealthyCare\obj\Debug\HealthyCare.UI.User.frmEditProfile.resources
+D:\fpt\PRN292\Project\HealthyCare\HealthyCare\HealthyCare\obj\Debug\HealthyCare.UI.User.frmViewProfile.resources

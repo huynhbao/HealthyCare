@@ -42,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataAccess\AdminData.cs" />
     <Compile Include="DataAccess\DoctorData.cs" />
     <Compile Include="DataAccess\UserData.cs" />
     <Compile Include="Entities\Doctor.cs" />
