@@ -125,7 +125,7 @@ namespace BussinessObject.DataAccess
         {
             int result = 0;
 
-            string sql = "select count(*) from Booking where idUser=@idUser";
+            string sql = "select count(*) from Booking where idDoctor=@idUser AND status = 3";
             SqlParameter DoctorIDParam = new SqlParameter("@idUser", DoctorID);
             SqlDataReader rd = DataProvider.ExecuteQueryWithDataReader(sql, CommandType.Text, DoctorIDParam);
             if (rd.HasRows)

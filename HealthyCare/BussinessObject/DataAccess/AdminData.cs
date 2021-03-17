@@ -10,12 +10,12 @@ namespace BussinessObject
 {
     public class AdminData
     {
-        public DataSet GetUsers()
+        public DataSet GetData()
         {
-            string sql = "select idUser, fullName, address, email, phone, gender, status " +
-                "from Users where idRole=@idRole";
-            SqlParameter RoleIDParam = new SqlParameter("@idRole", "3");
-            DataSet dt = DataProvider.ExecuteQueryWithDataSet(sql, CommandType.Text, RoleIDParam);
+            string sql = "select idUser, fullName, address, email, phone, gender, status, idRole " +
+                "from Users; Select idFeedback FROM Feedback";
+            //SqlParameter RoleIDParam = new SqlParameter("@idRole", "3");
+            DataSet dt = DataProvider.ExecuteQueryWithDataSet(sql, CommandType.Text);
             return dt;
         }
         public bool DeleteUser(String userID, int status)

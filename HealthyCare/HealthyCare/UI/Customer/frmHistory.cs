@@ -1,5 +1,6 @@
 ﻿using DarkUI.Forms;
 using HealthyCare.Presenters;
+using HealthyCare.Utils;
 using HealthyCare.Views;
 using System;
 using System.Collections.Generic;
@@ -22,18 +23,18 @@ namespace HealthyCare.UI.Customer
         {
             this.dsHistory = dsHistory;
             dgvHistory.DataSource = dsHistory.Tables[0];
-            dgvHistory.Sort(dgvHistory.Columns["bookingDate"], ListSortDirection.Descending);
+            LoadingFormUtils.Close();
         }
 
         public frmHistory()
         {
             InitializeComponent();
             userPresenter = new UserPresenter(this);
-            LoadData();
         }
 
         void LoadData()
         {
+            LoadingFormUtils.Show(this);
             userPresenter.GetHistory();
         }
 
@@ -101,6 +102,11 @@ namespace HealthyCare.UI.Customer
             } else {
                 MessageBox.Show("Cannot Cancel", "Message");
             }
+        }
+
+        private void frmHistory_Load(object sender, EventArgs e)
+        {
+            LoadData();
         }
     }
 }

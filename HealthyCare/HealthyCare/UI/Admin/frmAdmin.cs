@@ -11,127 +11,110 @@ using System.Windows.Forms;
 namespace HealthyCare.UI.Admin
 {
     using BussinessObject.Entities;
+    using DarkUI.Forms;
     using HealthyCare.Presenters;
     using HealthyCare.Utils;
     using HealthyCare.Views;
 
-    public partial class frmAdmin : Form, IAdmin
+    public partial class frmAdmin : DarkForm, IAdmin
     {
         User user = null;
-        AdminPresenter userPresenter = null;
+        AdminPresenter adminPresenter = null;
         private DataSet dsAdmin;
         private DataTable dtAdmin;
+        private DataTable dtFeedback;
+
+        private Form activeForm = null;
+        private Button activeButton = null;
         public frmAdmin()
         {
             InitializeComponent();
             user = LoginInfo.user;
-            userPresenter = new AdminPresenter(this);
-            LoadData();
+            adminPresenter = new AdminPresenter(this);
+            ActiveButton(btnHome);
         }
+
+        private void ActiveButton(Button btn)
+        {
+            DisableButton();
+            activeButton = btn;
+            activeButton.BackColor = Color.FromArgb(79, 79, 79);
+            lbParentForm.Text = "Dashboard";
+        }
+
+        private void DisableButton()
+        {
+            if (activeButton != null)
+            {
+                activeButton.BackColor = Color.FromArgb(45, 45, 45);
+            }
+        }
+
         public void LoadData()
         {
-            userPresenter.GetUsers();
+            LoadingFormUtils.Show(this);
+            adminPresenter.GetData();
+            lbFullName.Text = "Hi! " + user.FullName;
         }
+
         private void btnCreateDoctor_Click(object sender, EventArgs e)
         {
             new frmCreateDoctor().ShowDialog();
         }
 
-        void IAdmin.GetUsers(DataSet data)
+        void IAdmin.GetData(DataSet data)
         {
             dsAdmin = data;
             dtAdmin = dsAdmin.Tables[0];
-            MyUtils.ConvertColumnType(ref dtAdmin, "status", typeof(int));
-            MyUtils.ConvertColumnType(ref dtAdmin, "gender", typeof(int));
-            dgvUser.DataSource = dtAdmin;
-            dgvUser.CellFormatting += DgvUser_CellFormatting;
+            lbTotalUsers.Text = dtAdmin.Compute("count(idUser)", "idRole = 3").ToString();
+            lbTotalDoctors.Text = dtAdmin.Compute("count(idUser)", "idRole = 2").ToString();
+
+            dtFeedback = dsAdmin.Tables[1];
+            lbFeedback.Text = dtFeedback.Compute("count(idFeedback)", "").ToString();
+            LoadingFormUtils.Close();
         }
 
-        private void DgvUser_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
-        {
-            if (dgvUser.Columns[e.ColumnIndex].Name.Equals("status"))
-            {
-                if (e.Value != null)
-                {
-                    int status = int.Parse(e.Value.ToString());
-                    switch (status)
-                    {
-                        case 1:
-                            e.Value = "Active";
-                            break;
-                        case 0:
-                            e.Value = "Inactive";
-                            break;
-                    }
-                }
-            }
-
-            if (dgvUser.Columns[e.ColumnIndex].Name.Equals("gender"))
-            {
-                if (e.Value != null)
-                {
-                    int status = int.Parse(e.Value.ToString());
-                    switch (status)
-                    {
-                        case 1:
-                            e.Value = "Male";
-                            break;
-                        case 0:
-                            e.Value = "Female";
-                            break;
-                    }
-                }
-            }
-        }
-
-        private void dgvUser_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
-        {
-        }
-        private void btnDeleteUser_Click(object sender, EventArgs e)
-        {
-            if (dgvUser.SelectedRows.Count > 0)
-            {
-                String userId = dgvUser.SelectedRows[0].Cells[0].Value.ToString();
-                dtAdmin = dsAdmin.Tables[0];
-                DataRow dr = dtAdmin.Rows[dgvUser.SelectedRows[0].Index];
-                int status = int.Parse(dr["status"].ToString());
-
-                switch (status)
-                {
-                    case 1:
-                        userPresenter.DeleteUser(userId);
-                        break;
-                    case 2:
-                        MessageBox.Show("This booking has been confirmed.", "Message");
-                        break;
-                    case 3:
-                        MessageBox.Show("This booking has been done.", "Message");
-                        break;
-                    case 4:
-                        MessageBox.Show("This booking has been canceled.", "Message");
-                        break;
-
-                }
-
-            }
-        }
 
         void IAdmin.DeleteUser(bool check)
         {
-            if (check)
+        }
+
+        private void btnManageUsers_Click(object sender, EventArgs e)
+        {
+            frmManageUser frm = new frmManageUser();
+            openChildForm(frm, btnManageUsers);
+        }
+
+        private void openChildForm(Form childForm, Button btn)
+        {
+            if (activeForm != null)
             {
-                MessageBox.Show("Delete Sucessful", "Message");
-                LoadData();
+                activeForm.Close();
             }
-            else
+            activeForm = childForm;
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+            pnView.Controls.Add(childForm);
+            pnView.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
+            lbParentForm.Text = childForm.Text;
+            ActiveButton(btn);
+        }
+
+        private void btnHome_Click(object sender, EventArgs e)
+        {
+            ActiveButton(btnHome);
+            if (activeForm != null)
             {
-                MessageBox.Show("Cannot Delete", "Message");
+                activeForm.Close();
             }
         }
 
-        private void dgvUser_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        private void frmAdmin_Load(object sender, EventArgs e)
         {
-            
+            LoadData();
         }
     }
 }

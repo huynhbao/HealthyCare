@@ -7,10 +7,12 @@ using System.Threading.Tasks;
 
 namespace HealthyCare.Views
 {
-    public interface ICreateDoctor : IUser
+    public interface IDoctor : IUser
     {
         Certificate Certificate { get; set; }
 
         void Register(bool isCreated);
+        void GetTotalBooking(int total);
+
     }
 }

@@ -22,10 +22,10 @@ namespace HealthyCare.Presenters
             adminView = view;
 
         }
-        public void GetUsers()
+        public void GetData()
         {
-            DataSet data = adminData.GetUsers();
-            adminView.GetUsers(data);
+            DataSet data = adminData.GetData();
+            adminView.GetData(data);
         }
 
         public void DeleteUser(String userID)

@@ -96,11 +96,12 @@ namespace BussinessObject
                     DataProvider.ExecuteNonQuery(SQL, CommandType.Text, idUser, password, fullName, address, email, phone, gender, idRole);
                     return 0;
                 }
-                catch (SqlException se)
+                catch (SqlException)
                 {
                     return 2;
                 }
-            } else
+            }
+            else
             {
                 return 1;
             }
@@ -143,10 +144,30 @@ namespace BussinessObject
             }
         }
 
+        public bool CheckPreviousBooking(string UserID)
+        {
+            bool result = false;
+
+            string sql = "select status " +
+                "from Booking where idUser=@idUser";
+            SqlParameter UserIDIDParam = new SqlParameter("@idUser", UserID);
+            SqlDataReader rd = DataProvider.ExecuteQueryWithDataReader(sql, CommandType.Text, UserIDIDParam);
+            while (rd.Read())
+            {
+                if (int.Parse(rd["status"].ToString()) == 1)
+                {
+                    result = true;
+                    break;
+                }
+            }
+
+            return result;
+        }
+
         public DataSet GetHistory(string UserID)
         {
 
-            string sql = "SELECT idBooking, bookingDate, idDoctor, fullName, b.status FROM Booking b, Users u WHERE b.idUser=@idUser AND b.idDoctor=u.idUser";
+            string sql = "SELECT idBooking, bookingDate, idDoctor, fullName, b.status FROM Booking b, Users u WHERE b.idUser=@idUser AND b.idDoctor=u.idUser ORDER BY bookingDate DESC";
             SqlParameter RoleIDParam = new SqlParameter("@idUser", UserID);
             DataSet dt = DataProvider.ExecuteQueryWithDataSet(sql, CommandType.Text, RoleIDParam);
             return dt;

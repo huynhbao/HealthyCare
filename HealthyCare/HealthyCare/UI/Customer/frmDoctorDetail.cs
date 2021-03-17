@@ -15,15 +15,15 @@ namespace HealthyCare.UI.Customer
     using HealthyCare.Presenters;
     using HealthyCare.Views;
 
-    public partial class frmDoctorDetail : DarkForm, IUser
+    public partial class frmDoctorDetail : DarkForm, IDoctor
     {
         private Doctor doctor = null;
-        private UserPresenter userPresenter = null;
+        private DoctorPresenter doctorPresenter = null;
         public frmDoctorDetail(Doctor doctor)
         {
             InitializeComponent();
             this.doctor = doctor;
-            userPresenter = new UserPresenter(this);
+            doctorPresenter = new DoctorPresenter(this);
             LoadData();
         }
 
@@ -34,6 +34,9 @@ namespace HealthyCare.UI.Customer
         public string Email { get; set; }
         public string Address { get; set; }
         public string Phone { get; set; }
+        Certificate IDoctor.Certificate { get; set; }
+
+        
 
         private void LoadData()
         {
@@ -50,8 +53,18 @@ namespace HealthyCare.UI.Customer
                 lbGender.Text = "Female";
             }
 
-            lbNumOfBooking.Text = userPresenter.GetNumOfBooking(doctor.UserID).ToString();
+            doctorPresenter.GetDoctorTotalBooking(doctor.UserID);
             lbCertificate.Text = doctor.Certificate.Name;
+        }
+
+        void IDoctor.GetTotalBooking(int total)
+        {
+            lbNumOfBooking.Text = total.ToString();
+        }
+
+        void IDoctor.Register(bool isCreated)
+        {
+            throw new NotImplementedException();
         }
     }
 }

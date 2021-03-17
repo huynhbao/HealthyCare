@@ -10,7 +10,7 @@ namespace HealthyCare.Views
 {
     public interface IAdmin
     {
-        void GetUsers(DataSet data);
+        void GetData(DataSet data);
         void DeleteUser(bool check);
     }
 }

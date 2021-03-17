@@ -33,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CircularProgressBar, Version=2.8.0.16, Culture=neutral, PublicKeyToken=310fd07b25df79b3, processorArchitecture=MSIL">
+      <HintPath>..\packages\CircularProgressBar.2.8.0.16\lib\net40\CircularProgressBar.dll</HintPath>
+    </Reference>
     <Reference Include="Dapper, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Dapper.2.0.78\lib\net461\Dapper.dll</HintPath>
     </Reference>
@@ -55,6 +58,9 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="WinFormAnimation, Version=1.6.0.4, Culture=neutral, PublicKeyToken=310fd07b25df79b3, processorArchitecture=MSIL">
+      <HintPath>..\packages\WinFormAnimation.1.6.0.4\lib\net40\WinFormAnimation.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Presenters\AdminPresenter.cs" />
@@ -72,6 +78,12 @@
     </Compile>
     <Compile Include="UI\Admin\frmCreateDoctor.Designer.cs">
       <DependentUpon>frmCreateDoctor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Admin\frmManageUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Admin\frmManageUser.Designer.cs">
+      <DependentUpon>frmManageUser.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\Customer\frmCustomer.cs">
       <SubType>Form</SubType>
@@ -109,6 +121,12 @@
     <Compile Include="UI\Doctor\frmViewFeedbacks.Designer.cs">
       <DependentUpon>frmViewFeedbacks.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\Guest\frmLoading.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Guest\frmLoading.Designer.cs">
+      <DependentUpon>frmLoading.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Guest\frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -133,6 +151,7 @@
     <Compile Include="UI\User\frmViewProfile.Designer.cs">
       <DependentUpon>frmViewProfile.cs</DependentUpon>
     </Compile>
+    <Compile Include="Utils\LoadingFormUtils.cs" />
     <Compile Include="Utils\MyUtils.cs" />
     <Compile Include="Presenters\UserPresenter.cs" />
     <Compile Include="Program.cs" />
@@ -141,7 +160,7 @@
     <Compile Include="Views\ICustomer.cs" />
     <Compile Include="Views\IRegister.cs" />
     <Compile Include="Views\IUser.cs" />
-    <Compile Include="Views\ICreateDoctor.cs" />
+    <Compile Include="Views\IDoctor.cs" />
     <Compile Include="Views\IHistory.cs" />
     <Compile Include="Views\ILogin.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -160,6 +179,9 @@
     <EmbeddedResource Include="UI\Admin\frmCreateDoctor.resx">
       <DependentUpon>frmCreateDoctor.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\Admin\frmManageUser.resx">
+      <DependentUpon>frmManageUser.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\Customer\frmCustomer.resx">
       <DependentUpon>frmCustomer.cs</DependentUpon>
     </EmbeddedResource>
@@ -171,6 +193,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Doctor\frmDoctor.resx">
       <DependentUpon>frmDoctor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Guest\frmLoading.resx">
+      <DependentUpon>frmLoading.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Guest\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>

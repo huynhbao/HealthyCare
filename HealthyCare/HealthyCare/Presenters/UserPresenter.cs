@@ -60,11 +60,6 @@ namespace HealthyCare.Presenters
             DataSet data = doctorData.GetDoctors();
             customerView.GetDoctors(data);
         }
-        
-        public void GetHistory()
-        {
-            historyView.GetHistory(userData.GetHistory(user.UserID));
-        }
 
         public void GetDoctorByID(string doctorID)
         {
@@ -72,14 +67,19 @@ namespace HealthyCare.Presenters
             customerView.GetDoctorByID(doctor);
         }
 
-        public int GetNumOfBooking(string DoctorID)
+        public void GetHistory()
         {
-            return doctorData.GetNumOfBooking(DoctorID);
+            historyView.GetHistory(userData.GetHistory(user.UserID));
         }
 
         public void BookDoctor(string DoctorID)
         {
-            bool check = userData.BookDoctor(DoctorID, user.UserID, DateTime.Now);
+            bool check = !userData.CheckPreviousBooking(user.UserID);
+            if (check)
+            {
+                userData.BookDoctor(DoctorID, user.UserID, DateTime.Now);
+            }
+            
             customerView.BookDoctor(check);
         }
 

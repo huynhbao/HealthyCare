@@ -11,11 +11,11 @@ namespace HealthyCare.Presenters
 {
     class DoctorPresenter
     {
-        private ICreateDoctor doctorView;
+        private IDoctor doctorView;
         private Doctor doctor;
         private DoctorData doctorData = new DoctorData();
 
-        public DoctorPresenter(ICreateDoctor view)
+        public DoctorPresenter(IDoctor view)
         {
             doctorView = view;
             doctor = new Doctor
@@ -35,6 +35,12 @@ namespace HealthyCare.Presenters
         {
             bool check = doctorData.Register(doctor);
             doctorView.Register(check);
+        }
+
+        public void GetDoctorTotalBooking(string doctorID)
+        {
+            int total = doctorData.GetNumOfBooking(doctorID);
+            doctorView.GetTotalBooking(total);
         }
     }
 }

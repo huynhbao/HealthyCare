@@ -13,6 +13,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using HealthyCare.Utils;
 using DarkUI.Forms;
+using HealthyCare.UI.Guest;
 
 
 
@@ -22,6 +23,7 @@ namespace HealthyCare.UI.G
     using HealthyCare.UI.Admin;
     using HealthyCare.UI.Doctor;
     using HealthyCare.UI.Customer;
+    using System.Threading;
 
     public partial class frmLogin : DarkForm, ILogin
     {
@@ -31,29 +33,30 @@ namespace HealthyCare.UI.G
             InitializeComponent();
         }
 
-        
+        //LoadingFormUtils loadingForm = new LoadingFormUtils();
 
         public string UserID { get => txtUsername.Text; set => txtUsername.Text = value; }
         public string Password { get => txtPassword.Text; set => txtPassword.Text = value; }
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
+            LoadingFormUtils.Show(this);
             presenter = new LoginPresneter(this);
             presenter.CheckLogin();
         }
-
-        
 
         private void btnRegister_Click(object sender, EventArgs e)
         {
             frmRegister register = new frmRegister();
             register.Show();
-
             Hide();
         }
 
+
         void ILogin.Login(User user)
         {
+            LoadingFormUtils.Close();
+
             if (user != null)
             {
                 string roleID = user.Role.RoleID;
