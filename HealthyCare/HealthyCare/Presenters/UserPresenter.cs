@@ -1,6 +1,7 @@
 ﻿using BussinessObject;
 using BussinessObject.DataAccess;
 using BussinessObject.Entities;
+using HealthyCare.Utils;
 using HealthyCare.Views;
 using System;
 using System.Collections.Generic;
@@ -10,6 +11,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace HealthyCare.Presenters
 {
@@ -21,6 +23,9 @@ namespace HealthyCare.Presenters
         ICustomer customerView;
         UserData userData = new UserData();
         DoctorData doctorData = new DoctorData();
+        LoadingFormUtils loadingForm = new LoadingFormUtils();
+        Form form = null;
+
 
         public UserPresenter(IUser view)
         {
@@ -32,12 +37,14 @@ namespace HealthyCare.Presenters
         {
             user = LoginInfo.user;
             historyView = view;
+            form = view.Form;
         }
 
         public UserPresenter(ICustomer view)
         {
             user = LoginInfo.user;
             customerView = view;
+            form = view.Form;
         }
         
         public void ConnectModelAndView()
@@ -57,19 +64,26 @@ namespace HealthyCare.Presenters
 
         public void GetDoctors()
         {
+            loadingForm.Show(form);
             DataSet data = doctorData.GetDoctors();
+            loadingForm.Close();
             customerView.GetDoctors(data);
         }
 
         public void GetDoctorByID(string doctorID)
         {
+            loadingForm.Show(form);
             Doctor doctor = doctorData.GetDoctorByID(doctorID);
+            loadingForm.Close();
             customerView.GetDoctorByID(doctor);
         }
 
         public void GetHistory()
         {
-            historyView.GetHistory(userData.GetHistory(user.UserID));
+            loadingForm.Show(form);
+            DataSet data = userData.GetHistory(user.UserID);
+            loadingForm.Close();
+            historyView.GetHistory(data);
         }
 
         public void BookDoctor(string DoctorID)

@@ -23,11 +23,11 @@ namespace HealthyCare.UI.G
     using HealthyCare.UI.Admin;
     using HealthyCare.UI.Doctor;
     using HealthyCare.UI.Customer;
-    using System.Threading;
 
     public partial class frmLogin : DarkForm, ILogin
     {
         private LoginPresneter presenter;
+
         public frmLogin()
         {
             InitializeComponent();
@@ -37,13 +37,16 @@ namespace HealthyCare.UI.G
 
         public string UserID { get => txtUsername.Text; set => txtUsername.Text = value; }
         public string Password { get => txtPassword.Text; set => txtPassword.Text = value; }
+        public Form Form { get => this;}
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            LoadingFormUtils.Show(this);
+
+            //loadingForm.Show(this);
             presenter = new LoginPresneter(this);
             presenter.CheckLogin();
         }
+
 
         private void btnRegister_Click(object sender, EventArgs e)
         {
@@ -53,10 +56,9 @@ namespace HealthyCare.UI.G
         }
 
 
-        void ILogin.Login(User user)
+        public void Login(User user)
         {
-            LoadingFormUtils.Close();
-
+            //loadingForm.Close();
             if (user != null)
             {
                 string roleID = user.Role.RoleID;

@@ -43,6 +43,9 @@ namespace HealthyCare.UI.Customer
             this.dgvHistory.AllowUserToOrderColumns = true;
             this.dgvHistory.AllowUserToResizeColumns = false;
             this.dgvHistory.AllowUserToResizeRows = false;
+            this.dgvHistory.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvHistory.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgvHistory.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -60,10 +63,11 @@ namespace HealthyCare.UI.Customer
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvHistory.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvHistory.Location = new System.Drawing.Point(12, 86);
+            this.dgvHistory.Location = new System.Drawing.Point(12, 66);
             this.dgvHistory.MultiSelect = false;
             this.dgvHistory.Name = "dgvHistory";
             this.dgvHistory.ReadOnly = true;
+            this.dgvHistory.RowHeadersVisible = false;
             this.dgvHistory.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvHistory.Size = new System.Drawing.Size(773, 251);
             this.dgvHistory.TabIndex = 10;
@@ -71,7 +75,7 @@ namespace HealthyCare.UI.Customer
             // 
             // btnCancelBooking
             // 
-            this.btnCancelBooking.Location = new System.Drawing.Point(333, 344);
+            this.btnCancelBooking.Location = new System.Drawing.Point(330, 324);
             this.btnCancelBooking.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnCancelBooking.Name = "btnCancelBooking";
             this.btnCancelBooking.Padding = new System.Windows.Forms.Padding(6);

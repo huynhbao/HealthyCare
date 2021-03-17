@@ -1,0 +1,9 @@
+C:\Users\HuynhBao\source\repos\HealthyCare\HealthyCare\BussinessObject\bin\Release\BussinessObject.dll
+C:\Users\HuynhBao\source\repos\HealthyCare\HealthyCare\BussinessObject\bin\Release\BussinessObject.pdb
+C:\Users\HuynhBao\source\repos\HealthyCare\HealthyCare\BussinessObject\bin\Release\DataProvider.dll
+C:\Users\HuynhBao\source\repos\HealthyCare\HealthyCare\BussinessObject\bin\Release\DataProvider.pdb
+C:\Users\HuynhBao\source\repos\HealthyCare\HealthyCare\BussinessObject\obj\Release\BussinessObject.csprojAssemblyReference.cache
+C:\Users\HuynhBao\source\repos\HealthyCare\HealthyCare\BussinessObject\obj\Release\BussinessObject.csproj.CoreCompileInputs.cache
+C:\Users\HuynhBao\source\repos\HealthyCare\HealthyCare\BussinessObject\obj\Release\BussinessObject.csproj.CopyComplete
+C:\Users\HuynhBao\source\repos\HealthyCare\HealthyCare\BussinessObject\obj\Release\BussinessObject.dll
+C:\Users\HuynhBao\source\repos\HealthyCare\HealthyCare\BussinessObject\obj\Release\BussinessObject.pdb

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace HealthyCare.Views
 {
-    public interface IHistory
+    public interface IHistory : ILoading
     {
         void GetHistory(DataSet dsHistory);
         void CancelBooking(bool check);

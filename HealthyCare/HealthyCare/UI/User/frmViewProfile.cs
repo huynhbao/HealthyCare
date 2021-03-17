@@ -15,6 +15,7 @@ namespace HealthyCare.UI.User
 {
     using BussinessObject.Entities;
     using HealthyCare.Presenters;
+    using HealthyCare.Utils;
 
     public partial class frmViewProfile : DarkForm
     {

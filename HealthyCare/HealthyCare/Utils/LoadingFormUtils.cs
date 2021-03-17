@@ -9,34 +9,28 @@ using System.Windows.Forms;
 
 namespace HealthyCare.Utils
 {
-    public static class LoadingFormUtils
+    public class LoadingFormUtils
     {
-        static frmLoading wait;
-        static Thread loadthread;
+        frmLoading wait;
+        Thread loadThread;
 
-        public static void Show(Form parent)
+        public void Show(Form parent)
         {
-            loadthread = new Thread(new ParameterizedThreadStart(LoadingProcess));
-            loadthread.Start(parent);
+            loadThread = new Thread(new ParameterizedThreadStart(LoadingProcess));
+            loadThread.Start(parent);
         }
 
-        public static void Close()
+        public void Close()
         {
             if (wait != null)
             {
                 wait.BeginInvoke(new ThreadStart(wait.CloseWaitForm));
                 wait = null;
-                loadthread = null;
+                loadThread = null;
             }
         }
 
-        private static void LoadingProcess()
-        {
-            wait = new frmLoading();
-            wait.ShowDialog();
-        }
-
-        private static void LoadingProcess(object parent)
+        private void LoadingProcess(object parent)
         {
             Form parent1 = parent as Form;
             wait = new frmLoading(parent1);

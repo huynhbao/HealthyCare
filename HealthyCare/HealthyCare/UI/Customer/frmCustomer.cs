@@ -28,18 +28,18 @@ namespace HealthyCare.UI.Customer
         private Form activeForm = null;
         private Button activeButton = null;
 
+        Form ILoading.Form => this;
+
         public frmCustomer()
         {
             InitializeComponent();
             user = LoginInfo.user;
             userPresenter = new UserPresenter(this);
             ActiveButton(btnHome);
-            
         }
 
         public void LoadData()
         {
-            LoadingFormUtils.Show(this);
             userPresenter.GetDoctors();
 
             lbFullName.Text = "Hi! " + user.FullName;
@@ -79,6 +79,7 @@ namespace HealthyCare.UI.Customer
             childForm.Dock = DockStyle.Fill;
             pnView.Controls.Add(childForm);
             pnView.Tag = childForm;
+            childForm.Location = Location;
             childForm.BringToFront();
             childForm.Show();
             lbParentForm.Text = childForm.Text;
@@ -184,7 +185,6 @@ namespace HealthyCare.UI.Customer
             cbMajor.DisplayMember = "name";
             cbMajor.ValueMember = "majorID";
             cbMajor.DataSource = dtMajor;
-            LoadingFormUtils.Close();
         }
 
         public void GetDoctorByID(Doctor doctor)
@@ -213,5 +213,6 @@ namespace HealthyCare.UI.Customer
         {
             LoadData();
         }
+
     }
 }

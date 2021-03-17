@@ -37,7 +37,7 @@ namespace HealthyCare.UI.Guest
             // 
             this.circularProgressBar5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.circularProgressBar5.AnimationFunction = WinFormAnimation.KnownAnimationFunctions.Liner;
-            this.circularProgressBar5.AnimationSpeed = 800;
+            this.circularProgressBar5.AnimationSpeed = 2000;
             this.circularProgressBar5.BackColor = System.Drawing.Color.Transparent;
             this.circularProgressBar5.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.circularProgressBar5.ForeColor = System.Drawing.Color.White;
@@ -47,10 +47,10 @@ namespace HealthyCare.UI.Guest
             this.circularProgressBar5.Location = new System.Drawing.Point(25, 16);
             this.circularProgressBar5.MarqueeAnimationSpeed = 2000;
             this.circularProgressBar5.Name = "circularProgressBar5";
-            this.circularProgressBar5.OuterColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
+            this.circularProgressBar5.OuterColor = System.Drawing.SystemColors.Control;
             this.circularProgressBar5.OuterMargin = -17;
             this.circularProgressBar5.OuterWidth = 17;
-            this.circularProgressBar5.ProgressColor = System.Drawing.Color.CornflowerBlue;
+            this.circularProgressBar5.ProgressColor = System.Drawing.Color.RoyalBlue;
             this.circularProgressBar5.ProgressWidth = 5;
             this.circularProgressBar5.SecondaryFont = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.circularProgressBar5.Size = new System.Drawing.Size(53, 54);
@@ -64,14 +64,15 @@ namespace HealthyCare.UI.Guest
             this.circularProgressBar5.SuperscriptText = "";
             this.circularProgressBar5.TabIndex = 19;
             this.circularProgressBar5.TextMargin = new System.Windows.Forms.Padding(0, 2, 0, 0);
-            this.circularProgressBar5.Value = 67;
+            this.circularProgressBar5.Value = 55;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(105, 39);
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(96, 38);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(67, 13);
+            this.label1.Size = new System.Drawing.Size(86, 17);
             this.label1.TabIndex = 20;
             this.label1.Text = "Please Wait!";
             // 

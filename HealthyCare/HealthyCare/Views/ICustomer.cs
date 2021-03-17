@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace HealthyCare.Views
 {
-    public interface ICustomer
+    public interface ICustomer : ILoading
     {
         void GetDoctors(DataSet data);
         void GetDoctorByID(Doctor doctor);

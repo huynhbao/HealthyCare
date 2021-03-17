@@ -30,6 +30,9 @@ namespace HealthyCare.UI.Admin
         private void InitializeComponent()
         {
             this.pnView = new System.Windows.Forms.Panel();
+            this.darkLabel4 = new DarkUI.Controls.DarkLabel();
+            this.darkLabel3 = new DarkUI.Controls.DarkLabel();
+            this.darkLabel2 = new DarkUI.Controls.DarkLabel();
             this.lbFeedback = new DarkUI.Controls.DarkLabel();
             this.lbTotalUsers = new DarkUI.Controls.DarkLabel();
             this.lbTotalDoctors = new DarkUI.Controls.DarkLabel();
@@ -37,17 +40,16 @@ namespace HealthyCare.UI.Admin
             this.iconButton2 = new FontAwesome.Sharp.IconButton();
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.panelTitleBar = new System.Windows.Forms.Panel();
-            this.lbParentForm = new DarkUI.Controls.DarkLabel();
             this.btnMinimize = new FontAwesome.Sharp.IconButton();
+            this.lbParentForm = new DarkUI.Controls.DarkLabel();
             this.btnExit = new FontAwesome.Sharp.IconButton();
             this.darkLabel1 = new DarkUI.Controls.DarkLabel();
             this.lbFullName = new DarkUI.Controls.DarkLabel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnHome = new FontAwesome.Sharp.IconButton();
             this.btnManageUsers = new FontAwesome.Sharp.IconButton();
-            this.darkLabel2 = new DarkUI.Controls.DarkLabel();
-            this.darkLabel3 = new DarkUI.Controls.DarkLabel();
-            this.darkLabel4 = new DarkUI.Controls.DarkLabel();
+            this.iconButton3 = new FontAwesome.Sharp.IconButton();
+            this.btnLogout = new FontAwesome.Sharp.IconButton();
             this.pnView.SuspendLayout();
             this.panelTitleBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -71,6 +73,37 @@ namespace HealthyCare.UI.Admin
             this.pnView.Size = new System.Drawing.Size(952, 617);
             this.pnView.TabIndex = 3;
             // 
+            // darkLabel4
+            // 
+            this.darkLabel4.AutoSize = true;
+            this.darkLabel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.darkLabel4.Location = new System.Drawing.Point(905, 73);
+            this.darkLabel4.Name = "darkLabel4";
+            this.darkLabel4.Size = new System.Drawing.Size(32, 16);
+            this.darkLabel4.TabIndex = 13;
+            this.darkLabel4.Text = "Time";
+            // 
+            // darkLabel3
+            // 
+            this.darkLabel3.AutoSize = true;
+            this.darkLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.darkLabel3.Location = new System.Drawing.Point(905, 45);
+            this.darkLabel3.Name = "darkLabel3";
+            this.darkLabel3.Size = new System.Drawing.Size(35, 16);
+            this.darkLabel3.TabIndex = 13;
+            this.darkLabel3.Text = "Date";
+            // 
+            // darkLabel2
+            // 
+            this.darkLabel2.AutoSize = true;
+            this.darkLabel2.Font = new System.Drawing.Font("Century Gothic", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.darkLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.darkLabel2.Location = new System.Drawing.Point(366, 180);
+            this.darkLabel2.Name = "darkLabel2";
+            this.darkLabel2.Size = new System.Drawing.Size(190, 36);
+            this.darkLabel2.TabIndex = 12;
+            this.darkLabel2.Text = "DASHBOARD";
+            // 
             // lbFeedback
             // 
             this.lbFeedback.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(53)))), ((int)(((byte)(55)))));
@@ -93,7 +126,7 @@ namespace HealthyCare.UI.Admin
             this.lbTotalUsers.Location = new System.Drawing.Point(157, 351);
             this.lbTotalUsers.Name = "lbTotalUsers";
             this.lbTotalUsers.Size = new System.Drawing.Size(124, 25);
-            this.lbTotalUsers.TabIndex = 11;
+            this.lbTotalUsers.TabIndex = 1;
             this.lbTotalUsers.Text = "0";
             this.lbTotalUsers.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -180,7 +213,7 @@ namespace HealthyCare.UI.Admin
             this.iconButton1.Name = "iconButton1";
             this.iconButton1.Padding = new System.Windows.Forms.Padding(0, 8, 0, 0);
             this.iconButton1.Size = new System.Drawing.Size(124, 125);
-            this.iconButton1.TabIndex = 10;
+            this.iconButton1.TabIndex = 0;
             this.iconButton1.Text = "Users";
             this.iconButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.iconButton1.UseVisualStyleBackColor = false;
@@ -188,14 +221,30 @@ namespace HealthyCare.UI.Admin
             // panelTitleBar
             // 
             this.panelTitleBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(9)))), ((int)(((byte)(9)))));
-            this.panelTitleBar.Controls.Add(this.lbParentForm);
             this.panelTitleBar.Controls.Add(this.btnMinimize);
+            this.panelTitleBar.Controls.Add(this.lbParentForm);
             this.panelTitleBar.Controls.Add(this.btnExit);
             this.panelTitleBar.Location = new System.Drawing.Point(2, 3);
             this.panelTitleBar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panelTitleBar.Name = "panelTitleBar";
-            this.panelTitleBar.Size = new System.Drawing.Size(1148, 38);
+            this.panelTitleBar.Size = new System.Drawing.Size(1123, 29);
             this.panelTitleBar.TabIndex = 10;
+            this.panelTitleBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelTitleBar_MouseDown);
+            // 
+            // btnMinimize
+            // 
+            this.btnMinimize.FlatAppearance.BorderSize = 0;
+            this.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMinimize.IconChar = FontAwesome.Sharp.IconChar.WindowMinimize;
+            this.btnMinimize.IconColor = System.Drawing.Color.White;
+            this.btnMinimize.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnMinimize.IconSize = 25;
+            this.btnMinimize.Location = new System.Drawing.Point(1061, 0);
+            this.btnMinimize.Name = "btnMinimize";
+            this.btnMinimize.Size = new System.Drawing.Size(28, 25);
+            this.btnMinimize.TabIndex = 19;
+            this.btnMinimize.UseVisualStyleBackColor = true;
+            this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
             // 
             // lbParentForm
             // 
@@ -207,21 +256,6 @@ namespace HealthyCare.UI.Admin
             this.lbParentForm.TabIndex = 1;
             this.lbParentForm.Text = "darkLabel3";
             // 
-            // btnMinimize
-            // 
-            this.btnMinimize.FlatAppearance.BorderSize = 0;
-            this.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMinimize.IconChar = FontAwesome.Sharp.IconChar.WindowMinimize;
-            this.btnMinimize.IconColor = System.Drawing.Color.White;
-            this.btnMinimize.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnMinimize.IconSize = 25;
-            this.btnMinimize.Location = new System.Drawing.Point(1235, 3);
-            this.btnMinimize.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnMinimize.Name = "btnMinimize";
-            this.btnMinimize.Size = new System.Drawing.Size(33, 31);
-            this.btnMinimize.TabIndex = 0;
-            this.btnMinimize.UseVisualStyleBackColor = true;
-            // 
             // btnExit
             // 
             this.btnExit.FlatAppearance.BorderSize = 0;
@@ -230,12 +264,12 @@ namespace HealthyCare.UI.Admin
             this.btnExit.IconColor = System.Drawing.Color.White;
             this.btnExit.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnExit.IconSize = 25;
-            this.btnExit.Location = new System.Drawing.Point(1277, 4);
-            this.btnExit.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnExit.Location = new System.Drawing.Point(1092, 2);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(33, 31);
-            this.btnExit.TabIndex = 0;
+            this.btnExit.Size = new System.Drawing.Size(28, 25);
+            this.btnExit.TabIndex = 20;
             this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // darkLabel1
             // 
@@ -286,7 +320,7 @@ namespace HealthyCare.UI.Admin
             this.btnHome.Name = "btnHome";
             this.btnHome.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
             this.btnHome.Size = new System.Drawing.Size(179, 52);
-            this.btnHome.TabIndex = 17;
+            this.btnHome.TabIndex = 0;
             this.btnHome.Text = "Home";
             this.btnHome.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnHome.UseVisualStyleBackColor = true;
@@ -308,42 +342,55 @@ namespace HealthyCare.UI.Admin
             this.btnManageUsers.Name = "btnManageUsers";
             this.btnManageUsers.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
             this.btnManageUsers.Size = new System.Drawing.Size(179, 52);
-            this.btnManageUsers.TabIndex = 17;
+            this.btnManageUsers.TabIndex = 1;
             this.btnManageUsers.Text = "Manage Users";
             this.btnManageUsers.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnManageUsers.UseVisualStyleBackColor = true;
             this.btnManageUsers.Click += new System.EventHandler(this.btnManageUsers_Click);
             // 
-            // darkLabel2
+            // iconButton3
             // 
-            this.darkLabel2.AutoSize = true;
-            this.darkLabel2.Font = new System.Drawing.Font("Century Gothic", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.darkLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.darkLabel2.Location = new System.Drawing.Point(366, 180);
-            this.darkLabel2.Name = "darkLabel2";
-            this.darkLabel2.Size = new System.Drawing.Size(190, 36);
-            this.darkLabel2.TabIndex = 12;
-            this.darkLabel2.Text = "DASHBOARD";
+            this.iconButton3.FlatAppearance.BorderSize = 0;
+            this.iconButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton3.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.iconButton3.ForeColor = System.Drawing.Color.Gainsboro;
+            this.iconButton3.IconChar = FontAwesome.Sharp.IconChar.UserMd;
+            this.iconButton3.IconColor = System.Drawing.Color.Azure;
+            this.iconButton3.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton3.IconSize = 35;
+            this.iconButton3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButton3.Location = new System.Drawing.Point(2, 393);
+            this.iconButton3.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.iconButton3.Name = "iconButton3";
+            this.iconButton3.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
+            this.iconButton3.Size = new System.Drawing.Size(179, 52);
+            this.iconButton3.TabIndex = 2;
+            this.iconButton3.Text = "Manage Doctors";
+            this.iconButton3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.iconButton3.UseVisualStyleBackColor = true;
+            this.iconButton3.Click += new System.EventHandler(this.btnManageUsers_Click);
             // 
-            // darkLabel3
+            // btnLogout
             // 
-            this.darkLabel3.AutoSize = true;
-            this.darkLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.darkLabel3.Location = new System.Drawing.Point(905, 45);
-            this.darkLabel3.Name = "darkLabel3";
-            this.darkLabel3.Size = new System.Drawing.Size(35, 16);
-            this.darkLabel3.TabIndex = 13;
-            this.darkLabel3.Text = "Date";
-            // 
-            // darkLabel4
-            // 
-            this.darkLabel4.AutoSize = true;
-            this.darkLabel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.darkLabel4.Location = new System.Drawing.Point(905, 73);
-            this.darkLabel4.Name = "darkLabel4";
-            this.darkLabel4.Size = new System.Drawing.Size(32, 16);
-            this.darkLabel4.TabIndex = 13;
-            this.darkLabel4.Text = "Time";
+            this.btnLogout.FlatAppearance.BorderSize = 0;
+            this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogout.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.btnLogout.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnLogout.IconChar = FontAwesome.Sharp.IconChar.SignOutAlt;
+            this.btnLogout.IconColor = System.Drawing.Color.Azure;
+            this.btnLogout.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnLogout.IconSize = 35;
+            this.btnLogout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLogout.Location = new System.Drawing.Point(2, 454);
+            this.btnLogout.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Padding = new System.Windows.Forms.Padding(6, 0, 0, 0);
+            this.btnLogout.Size = new System.Drawing.Size(179, 52);
+            this.btnLogout.TabIndex = 18;
+            this.btnLogout.Text = "Logout";
+            this.btnLogout.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnLogout.UseVisualStyleBackColor = true;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // frmAdmin
             // 
@@ -356,13 +403,16 @@ namespace HealthyCare.UI.Admin
             this.Controls.Add(this.panelTitleBar);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.pnView);
+            this.Controls.Add(this.iconButton3);
             this.Controls.Add(this.btnManageUsers);
             this.Controls.Add(this.btnHome);
+            this.Controls.Add(this.btnLogout);
             this.Font = new System.Drawing.Font("Century Gothic", 8.25F);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "frmAdmin";
             this.Text = "frmAdmin";
+            this.Load += new System.EventHandler(this.frmAdmin_Load);
             this.pnView.ResumeLayout(false);
             this.pnView.PerformLayout();
             this.panelTitleBar.ResumeLayout(false);
@@ -377,8 +427,6 @@ namespace HealthyCare.UI.Admin
         private System.Windows.Forms.Panel pnView;
         private System.Windows.Forms.Panel panelTitleBar;
         private DarkUI.Controls.DarkLabel lbParentForm;
-        private FontAwesome.Sharp.IconButton btnMinimize;
-        private FontAwesome.Sharp.IconButton btnExit;
         private DarkUI.Controls.DarkLabel darkLabel1;
         private DarkUI.Controls.DarkLabel lbFullName;
         private System.Windows.Forms.PictureBox pictureBox1;
@@ -393,5 +441,9 @@ namespace HealthyCare.UI.Admin
         private DarkUI.Controls.DarkLabel darkLabel4;
         private DarkUI.Controls.DarkLabel darkLabel3;
         private DarkUI.Controls.DarkLabel darkLabel2;
+        private FontAwesome.Sharp.IconButton iconButton3;
+        private FontAwesome.Sharp.IconButton btnLogout;
+        private FontAwesome.Sharp.IconButton btnMinimize;
+        private FontAwesome.Sharp.IconButton btnExit;
     }
 }

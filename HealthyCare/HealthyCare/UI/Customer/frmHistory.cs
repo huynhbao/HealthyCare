@@ -9,6 +9,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -18,12 +19,15 @@ namespace HealthyCare.UI.Customer
     {
         UserPresenter userPresenter = null;
         DataSet dsHistory;
+        LoadingFormUtils loadingForm = new LoadingFormUtils();
+
+        Form ILoading.Form => this;
 
         public void GetHistory(DataSet dsHistory)
         {
             this.dsHistory = dsHistory;
             dgvHistory.DataSource = dsHistory.Tables[0];
-            LoadingFormUtils.Close();
+            loadingForm.Close();
         }
 
         public frmHistory()
@@ -34,7 +38,7 @@ namespace HealthyCare.UI.Customer
 
         void LoadData()
         {
-            LoadingFormUtils.Show(this);
+            loadingForm.Show(this);
             userPresenter.GetHistory();
         }
 

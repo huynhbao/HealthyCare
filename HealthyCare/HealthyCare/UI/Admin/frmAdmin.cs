@@ -13,8 +13,10 @@ namespace HealthyCare.UI.Admin
     using BussinessObject.Entities;
     using DarkUI.Forms;
     using HealthyCare.Presenters;
+    using HealthyCare.UI.G;
     using HealthyCare.Utils;
     using HealthyCare.Views;
+    using System.Threading;
 
     public partial class frmAdmin : DarkForm, IAdmin
     {
@@ -52,7 +54,6 @@ namespace HealthyCare.UI.Admin
 
         public void LoadData()
         {
-            LoadingFormUtils.Show(this);
             adminPresenter.GetData();
             lbFullName.Text = "Hi! " + user.FullName;
         }
@@ -66,12 +67,12 @@ namespace HealthyCare.UI.Admin
         {
             dsAdmin = data;
             dtAdmin = dsAdmin.Tables[0];
+            
             lbTotalUsers.Text = dtAdmin.Compute("count(idUser)", "idRole = 3").ToString();
             lbTotalDoctors.Text = dtAdmin.Compute("count(idUser)", "idRole = 2").ToString();
 
             dtFeedback = dsAdmin.Tables[1];
             lbFeedback.Text = dtFeedback.Compute("count(idFeedback)", "").ToString();
-            LoadingFormUtils.Close();
         }
 
 
@@ -112,9 +113,35 @@ namespace HealthyCare.UI.Admin
             }
         }
 
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            LoginInfo.user = null;
+            frmLogin frm = new frmLogin();
+            frm.Show();
+            Close();
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void btnMinimize_Click(object sender, EventArgs e)
+        {
+            WindowState = FormWindowState.Minimized;
+        }
+
+        private void panelTitleBar_MouseDown(object sender, MouseEventArgs e)
+        {
+            MyUtils.ReleaseCapture();
+            MyUtils.SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
         private void frmAdmin_Load(object sender, EventArgs e)
         {
-            LoadData();
+            //LoadData();
+            Thread a = new Thread(LoadData);
+            a.Start();
         }
     }
 }

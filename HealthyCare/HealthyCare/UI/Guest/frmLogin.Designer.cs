@@ -131,9 +131,9 @@ namespace HealthyCare.UI.G
             // pictureBox1
             // 
             this.pictureBox1.Image = global::HealthyCare.Properties.Resources.bg;
-            this.pictureBox1.Location = new System.Drawing.Point(413, -1);
+            this.pictureBox1.Location = new System.Drawing.Point(411, -1);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(448, 438);
+            this.pictureBox1.Size = new System.Drawing.Size(450, 438);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 15;
             this.pictureBox1.TabStop = false;
