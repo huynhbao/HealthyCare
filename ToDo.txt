@@ -6,3 +6,6 @@ validate login, update
 
 	chia manage user, doctor
 	search function (name, gender)
+
+19/03
+	Nghiep is so noob ssssss
