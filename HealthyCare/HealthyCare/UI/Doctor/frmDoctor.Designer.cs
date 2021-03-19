@@ -29,8 +29,8 @@ namespace HealthyCare.UI.Doctor
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.darkLabel1 = new DarkUI.Controls.DarkLabel();
             this.lbFullName = new DarkUI.Controls.DarkLabel();
             this.panelTitleBar = new System.Windows.Forms.Panel();
@@ -39,16 +39,18 @@ namespace HealthyCare.UI.Doctor
             this.btnExit = new FontAwesome.Sharp.IconButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnView = new System.Windows.Forms.Panel();
+            this.dgvDoctor = new System.Windows.Forms.DataGridView();
+            this.btnRefresh = new DarkUI.Controls.DarkButton();
             this.btnManageUsers = new FontAwesome.Sharp.IconButton();
             this.btnHome = new FontAwesome.Sharp.IconButton();
             this.btnLogout = new FontAwesome.Sharp.IconButton();
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
-            this.btnRefresh = new DarkUI.Controls.DarkButton();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.btnAccept = new DarkUI.Controls.DarkButton();
+            this.btnReject = new DarkUI.Controls.DarkButton();
             this.panelTitleBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pnView.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDoctor)).BeginInit();
             this.SuspendLayout();
             // 
             // darkLabel1
@@ -98,6 +100,7 @@ namespace HealthyCare.UI.Doctor
             this.btnMinimize.Size = new System.Drawing.Size(28, 25);
             this.btnMinimize.TabIndex = 19;
             this.btnMinimize.UseVisualStyleBackColor = true;
+            this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
             // 
             // lbParentForm
             // 
@@ -122,6 +125,7 @@ namespace HealthyCare.UI.Doctor
             this.btnExit.Size = new System.Drawing.Size(28, 25);
             this.btnExit.TabIndex = 20;
             this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // pictureBox1
             // 
@@ -137,13 +141,60 @@ namespace HealthyCare.UI.Doctor
             // pnView
             // 
             this.pnView.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.pnView.Controls.Add(this.dataGridView1);
+            this.pnView.Controls.Add(this.dgvDoctor);
+            this.pnView.Controls.Add(this.btnReject);
+            this.pnView.Controls.Add(this.btnAccept);
             this.pnView.Controls.Add(this.btnRefresh);
             this.pnView.Location = new System.Drawing.Point(172, -2);
             this.pnView.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.pnView.Name = "pnView";
             this.pnView.Size = new System.Drawing.Size(952, 617);
             this.pnView.TabIndex = 22;
+            // 
+            // dgvDoctor
+            // 
+            this.dgvDoctor.AllowUserToAddRows = false;
+            this.dgvDoctor.AllowUserToDeleteRows = false;
+            this.dgvDoctor.AllowUserToOrderColumns = true;
+            this.dgvDoctor.AllowUserToResizeColumns = false;
+            this.dgvDoctor.AllowUserToResizeRows = false;
+            this.dgvDoctor.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvDoctor.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.MenuBar;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDoctor.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            this.dgvDoctor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvDoctor.DefaultCellStyle = dataGridViewCellStyle6;
+            this.dgvDoctor.Location = new System.Drawing.Point(14, 59);
+            this.dgvDoctor.MultiSelect = false;
+            this.dgvDoctor.Name = "dgvDoctor";
+            this.dgvDoctor.ReadOnly = true;
+            this.dgvDoctor.RowHeadersVisible = false;
+            this.dgvDoctor.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvDoctor.Size = new System.Drawing.Size(914, 286);
+            this.dgvDoctor.TabIndex = 10;
+            this.dgvDoctor.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvDoctor_CellFormatting);
+            // 
+            // btnRefresh
+            // 
+            this.btnRefresh.Location = new System.Drawing.Point(853, 360);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Padding = new System.Windows.Forms.Padding(5);
+            this.btnRefresh.Size = new System.Drawing.Size(75, 23);
+            this.btnRefresh.TabIndex = 1;
+            this.btnRefresh.Text = "Refresh";
             // 
             // btnManageUsers
             // 
@@ -229,49 +280,25 @@ namespace HealthyCare.UI.Doctor
             this.iconButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.iconButton1.UseVisualStyleBackColor = true;
             // 
-            // btnRefresh
+            // btnAccept
             // 
-            this.btnRefresh.Location = new System.Drawing.Point(853, 360);
-            this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Padding = new System.Windows.Forms.Padding(5);
-            this.btnRefresh.Size = new System.Drawing.Size(75, 23);
-            this.btnRefresh.TabIndex = 1;
-            this.btnRefresh.Text = "Refresh";
+            this.btnAccept.Location = new System.Drawing.Point(562, 360);
+            this.btnAccept.Name = "btnAccept";
+            this.btnAccept.Padding = new System.Windows.Forms.Padding(5);
+            this.btnAccept.Size = new System.Drawing.Size(116, 23);
+            this.btnAccept.TabIndex = 1;
+            this.btnAccept.Text = "Accept Booking";
+            this.btnAccept.Click += new System.EventHandler(this.btnAccept_Click);
             // 
-            // dataGridView1
+            // btnReject
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AllowUserToOrderColumns = true;
-            this.dataGridView1.AllowUserToResizeColumns = false;
-            this.dataGridView1.AllowUserToResizeRows = false;
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.MenuBar;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridView1.Location = new System.Drawing.Point(14, 59);
-            this.dataGridView1.MultiSelect = false;
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(914, 286);
-            this.dataGridView1.TabIndex = 10;
+            this.btnReject.Location = new System.Drawing.Point(713, 360);
+            this.btnReject.Name = "btnReject";
+            this.btnReject.Padding = new System.Windows.Forms.Padding(5);
+            this.btnReject.Size = new System.Drawing.Size(116, 23);
+            this.btnReject.TabIndex = 1;
+            this.btnReject.Text = "Reject Booking";
+            this.btnReject.Click += new System.EventHandler(this.btnReject_Click);
             // 
             // frmDoctor
             // 
@@ -297,7 +324,7 @@ namespace HealthyCare.UI.Doctor
             this.panelTitleBar.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.pnView.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDoctor)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -318,6 +345,8 @@ namespace HealthyCare.UI.Doctor
         private FontAwesome.Sharp.IconButton btnLogout;
         private FontAwesome.Sharp.IconButton iconButton1;
         private DarkUI.Controls.DarkButton btnRefresh;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvDoctor;
+        private DarkUI.Controls.DarkButton btnReject;
+        private DarkUI.Controls.DarkButton btnAccept;
     }
 }

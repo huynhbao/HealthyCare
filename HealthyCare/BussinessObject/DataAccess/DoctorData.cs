@@ -86,13 +86,19 @@ namespace BussinessObject.DataAccess
         public DataSet GetDoctors()
         {
 
-            string sql = "select idUser, fullName, address, email, phone, gender, idCertificate, majorID " +
-                "from Users where idRole=@idRole; SELECT majorID, name FROM Major";
+            string sql = "SELECT idUser, fullName, address, email, phone, gender, idCertificate, majorID " +
+                "FROM Users where idRole=@idRole; SELECT majorID, name FROM Major";
             SqlParameter RoleIDParam = new SqlParameter("@idRole", "2");
             DataSet dt = DataProvider.ExecuteQueryWithDataSet(sql, CommandType.Text, RoleIDParam);
             return dt;
         }
-
+        public DataSet GetBooking(String idDoctor)
+        {
+            string sql = "SELECT idBooking, idUser, bookingDate, status from Booking  where idDoctor=@idDoctor and status=1 ORDER BY bookingDate DESC";
+            SqlParameter DoctorIDParam = new SqlParameter("@idDoctor", idDoctor);
+            DataSet dt = DataProvider.ExecuteQueryWithDataSet(sql, CommandType.Text, DoctorIDParam);
+            return dt;
+        }
         public Doctor GetDoctorByID(string DoctorID)
         {
             Doctor doctor = null;
@@ -135,6 +141,56 @@ namespace BussinessObject.DataAccess
                     result = int.Parse(rd[0].ToString());
                 }
             }
+            return result;
+        }
+
+        public bool AcceptBooking(String idBooking)
+        {
+            string SQL = "Update Booking set status=2 WHERE idBooking=@idBooking";
+
+            SqlParameter idBookingParam = new SqlParameter("@idBooking", idBooking);
+            try
+            {
+                return DataProvider.ExecuteNonQuery(SQL, CommandType.Text, idBookingParam);
+            }
+            catch (SqlException se)
+            {
+                throw new Exception(se.Message);
+            }
+        }
+
+        public bool RejectBooking(String idBooking)
+        {
+            string SQL = "Update Booking set status=4 WHERE idBooking=@idBooking";
+
+            SqlParameter idBookingParam = new SqlParameter("@idBooking", idBooking);
+            try
+            {
+                return DataProvider.ExecuteNonQuery(SQL, CommandType.Text, idBookingParam);
+            }
+            catch (SqlException se)
+            {
+                throw new Exception(se.Message);
+            }
+        }
+
+        public bool CheckWaitingBooking(string UserID)
+        {
+            bool result = true;
+
+            string sql = "select status " +
+                "from Booking where idUser=@idUser";
+            SqlParameter UserIDIDParam = new SqlParameter("@idUser", UserID);
+            SqlDataReader rd = DataProvider.ExecuteQueryWithDataReader(sql, CommandType.Text, UserIDIDParam);
+            while (rd.Read())
+            {
+                if (int.Parse(rd["status"].ToString()) != 1)
+                {
+                    result = false;
+                    break;
+                }
+            }
+
             return result;
         }
     }

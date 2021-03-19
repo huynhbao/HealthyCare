@@ -67,6 +67,7 @@
     <Compile Include="Presenters\DoctorPresenter.cs" />
     <Compile Include="Presenters\LoginPresneter.cs" />
     <Compile Include="Presenters\RegisterPresenter.cs" />
+    <Compile Include="Presenters\ViewBookingPresenter.cs" />
     <Compile Include="UI\Admin\frmAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -157,6 +158,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Views\IAdmin.cs" />
+    <Compile Include="Views\IViewBooking.cs" />
     <Compile Include="Views\ICustomer.cs" />
     <Compile Include="Views\IRegister.cs" />
     <Compile Include="Views\IUser.cs" />

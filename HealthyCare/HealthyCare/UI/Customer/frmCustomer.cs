@@ -212,5 +212,6 @@ namespace HealthyCare.UI.Customer
             LoadData();
         }
 
-    }
+      }
+    
 }

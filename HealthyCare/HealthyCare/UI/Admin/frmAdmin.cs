@@ -139,9 +139,7 @@ namespace HealthyCare.UI.Admin
 
         private void frmAdmin_Load(object sender, EventArgs e)
         {
-            //LoadData();
-            Thread a = new Thread(LoadData);
-            a.Start();
+            LoadData();
         }
     }
 }

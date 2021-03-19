@@ -3,6 +3,7 @@ using BussinessObject.Entities;
 using HealthyCare.Views;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -36,7 +37,6 @@ namespace HealthyCare.Presenters
             bool check = doctorData.Register(doctor);
             doctorView.Register(check);
         }
-
         public void GetDoctorTotalBooking(string doctorID)
         {
             int total = doctorData.GetNumOfBooking(doctorID);
