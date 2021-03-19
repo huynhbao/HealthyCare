@@ -75,7 +75,7 @@ namespace HealthyCare.UI.Admin
             // 
             // btnCreateDoctor
             // 
-            this.btnCreateDoctor.Location = new System.Drawing.Point(176, 369);
+            this.btnCreateDoctor.Location = new System.Drawing.Point(12, 333);
             this.btnCreateDoctor.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnCreateDoctor.Name = "btnCreateDoctor";
             this.btnCreateDoctor.Size = new System.Drawing.Size(132, 28);
@@ -85,7 +85,7 @@ namespace HealthyCare.UI.Admin
             // 
             // btnDeleteUser
             // 
-            this.btnDeleteUser.Location = new System.Drawing.Point(425, 409);
+            this.btnDeleteUser.Location = new System.Drawing.Point(160, 332);
             this.btnDeleteUser.Name = "btnDeleteUser";
             this.btnDeleteUser.Padding = new System.Windows.Forms.Padding(5);
             this.btnDeleteUser.Size = new System.Drawing.Size(75, 23);

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace HealthyCare.Views
 {
 
-    public interface ILogin : ILoading
+    public interface ILogin
     {
         string UserID { get; set; }
         string Password { get; set; }

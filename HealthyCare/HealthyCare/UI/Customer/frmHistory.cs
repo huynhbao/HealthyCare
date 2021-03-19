@@ -21,8 +21,6 @@ namespace HealthyCare.UI.Customer
         DataSet dsHistory;
         LoadingFormUtils loadingForm = new LoadingFormUtils();
 
-        Form ILoading.Form => this;
-
         public void GetHistory(DataSet dsHistory)
         {
             this.dsHistory = dsHistory;

@@ -27,10 +27,22 @@ namespace HealthyCare.UI.G
     public partial class frmLogin : DarkForm, ILogin
     {
         private LoginPresneter presenter;
+        LoadingFormUtils loadingFormUtils = new LoadingFormUtils();
 
         public frmLogin()
         {
             InitializeComponent();
+            
+        }
+
+        private void Presenter_OnDataLoadingCompleted()
+        {
+            loadingFormUtils.Close();
+        }
+
+        private void Presenter_OnDataLoading()
+        {
+            loadingFormUtils.Show(this);
         }
 
         //LoadingFormUtils loadingForm = new LoadingFormUtils();
@@ -44,6 +56,8 @@ namespace HealthyCare.UI.G
 
             //loadingForm.Show(this);
             presenter = new LoginPresneter(this);
+            presenter.OnDataLoading += Presenter_OnDataLoading;
+            presenter.OnDataLoadingCompleted += Presenter_OnDataLoadingCompleted;
             presenter.CheckLogin();
         }
 

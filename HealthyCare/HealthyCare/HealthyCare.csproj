@@ -158,7 +158,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Views\IAdmin.cs" />
     <Compile Include="Views\ICustomer.cs" />
-    <Compile Include="Views\ILoading.cs" />
     <Compile Include="Views\IRegister.cs" />
     <Compile Include="Views\IUser.cs" />
     <Compile Include="Views\IDoctor.cs" />

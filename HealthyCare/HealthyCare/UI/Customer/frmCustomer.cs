@@ -28,8 +28,6 @@ namespace HealthyCare.UI.Customer
         private Form activeForm = null;
         private Button activeButton = null;
 
-        Form ILoading.Form => this;
-
         public frmCustomer()
         {
             InitializeComponent();
