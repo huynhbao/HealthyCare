@@ -13,11 +13,12 @@ namespace HealthyCare.UI.Doctor
 {
     using BussinessObject.Entities;
     using DarkUI.Forms;
+    using HealthyCare.Presenters;
 
     public partial class frmDoctor : DarkForm
     {
         User user = null;
-        DoctorPresenter doctorPresenter = 
+        DoctorPresenter doctorPresenter = null; 
         public frmDoctor()
         {
             InitializeComponent();

@@ -28,12 +28,26 @@ namespace HealthyCare.UI.Admin
 
         private Form activeForm = null;
         private Button activeButton = null;
+        LoadingFormUtils loadingFormUtils = new LoadingFormUtils();
+
         public frmAdmin()
         {
             InitializeComponent();
             user = LoginInfo.user;
             adminPresenter = new AdminPresenter(this);
+            adminPresenter.OnDataLoading += AdminPresenter_OnDataLoading;
+            adminPresenter.OnDataLoadingCompleted += AdminPresenter_OnDataLoadingCompleted;
             ActiveButton(btnHome);
+        }
+
+        private void AdminPresenter_OnDataLoadingCompleted()
+        {
+            loadingFormUtils.Close();
+        }
+
+        private void AdminPresenter_OnDataLoading()
+        {
+            loadingFormUtils.Show(this);
         }
 
         private void ActiveButton(Button btn)
@@ -139,9 +153,7 @@ namespace HealthyCare.UI.Admin
 
         private void frmAdmin_Load(object sender, EventArgs e)
         {
-            //LoadData();
-            Thread a = new Thread(LoadData);
-            a.Start();
+            LoadData();
         }
     }
 }

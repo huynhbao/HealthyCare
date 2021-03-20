@@ -10,11 +10,15 @@ using System.Threading.Tasks;
 
 namespace HealthyCare.Presenters
 {
+
     public class AdminPresenter
     {
         AdminData adminData = new AdminData();
         IAdmin adminView;
         User user = null;
+
+        public event WaitCallBack OnDataLoading;
+        public event WaitCompletedCallBack OnDataLoadingCompleted;
 
         public AdminPresenter(IAdmin view)
         {
@@ -24,7 +28,15 @@ namespace HealthyCare.Presenters
         }
         public void GetData()
         {
+            if (OnDataLoading != null)
+            {
+                OnDataLoading();
+            }
             DataSet data = adminData.GetData();
+            if (OnDataLoadingCompleted != null)
+            {
+                OnDataLoadingCompleted();
+            }
             adminView.GetData(data);
         }
 

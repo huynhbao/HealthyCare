@@ -27,13 +27,26 @@ namespace HealthyCare.UI.Customer
         private DataTable dtDoctor;
         private Form activeForm = null;
         private Button activeButton = null;
+        LoadingFormUtils loadingForm = new LoadingFormUtils();
 
         public frmCustomer()
         {
             InitializeComponent();
             user = LoginInfo.user;
             userPresenter = new UserPresenter(this);
+            userPresenter.OnDataLoading += UserPresenter_OnDataLoading;
+            userPresenter.OnDataLoadingCompleted += UserPresenter_OnDataLoadingCompleted;
             ActiveButton(btnHome);
+        }
+
+        private void UserPresenter_OnDataLoadingCompleted()
+        {
+            loadingForm.Close();
+        }
+
+        private void UserPresenter_OnDataLoading()
+        {
+            loadingForm.Show(this);
         }
 
         public void LoadData()

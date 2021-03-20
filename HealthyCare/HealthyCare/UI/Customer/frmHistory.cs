@@ -25,7 +25,6 @@ namespace HealthyCare.UI.Customer
         {
             this.dsHistory = dsHistory;
             dgvHistory.DataSource = dsHistory.Tables[0];
-            loadingForm.Close();
         }
 
         public frmHistory()
@@ -36,7 +35,6 @@ namespace HealthyCare.UI.Customer
 
         void LoadData()
         {
-            loadingForm.Show(this);
             userPresenter.GetHistory();
         }
 

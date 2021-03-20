@@ -24,6 +24,8 @@ namespace HealthyCare.Presenters
         UserData userData = new UserData();
         DoctorData doctorData = new DoctorData();
 
+        public event WaitCallBack OnDataLoading;
+        public event WaitCompletedCallBack OnDataLoadingCompleted;
 
         public UserPresenter(IUser view)
         {
@@ -60,7 +62,15 @@ namespace HealthyCare.Presenters
 
         public void GetDoctors()
         {
+            if (OnDataLoading != null)
+            {
+                OnDataLoading();
+            }
             DataSet data = doctorData.GetDoctors();
+            if (OnDataLoadingCompleted != null)
+            {
+                OnDataLoadingCompleted();
+            }
             customerView.GetDoctors(data);
         }
 
@@ -72,7 +82,15 @@ namespace HealthyCare.Presenters
 
         public void GetHistory()
         {
+            if (OnDataLoading != null)
+            {
+                OnDataLoading();
+            }
             DataSet data = userData.GetHistory(user.UserID);
+            if (OnDataLoadingCompleted != null)
+            {
+                OnDataLoadingCompleted();
+            }
             historyView.GetHistory(data);
         }
 
