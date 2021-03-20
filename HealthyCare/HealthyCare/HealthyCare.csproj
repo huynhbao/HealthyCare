@@ -32,6 +32,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>app-logo.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="CircularProgressBar, Version=2.8.0.16, Culture=neutral, PublicKeyToken=310fd07b25df79b3, processorArchitecture=MSIL">
       <HintPath>..\packages\CircularProgressBar.2.8.0.16\lib\net40\CircularProgressBar.dll</HintPath>
@@ -256,10 +259,16 @@
     <None Include="Resources\bg.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\admin-logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\healthcare-background.jpg" />
+  </ItemGroup>
+  <ItemGroup>
     <None Include="Resources\app-logo.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\admin-logo.png" />
+    <Content Include="app-logo.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
