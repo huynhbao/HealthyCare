@@ -86,12 +86,46 @@ namespace BussinessObject.DataAccess
         public DataSet GetDoctors()
         {
 
-            string sql = "select idUser, fullName, address, email, phone, gender, idCertificate, majorID " +
-                "from Users where idRole=@idRole; SELECT majorID, name FROM Major";
+            string sql = "SELECT idUser, fullName, address, email, phone, gender, idCertificate, majorID " +
+                "FROM Users where idRole=@idRole; SELECT majorID, name FROM Major";
             SqlParameter RoleIDParam = new SqlParameter("@idRole", "2");
             DataSet dt = DataProvider.ExecuteQueryWithDataSet(sql, CommandType.Text, RoleIDParam);
             return dt;
         }
+        public DataSet GetBooking(string idDoctor)
+        {
+            string sql = "SELECT idBooking, b.idUser, u.fullName, bookingDate, b.status from Booking b, Users u where idDoctor=@idDoctor and b.status=1 and b.idUser=u.idUser ORDER BY bookingDate DESC";
+            SqlParameter DoctorIDParam = new SqlParameter("@idDoctor", idDoctor);
+            DataSet dt = DataProvider.ExecuteQueryWithDataSet(sql, CommandType.Text, DoctorIDParam);
+            return dt;
+        }
+
+        public User GetUserInformationByID(string UserID)
+        {
+            User user = null;
+
+            string sql = "select fullName, address, email, phone, gender, Count(CASE WHEN b.status = 1 THEN 1 END) from Users u, Booking b where u.idUser=@UserID AND u.idUser=b.idUser AND u.status = 1 GROUP BY fullName, address, email, phone, gender";
+            SqlParameter UserIDParam = new SqlParameter("@UserID", UserID);
+            SqlDataReader rd = DataProvider.ExecuteQueryWithDataReader(sql, CommandType.Text, UserIDParam);
+            if (rd.HasRows)
+            {
+                if (rd.Read())
+                {
+                    user = new User()
+                    {
+                        UserID = UserID,
+                        FullName = rd[0].ToString(),
+                        Address = rd[1].ToString(),
+                        Email = rd[2].ToString(),
+                        Phone = rd[3].ToString(),
+                        Gender = bool.Parse(rd[4].ToString()),
+                        TotalBooking = int.Parse(rd[5].ToString()),
+                    };
+                }
+            }
+            return user;
+        }
+
 
         public Doctor GetDoctorByID(string DoctorID)
         {
@@ -135,6 +169,56 @@ namespace BussinessObject.DataAccess
                     result = int.Parse(rd[0].ToString());
                 }
             }
+            return result;
+        }
+
+        public bool AcceptBooking(string idBooking)
+        {
+            string SQL = "Update Booking set status=2 WHERE idBooking=@idBooking";
+
+            SqlParameter idBookingParam = new SqlParameter("@idBooking", idBooking);
+            try
+            {
+                return DataProvider.ExecuteNonQuery(SQL, CommandType.Text, idBookingParam);
+            }
+            catch (SqlException se)
+            {
+                throw new Exception(se.Message);
+            }
+        }
+
+        public bool RejectBooking(string idBooking)
+        {
+            string SQL = "Update Booking set status=4 WHERE idBooking=@idBooking";
+
+            SqlParameter idBookingParam = new SqlParameter("@idBooking", idBooking);
+            try
+            {
+                return DataProvider.ExecuteNonQuery(SQL, CommandType.Text, idBookingParam);
+            }
+            catch (SqlException se)
+            {
+                throw new Exception(se.Message);
+            }
+        }
+
+        public bool CheckWaitingBooking(string UserID)
+        {
+            bool result = true;
+
+            string sql = "select status " +
+                "from Booking where idUser=@idUser";
+            SqlParameter UserIDIDParam = new SqlParameter("@idUser", UserID);
+            SqlDataReader rd = DataProvider.ExecuteQueryWithDataReader(sql, CommandType.Text, UserIDIDParam);
+            while (rd.Read())
+            {
+                if (int.Parse(rd["status"].ToString()) != 1)
+                {
+                    result = false;
+                    break;
+                }
+            }
+
             return result;
         }
     }

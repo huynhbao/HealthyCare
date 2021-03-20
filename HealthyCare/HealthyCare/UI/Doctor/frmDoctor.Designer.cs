@@ -39,16 +39,35 @@ namespace HealthyCare.UI.Doctor
             this.btnExit = new FontAwesome.Sharp.IconButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnView = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
+            this.lbEmail = new DarkUI.Controls.DarkLabel();
+            this.lbPhone = new DarkUI.Controls.DarkLabel();
+            this.lbTotal = new DarkUI.Controls.DarkLabel();
+            this.lbGender = new DarkUI.Controls.DarkLabel();
+            this.lbAddress = new DarkUI.Controls.DarkLabel();
+            this.lbFullNameCus = new DarkUI.Controls.DarkLabel();
+            this.darkLabel2 = new DarkUI.Controls.DarkLabel();
+            this.darkLabel6 = new DarkUI.Controls.DarkLabel();
+            this.darkLabel7 = new DarkUI.Controls.DarkLabel();
+            this.darkLabel5 = new DarkUI.Controls.DarkLabel();
+            this.darkLabel4 = new DarkUI.Controls.DarkLabel();
+            this.darkLabel3 = new DarkUI.Controls.DarkLabel();
+            this.darkLabel11 = new DarkUI.Controls.DarkLabel();
+            this.lbCount = new DarkUI.Controls.DarkLabel();
+            this.dgvDoctor = new System.Windows.Forms.DataGridView();
+            this.btnReject = new DarkUI.Controls.DarkButton();
+            this.btnAccept = new DarkUI.Controls.DarkButton();
             this.btnRefresh = new DarkUI.Controls.DarkButton();
-            this.btnManageUsers = new FontAwesome.Sharp.IconButton();
+            this.btnHistory = new FontAwesome.Sharp.IconButton();
             this.btnHome = new FontAwesome.Sharp.IconButton();
             this.btnLogout = new FontAwesome.Sharp.IconButton();
-            this.iconButton1 = new FontAwesome.Sharp.IconButton();
+            this.btnFeedback = new FontAwesome.Sharp.IconButton();
+            this.btnProfile = new FontAwesome.Sharp.IconButton();
             this.panelTitleBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pnView.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDoctor)).BeginInit();
             this.SuspendLayout();
             // 
             // darkLabel1
@@ -84,6 +103,7 @@ namespace HealthyCare.UI.Doctor
             this.panelTitleBar.Name = "panelTitleBar";
             this.panelTitleBar.Size = new System.Drawing.Size(1123, 29);
             this.panelTitleBar.TabIndex = 23;
+            this.panelTitleBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelTitleBar_MouseDown);
             // 
             // btnMinimize
             // 
@@ -98,6 +118,7 @@ namespace HealthyCare.UI.Doctor
             this.btnMinimize.Size = new System.Drawing.Size(28, 25);
             this.btnMinimize.TabIndex = 19;
             this.btnMinimize.UseVisualStyleBackColor = true;
+            this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
             // 
             // lbParentForm
             // 
@@ -122,10 +143,11 @@ namespace HealthyCare.UI.Doctor
             this.btnExit.Size = new System.Drawing.Size(28, 25);
             this.btnExit.TabIndex = 20;
             this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::HealthyCare.Properties.Resources.user_icon;
+            this.pictureBox1.Image = global::HealthyCare.Properties.Resources.doctor_logo;
             this.pictureBox1.Location = new System.Drawing.Point(34, 85);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.pictureBox1.Name = "pictureBox1";
@@ -137,7 +159,24 @@ namespace HealthyCare.UI.Doctor
             // pnView
             // 
             this.pnView.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.pnView.Controls.Add(this.dataGridView1);
+            this.pnView.Controls.Add(this.iconPictureBox1);
+            this.pnView.Controls.Add(this.lbEmail);
+            this.pnView.Controls.Add(this.lbPhone);
+            this.pnView.Controls.Add(this.lbTotal);
+            this.pnView.Controls.Add(this.lbGender);
+            this.pnView.Controls.Add(this.lbAddress);
+            this.pnView.Controls.Add(this.lbFullNameCus);
+            this.pnView.Controls.Add(this.darkLabel2);
+            this.pnView.Controls.Add(this.darkLabel6);
+            this.pnView.Controls.Add(this.darkLabel7);
+            this.pnView.Controls.Add(this.darkLabel5);
+            this.pnView.Controls.Add(this.darkLabel4);
+            this.pnView.Controls.Add(this.darkLabel3);
+            this.pnView.Controls.Add(this.darkLabel11);
+            this.pnView.Controls.Add(this.lbCount);
+            this.pnView.Controls.Add(this.dgvDoctor);
+            this.pnView.Controls.Add(this.btnReject);
+            this.pnView.Controls.Add(this.btnAccept);
             this.pnView.Controls.Add(this.btnRefresh);
             this.pnView.Location = new System.Drawing.Point(172, -2);
             this.pnView.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
@@ -145,15 +184,176 @@ namespace HealthyCare.UI.Doctor
             this.pnView.Size = new System.Drawing.Size(952, 617);
             this.pnView.TabIndex = 22;
             // 
-            // dataGridView1
+            // iconPictureBox1
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AllowUserToOrderColumns = true;
-            this.dataGridView1.AllowUserToResizeColumns = false;
-            this.dataGridView1.AllowUserToResizeRows = false;
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
+            this.iconPictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
+            this.iconPictureBox1.ForeColor = System.Drawing.Color.Crimson;
+            this.iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.UserTie;
+            this.iconPictureBox1.IconColor = System.Drawing.Color.Crimson;
+            this.iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconPictureBox1.Location = new System.Drawing.Point(304, 45);
+            this.iconPictureBox1.Name = "iconPictureBox1";
+            this.iconPictureBox1.Size = new System.Drawing.Size(32, 32);
+            this.iconPictureBox1.TabIndex = 13;
+            this.iconPictureBox1.TabStop = false;
+            // 
+            // lbEmail
+            // 
+            this.lbEmail.AutoSize = true;
+            this.lbEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.lbEmail.Location = new System.Drawing.Point(718, 111);
+            this.lbEmail.Name = "lbEmail";
+            this.lbEmail.Size = new System.Drawing.Size(28, 16);
+            this.lbEmail.TabIndex = 12;
+            this.lbEmail.Text = "N/A";
+            // 
+            // lbPhone
+            // 
+            this.lbPhone.AutoSize = true;
+            this.lbPhone.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.lbPhone.Location = new System.Drawing.Point(718, 150);
+            this.lbPhone.Name = "lbPhone";
+            this.lbPhone.Size = new System.Drawing.Size(28, 16);
+            this.lbPhone.TabIndex = 12;
+            this.lbPhone.Text = "N/A";
+            // 
+            // lbTotal
+            // 
+            this.lbTotal.AutoSize = true;
+            this.lbTotal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.lbTotal.Location = new System.Drawing.Point(718, 189);
+            this.lbTotal.Name = "lbTotal";
+            this.lbTotal.Size = new System.Drawing.Size(28, 16);
+            this.lbTotal.TabIndex = 12;
+            this.lbTotal.Text = "N/A";
+            // 
+            // lbGender
+            // 
+            this.lbGender.AutoSize = true;
+            this.lbGender.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.lbGender.Location = new System.Drawing.Point(268, 197);
+            this.lbGender.Name = "lbGender";
+            this.lbGender.Size = new System.Drawing.Size(28, 16);
+            this.lbGender.TabIndex = 12;
+            this.lbGender.Text = "N/A";
+            // 
+            // lbAddress
+            // 
+            this.lbAddress.AutoSize = true;
+            this.lbAddress.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.lbAddress.Location = new System.Drawing.Point(268, 154);
+            this.lbAddress.Name = "lbAddress";
+            this.lbAddress.Size = new System.Drawing.Size(28, 16);
+            this.lbAddress.TabIndex = 12;
+            this.lbAddress.Text = "N/A";
+            // 
+            // lbFullNameCus
+            // 
+            this.lbFullNameCus.AutoSize = true;
+            this.lbFullNameCus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.lbFullNameCus.Location = new System.Drawing.Point(268, 111);
+            this.lbFullNameCus.Name = "lbFullNameCus";
+            this.lbFullNameCus.Size = new System.Drawing.Size(28, 16);
+            this.lbFullNameCus.TabIndex = 12;
+            this.lbFullNameCus.Text = "N/A";
+            // 
+            // darkLabel2
+            // 
+            this.darkLabel2.AutoSize = true;
+            this.darkLabel2.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.darkLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.darkLabel2.Location = new System.Drawing.Point(342, 46);
+            this.darkLabel2.Name = "darkLabel2";
+            this.darkLabel2.Size = new System.Drawing.Size(200, 28);
+            this.darkLabel2.TabIndex = 11;
+            this.darkLabel2.Text = "User Information";
+            // 
+            // darkLabel6
+            // 
+            this.darkLabel6.AutoSize = true;
+            this.darkLabel6.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
+            this.darkLabel6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.darkLabel6.Location = new System.Drawing.Point(578, 110);
+            this.darkLabel6.Name = "darkLabel6";
+            this.darkLabel6.Size = new System.Drawing.Size(52, 19);
+            this.darkLabel6.TabIndex = 11;
+            this.darkLabel6.Text = "Email";
+            // 
+            // darkLabel7
+            // 
+            this.darkLabel7.AutoSize = true;
+            this.darkLabel7.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
+            this.darkLabel7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.darkLabel7.Location = new System.Drawing.Point(578, 189);
+            this.darkLabel7.Name = "darkLabel7";
+            this.darkLabel7.Size = new System.Drawing.Size(112, 19);
+            this.darkLabel7.TabIndex = 11;
+            this.darkLabel7.Text = "Total Booking";
+            // 
+            // darkLabel5
+            // 
+            this.darkLabel5.AutoSize = true;
+            this.darkLabel5.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
+            this.darkLabel5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.darkLabel5.Location = new System.Drawing.Point(103, 194);
+            this.darkLabel5.Name = "darkLabel5";
+            this.darkLabel5.Size = new System.Drawing.Size(68, 19);
+            this.darkLabel5.TabIndex = 11;
+            this.darkLabel5.Text = "Gender";
+            // 
+            // darkLabel4
+            // 
+            this.darkLabel4.AutoSize = true;
+            this.darkLabel4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
+            this.darkLabel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.darkLabel4.Location = new System.Drawing.Point(578, 149);
+            this.darkLabel4.Name = "darkLabel4";
+            this.darkLabel4.Size = new System.Drawing.Size(58, 19);
+            this.darkLabel4.TabIndex = 11;
+            this.darkLabel4.Text = "Phone";
+            // 
+            // darkLabel3
+            // 
+            this.darkLabel3.AutoSize = true;
+            this.darkLabel3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
+            this.darkLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.darkLabel3.Location = new System.Drawing.Point(103, 150);
+            this.darkLabel3.Name = "darkLabel3";
+            this.darkLabel3.Size = new System.Drawing.Size(70, 19);
+            this.darkLabel3.TabIndex = 11;
+            this.darkLabel3.Text = "Address";
+            // 
+            // darkLabel11
+            // 
+            this.darkLabel11.AutoSize = true;
+            this.darkLabel11.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.darkLabel11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.darkLabel11.Location = new System.Drawing.Point(103, 111);
+            this.darkLabel11.Name = "darkLabel11";
+            this.darkLabel11.Size = new System.Drawing.Size(88, 19);
+            this.darkLabel11.TabIndex = 11;
+            this.darkLabel11.Text = "Full Name";
+            // 
+            // lbCount
+            // 
+            this.lbCount.AutoSize = true;
+            this.lbCount.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbCount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.lbCount.Location = new System.Drawing.Point(173, 586);
+            this.lbCount.Name = "lbCount";
+            this.lbCount.Size = new System.Drawing.Size(39, 16);
+            this.lbCount.TabIndex = 11;
+            this.lbCount.Text = "Total";
+            // 
+            // dgvDoctor
+            // 
+            this.dgvDoctor.AllowUserToAddRows = false;
+            this.dgvDoctor.AllowUserToDeleteRows = false;
+            this.dgvDoctor.AllowUserToOrderColumns = true;
+            this.dgvDoctor.AllowUserToResizeColumns = false;
+            this.dgvDoctor.AllowUserToResizeRows = false;
+            this.dgvDoctor.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvDoctor.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -161,8 +361,8 @@ namespace HealthyCare.UI.Doctor
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDoctor.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvDoctor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -170,45 +370,69 @@ namespace HealthyCare.UI.Doctor
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridView1.Location = new System.Drawing.Point(14, 59);
-            this.dataGridView1.MultiSelect = false;
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(927, 286);
-            this.dataGridView1.TabIndex = 10;
+            this.dgvDoctor.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvDoctor.Location = new System.Drawing.Point(176, 269);
+            this.dgvDoctor.MultiSelect = false;
+            this.dgvDoctor.Name = "dgvDoctor";
+            this.dgvDoctor.ReadOnly = true;
+            this.dgvDoctor.RowHeadersVisible = false;
+            this.dgvDoctor.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvDoctor.Size = new System.Drawing.Size(765, 311);
+            this.dgvDoctor.TabIndex = 10;
+            this.dgvDoctor.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDoctor_CellClick);
+            this.dgvDoctor.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvDoctor_CellFormatting);
+            this.dgvDoctor.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgvDoctor_DataBindingComplete);
+            // 
+            // btnReject
+            // 
+            this.btnReject.Location = new System.Drawing.Point(31, 392);
+            this.btnReject.Name = "btnReject";
+            this.btnReject.Padding = new System.Windows.Forms.Padding(5);
+            this.btnReject.Size = new System.Drawing.Size(116, 23);
+            this.btnReject.TabIndex = 1;
+            this.btnReject.Text = "Reject Booking";
+            this.btnReject.Click += new System.EventHandler(this.btnReject_Click);
+            // 
+            // btnAccept
+            // 
+            this.btnAccept.Location = new System.Drawing.Point(31, 330);
+            this.btnAccept.Name = "btnAccept";
+            this.btnAccept.Padding = new System.Windows.Forms.Padding(5);
+            this.btnAccept.Size = new System.Drawing.Size(116, 23);
+            this.btnAccept.TabIndex = 1;
+            this.btnAccept.Text = "Accept Booking";
+            this.btnAccept.Click += new System.EventHandler(this.btnAccept_Click);
             // 
             // btnRefresh
             // 
-            this.btnRefresh.Location = new System.Drawing.Point(853, 360);
+            this.btnRefresh.Location = new System.Drawing.Point(31, 454);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Padding = new System.Windows.Forms.Padding(5);
             this.btnRefresh.Size = new System.Drawing.Size(75, 23);
             this.btnRefresh.TabIndex = 1;
             this.btnRefresh.Text = "Refresh";
             // 
-            // btnManageUsers
+            // btnHistory
             // 
-            this.btnManageUsers.FlatAppearance.BorderSize = 0;
-            this.btnManageUsers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnManageUsers.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnManageUsers.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnManageUsers.IconChar = FontAwesome.Sharp.IconChar.History;
-            this.btnManageUsers.IconColor = System.Drawing.Color.Azure;
-            this.btnManageUsers.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnManageUsers.IconSize = 35;
-            this.btnManageUsers.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnManageUsers.Location = new System.Drawing.Point(1, 329);
-            this.btnManageUsers.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.btnManageUsers.Name = "btnManageUsers";
-            this.btnManageUsers.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
-            this.btnManageUsers.Size = new System.Drawing.Size(179, 52);
-            this.btnManageUsers.TabIndex = 20;
-            this.btnManageUsers.Text = "History";
-            this.btnManageUsers.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnManageUsers.UseVisualStyleBackColor = true;
+            this.btnHistory.FlatAppearance.BorderSize = 0;
+            this.btnHistory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHistory.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHistory.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnHistory.IconChar = FontAwesome.Sharp.IconChar.History;
+            this.btnHistory.IconColor = System.Drawing.Color.Azure;
+            this.btnHistory.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnHistory.IconSize = 35;
+            this.btnHistory.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnHistory.Location = new System.Drawing.Point(1, 390);
+            this.btnHistory.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.btnHistory.Name = "btnHistory";
+            this.btnHistory.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
+            this.btnHistory.Size = new System.Drawing.Size(179, 52);
+            this.btnHistory.TabIndex = 20;
+            this.btnHistory.Text = "History";
+            this.btnHistory.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnHistory.UseVisualStyleBackColor = true;
+            this.btnHistory.Click += new System.EventHandler(this.btnHistory_Click);
             // 
             // btnHome
             // 
@@ -230,6 +454,7 @@ namespace HealthyCare.UI.Doctor
             this.btnHome.Text = "Home";
             this.btnHome.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnHome.UseVisualStyleBackColor = true;
+            this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
             // 
             // btnLogout
             // 
@@ -242,7 +467,7 @@ namespace HealthyCare.UI.Doctor
             this.btnLogout.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnLogout.IconSize = 35;
             this.btnLogout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLogout.Location = new System.Drawing.Point(1, 452);
+            this.btnLogout.Location = new System.Drawing.Point(1, 513);
             this.btnLogout.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Padding = new System.Windows.Forms.Padding(6, 0, 0, 0);
@@ -252,52 +477,80 @@ namespace HealthyCare.UI.Doctor
             this.btnLogout.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnLogout.UseVisualStyleBackColor = true;
             // 
-            // iconButton1
+            // btnFeedback
             // 
-            this.iconButton1.FlatAppearance.BorderSize = 0;
-            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconButton1.ForeColor = System.Drawing.Color.Gainsboro;
-            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.Comments;
-            this.iconButton1.IconColor = System.Drawing.Color.Azure;
-            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton1.IconSize = 35;
-            this.iconButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton1.Location = new System.Drawing.Point(1, 391);
-            this.iconButton1.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
-            this.iconButton1.Size = new System.Drawing.Size(179, 52);
-            this.iconButton1.TabIndex = 20;
-            this.iconButton1.Text = "Feedback";
-            this.iconButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButton1.UseVisualStyleBackColor = true;
+            this.btnFeedback.FlatAppearance.BorderSize = 0;
+            this.btnFeedback.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFeedback.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFeedback.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnFeedback.IconChar = FontAwesome.Sharp.IconChar.Comments;
+            this.btnFeedback.IconColor = System.Drawing.Color.Azure;
+            this.btnFeedback.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnFeedback.IconSize = 35;
+            this.btnFeedback.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnFeedback.Location = new System.Drawing.Point(1, 452);
+            this.btnFeedback.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.btnFeedback.Name = "btnFeedback";
+            this.btnFeedback.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
+            this.btnFeedback.Size = new System.Drawing.Size(179, 52);
+            this.btnFeedback.TabIndex = 20;
+            this.btnFeedback.Text = "Feedback";
+            this.btnFeedback.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnFeedback.UseVisualStyleBackColor = true;
+            this.btnFeedback.Click += new System.EventHandler(this.btnFeedback_Click);
+            // 
+            // btnProfile
+            // 
+            this.btnProfile.FlatAppearance.BorderSize = 0;
+            this.btnProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnProfile.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.btnProfile.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnProfile.IconChar = FontAwesome.Sharp.IconChar.IdCard;
+            this.btnProfile.IconColor = System.Drawing.Color.Azure;
+            this.btnProfile.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnProfile.IconSize = 35;
+            this.btnProfile.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnProfile.Location = new System.Drawing.Point(1, 328);
+            this.btnProfile.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnProfile.Name = "btnProfile";
+            this.btnProfile.Padding = new System.Windows.Forms.Padding(6, 0, 0, 0);
+            this.btnProfile.Size = new System.Drawing.Size(179, 52);
+            this.btnProfile.TabIndex = 28;
+            this.btnProfile.Text = "Profile";
+            this.btnProfile.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnProfile.UseVisualStyleBackColor = true;
             // 
             // frmDoctor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
             this.ClientSize = new System.Drawing.Size(1125, 613);
             this.Controls.Add(this.darkLabel1);
             this.Controls.Add(this.lbFullName);
             this.Controls.Add(this.panelTitleBar);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.pnView);
-            this.Controls.Add(this.iconButton1);
-            this.Controls.Add(this.btnManageUsers);
+            this.Controls.Add(this.btnFeedback);
+            this.Controls.Add(this.btnHistory);
             this.Controls.Add(this.btnHome);
             this.Controls.Add(this.btnLogout);
+            this.Controls.Add(this.btnProfile);
             this.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MaximizeBox = false;
             this.Name = "frmDoctor";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Main";
+            this.Load += new System.EventHandler(this.frmDoctor_Load);
             this.panelTitleBar.ResumeLayout(false);
             this.panelTitleBar.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.pnView.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.pnView.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDoctor)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -313,11 +566,29 @@ namespace HealthyCare.UI.Doctor
         private FontAwesome.Sharp.IconButton btnExit;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel pnView;
-        private FontAwesome.Sharp.IconButton btnManageUsers;
+        private FontAwesome.Sharp.IconButton btnHistory;
         private FontAwesome.Sharp.IconButton btnHome;
         private FontAwesome.Sharp.IconButton btnLogout;
-        private FontAwesome.Sharp.IconButton iconButton1;
+        private FontAwesome.Sharp.IconButton btnFeedback;
         private DarkUI.Controls.DarkButton btnRefresh;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvDoctor;
+        private DarkUI.Controls.DarkButton btnReject;
+        private DarkUI.Controls.DarkButton btnAccept;
+        private DarkUI.Controls.DarkLabel lbCount;
+        private DarkUI.Controls.DarkLabel darkLabel2;
+        private DarkUI.Controls.DarkLabel darkLabel6;
+        private DarkUI.Controls.DarkLabel darkLabel5;
+        private DarkUI.Controls.DarkLabel darkLabel4;
+        private DarkUI.Controls.DarkLabel darkLabel3;
+        private DarkUI.Controls.DarkLabel lbEmail;
+        private DarkUI.Controls.DarkLabel lbPhone;
+        private DarkUI.Controls.DarkLabel lbTotal;
+        private DarkUI.Controls.DarkLabel lbGender;
+        private DarkUI.Controls.DarkLabel lbAddress;
+        private DarkUI.Controls.DarkLabel lbFullNameCus;
+        private DarkUI.Controls.DarkLabel darkLabel7;
+        private DarkUI.Controls.DarkLabel darkLabel11;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
+        private FontAwesome.Sharp.IconButton btnProfile;
     }
 }

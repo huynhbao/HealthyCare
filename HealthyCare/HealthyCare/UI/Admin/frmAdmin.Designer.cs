@@ -295,7 +295,7 @@ namespace HealthyCare.UI.Admin
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::HealthyCare.Properties.Resources.user_icon;
+            this.pictureBox1.Image = global::HealthyCare.Properties.Resources.admin_logo;
             this.pictureBox1.Location = new System.Drawing.Point(35, 87);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.pictureBox1.Name = "pictureBox1";
@@ -411,6 +411,7 @@ namespace HealthyCare.UI.Admin
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "frmAdmin";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmAdmin";
             this.Load += new System.EventHandler(this.frmAdmin_Load);
             this.pnView.ResumeLayout(false);

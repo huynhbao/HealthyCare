@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DarkUI.Forms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,7 +11,7 @@ using System.Windows.Forms;
 
 namespace HealthyCare.UI.Doctor
 {
-    public partial class frmViewFeedbacks : Form
+    public partial class frmViewFeedbacks : DarkForm
     {
         public frmViewFeedbacks()
         {

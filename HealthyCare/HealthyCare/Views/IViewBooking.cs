@@ -8,13 +8,11 @@ using System.Threading.Tasks;
 
 namespace HealthyCare.Views
 {
-    public interface IDoctor : IUser
+    public interface IViewBooking
     {
-        Certificate Certificate { get; set; }
-
-        void Register(bool isCreated);
-        void GetTotalBooking(int total);
-        
-
+        void GetBooking(DataSet data);
+        void AcceptBooking(bool check);
+        void RejectBooking(bool check);
+        void GetUserInformationByID(User user);
     }
 }

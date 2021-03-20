@@ -16,7 +16,6 @@ namespace HealthyCare.UI.Customer
     using HealthyCare.Presenters;
     using HealthyCare.Views;
     using HealthyCare.UI.G;
-    using System.Runtime.InteropServices;
     using HealthyCare.Utils;
 
     public partial class frmCustomer : DarkForm, ICustomer
@@ -225,5 +224,6 @@ namespace HealthyCare.UI.Customer
             LoadData();
         }
 
-    }
+      }
+    
 }

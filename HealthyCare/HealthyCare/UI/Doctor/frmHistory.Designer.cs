@@ -1,7 +1,7 @@
 ﻿
 namespace HealthyCare.UI.Doctor
 {
-    partial class frmViewBooking
+    partial class frmHistory
     {
         /// <summary>
         /// Required designer variable.

@@ -15,7 +15,6 @@ D:\Hung\PRN292\HealthyCare\HealthyCare\obj\Debug\HealthyCare.csproj.CopyComplete
 C:\Users\HuynhBao\source\repos\HealthyCare\HealthyCare\HealthyCare\bin\Debug\HealthyCare.exe.config
 C:\Users\HuynhBao\source\repos\HealthyCare\HealthyCare\HealthyCare\bin\Debug\HealthyCare.exe
 C:\Users\HuynhBao\source\repos\HealthyCare\HealthyCare\HealthyCare\bin\Debug\HealthyCare.pdb
-C:\Users\HuynhBao\source\repos\HealthyCare\HealthyCare\HealthyCare\bin\Debug\Dapper.xml
 C:\Users\HuynhBao\source\repos\HealthyCare\HealthyCare\HealthyCare\obj\Debug\HealthyCare.csprojAssemblyReference.cache
 C:\Users\HuynhBao\source\repos\HealthyCare\HealthyCare\HealthyCare\obj\Debug\HealthyCare.frmRegister.resources
 C:\Users\HuynhBao\source\repos\HealthyCare\HealthyCare\HealthyCare\obj\Debug\HealthyCare.Properties.Resources.resources
@@ -82,3 +81,8 @@ C:\Users\HuynhBao\source\repos\HealthyCare\HealthyCare\HealthyCare\bin\Debug\Cir
 C:\Users\HuynhBao\source\repos\HealthyCare\HealthyCare\HealthyCare\bin\Debug\WinFormAnimation.dll
 C:\Users\HuynhBao\source\repos\HealthyCare\HealthyCare\HealthyCare\bin\Debug\CircularProgressBar.xml
 C:\Users\HuynhBao\source\repos\HealthyCare\HealthyCare\HealthyCare\obj\Debug\HealthyCare.UI.Guest.frmLoading.resources
+D:\fpt\PRN292\Project\HealthyCare\HealthyCare\HealthyCare\bin\Debug\CircularProgressBar.dll
+D:\fpt\PRN292\Project\HealthyCare\HealthyCare\HealthyCare\bin\Debug\WinFormAnimation.dll
+D:\fpt\PRN292\Project\HealthyCare\HealthyCare\HealthyCare\bin\Debug\CircularProgressBar.xml
+D:\fpt\PRN292\Project\HealthyCare\HealthyCare\HealthyCare\obj\Debug\HealthyCare.UI.Admin.frmManageUser.resources
+D:\fpt\PRN292\Project\HealthyCare\HealthyCare\HealthyCare\obj\Debug\HealthyCare.UI.Guest.frmLoading.resources

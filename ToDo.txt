@@ -6,3 +6,17 @@ validate login, update
 
 	chia manage user, doctor
 	search function (name, gender)
+
+20/03
+	Admin:
+		Manage User
+		Manage Doctor
+	User:
+		Feedback
+	Doctor:
+		Update Profile
+		History
+		Feedback
+		Logout
+	Discussion:
+		Admin can create doctor or doctor can create

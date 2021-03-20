@@ -45,7 +45,6 @@ namespace HealthyCare.UI.G
             loadingFormUtils.Show(this);
         }
 
-        //LoadingFormUtils loadingForm = new LoadingFormUtils();
 
         public string UserID { get => txtUsername.Text; set => txtUsername.Text = value; }
         public string Password { get => txtPassword.Text; set => txtPassword.Text = value; }

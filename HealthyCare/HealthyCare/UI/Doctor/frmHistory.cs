@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace HealthyCare.UI.Doctor
 {
-    public partial class frmViewBooking : DarkForm
+    public partial class frmHistory : DarkForm
     {
-        public frmViewBooking()
+        public frmHistory()
         {
             InitializeComponent();
         }

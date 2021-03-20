@@ -67,6 +67,7 @@
     <Compile Include="Presenters\DoctorPresenter.cs" />
     <Compile Include="Presenters\LoginPresneter.cs" />
     <Compile Include="Presenters\RegisterPresenter.cs" />
+    <Compile Include="Presenters\ViewBookingPresenter.cs" />
     <Compile Include="UI\Admin\frmAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -109,11 +110,11 @@
     <Compile Include="UI\Doctor\frmDoctor.Designer.cs">
       <DependentUpon>frmDoctor.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\Doctor\frmViewBooking.cs">
+    <Compile Include="UI\Doctor\frmHistory.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UI\Doctor\frmViewBooking.Designer.cs">
-      <DependentUpon>frmViewBooking.cs</DependentUpon>
+    <Compile Include="UI\Doctor\frmHistory.Designer.cs">
+      <DependentUpon>frmHistory.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\Doctor\frmViewFeedbacks.cs">
       <SubType>Form</SubType>
@@ -157,6 +158,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Views\IAdmin.cs" />
+    <Compile Include="Views\IViewBooking.cs" />
     <Compile Include="Views\ICustomer.cs" />
     <Compile Include="Views\IRegister.cs" />
     <Compile Include="Views\IUser.cs" />
@@ -255,6 +257,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\app-logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\admin-logo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

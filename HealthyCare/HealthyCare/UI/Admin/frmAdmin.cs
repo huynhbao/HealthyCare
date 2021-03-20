@@ -16,7 +16,6 @@ namespace HealthyCare.UI.Admin
     using HealthyCare.UI.G;
     using HealthyCare.Utils;
     using HealthyCare.Views;
-    using System.Threading;
 
     public partial class frmAdmin : DarkForm, IAdmin
     {
