@@ -48,7 +48,6 @@ D:\fpt\PRN292\Project\HealthyCare\HealthyCare\HealthyCare\bin\Debug\HealthyCare.
 D:\fpt\PRN292\Project\HealthyCare\HealthyCare\HealthyCare\bin\Debug\BussinessObject.dll
 D:\fpt\PRN292\Project\HealthyCare\HealthyCare\HealthyCare\bin\Debug\DataProvider.dll
 D:\fpt\PRN292\Project\HealthyCare\HealthyCare\HealthyCare\bin\Debug\BussinessObject.pdb
-D:\fpt\PRN292\Project\HealthyCare\HealthyCare\HealthyCare\bin\Debug\Dapper.xml
 D:\fpt\PRN292\Project\HealthyCare\HealthyCare\HealthyCare\bin\Debug\DataProvider.pdb
 D:\fpt\PRN292\Project\HealthyCare\HealthyCare\HealthyCare\obj\Debug\HealthyCare.csproj.CopyComplete
 D:\Hung\PRN292\Projects\HealthyCare\HealthyCare\HealthyCare\obj\Debug\HealthyCare.csprojAssemblyReference.cache
@@ -86,3 +85,5 @@ D:\fpt\PRN292\Project\HealthyCare\HealthyCare\HealthyCare\bin\Debug\WinFormAnima
 D:\fpt\PRN292\Project\HealthyCare\HealthyCare\HealthyCare\bin\Debug\CircularProgressBar.xml
 D:\fpt\PRN292\Project\HealthyCare\HealthyCare\HealthyCare\obj\Debug\HealthyCare.UI.Admin.frmManageUser.resources
 D:\fpt\PRN292\Project\HealthyCare\HealthyCare\HealthyCare\obj\Debug\HealthyCare.UI.Guest.frmLoading.resources
+D:\fpt\PRN292\Project\HealthyCare\HealthyCare\HealthyCare\obj\Debug\HealthyCare.UI.Doctor.frmHistory.resources
+D:\fpt\PRN292\Project\HealthyCare\HealthyCare\HealthyCare\obj\Debug\HealthyCare.UI.Doctor.frmViewFeedbacks.resources

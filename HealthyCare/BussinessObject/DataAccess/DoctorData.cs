@@ -221,5 +221,19 @@ namespace BussinessObject.DataAccess
 
             return result;
         }
+
+        public DataSet GetHistory(string idDoctor)
+        {
+            string sql = "SELECT idBooking,b.idDoctor, b.idUser, u.fullName as 'UserName', bookingDate, b.status from Booking b JOIN Users u on b.idUser = u.idUser where idDoctor =@idDoctor AND(b.status = 3 or b.status = 4) ORDER BY bookingDate DESC";
+            SqlParameter DoctorIDParam = new SqlParameter("@idDoctor", idDoctor);
+            DataSet dt = DataProvider.ExecuteQueryWithDataSet(sql, CommandType.Text, DoctorIDParam);
+            return dt;
+        }public DataSet GetFeedback(string idDoctor)
+        {
+            string sql = "SELECT idFeedback,comment,points, f.idUser,(SELECT fullName from Users u  WHERE u.idUser =@idDoctor) as 'DoctorName', u.fullName as 'UserName', bookingDate  from Feedback f JOIN Users u on f.idUser = u.idUser JOIN Booking b on f.idBooking = b.idBooking where idDoctor =@idDoctor ORDER BY bookingDate DESC";
+            SqlParameter DoctorIDParam = new SqlParameter("@idDoctor", idDoctor);
+            DataSet dt = DataProvider.ExecuteQueryWithDataSet(sql, CommandType.Text, DoctorIDParam);
+            return dt;
+        }
     }
 }

@@ -14,6 +14,8 @@ namespace HealthyCare.UI.Doctor
     using BussinessObject.Entities;
     using DarkUI.Forms;
     using HealthyCare.Presenters;
+    using HealthyCare.UI.G;
+    using HealthyCare.UI.User;
     using HealthyCare.Utils;
     using HealthyCare.Views;
 
@@ -243,6 +245,20 @@ namespace HealthyCare.UI.Doctor
         {
             MyUtils.ReleaseCapture();
             MyUtils.SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void btnProfile_Click(object sender, EventArgs e)
+        {
+            frmViewProfile frm = new frmViewProfile();
+            openChildForm(frm, btnProfile);
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            LoginInfo.user = null;
+            frmLogin frm = new frmLogin();
+            frm.Show();
+            Close();
         }
     }
 }

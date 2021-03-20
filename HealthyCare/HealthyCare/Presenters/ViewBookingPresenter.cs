@@ -14,6 +14,8 @@ namespace HealthyCare.Presenters
     public class ViewBookingPresenter
     {
         private IViewBooking bookingView;
+        private IBookingHistory historyView;
+        private IViewFeedback feedbackView;
         private DoctorData doctorData = new DoctorData();
         User user = null;
         public event WaitCallBack OnDataLoading;
@@ -24,6 +26,16 @@ namespace HealthyCare.Presenters
             user = LoginInfo.user;
             bookingView = view;
 
+        }
+        public ViewBookingPresenter(IBookingHistory view)
+        {
+            user = LoginInfo.user;
+            historyView = view;
+        }
+        public ViewBookingPresenter(IViewFeedback view)
+        {
+            user = LoginInfo.user;
+            feedbackView = view;
         }
 
         public void GetBooking(string idDoctor)
@@ -83,6 +95,32 @@ namespace HealthyCare.Presenters
                 OnDataLoadingCompleted();
             }
             bookingView.GetUserInformationByID(user);
+        }
+        public void GetHistory()
+        {
+            if (OnDataLoading != null)
+            {
+                OnDataLoading();
+            }
+            DataSet data = doctorData.GetHistory(user.UserID);
+            if (OnDataLoadingCompleted != null)
+            {
+                OnDataLoadingCompleted();
+            }
+            historyView.GetHistory(data);
+        }
+        public void GetFeedback()
+        {
+            if (OnDataLoading != null)
+            {
+                OnDataLoading();
+            }
+            DataSet data = doctorData.GetFeedback(user.UserID);
+            if (OnDataLoadingCompleted != null)
+            {
+                OnDataLoadingCompleted();
+            }
+            feedbackView.GetFeedback(data);
         }
     }
 }

@@ -476,6 +476,7 @@ namespace HealthyCare.UI.Doctor
             this.btnLogout.Text = "Logout";
             this.btnLogout.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnLogout.UseVisualStyleBackColor = true;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // btnFeedback
             // 
@@ -519,6 +520,7 @@ namespace HealthyCare.UI.Doctor
             this.btnProfile.Text = "Profile";
             this.btnProfile.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnProfile.UseVisualStyleBackColor = true;
+            this.btnProfile.Click += new System.EventHandler(this.btnProfile_Click);
             // 
             // frmDoctor
             // 

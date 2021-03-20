@@ -10,13 +10,23 @@ validate login, update
 20/03
 	Admin:
 		Manage User
+			delete status user
 		Manage Doctor
+				full
+		
 	User:
-		Feedback
+		fix UI gender
+		UI profile
+		Feedback (button in tab history) 
 	Doctor:
-		Update Profile
-		History
-		Feedback
-		Logout
+		Update Profile .done
+		History .done
+		Feedback .done
+		Logout .done
 	Discussion:
-		Admin can create doctor or doctor can create
+		Admin can create doctor .done
+		Validate booking. done
+
+
+	Validate update profile when fail
+		
