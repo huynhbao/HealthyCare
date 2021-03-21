@@ -35,11 +35,11 @@ namespace HealthyCare.UI.User
             lbPhone.Text = user.Phone;
             if (user.Gender)
             {
-                rbMale.Checked = true;
+                lbGender.Text = "Male";
             }
             else
             {
-                rbFemale.Checked = true;
+                lbGender.Text = "Femle";
             }
         }
         private void btnEdit_Click(object sender, EventArgs e)

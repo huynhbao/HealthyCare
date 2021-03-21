@@ -14,6 +14,7 @@ namespace HealthyCare.UI.User
 {
     using BussinessObject.Entities;
     using HealthyCare.Presenters;
+    using HealthyCare.Utils;
 
     public partial class frmEditProfile : DarkForm, IUser
     {
@@ -82,6 +83,17 @@ namespace HealthyCare.UI.User
             string s = (check == true ? "successful" : "fail");
             MessageBox.Show("Update " + s);
             Close();
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void panelTitleBar_MouseDown(object sender, MouseEventArgs e)
+        {
+            MyUtils.ReleaseCapture();
+            MyUtils.SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
     }
 }

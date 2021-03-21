@@ -11,7 +11,9 @@ validate login, update
 	Admin:
 		Manage User
 			delete status user @Nghiep
-		Manage Doctor
+			Show Detail User @Nghiep
+		Manage Doctor 
+			Show Detail Doctor @Nghiep
 				full @Nghiep
 		
 	User:

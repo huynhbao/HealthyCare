@@ -74,7 +74,7 @@ namespace HealthyCare.UI.Customer
             this.groupBox1.Controls.Add(this.btnBook);
             this.groupBox1.Controls.Add(this.darkLabel2);
             this.groupBox1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.groupBox1.Location = new System.Drawing.Point(22, 39);
+            this.groupBox1.Location = new System.Drawing.Point(17, 39);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);

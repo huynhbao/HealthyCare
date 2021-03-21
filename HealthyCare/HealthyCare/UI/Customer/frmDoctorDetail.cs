@@ -66,5 +66,10 @@ namespace HealthyCare.UI.Customer
         {
             throw new NotImplementedException();
         }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }
