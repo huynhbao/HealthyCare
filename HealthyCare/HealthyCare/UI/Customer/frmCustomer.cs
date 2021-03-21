@@ -16,7 +16,6 @@ namespace HealthyCare.UI.Customer
     using HealthyCare.Presenters;
     using HealthyCare.Views;
     using HealthyCare.UI.G;
-    using System.Runtime.InteropServices;
     using HealthyCare.Utils;
 
     public partial class frmCustomer : DarkForm, ICustomer
@@ -27,69 +26,39 @@ namespace HealthyCare.UI.Customer
         private DataTable dtDoctor;
         private Form activeForm = null;
         private Button activeButton = null;
-
+        LoadingFormUtils loadingForm = new LoadingFormUtils();
 
         public frmCustomer()
         {
             InitializeComponent();
             user = LoginInfo.user;
             userPresenter = new UserPresenter(this);
+            userPresenter.OnDataLoading += UserPresenter_OnDataLoading;
+            userPresenter.OnDataLoadingCompleted += UserPresenter_OnDataLoadingCompleted;
             ActiveButton(btnHome);
-            LoadData();
+        }
+
+        private void UserPresenter_OnDataLoadingCompleted()
+        {
+            loadingForm.Close();
+        }
+
+        private void UserPresenter_OnDataLoading()
+        {
+            loadingForm.Show(this);
         }
 
         public void LoadData()
         {
             userPresenter.GetDoctors();
 
-            /*listView1.View = View.Details;
-            listView1.Columns.Add("Full Name");
-            listView1.Columns.Add("Phone");
-            listView1.Columns.Add("Address");
-            listView1.Columns[0].Width = 215;
-            listView1.Columns[1].Width = 215;
-            listView1.Columns[2].Width = 215;
-            ImageList lstviewItemImageList = new ImageList();
-
-            foreach (DataRow row in dtDoctor.Rows)
-            {
-                string doctorID = row["idUser"].ToString();
-                lstviewItemImageList.ImageSize = new Size(40, 40);
-                lstviewItemImageList.Images.Add(doctorID, Properties.Resources.user_icon);
-                listView1.SmallImageList = lstviewItemImageList;
-
-                ListViewItem item1 = new ListViewItem();
-                item1.Text = row["fullName"].ToString();
-                item1.ImageKey = doctorID;
-
-                for (int i = 1; i < dtDoctor.Columns.Count; i++)
-                {
-                    item1.SubItems.Add(new ListViewItem.ListViewSubItem() { Text = row["phone"].ToString() });
-                    item1.SubItems.Add(new ListViewItem.ListViewSubItem() { Text = row["address"].ToString() });
-                }
-                listView1.Items.Add(item1);
-            }
-
-            DataTable dtMajor = dsDoctor.Tables[1];
-            DataRow dr = dtMajor.NewRow();
-            dr["majorID"] = "";
-            dr["name"] = "All";
-            dtMajor.Rows.InsertAt(dr, 0);
-
-            //cbMajor.SelectedIndex = 0;
-            cbMajor.DisplayMember = "name";
-            cbMajor.ValueMember = "majorID";
-            cbMajor.DataSource = dtMajor;
-            */
-
             lbFullName.Text = "Hi! " + user.FullName;
         }
 
         private void btnMyProfile_Click(object sender, EventArgs e)
         {
-            ActiveButton(btnProfile);
             frmViewProfile frm = new frmViewProfile();
-            openChildForm(frm);
+            openChildForm(frm, btnProfile);
         }
 
         private void ActiveButton(Button btn)
@@ -108,7 +77,7 @@ namespace HealthyCare.UI.Customer
             }
         }
 
-        private void openChildForm(Form childForm)
+        private void openChildForm(Form childForm, Button btn)
         {
             if (activeForm != null)
             {
@@ -120,10 +89,11 @@ namespace HealthyCare.UI.Customer
             childForm.Dock = DockStyle.Fill;
             pnView.Controls.Add(childForm);
             pnView.Tag = childForm;
+            childForm.Location = Location;
             childForm.BringToFront();
             childForm.Show();
             lbParentForm.Text = childForm.Text;
-
+            ActiveButton(btn);
         }
 
         private void btnHome_Click(object sender, EventArgs e)
@@ -137,9 +107,9 @@ namespace HealthyCare.UI.Customer
 
         private void btnBook_Click(object sender, EventArgs e)
         {
-            if (dataGridView1.SelectedRows.Count > 0)
+            if (dgvDoctorList.SelectedRows.Count > 0)
             {
-                string doctorID = dataGridView1.SelectedRows[0].Cells[0].Value.ToString();
+                string doctorID = dgvDoctorList.SelectedRows[0].Cells[0].Value.ToString();
                 DialogResult dialogResult = MessageBox.Show("Do you want to book this doctor?", "Confirm", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
                 {
@@ -150,9 +120,9 @@ namespace HealthyCare.UI.Customer
 
         private void btnViewDoctor_Click(object sender, EventArgs e)
         {
-            if (dataGridView1.SelectedRows.Count > 0)
+            if (dgvDoctorList.SelectedRows.Count > 0)
             {
-                string doctorID = dataGridView1.SelectedRows[0].Cells[0].Value.ToString();
+                string doctorID = dgvDoctorList.SelectedRows[0].Cells[0].Value.ToString();
                 userPresenter.GetDoctorByID(doctorID);
             }
         }
@@ -191,31 +161,31 @@ namespace HealthyCare.UI.Customer
             dv.RowFilter = filter;
         }
 
-        private void cbMajor_SelectedValueChanged(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            
-        }
-
         private void btnHistory_Click(object sender, EventArgs e)
         {
-            ActiveButton(btnHistory);
             frmHistory frm = new frmHistory();
-            openChildForm(frm);
+            openChildForm(frm, btnHistory);
         }
 
         public void GetDoctors(DataSet data)
         {
             dsDoctor = data;
             dtDoctor = dsDoctor.Tables[0];
-            dataGridView1.DataSource = dtDoctor;
-            dataGridView1.Columns["idUser"].Visible = false;
-            dataGridView1.Columns["majorID"].Visible = false;
-            dataGridView1.Columns["idCertificate"].Visible = false;
+            MyUtils.ConvertColumnType(ref dtDoctor, "gender", typeof(int));
+            dgvDoctorList.DataSource = dtDoctor;
+            dgvDoctorList.Columns["idUser"].Visible = false;
+            dgvDoctorList.Columns["majorID"].Visible = false;
+            dgvDoctorList.Columns["idCertificate"].Visible = false;
+
+            DataTable dtMajor = dsDoctor.Tables[1];
+            DataRow dr = dtMajor.NewRow();
+            dr["majorID"] = "";
+            dr["name"] = "All";
+            dtMajor.Rows.InsertAt(dr, 0);
+
+            cbMajor.DisplayMember = "name";
+            cbMajor.ValueMember = "majorID";
+            cbMajor.DataSource = dtMajor;
         }
 
         public void GetDoctorByID(Doctor doctor)
@@ -234,7 +204,36 @@ namespace HealthyCare.UI.Customer
             if (check)
             {
                 MessageBox.Show("Booked successful!\nWaiting for doctor confirming...", "Message");
+            } else
+            {
+                MessageBox.Show("You already have another booking!", "Message");
+            }
+        }
+
+        private void frmCustomer_Load(object sender, EventArgs e)
+        {
+            LoadData();
+        }
+
+        private void dgvDoctorList_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (dgvDoctorList.Columns[e.ColumnIndex].Name.Equals("gender"))
+            {
+                if (e.Value != null)
+                {
+                    int status = int.Parse(e.Value.ToString());
+                    switch (status)
+                    {
+                        case 1:
+                            e.Value = "Male";
+                            break;
+                        case 0:
+                            e.Value = "Female";
+                            break;
+                    }
+                }
             }
         }
     }
+    
 }

@@ -1,6 +1,7 @@
 ﻿using BussinessObject;
 using BussinessObject.DataAccess;
 using BussinessObject.Entities;
+using HealthyCare.Utils;
 using HealthyCare.Views;
 using System;
 using System.Collections.Generic;
@@ -10,6 +11,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace HealthyCare.Presenters
 {
@@ -21,6 +23,9 @@ namespace HealthyCare.Presenters
         ICustomer customerView;
         UserData userData = new UserData();
         DoctorData doctorData = new DoctorData();
+
+        public event WaitCallBack OnDataLoading;
+        public event WaitCompletedCallBack OnDataLoadingCompleted;
 
         public UserPresenter(IUser view)
         {
@@ -39,7 +44,7 @@ namespace HealthyCare.Presenters
             user = LoginInfo.user;
             customerView = view;
         }
-
+        
         public void ConnectModelAndView()
         {
             user.FullName = userView.FullName;
@@ -57,29 +62,46 @@ namespace HealthyCare.Presenters
 
         public void GetDoctors()
         {
+            if (OnDataLoading != null)
+            {
+                OnDataLoading();
+            }
             DataSet data = doctorData.GetDoctors();
+            if (OnDataLoadingCompleted != null)
+            {
+                OnDataLoadingCompleted();
+            }
             customerView.GetDoctors(data);
         }
 
-        public void GetHistory()
-        {
-            historyView.GetHistory(userData.GetHistory(user.UserID));
-        }
-
         public void GetDoctorByID(string doctorID)
-        {
+        {;
             Doctor doctor = doctorData.GetDoctorByID(doctorID);
             customerView.GetDoctorByID(doctor);
         }
 
-        public int GetNumOfBooking(string DoctorID)
+        public void GetHistory()
         {
-            return doctorData.GetNumOfBooking(DoctorID);
+            if (OnDataLoading != null)
+            {
+                OnDataLoading();
+            }
+            DataSet data = userData.GetHistory(user.UserID);
+            if (OnDataLoadingCompleted != null)
+            {
+                OnDataLoadingCompleted();
+            }
+            historyView.GetHistory(data);
         }
 
         public void BookDoctor(string DoctorID)
         {
-            bool check = userData.BookDoctor(DoctorID, user.UserID, DateTime.Now);
+            bool check = !userData.CheckPreviousBooking(user.UserID);
+            if (check)
+            {
+                userData.BookDoctor(DoctorID, user.UserID, DateTime.Now);
+            }
+            
             customerView.BookDoctor(check);
         }
 

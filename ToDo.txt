@@ -1,4 +1,32 @@
 validate login, update
 
-Check nếu đang booking thì ko đc book
-Sửa major
+16/03
+	Check nếu đang booking thì ko đc book
+	Sửa major
+
+	chia manage user, doctor
+	search function (name, gender)
+
+20/03
+	Admin:
+		Manage User
+			delete status user @Nghiep
+		Manage Doctor
+				full @Nghiep
+		
+	User:
+		fix UI gender .done
+		UI profile @Bao
+		Feedback (button in tab history)  @Nghiep
+	Doctor:
+		Update Profile .done
+		History .done
+		Feedback .done
+		Logout .done
+	Discussion:
+		Admin can create doctor .done
+		Validate booking. done
+
+
+	Validate update profile when fail @Nghiep
+		

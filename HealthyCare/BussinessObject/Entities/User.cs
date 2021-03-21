@@ -17,6 +17,7 @@ namespace BussinessObject.Entities
         public string Phone { get; set; }
         public Role Role { get; set; }
         public bool Status { get; set; }
+        public int TotalBooking { get; set; }
     }
 
     public static class LoginInfo

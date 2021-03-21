@@ -63,6 +63,16 @@ namespace HealthyCare.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap admin_logo {
+            get {
+                object obj = ResourceManager.GetObject("admin_logo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap app_logo {
             get {
                 object obj = ResourceManager.GetObject("app_logo", resourceCulture);
@@ -86,6 +96,16 @@ namespace HealthyCare.Properties {
         internal static System.Drawing.Bitmap doctor_logo {
             get {
                 object obj = ResourceManager.GetObject("doctor_logo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap healthcare_background {
+            get {
+                object obj = ResourceManager.GetObject("healthcare_background", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

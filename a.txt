@@ -1,0 +1,13 @@
+dgvBooking: 
+	bookingID	Customer	Speciaty	Time		Status
+
+
+
+Panel(Booking details)			Panel(Customer Details)
+
+	label(BookingID)		Label(Name)
+	label(Customer)			Label(Gender)			
+	label(Speciaty)			Label(Address)
+	label(Time)			label(PhoneNumber)	
+
+btn(Accept)	btn(Deny)

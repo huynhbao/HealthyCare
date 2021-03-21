@@ -86,12 +86,46 @@ namespace BussinessObject.DataAccess
         public DataSet GetDoctors()
         {
 
-            string sql = "select idUser, fullName, address, email, phone, gender, idCertificate, majorID " +
-                "from Users where idRole=@idRole; SELECT majorID, name FROM Major";
+            string sql = "SELECT idUser, fullName, address, email, phone, gender, idCertificate, majorID " +
+                "FROM Users where idRole=@idRole; SELECT majorID, name FROM Major";
             SqlParameter RoleIDParam = new SqlParameter("@idRole", "2");
             DataSet dt = DataProvider.ExecuteQueryWithDataSet(sql, CommandType.Text, RoleIDParam);
             return dt;
         }
+        public DataSet GetBooking(string idDoctor)
+        {
+            string sql = "SELECT idBooking, b.idUser, u.fullName, bookingDate, b.status from Booking b, Users u where idDoctor=@idDoctor and b.status=1 and b.idUser=u.idUser ORDER BY bookingDate DESC";
+            SqlParameter DoctorIDParam = new SqlParameter("@idDoctor", idDoctor);
+            DataSet dt = DataProvider.ExecuteQueryWithDataSet(sql, CommandType.Text, DoctorIDParam);
+            return dt;
+        }
+
+        public User GetUserInformationByID(string UserID)
+        {
+            User user = null;
+
+            string sql = "select fullName, address, email, phone, gender, Count(CASE WHEN b.status = 1 THEN 1 END) from Users u, Booking b where u.idUser=@UserID AND u.idUser=b.idUser AND u.status = 1 GROUP BY fullName, address, email, phone, gender";
+            SqlParameter UserIDParam = new SqlParameter("@UserID", UserID);
+            SqlDataReader rd = DataProvider.ExecuteQueryWithDataReader(sql, CommandType.Text, UserIDParam);
+            if (rd.HasRows)
+            {
+                if (rd.Read())
+                {
+                    user = new User()
+                    {
+                        UserID = UserID,
+                        FullName = rd[0].ToString(),
+                        Address = rd[1].ToString(),
+                        Email = rd[2].ToString(),
+                        Phone = rd[3].ToString(),
+                        Gender = bool.Parse(rd[4].ToString()),
+                        TotalBooking = int.Parse(rd[5].ToString()),
+                    };
+                }
+            }
+            return user;
+        }
+
 
         public Doctor GetDoctorByID(string DoctorID)
         {
@@ -125,7 +159,7 @@ namespace BussinessObject.DataAccess
         {
             int result = 0;
 
-            string sql = "select count(*) from Booking where idUser=@idUser";
+            string sql = "select count(*) from Booking where idDoctor=@idUser AND status = 3";
             SqlParameter DoctorIDParam = new SqlParameter("@idUser", DoctorID);
             SqlDataReader rd = DataProvider.ExecuteQueryWithDataReader(sql, CommandType.Text, DoctorIDParam);
             if (rd.HasRows)
@@ -136,6 +170,70 @@ namespace BussinessObject.DataAccess
                 }
             }
             return result;
+        }
+
+        public bool AcceptBooking(string idBooking)
+        {
+            string SQL = "Update Booking set status=2 WHERE idBooking=@idBooking";
+
+            SqlParameter idBookingParam = new SqlParameter("@idBooking", idBooking);
+            try
+            {
+                return DataProvider.ExecuteNonQuery(SQL, CommandType.Text, idBookingParam);
+            }
+            catch (SqlException se)
+            {
+                throw new Exception(se.Message);
+            }
+        }
+
+        public bool RejectBooking(string idBooking)
+        {
+            string SQL = "Update Booking set status=4 WHERE idBooking=@idBooking";
+
+            SqlParameter idBookingParam = new SqlParameter("@idBooking", idBooking);
+            try
+            {
+                return DataProvider.ExecuteNonQuery(SQL, CommandType.Text, idBookingParam);
+            }
+            catch (SqlException se)
+            {
+                throw new Exception(se.Message);
+            }
+        }
+
+        public bool CheckWaitingBooking(string UserID)
+        {
+            bool result = true;
+
+            string sql = "select status " +
+                "from Booking where idUser=@idUser";
+            SqlParameter UserIDIDParam = new SqlParameter("@idUser", UserID);
+            SqlDataReader rd = DataProvider.ExecuteQueryWithDataReader(sql, CommandType.Text, UserIDIDParam);
+            while (rd.Read())
+            {
+                if (int.Parse(rd["status"].ToString()) != 1)
+                {
+                    result = false;
+                    break;
+                }
+            }
+
+            return result;
+        }
+
+        public DataSet GetHistory(string idDoctor)
+        {
+            string sql = "SELECT idBooking,b.idDoctor, b.idUser, u.fullName as 'UserName', bookingDate, b.status from Booking b JOIN Users u on b.idUser = u.idUser where idDoctor =@idDoctor AND(b.status = 3 or b.status = 4) ORDER BY bookingDate DESC";
+            SqlParameter DoctorIDParam = new SqlParameter("@idDoctor", idDoctor);
+            DataSet dt = DataProvider.ExecuteQueryWithDataSet(sql, CommandType.Text, DoctorIDParam);
+            return dt;
+        }public DataSet GetFeedback(string idDoctor)
+        {
+            string sql = "SELECT idFeedback,comment,points, f.idUser,(SELECT fullName from Users u  WHERE u.idUser =@idDoctor) as 'DoctorName', u.fullName as 'UserName', bookingDate  from Feedback f JOIN Users u on f.idUser = u.idUser JOIN Booking b on f.idBooking = b.idBooking where idDoctor =@idDoctor ORDER BY bookingDate DESC";
+            SqlParameter DoctorIDParam = new SqlParameter("@idDoctor", idDoctor);
+            DataSet dt = DataProvider.ExecuteQueryWithDataSet(sql, CommandType.Text, DoctorIDParam);
+            return dt;
         }
     }
 }
