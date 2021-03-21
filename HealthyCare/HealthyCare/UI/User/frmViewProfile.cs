@@ -29,7 +29,6 @@ namespace HealthyCare.UI.User
 
         private void LoadData()
         {
-            lbProfile.Text = "Hello, " + user.UserID;
             lbFullName.Text = user.FullName;
             lbEmail.Text = user.Email;
             lbAddress.Text = user.Address;

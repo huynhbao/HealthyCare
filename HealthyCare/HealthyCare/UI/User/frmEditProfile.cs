@@ -81,6 +81,7 @@ namespace HealthyCare.UI.User
             bool check = userPresenter.UpadteProfile();
             string s = (check == true ? "successful" : "fail");
             MessageBox.Show("Update " + s);
+            Close();
         }
     }
 }

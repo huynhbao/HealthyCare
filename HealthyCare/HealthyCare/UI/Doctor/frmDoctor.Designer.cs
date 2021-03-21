@@ -148,10 +148,10 @@ namespace HealthyCare.UI.Doctor
             // pictureBox1
             // 
             this.pictureBox1.Image = global::HealthyCare.Properties.Resources.doctor_logo;
-            this.pictureBox1.Location = new System.Drawing.Point(34, 85);
+            this.pictureBox1.Location = new System.Drawing.Point(48, 88);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(104, 102);
+            this.pictureBox1.Size = new System.Drawing.Size(80, 80);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 24;
             this.pictureBox1.TabStop = false;
@@ -476,6 +476,7 @@ namespace HealthyCare.UI.Doctor
             this.btnLogout.Text = "Logout";
             this.btnLogout.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnLogout.UseVisualStyleBackColor = true;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // btnFeedback
             // 
@@ -519,6 +520,7 @@ namespace HealthyCare.UI.Doctor
             this.btnProfile.Text = "Profile";
             this.btnProfile.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnProfile.UseVisualStyleBackColor = true;
+            this.btnProfile.Click += new System.EventHandler(this.btnProfile_Click);
             // 
             // frmDoctor
             // 

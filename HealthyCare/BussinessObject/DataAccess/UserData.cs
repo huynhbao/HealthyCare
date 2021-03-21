@@ -166,8 +166,7 @@ namespace BussinessObject
 
         public DataSet GetHistory(string UserID)
         {
-
-            string sql = "SELECT idBooking, bookingDate, idDoctor, fullName, b.status FROM Booking b, Users u WHERE b.idUser=@idUser AND b.idDoctor=u.idUser ORDER BY bookingDate DESC";
+            string sql = "SELECT idBooking, bookingDate, idDoctor, fullName, b.status FROM Booking b, Users u WHERE b.idUser=@idUser AND b.idDoctor=u.idUser ORDER BY status ASC";
             SqlParameter RoleIDParam = new SqlParameter("@idUser", UserID);
             DataSet dt = DataProvider.ExecuteQueryWithDataSet(sql, CommandType.Text, RoleIDParam);
             return dt;
