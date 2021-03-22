@@ -13,6 +13,7 @@ namespace HealthyCare.UI.Customer
 {
     using BussinessObject.Entities;
     using HealthyCare.Presenters;
+    using HealthyCare.Utils;
     using HealthyCare.Views;
 
     public partial class frmDoctorDetail : DarkForm, IDoctor
@@ -65,6 +66,17 @@ namespace HealthyCare.UI.Customer
         void IDoctor.Register(bool isCreated)
         {
             throw new NotImplementedException();
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void panelTitleBar_MouseDown(object sender, MouseEventArgs e)
+        {
+            MyUtils.ReleaseCapture();
+            MyUtils.SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
     }
 }

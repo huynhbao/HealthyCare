@@ -24,7 +24,7 @@ namespace HealthyCare.UI.Admin
         }
 
         public Certificate Certificate { get => new Certificate(0, txtCertificate.Text); set => new Certificate(0, txtCertificate.Text); }
-        public string UserID { get => txtUserID.Text; set => txtUserID.Text = value; }
+        public string UserID { get => txtConfirm.Text; set => txtConfirm.Text = value; }
         public string Password { get => txtPassword.Text; set => txtPassword.Text = value; }
         public string FullName { get => txtFullname.Text; set => txtFullname.Text = value; }
         public bool Gender { get => getGender(); set => getGender(); }
@@ -46,7 +46,7 @@ namespace HealthyCare.UI.Admin
         {
             Regex rgMail = new Regex(MyUtils.EMAIL_FORMAT);
             Regex rgPhone = new Regex(MyUtils.PHONE_FORMAT);
-            if (txtUserID.Text == "" || txtAddress.Text == "" || txtEmail.Text == "" || txtPhone.Text == "" || txtFullname.Text == "" || txtPassword.Text == "" || txtConfirm.Text == "" || txtCertificate.Text == "")
+            if (txtConfirm.Text == "" || txtAddress.Text == "" || txtEmail.Text == "" || txtPhone.Text == "" || txtFullname.Text == "" || txtPassword.Text == "" || txtConfirm.Text == "" || txtCertificate.Text == "")
                 MessageBox.Show("Please fill sandatory fields");
             else if (!rgMail.IsMatch(txtEmail.Text))
                 MessageBox.Show("Email is not correct.");
@@ -73,6 +73,22 @@ namespace HealthyCare.UI.Admin
         void IDoctor.GetTotalBooking(int total)
         {
             throw new NotImplementedException();
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void btnMinimize_Click(object sender, EventArgs e)
+        {
+            WindowState = FormWindowState.Minimized;
+        }
+
+        private void panelTitleBar_MouseDown(object sender, MouseEventArgs e)
+        {
+            MyUtils.ReleaseCapture();
+            MyUtils.SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
     }
 }

@@ -36,6 +36,9 @@
     <ApplicationIcon>app-logo.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Bunifu_UI_v1.52">
+      <HintPath>..\..\..\..\..\Desktop\Bunifu_UI_v1.52.dll</HintPath>
+    </Reference>
     <Reference Include="CircularProgressBar, Version=2.8.0.16, Culture=neutral, PublicKeyToken=310fd07b25df79b3, processorArchitecture=MSIL">
       <HintPath>..\packages\CircularProgressBar.2.8.0.16\lib\net40\CircularProgressBar.dll</HintPath>
     </Reference>
@@ -49,9 +52,12 @@
     <Reference Include="FontAwesome.Sharp, Version=5.15.3.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\FontAwesome.Sharp.5.15.3\lib\net472\FontAwesome.Sharp.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Management" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -100,6 +106,12 @@
     </Compile>
     <Compile Include="UI\Customer\frmDoctorDetail.Designer.cs">
       <DependentUpon>frmDoctorDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Customer\frmFeedback.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Customer\frmFeedback.Designer.cs">
+      <DependentUpon>frmFeedback.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\Customer\frmHistory.cs">
       <SubType>Form</SubType>
@@ -261,9 +273,6 @@
     <None Include="Resources\home-2-64.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\doctor-logo.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\bg.png" />
   </ItemGroup>
   <ItemGroup>
@@ -273,10 +282,9 @@
     <None Include="Resources\healthcare-background.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\app-logo.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="app-logo.ico" />
+    <None Include="Resources\app-logo.png" />
+    <None Include="Resources\doctor-logo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

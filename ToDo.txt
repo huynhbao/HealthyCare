@@ -8,16 +8,23 @@ validate login, update
 	search function (name, gender)
 
 20/03
+	All:
+		Đổi tên column
 	Admin:
 		Manage User
-			delete status user
-		Manage Doctor
-				full
+			delete status user @Nghiep
+			Show Detail User @Nghiep
+		Manage Doctor 
+			Show Detail Doctor @Nghiep
+				full @Nghiep
 		
 	User:
-		fix UI gender
-		UI profile
-		Feedback (button in tab history) 
+		fix UI gender .done
+		UI profile @Bao
+		Feedback (button in tab history)  @Nghiep
+		Update Password
+		View Doctor In History Tab
+		Feedback In History Tab
 	Doctor:
 		Update Profile .done
 		History .done
@@ -28,5 +35,5 @@ validate login, update
 		Validate booking. done
 
 
-	Validate update profile when fail
+	Validate update profile when fail @Nghiep
 		

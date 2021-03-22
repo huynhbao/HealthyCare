@@ -124,5 +124,10 @@ namespace HealthyCare.UI.Admin
 
             }
         }
+
+        private void btnCreateDoctor_Click(object sender, EventArgs e)
+        {
+            new frmCreateDoctor().ShowDialog();
+        }
     }
 }

@@ -17,6 +17,7 @@ namespace HealthyCare.UI.Customer
     using HealthyCare.Views;
     using HealthyCare.UI.G;
     using HealthyCare.Utils;
+    using FontAwesome.Sharp;
 
     public partial class frmCustomer : DarkForm, ICustomer
     {
@@ -25,7 +26,7 @@ namespace HealthyCare.UI.Customer
         private DataSet dsDoctor;
         private DataTable dtDoctor;
         private Form activeForm = null;
-        private Button activeButton = null;
+        private IconButton activeButton = null;
         LoadingFormUtils loadingForm = new LoadingFormUtils();
 
         public frmCustomer()
@@ -61,11 +62,12 @@ namespace HealthyCare.UI.Customer
             openChildForm(frm, btnProfile);
         }
 
-        private void ActiveButton(Button btn)
+        private void ActiveButton(IconButton btn)
         {
             DisableButton();
             activeButton = btn;
             activeButton.BackColor = Color.FromArgb(79, 79, 79);
+            activeButton.IconColor = Color.FromArgb(255, 63, 128);
             lbParentForm.Text = "Home";
         }
 
@@ -74,10 +76,11 @@ namespace HealthyCare.UI.Customer
             if (activeButton != null)
             {
                 activeButton.BackColor = Color.FromArgb(45, 45, 45);
+                activeButton.IconColor = Color.FromArgb(230, 230, 230);
             }
         }
 
-        private void openChildForm(Form childForm, Button btn)
+        private void openChildForm(Form childForm, IconButton btn)
         {
             if (activeForm != null)
             {
@@ -107,9 +110,9 @@ namespace HealthyCare.UI.Customer
 
         private void btnBook_Click(object sender, EventArgs e)
         {
-            if (dataGridView1.SelectedRows.Count > 0)
+            if (dgvDoctorList.SelectedRows.Count > 0)
             {
-                string doctorID = dataGridView1.SelectedRows[0].Cells[0].Value.ToString();
+                string doctorID = dgvDoctorList.SelectedRows[0].Cells[0].Value.ToString();
                 DialogResult dialogResult = MessageBox.Show("Do you want to book this doctor?", "Confirm", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
                 {
@@ -120,9 +123,9 @@ namespace HealthyCare.UI.Customer
 
         private void btnViewDoctor_Click(object sender, EventArgs e)
         {
-            if (dataGridView1.SelectedRows.Count > 0)
+            if (dgvDoctorList.SelectedRows.Count > 0)
             {
-                string doctorID = dataGridView1.SelectedRows[0].Cells[0].Value.ToString();
+                string doctorID = dgvDoctorList.SelectedRows[0].Cells[0].Value.ToString();
                 userPresenter.GetDoctorByID(doctorID);
             }
         }
@@ -161,16 +164,6 @@ namespace HealthyCare.UI.Customer
             dv.RowFilter = filter;
         }
 
-        private void cbMajor_SelectedValueChanged(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            
-        }
-
         private void btnHistory_Click(object sender, EventArgs e)
         {
             frmHistory frm = new frmHistory();
@@ -181,10 +174,13 @@ namespace HealthyCare.UI.Customer
         {
             dsDoctor = data;
             dtDoctor = dsDoctor.Tables[0];
-            dataGridView1.DataSource = dtDoctor;
-            dataGridView1.Columns["idUser"].Visible = false;
-            dataGridView1.Columns["majorID"].Visible = false;
-            dataGridView1.Columns["idCertificate"].Visible = false;
+            MyUtils.ConvertColumnType(ref dtDoctor, "gender", typeof(int));
+            dgvDoctorList.DataSource = dtDoctor;
+            dgvDoctorList.Columns["idUser"].Visible = false;
+            dgvDoctorList.Columns["majorID"].Visible = false;
+            dgvDoctorList.Columns["idCertificate"].Visible = false;
+
+
 
             DataTable dtMajor = dsDoctor.Tables[1];
             DataRow dr = dtMajor.NewRow();
@@ -224,6 +220,35 @@ namespace HealthyCare.UI.Customer
             LoadData();
         }
 
-      }
+        private void dgvDoctorList_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (dgvDoctorList.Columns[e.ColumnIndex].Name.Equals("gender"))
+            {
+                if (e.Value != null)
+                {
+                    int status = int.Parse(e.Value.ToString());
+                    switch (status)
+                    {
+                        case 1:
+                            e.Value = "Male";
+                            break;
+                        case 0:
+                            e.Value = "Female";
+                            break;
+                    }
+                }
+            }
+        }
+
+        private void dgvDoctorList_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            dgvDoctorList.ClearSelection();
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            LoadData();
+        }
+    }
     
 }

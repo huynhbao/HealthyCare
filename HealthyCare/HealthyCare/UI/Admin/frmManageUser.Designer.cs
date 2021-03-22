@@ -29,11 +29,11 @@ namespace HealthyCare.UI.Admin
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvUser = new System.Windows.Forms.DataGridView();
-            this.btnCreateDoctor = new System.Windows.Forms.Button();
             this.btnDeleteUser = new DarkUI.Controls.DarkButton();
+            this.btnCreateDoctor = new DarkUI.Controls.DarkButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUser)).BeginInit();
             this.SuspendLayout();
             // 
@@ -46,23 +46,23 @@ namespace HealthyCare.UI.Admin
             this.dgvUser.AllowUserToResizeRows = false;
             this.dgvUser.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvUser.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 8.25F);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.MenuBar;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvUser.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 8.25F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.MenuBar;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvUser.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvUser.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 8.25F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvUser.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 8.25F);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvUser.DefaultCellStyle = dataGridViewCellStyle4;
             this.dgvUser.Location = new System.Drawing.Point(12, 53);
             this.dgvUser.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dgvUser.MultiSelect = false;
@@ -72,16 +72,6 @@ namespace HealthyCare.UI.Admin
             this.dgvUser.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvUser.Size = new System.Drawing.Size(755, 272);
             this.dgvUser.TabIndex = 12;
-            // 
-            // btnCreateDoctor
-            // 
-            this.btnCreateDoctor.Location = new System.Drawing.Point(12, 333);
-            this.btnCreateDoctor.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnCreateDoctor.Name = "btnCreateDoctor";
-            this.btnCreateDoctor.Size = new System.Drawing.Size(132, 28);
-            this.btnCreateDoctor.TabIndex = 10;
-            this.btnCreateDoctor.Text = "Create Doctor";
-            this.btnCreateDoctor.UseVisualStyleBackColor = true;
             // 
             // btnDeleteUser
             // 
@@ -93,16 +83,26 @@ namespace HealthyCare.UI.Admin
             this.btnDeleteUser.Text = "Delete User";
             this.btnDeleteUser.Click += new System.EventHandler(this.btnDeleteUser_Click);
             // 
+            // btnCreateDoctor
+            // 
+            this.btnCreateDoctor.Location = new System.Drawing.Point(12, 332);
+            this.btnCreateDoctor.Name = "btnCreateDoctor";
+            this.btnCreateDoctor.Padding = new System.Windows.Forms.Padding(5);
+            this.btnCreateDoctor.Size = new System.Drawing.Size(105, 23);
+            this.btnCreateDoctor.TabIndex = 13;
+            this.btnCreateDoctor.Text = "Create Doctor";
+            this.btnCreateDoctor.Click += new System.EventHandler(this.btnCreateDoctor_Click);
+            // 
             // frmManageUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnCreateDoctor);
             this.Controls.Add(this.btnDeleteUser);
             this.Controls.Add(this.dgvUser);
-            this.Controls.Add(this.btnCreateDoctor);
             this.Name = "frmManageUser";
-            this.Text = "frmManageDoctor";
+            this.Text = "f";
             ((System.ComponentModel.ISupportInitialize)(this.dgvUser)).EndInit();
             this.ResumeLayout(false);
 
@@ -111,7 +111,7 @@ namespace HealthyCare.UI.Admin
         #endregion
 
         private System.Windows.Forms.DataGridView dgvUser;
-        private System.Windows.Forms.Button btnCreateDoctor;
         private DarkUI.Controls.DarkButton btnDeleteUser;
+        private DarkUI.Controls.DarkButton btnCreateDoctor;
     }
 }

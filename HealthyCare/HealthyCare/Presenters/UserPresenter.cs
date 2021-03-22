@@ -76,7 +76,15 @@ namespace HealthyCare.Presenters
 
         public void GetDoctorByID(string doctorID)
         {;
+            if (OnDataLoading != null)
+            {
+                OnDataLoading();
+            }
             Doctor doctor = doctorData.GetDoctorByID(doctorID);
+            if (OnDataLoadingCompleted != null)
+            {
+                OnDataLoadingCompleted();
+            }
             customerView.GetDoctorByID(doctor);
         }
 

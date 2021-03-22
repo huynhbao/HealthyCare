@@ -28,6 +28,7 @@ namespace HealthyCare.UI.Admin
         private Form activeForm = null;
         private Button activeButton = null;
         LoadingFormUtils loadingFormUtils = new LoadingFormUtils();
+        Timer tmr = null;
 
         public frmAdmin()
         {
@@ -37,6 +38,7 @@ namespace HealthyCare.UI.Admin
             adminPresenter.OnDataLoading += AdminPresenter_OnDataLoading;
             adminPresenter.OnDataLoadingCompleted += AdminPresenter_OnDataLoadingCompleted;
             ActiveButton(btnHome);
+            ShowDateTime();
         }
 
         private void AdminPresenter_OnDataLoadingCompleted()
@@ -71,9 +73,17 @@ namespace HealthyCare.UI.Admin
             lbFullName.Text = "Hi! " + user.FullName;
         }
 
-        private void btnCreateDoctor_Click(object sender, EventArgs e)
+        void ShowDateTime()
         {
-            new frmCreateDoctor().ShowDialog();
+            tmr = new Timer();
+            tmr.Interval = 1000;
+            tmr.Tick += new EventHandler(tmr_Tick);
+            tmr.Enabled = true;
+        }
+
+        void tmr_Tick(object sender, EventArgs e)
+        {
+            lbDateTime.Text = DateTime.Now.ToString();
         }
 
         void IAdmin.GetData(DataSet data)
@@ -153,6 +163,12 @@ namespace HealthyCare.UI.Admin
         private void frmAdmin_Load(object sender, EventArgs e)
         {
             LoadData();
+        }
+
+        private void btnManageDoctors_Click(object sender, EventArgs e)
+        {
+            frmManageUser frm = new frmManageUser();
+            openChildForm(frm, btnManageDoctors);
         }
     }
 }

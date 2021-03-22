@@ -31,6 +31,18 @@ namespace HealthyCare.UI.Customer
         {
             InitializeComponent();
             userPresenter = new UserPresenter(this);
+            userPresenter.OnDataLoading += UserPresenter_OnDataLoading;
+            userPresenter.OnDataLoadingCompleted += UserPresenter_OnDataLoadingCompleted;
+        }
+
+        private void UserPresenter_OnDataLoadingCompleted()
+        {
+            loadingForm.Close();
+        }
+
+        private void UserPresenter_OnDataLoading()
+        {
+            loadingForm.Show(this);
         }
 
         void LoadData()
@@ -107,6 +119,42 @@ namespace HealthyCare.UI.Customer
         private void frmHistory_Load(object sender, EventArgs e)
         {
             LoadData();
+        }
+
+        private void btnFeedback_Click(object sender, EventArgs e)
+        {
+            if (dgvHistory.SelectedRows.Count > 0)
+            {
+                int bookingID = int.Parse(dgvHistory.SelectedRows[0].Cells[0].Value.ToString());
+                int idDoctor = int.Parse(dgvHistory.SelectedRows[2].Cells[0].Value.ToString());
+                DataTable dtHistory = dsHistory.Tables[0];
+                DataRow dr = dtHistory.Rows[dgvHistory.SelectedRows[0].Index];
+                int status = int.Parse(dr["status"].ToString());
+
+                switch (status)
+                {
+                    case 1:
+                        MessageBox.Show("This booking has not been done.", "Message");
+                        break;
+                    case 2:
+                        MessageBox.Show("This booking has not been done.", "Message");
+                        break;
+                    case 3:
+                        frmFeedback fb = new frmFeedback(bookingID, idDoctor);
+                        fb.Show();
+                        break;
+                    case 4:
+                        MessageBox.Show("This booking has not been done.", "Message");
+                        break;
+
+                }
+
+            }
+        }
+
+        private void btnViewDoctor_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

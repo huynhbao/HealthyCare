@@ -37,8 +37,8 @@ namespace HealthyCare.UI.G
             this.darkLabel2 = new DarkUI.Controls.DarkLabel();
             this.darkLabel1 = new DarkUI.Controls.DarkLabel();
             this.panelTitleBar = new System.Windows.Forms.Panel();
-            this.lbParentForm = new DarkUI.Controls.DarkLabel();
             this.btnMinimize = new FontAwesome.Sharp.IconButton();
+            this.lbParentForm = new DarkUI.Controls.DarkLabel();
             this.btnExit = new FontAwesome.Sharp.IconButton();
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
@@ -130,17 +130,6 @@ namespace HealthyCare.UI.G
             this.panelTitleBar.TabIndex = 24;
             this.panelTitleBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelTitleBar_MouseDown);
             // 
-            // lbParentForm
-            // 
-            this.lbParentForm.AutoSize = true;
-            this.lbParentForm.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbParentForm.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.lbParentForm.Location = new System.Drawing.Point(10, 6);
-            this.lbParentForm.Name = "lbParentForm";
-            this.lbParentForm.Size = new System.Drawing.Size(43, 17);
-            this.lbParentForm.TabIndex = 1;
-            this.lbParentForm.Text = "Login";
-            // 
             // btnMinimize
             // 
             this.btnMinimize.FlatAppearance.BorderSize = 0;
@@ -155,6 +144,17 @@ namespace HealthyCare.UI.G
             this.btnMinimize.TabIndex = 19;
             this.btnMinimize.UseVisualStyleBackColor = true;
             this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
+            // 
+            // lbParentForm
+            // 
+            this.lbParentForm.AutoSize = true;
+            this.lbParentForm.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbParentForm.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.lbParentForm.Location = new System.Drawing.Point(10, 6);
+            this.lbParentForm.Name = "lbParentForm";
+            this.lbParentForm.Size = new System.Drawing.Size(43, 17);
+            this.lbParentForm.TabIndex = 1;
+            this.lbParentForm.Text = "Login";
             // 
             // btnExit
             // 
