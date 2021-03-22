@@ -21,6 +21,8 @@ namespace HealthyCare.Presenters
         IUser userView;
         IHistory historyView;
         ICustomer customerView;
+        IFeedback feedbackView;
+        IPassword passwordView;
         UserData userData = new UserData();
         DoctorData doctorData = new DoctorData();
 
@@ -38,13 +40,23 @@ namespace HealthyCare.Presenters
             user = LoginInfo.user;
             historyView = view;
         }
+        public UserPresenter(IPassword view)
+        {
+            user = LoginInfo.user;
+            passwordView = view;
+        }
 
         public UserPresenter(ICustomer view)
         {
             user = LoginInfo.user;
             customerView = view;
         }
-        
+        public UserPresenter(IFeedback view)
+        {
+            user = LoginInfo.user;
+            feedbackView = view;
+        }
+
         public void ConnectModelAndView()
         {
             user.FullName = userView.FullName;
@@ -75,7 +87,8 @@ namespace HealthyCare.Presenters
         }
 
         public void GetDoctorByID(string doctorID)
-        {;
+        {
+            ;
             if (OnDataLoading != null)
             {
                 OnDataLoading();
@@ -86,6 +99,20 @@ namespace HealthyCare.Presenters
                 OnDataLoadingCompleted();
             }
             customerView.GetDoctorByID(doctor);
+        }
+        public void GetDoctorByIDHistory(string doctorID)
+        {
+            ;
+            if (OnDataLoading != null)
+            {
+                OnDataLoading();
+            }
+            Doctor doctor = doctorData.GetDoctorByID(doctorID);
+            if (OnDataLoadingCompleted != null)
+            {
+                OnDataLoadingCompleted();
+            }
+            historyView.GetDoctorByID(doctor);
         }
 
         public void GetHistory()
@@ -109,8 +136,26 @@ namespace HealthyCare.Presenters
             {
                 userData.BookDoctor(DoctorID, user.UserID, DateTime.Now);
             }
-            
+
             customerView.BookDoctor(check);
+        }
+        public void Feedback(int bookingID, string comment, int value)
+        {
+            Boolean check = userData.CheckPreviousFeedback(user.UserID, bookingID);
+            if (!check)
+            {
+                userData.Feedback(user.UserID, bookingID, comment, value);
+            }
+            feedbackView.Feedback(check);
+        }
+        public void ChangePassword(string curPw, string newPw)
+        {
+            Boolean check = userData.CheckPassword(user.UserID, curPw);
+            if (check)
+            {
+                userData.ChangePassword(user.UserID, newPw);
+            }
+            passwordView.ChangePassword(check);
         }
 
         public void CancelBooking(int bookingID)

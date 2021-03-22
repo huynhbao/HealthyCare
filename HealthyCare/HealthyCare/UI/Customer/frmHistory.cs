@@ -55,7 +55,7 @@ namespace HealthyCare.UI.Customer
             dgvHistory.Columns["bookingDate"].DefaultCellStyle.Format = "dd/MM/yyyy HH:mm";
             if (dgvHistory.Columns[e.ColumnIndex].Name.Equals("status"))
             {
-                int bookingStatus = (int) e.Value;
+                int bookingStatus = (int)e.Value;
                 switch (bookingStatus)
                 {
                     case 1:
@@ -102,7 +102,7 @@ namespace HealthyCare.UI.Customer
                 }
 
             }
-            
+
         }
 
         void IHistory.CancelBooking(bool check)
@@ -111,7 +111,9 @@ namespace HealthyCare.UI.Customer
             {
                 MessageBox.Show("Canceled Sucessful", "Message");
                 LoadData();
-            } else {
+            }
+            else
+            {
                 MessageBox.Show("Cannot Cancel", "Message");
             }
         }
@@ -125,11 +127,10 @@ namespace HealthyCare.UI.Customer
         {
             if (dgvHistory.SelectedRows.Count > 0)
             {
-                int bookingID = int.Parse(dgvHistory.SelectedRows[0].Cells[0].Value.ToString());
-                int idDoctor = int.Parse(dgvHistory.SelectedRows[2].Cells[0].Value.ToString());
                 DataTable dtHistory = dsHistory.Tables[0];
                 DataRow dr = dtHistory.Rows[dgvHistory.SelectedRows[0].Index];
                 int status = int.Parse(dr["status"].ToString());
+                int idBooking = int.Parse(dr["idBooking"].ToString());
 
                 switch (status)
                 {
@@ -140,7 +141,7 @@ namespace HealthyCare.UI.Customer
                         MessageBox.Show("This booking has not been done.", "Message");
                         break;
                     case 3:
-                        frmFeedback fb = new frmFeedback(bookingID, idDoctor);
+                        frmFeedback fb = new frmFeedback(idBooking);
                         fb.Show();
                         break;
                     case 4:
@@ -154,7 +155,17 @@ namespace HealthyCare.UI.Customer
 
         private void btnViewDoctor_Click(object sender, EventArgs e)
         {
+            if (dgvHistory.SelectedRows.Count > 0)
+            {
+                string doctorID = dgvHistory.SelectedRows[0].Cells[0].Value.ToString();
+                userPresenter.GetDoctorByIDHistory(doctorID);
+            }
+        }
 
+        public void GetDoctorByID(BussinessObject.Entities.Doctor doctor)
+        {
+            frmDoctorDetail frm = new frmDoctorDetail(doctor);
+            frm.ShowDialog();
         }
     }
 }

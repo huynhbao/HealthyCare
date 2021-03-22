@@ -29,12 +29,86 @@ namespace HealthyCare.UI.Customer
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmFeedback));
+            this.txtRating = new Bunifu.Framework.UI.BunifuRating();
+            this.comment = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.btnFeedback = new Bunifu.Framework.UI.BunifuThinButton2();
+            this.txtComment = new System.Windows.Forms.TextBox();
+            this.SuspendLayout();
+            // 
+            // txtRating
+            // 
+            this.txtRating.BackColor = System.Drawing.Color.Transparent;
+            this.txtRating.ForeColor = System.Drawing.Color.SeaGreen;
+            this.txtRating.Location = new System.Drawing.Point(247, 55);
+            this.txtRating.Name = "txtRating";
+            this.txtRating.Size = new System.Drawing.Size(316, 50);
+            this.txtRating.TabIndex = 0;
+            this.txtRating.Value = 0;
+            // 
+            // comment
+            // 
+            this.comment.AutoSize = true;
+            this.comment.Location = new System.Drawing.Point(73, 231);
+            this.comment.Name = "comment";
+            this.comment.Size = new System.Drawing.Size(51, 13);
+            this.comment.TabIndex = 2;
+            this.comment.Text = "Comment";
+            // 
+            // btnFeedback
+            // 
+            this.btnFeedback.ActiveBorderThickness = 1;
+            this.btnFeedback.ActiveCornerRadius = 20;
+            this.btnFeedback.ActiveFillColor = System.Drawing.Color.SeaGreen;
+            this.btnFeedback.ActiveForecolor = System.Drawing.Color.White;
+            this.btnFeedback.ActiveLineColor = System.Drawing.Color.SeaGreen;
+            this.btnFeedback.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
+            this.btnFeedback.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnFeedback.BackgroundImage")));
+            this.btnFeedback.ButtonText = "Feedback";
+            this.btnFeedback.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnFeedback.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFeedback.ForeColor = System.Drawing.Color.SeaGreen;
+            this.btnFeedback.IdleBorderThickness = 1;
+            this.btnFeedback.IdleCornerRadius = 20;
+            this.btnFeedback.IdleFillColor = System.Drawing.Color.White;
+            this.btnFeedback.IdleForecolor = System.Drawing.Color.SeaGreen;
+            this.btnFeedback.IdleLineColor = System.Drawing.Color.SeaGreen;
+            this.btnFeedback.Location = new System.Drawing.Point(304, 330);
+            this.btnFeedback.Margin = new System.Windows.Forms.Padding(5);
+            this.btnFeedback.Name = "btnFeedback";
+            this.btnFeedback.Size = new System.Drawing.Size(181, 41);
+            this.btnFeedback.TabIndex = 3;
+            this.btnFeedback.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnFeedback.Click += new System.EventHandler(this.btnFeedback_Click);
+            // 
+            // txtComment
+            // 
+            this.txtComment.Location = new System.Drawing.Point(234, 223);
+            this.txtComment.Name = "txtComment";
+            this.txtComment.Size = new System.Drawing.Size(273, 20);
+            this.txtComment.TabIndex = 4;
+            // 
+            // frmFeedback
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.txtComment);
+            this.Controls.Add(this.btnFeedback);
+            this.Controls.Add(this.comment);
+            this.Controls.Add(this.txtRating);
+            this.Name = "frmFeedback";
             this.Text = "frmFeedback";
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
+
+        private Bunifu.Framework.UI.BunifuRating txtRating;
+        private Bunifu.Framework.UI.BunifuCustomLabel comment;
+        private Bunifu.Framework.UI.BunifuThinButton2 btnFeedback;
+        private System.Windows.Forms.TextBox txtComment;
     }
 }
