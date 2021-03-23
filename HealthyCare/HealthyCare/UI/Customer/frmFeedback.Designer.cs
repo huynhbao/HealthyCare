@@ -40,7 +40,7 @@ namespace HealthyCare.UI.Customer
             // 
             this.txtRating.BackColor = System.Drawing.Color.Transparent;
             this.txtRating.ForeColor = System.Drawing.Color.SeaGreen;
-            this.txtRating.Location = new System.Drawing.Point(247, 55);
+            this.txtRating.Location = new System.Drawing.Point(247, 83);
             this.txtRating.Name = "txtRating";
             this.txtRating.Size = new System.Drawing.Size(316, 50);
             this.txtRating.TabIndex = 0;
@@ -49,11 +49,13 @@ namespace HealthyCare.UI.Customer
             // comment
             // 
             this.comment.AutoSize = true;
-            this.comment.Location = new System.Drawing.Point(73, 231);
+            this.comment.Font = new System.Drawing.Font("Microsoft Tai Le", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comment.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.comment.Location = new System.Drawing.Point(127, 193);
             this.comment.Name = "comment";
-            this.comment.Size = new System.Drawing.Size(51, 13);
+            this.comment.Size = new System.Drawing.Size(114, 27);
             this.comment.TabIndex = 2;
-            this.comment.Text = "Comment";
+            this.comment.Text = "Comment:";
             // 
             // btnFeedback
             // 
@@ -73,7 +75,7 @@ namespace HealthyCare.UI.Customer
             this.btnFeedback.IdleFillColor = System.Drawing.Color.White;
             this.btnFeedback.IdleForecolor = System.Drawing.Color.SeaGreen;
             this.btnFeedback.IdleLineColor = System.Drawing.Color.SeaGreen;
-            this.btnFeedback.Location = new System.Drawing.Point(304, 330);
+            this.btnFeedback.Location = new System.Drawing.Point(311, 323);
             this.btnFeedback.Margin = new System.Windows.Forms.Padding(5);
             this.btnFeedback.Name = "btnFeedback";
             this.btnFeedback.Size = new System.Drawing.Size(181, 41);
@@ -83,9 +85,10 @@ namespace HealthyCare.UI.Customer
             // 
             // txtComment
             // 
-            this.txtComment.Location = new System.Drawing.Point(234, 223);
+            this.txtComment.Location = new System.Drawing.Point(247, 193);
+            this.txtComment.Multiline = true;
             this.txtComment.Name = "txtComment";
-            this.txtComment.Size = new System.Drawing.Size(273, 20);
+            this.txtComment.Size = new System.Drawing.Size(316, 85);
             this.txtComment.TabIndex = 4;
             // 
             // frmFeedback
