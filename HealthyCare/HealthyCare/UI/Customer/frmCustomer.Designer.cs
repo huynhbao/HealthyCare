@@ -36,38 +36,38 @@ namespace HealthyCare.UI.Customer
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCustomer));
             this.pnView = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.darkLabel4 = new DarkUI.Controls.DarkLabel();
+            this.btnBook = new FontAwesome.Sharp.IconButton();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.darkLabel3 = new DarkUI.Controls.DarkLabel();
             this.cbMajor = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.darkLabel2 = new DarkUI.Controls.DarkLabel();
+            this.btnRefresh = new FontAwesome.Sharp.IconButton();
+            this.btnViewDoctor = new FontAwesome.Sharp.IconButton();
             this.dgvDoctorList = new System.Windows.Forms.DataGridView();
             this.lbFullName = new DarkUI.Controls.DarkLabel();
             this.panelTitleBar = new System.Windows.Forms.Panel();
             this.lbParentForm = new DarkUI.Controls.DarkLabel();
+            this.btnMinimize = new FontAwesome.Sharp.IconButton();
+            this.btnExit = new FontAwesome.Sharp.IconButton();
             this.darkLabel1 = new DarkUI.Controls.DarkLabel();
             this.elipsePanel1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.elipsePanel2 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.elipseBtnBook = new Bunifu.Framework.UI.BunifuElipse(this.components);
-            this.panel3 = new System.Windows.Forms.Panel();
             this.elipsePanel3 = new Bunifu.Framework.UI.BunifuElipse(this.components);
-            this.darkLabel3 = new DarkUI.Controls.DarkLabel();
-            this.darkLabel4 = new DarkUI.Controls.DarkLabel();
-            this.btnMinimize = new FontAwesome.Sharp.IconButton();
-            this.btnExit = new FontAwesome.Sharp.IconButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnBook = new FontAwesome.Sharp.IconButton();
-            this.btnRefresh = new FontAwesome.Sharp.IconButton();
-            this.btnViewDoctor = new FontAwesome.Sharp.IconButton();
             this.btnHistory = new FontAwesome.Sharp.IconButton();
             this.btnProfile = new FontAwesome.Sharp.IconButton();
             this.btnLogout = new FontAwesome.Sharp.IconButton();
             this.btnHome = new FontAwesome.Sharp.IconButton();
             this.pnView.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDoctorList)).BeginInit();
             this.panelTitleBar.SuspendLayout();
-            this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -83,6 +83,50 @@ namespace HealthyCare.UI.Customer
             this.pnView.Size = new System.Drawing.Size(952, 617);
             this.pnView.TabIndex = 2;
             // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.panel3.Controls.Add(this.darkLabel4);
+            this.panel3.Controls.Add(this.btnBook);
+            this.panel3.Location = new System.Drawing.Point(483, 404);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(447, 179);
+            this.panel3.TabIndex = 11;
+            // 
+            // darkLabel4
+            // 
+            this.darkLabel4.AutoSize = true;
+            this.darkLabel4.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.darkLabel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.darkLabel4.Location = new System.Drawing.Point(16, 22);
+            this.darkLabel4.Name = "darkLabel4";
+            this.darkLabel4.Size = new System.Drawing.Size(60, 17);
+            this.darkLabel4.TabIndex = 13;
+            this.darkLabel4.Text = "Booking";
+            // 
+            // btnBook
+            // 
+            this.btnBook.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(96)))), ((int)(((byte)(112)))));
+            this.btnBook.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBook.FlatAppearance.BorderSize = 0;
+            this.btnBook.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBook.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBook.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnBook.IconChar = FontAwesome.Sharp.IconChar.PlusCircle;
+            this.btnBook.IconColor = System.Drawing.Color.WhiteSmoke;
+            this.btnBook.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnBook.IconSize = 35;
+            this.btnBook.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnBook.Location = new System.Drawing.Point(152, 66);
+            this.btnBook.Margin = new System.Windows.Forms.Padding(0);
+            this.btnBook.Name = "btnBook";
+            this.btnBook.Size = new System.Drawing.Size(161, 60);
+            this.btnBook.TabIndex = 9;
+            this.btnBook.Text = "  Book";
+            this.btnBook.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnBook.UseVisualStyleBackColor = false;
+            this.btnBook.Click += new System.EventHandler(this.btnBook_Click);
+            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
@@ -92,6 +136,17 @@ namespace HealthyCare.UI.Customer
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(437, 179);
             this.panel2.TabIndex = 11;
+            // 
+            // darkLabel3
+            // 
+            this.darkLabel3.AutoSize = true;
+            this.darkLabel3.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.darkLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.darkLabel3.Location = new System.Drawing.Point(14, 22);
+            this.darkLabel3.Name = "darkLabel3";
+            this.darkLabel3.Size = new System.Drawing.Size(37, 17);
+            this.darkLabel3.TabIndex = 13;
+            this.darkLabel3.Text = "Filter";
             // 
             // cbMajor
             // 
@@ -127,6 +182,52 @@ namespace HealthyCare.UI.Customer
             this.darkLabel2.Size = new System.Drawing.Size(91, 21);
             this.darkLabel2.TabIndex = 13;
             this.darkLabel2.Text = "Doctor List";
+            // 
+            // btnRefresh
+            // 
+            this.btnRefresh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(218)))), ((int)(((byte)(198)))));
+            this.btnRefresh.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRefresh.FlatAppearance.BorderSize = 0;
+            this.btnRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRefresh.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRefresh.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnRefresh.IconChar = FontAwesome.Sharp.IconChar.Redo;
+            this.btnRefresh.IconColor = System.Drawing.Color.WhiteSmoke;
+            this.btnRefresh.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnRefresh.IconSize = 29;
+            this.btnRefresh.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnRefresh.Location = new System.Drawing.Point(761, 14);
+            this.btnRefresh.Margin = new System.Windows.Forms.Padding(0);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(129, 33);
+            this.btnRefresh.TabIndex = 9;
+            this.btnRefresh.Text = "  Refresh";
+            this.btnRefresh.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnRefresh.UseVisualStyleBackColor = false;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            // 
+            // btnViewDoctor
+            // 
+            this.btnViewDoctor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(173)))), ((int)(((byte)(255)))));
+            this.btnViewDoctor.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnViewDoctor.FlatAppearance.BorderSize = 0;
+            this.btnViewDoctor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnViewDoctor.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnViewDoctor.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnViewDoctor.IconChar = FontAwesome.Sharp.IconChar.InfoCircle;
+            this.btnViewDoctor.IconColor = System.Drawing.Color.WhiteSmoke;
+            this.btnViewDoctor.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnViewDoctor.IconSize = 29;
+            this.btnViewDoctor.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnViewDoctor.Location = new System.Drawing.Point(621, 14);
+            this.btnViewDoctor.Margin = new System.Windows.Forms.Padding(0);
+            this.btnViewDoctor.Name = "btnViewDoctor";
+            this.btnViewDoctor.Size = new System.Drawing.Size(129, 33);
+            this.btnViewDoctor.TabIndex = 9;
+            this.btnViewDoctor.Text = "  View Doctor";
+            this.btnViewDoctor.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnViewDoctor.UseVisualStyleBackColor = false;
+            this.btnViewDoctor.Click += new System.EventHandler(this.btnViewDoctor_Click);
             // 
             // dgvDoctorList
             // 
@@ -218,69 +319,6 @@ namespace HealthyCare.UI.Customer
             this.lbParentForm.TabIndex = 1;
             this.lbParentForm.Text = "darkLabel3";
             // 
-            // darkLabel1
-            // 
-            this.darkLabel1.AutoSize = true;
-            this.darkLabel1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.darkLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.darkLabel1.Location = new System.Drawing.Point(40, 39);
-            this.darkLabel1.Name = "darkLabel1";
-            this.darkLabel1.Size = new System.Drawing.Size(98, 23);
-            this.darkLabel1.TabIndex = 13;
-            this.darkLabel1.Text = "Customer";
-            // 
-            // elipsePanel1
-            // 
-            this.elipsePanel1.ElipseRadius = 25;
-            this.elipsePanel1.TargetControl = this.panel1;
-            // 
-            // elipsePanel2
-            // 
-            this.elipsePanel2.ElipseRadius = 25;
-            this.elipsePanel2.TargetControl = this.panel2;
-            // 
-            // elipseBtnBook
-            // 
-            this.elipseBtnBook.ElipseRadius = 10;
-            this.elipseBtnBook.TargetControl = this.btnBook;
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.panel3.Controls.Add(this.darkLabel4);
-            this.panel3.Controls.Add(this.btnBook);
-            this.panel3.Location = new System.Drawing.Point(483, 404);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(447, 179);
-            this.panel3.TabIndex = 11;
-            // 
-            // elipsePanel3
-            // 
-            this.elipsePanel3.ElipseRadius = 25;
-            this.elipsePanel3.TargetControl = this.panel3;
-            // 
-            // darkLabel3
-            // 
-            this.darkLabel3.AutoSize = true;
-            this.darkLabel3.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.darkLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.darkLabel3.Location = new System.Drawing.Point(14, 22);
-            this.darkLabel3.Name = "darkLabel3";
-            this.darkLabel3.Size = new System.Drawing.Size(37, 17);
-            this.darkLabel3.TabIndex = 13;
-            this.darkLabel3.Text = "Filter";
-            // 
-            // darkLabel4
-            // 
-            this.darkLabel4.AutoSize = true;
-            this.darkLabel4.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.darkLabel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.darkLabel4.Location = new System.Drawing.Point(16, 22);
-            this.darkLabel4.Name = "darkLabel4";
-            this.darkLabel4.Size = new System.Drawing.Size(60, 17);
-            this.darkLabel4.TabIndex = 13;
-            this.darkLabel4.Text = "Booking";
-            // 
             // btnMinimize
             // 
             this.btnMinimize.FlatAppearance.BorderSize = 0;
@@ -311,6 +349,37 @@ namespace HealthyCare.UI.Customer
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
+            // darkLabel1
+            // 
+            this.darkLabel1.AutoSize = true;
+            this.darkLabel1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.darkLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.darkLabel1.Location = new System.Drawing.Point(40, 39);
+            this.darkLabel1.Name = "darkLabel1";
+            this.darkLabel1.Size = new System.Drawing.Size(98, 23);
+            this.darkLabel1.TabIndex = 13;
+            this.darkLabel1.Text = "Customer";
+            // 
+            // elipsePanel1
+            // 
+            this.elipsePanel1.ElipseRadius = 25;
+            this.elipsePanel1.TargetControl = this.panel1;
+            // 
+            // elipsePanel2
+            // 
+            this.elipsePanel2.ElipseRadius = 25;
+            this.elipsePanel2.TargetControl = this.panel2;
+            // 
+            // elipseBtnBook
+            // 
+            this.elipseBtnBook.ElipseRadius = 10;
+            this.elipseBtnBook.TargetControl = this.btnBook;
+            // 
+            // elipsePanel3
+            // 
+            this.elipsePanel3.ElipseRadius = 25;
+            this.elipsePanel3.TargetControl = this.panel3;
+            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::HealthyCare.Properties.Resources.user_icon;
@@ -321,75 +390,6 @@ namespace HealthyCare.UI.Customer
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
-            // 
-            // btnBook
-            // 
-            this.btnBook.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(96)))), ((int)(((byte)(112)))));
-            this.btnBook.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnBook.FlatAppearance.BorderSize = 0;
-            this.btnBook.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBook.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBook.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnBook.IconChar = FontAwesome.Sharp.IconChar.PlusCircle;
-            this.btnBook.IconColor = System.Drawing.Color.WhiteSmoke;
-            this.btnBook.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnBook.IconSize = 35;
-            this.btnBook.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnBook.Location = new System.Drawing.Point(152, 66);
-            this.btnBook.Margin = new System.Windows.Forms.Padding(0);
-            this.btnBook.Name = "btnBook";
-            this.btnBook.Size = new System.Drawing.Size(161, 60);
-            this.btnBook.TabIndex = 9;
-            this.btnBook.Text = "  Book";
-            this.btnBook.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnBook.UseVisualStyleBackColor = false;
-            this.btnBook.Click += new System.EventHandler(this.btnBook_Click);
-            // 
-            // btnRefresh
-            // 
-            this.btnRefresh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(218)))), ((int)(((byte)(198)))));
-            this.btnRefresh.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnRefresh.FlatAppearance.BorderSize = 0;
-            this.btnRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRefresh.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRefresh.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnRefresh.IconChar = FontAwesome.Sharp.IconChar.Redo;
-            this.btnRefresh.IconColor = System.Drawing.Color.WhiteSmoke;
-            this.btnRefresh.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnRefresh.IconSize = 29;
-            this.btnRefresh.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnRefresh.Location = new System.Drawing.Point(761, 14);
-            this.btnRefresh.Margin = new System.Windows.Forms.Padding(0);
-            this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(129, 33);
-            this.btnRefresh.TabIndex = 9;
-            this.btnRefresh.Text = "  Refresh";
-            this.btnRefresh.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnRefresh.UseVisualStyleBackColor = false;
-            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
-            // 
-            // btnViewDoctor
-            // 
-            this.btnViewDoctor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(173)))), ((int)(((byte)(255)))));
-            this.btnViewDoctor.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnViewDoctor.FlatAppearance.BorderSize = 0;
-            this.btnViewDoctor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnViewDoctor.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnViewDoctor.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnViewDoctor.IconChar = FontAwesome.Sharp.IconChar.InfoCircle;
-            this.btnViewDoctor.IconColor = System.Drawing.Color.WhiteSmoke;
-            this.btnViewDoctor.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnViewDoctor.IconSize = 29;
-            this.btnViewDoctor.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnViewDoctor.Location = new System.Drawing.Point(621, 14);
-            this.btnViewDoctor.Margin = new System.Windows.Forms.Padding(0);
-            this.btnViewDoctor.Name = "btnViewDoctor";
-            this.btnViewDoctor.Size = new System.Drawing.Size(129, 33);
-            this.btnViewDoctor.TabIndex = 9;
-            this.btnViewDoctor.Text = "  View Doctor";
-            this.btnViewDoctor.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnViewDoctor.UseVisualStyleBackColor = false;
-            this.btnViewDoctor.Click += new System.EventHandler(this.btnViewDoctor_Click);
             // 
             // btnHistory
             // 
@@ -504,6 +504,8 @@ namespace HealthyCare.UI.Customer
             this.Text = "frmCustomer";
             this.Load += new System.EventHandler(this.frmCustomer_Load);
             this.pnView.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -511,8 +513,6 @@ namespace HealthyCare.UI.Customer
             ((System.ComponentModel.ISupportInitialize)(this.dgvDoctorList)).EndInit();
             this.panelTitleBar.ResumeLayout(false);
             this.panelTitleBar.PerformLayout();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
