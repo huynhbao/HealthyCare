@@ -81,6 +81,18 @@ namespace HealthyCare.Presenters
                 OnDataLoadingCompleted();
             }
             bookingView.RejectBooking(result);
+        }public void FinishBooking(string idBooking)
+        {
+            if (OnDataLoading != null)
+            {
+                OnDataLoading();
+            }
+            bool result = doctorData.FinishBooking(idBooking);
+            if (OnDataLoadingCompleted != null)
+            {
+                OnDataLoadingCompleted();
+            }
+            historyView.FinishBooking(result);
         }
 
         public void GetUserInformationByID(string UserID)

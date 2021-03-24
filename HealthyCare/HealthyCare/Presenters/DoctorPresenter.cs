@@ -12,7 +12,9 @@ namespace HealthyCare.Presenters
 {
     class DoctorPresenter
     {
+        User user = null;
         private IDoctor doctorView;
+        private IProfileDoctor profileView;
         private Doctor doctor;
         private DoctorData doctorData = new DoctorData();
 
@@ -30,6 +32,22 @@ namespace HealthyCare.Presenters
                 Gender = doctorView.Gender,
                 Certificate = doctorView.Certificate
             };
+        }
+        public DoctorPresenter(IProfileDoctor view)
+        {
+            user = LoginInfo.user;
+            profileView = view;
+        }
+
+        public void GetCertificate(String doctorID)
+        {
+            String certificate = doctorData.GetCertificateById(doctorID);
+            profileView.GetCertificate(certificate);
+        }
+        public void GetMajor(String doctorID)
+        {
+            String major = doctorData.GetMajorById(doctorID);
+            profileView.GetMajor(major);
         }
 
         public void Register()

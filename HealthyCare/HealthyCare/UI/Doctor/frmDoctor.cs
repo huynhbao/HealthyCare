@@ -165,7 +165,7 @@ namespace HealthyCare.UI.Doctor
                 MessageBox.Show("Accept successfull.");
             } else
             {
-                MessageBox.Show("Just accept waiting booking");
+                MessageBox.Show("ONLY accept 'Waiting' booking");
             }
         }
 
@@ -249,7 +249,7 @@ namespace HealthyCare.UI.Doctor
 
         private void btnProfile_Click(object sender, EventArgs e)
         {
-            frmViewProfile frm = new frmViewProfile();
+            frmViewProfile frm = new frmViewProfile(user.UserID);
             openChildForm(frm, btnProfile);
         }
 

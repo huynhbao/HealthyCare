@@ -63,5 +63,31 @@ namespace HealthyCare.UI.Doctor
         {
 
         }
+
+        private void btnDone_Click(object sender, EventArgs e)
+        {
+            if (dgvHistory.SelectedRows.Count > 0)
+            {
+                string BookingID = dgvHistory.SelectedRows[0].Cells[0].Value.ToString();
+                DialogResult dialogResult = MessageBox.Show("Do you want to finish this booking?", "Confirm", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    viewBookingPresenter.FinishBooking(BookingID);
+                    LoadData();
+                }
+            }
+        }
+
+        public void FinishBooking(bool check)
+        {
+            if (check)
+            {
+                MessageBox.Show("Finish successfull.");
+            }
+            else
+            {
+                MessageBox.Show("Cannot Finish.");
+            }
+        }
     }
 }

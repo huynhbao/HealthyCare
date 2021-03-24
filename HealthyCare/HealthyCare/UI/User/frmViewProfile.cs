@@ -17,18 +17,31 @@ namespace HealthyCare.UI.User
     using HealthyCare.Presenters;
     using HealthyCare.Utils;
 
-    public partial class frmViewProfile : DarkForm
+    public partial class frmViewProfile : DarkForm, IProfileDoctor
     {
         User user = null;
+        String idDoctor = null;
+        DoctorPresenter doctorPresenter = null;
+        String certificate = null;
+        String major = null;
         public frmViewProfile()
         {
             InitializeComponent();
             user = LoginInfo.user;
             LoadData();
         }
+        public frmViewProfile(String doctorID)
+        {
+            InitializeComponent();
+            user = LoginInfo.user;
+            this.idDoctor = doctorID;
+            doctorPresenter = new DoctorPresenter(this);
+            LoadData();
+        }
 
         private void LoadData()
         {
+            
             lbFullName.Text = user.FullName;
             lbEmail.Text = user.Email;
             lbAddress.Text = user.Address;
@@ -40,6 +53,20 @@ namespace HealthyCare.UI.User
             else
             {
                 lbGender.Text = "Femle";
+            }
+            if (user.Role.RoleID.Equals("3"))
+            {
+                lbCertificate.Hide();
+                lbMajor.Hide();
+                pbCertificate.Hide();
+                pbMajor.Hide();
+            }
+            else
+            {
+                doctorPresenter.GetCertificate(idDoctor);
+                doctorPresenter.GetMajor(idDoctor);
+                lbCertificate.Text = certificate;
+                lbMajor.Text = major;
             }
         }
         private void btnEdit_Click(object sender, EventArgs e)
@@ -55,7 +82,17 @@ namespace HealthyCare.UI.User
             frm.ShowDialog();
             LoadData();
         }
+
+        public void GetCertificate(string certificate)
+        {
+            this.certificate = certificate;
+        }
+
+        public void GetMajor(string major)
+        {
+            this.major = major; 
+        }
     }
 
-    
+
 }
