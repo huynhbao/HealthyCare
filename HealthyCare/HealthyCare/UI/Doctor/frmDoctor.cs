@@ -13,6 +13,7 @@ namespace HealthyCare.UI.Doctor
 {
     using BussinessObject.Entities;
     using DarkUI.Forms;
+    using FontAwesome.Sharp;
     using HealthyCare.Presenters;
     using HealthyCare.UI.G;
     using HealthyCare.UI.User;
@@ -28,7 +29,7 @@ namespace HealthyCare.UI.Doctor
         DataSet dsDoctor;
         DataTable dtDoctor;
         Form activeForm = null;
-        Button activeButton = null;
+        IconButton activeButton = null;
         LoadingFormUtils loadingFormUtils = new LoadingFormUtils();
 
         public frmDoctor()
@@ -57,11 +58,12 @@ namespace HealthyCare.UI.Doctor
             lbFullName.Text = "Hi! " + user.FullName;
         }
 
-        private void ActiveButton(Button btn)
+        private void ActiveButton(IconButton btn)
         {
             DisableButton();
             activeButton = btn;
             activeButton.BackColor = Color.FromArgb(79, 79, 79);
+            activeButton.IconColor = Color.FromArgb(255, 63, 128);
             lbParentForm.Text = "Home";
         }
 
@@ -70,10 +72,11 @@ namespace HealthyCare.UI.Doctor
             if (activeButton != null)
             {
                 activeButton.BackColor = Color.FromArgb(45, 45, 45);
+                activeButton.IconColor = Color.FromArgb(230, 230, 230);
             }
         }
 
-        private void openChildForm(Form childForm, Button btn)
+        private void openChildForm(Form childForm, IconButton btn)
         {
             if (activeForm != null)
             {
@@ -97,7 +100,7 @@ namespace HealthyCare.UI.Doctor
             dsDoctor = data;
             dtDoctor = dsDoctor.Tables[0];
             dgvDoctor.DataSource = dtDoctor;
-            lbCount.Text = "You have: " + dtDoctor.Compute("COUNT(idBooking)", string.Empty).ToString() + "(s) request from customer";
+            lbCount.Text = "" + dtDoctor.Compute("COUNT(idBooking)", string.Empty).ToString() + "(s) request";
         }
         private void btnExit_Click(object sender, EventArgs e)
         {
@@ -141,7 +144,7 @@ namespace HealthyCare.UI.Doctor
                 DialogResult dialogResult = MessageBox.Show("Do you want to accept this booking?", "Confirm", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
                 {
-                    viewBookingPresenter.AcceptBooking(BookingID);
+                    viewBookingPresenter.AcceptBooking(BookingID, UserID);
                     LoadData();
                 }
             }
@@ -161,14 +164,16 @@ namespace HealthyCare.UI.Doctor
             }
         }
 
-        public void AcceptBooking(bool check)
+        public void AcceptBooking(bool check, string UserID)
         {
             if(check)
             {
+                SignalR_Services.HubProxy.Invoke("PushNotification", user.UserID, UserID, "confirm");
                 MessageBox.Show("Accept successfull.");
             } else
             {
-                MessageBox.Show("Just accept waiting booking");
+                SignalR_Services.HubProxy.Invoke("PushNotification", user.UserID, UserID, "reject");
+                MessageBox.Show("ONLY accept 'Waiting' booking");
             }
         }
 
@@ -253,7 +258,7 @@ namespace HealthyCare.UI.Doctor
 
         private void btnProfile_Click(object sender, EventArgs e)
         {
-            frmViewProfile frm = new frmViewProfile();
+            frmViewProfile frm = new frmViewProfile(user.UserID);
             openChildForm(frm, btnProfile);
         }
 
@@ -301,7 +306,7 @@ namespace HealthyCare.UI.Doctor
 
         private void dispose(NotifyIcon notifyIcon)
         {
-            LoadData()
+            LoadData();
             notifyIcon.Dispose();
         }
     }

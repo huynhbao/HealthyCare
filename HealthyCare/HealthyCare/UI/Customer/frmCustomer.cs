@@ -263,13 +263,19 @@ namespace HealthyCare.UI.Customer
         private void ConnectAsync()
         {
             SignalR_Services.getInstance(LoginInfo.user);
-            //await SignalR_Services.HubProxy.Invoke("SetUserID", LoginInfo.user.UserID);
             SignalR_Services.HubProxy.On<User, Doctor, string>("AddMessage", (User, Doctor, msg) =>
             {
                 if (msg.Equals("confirm"))
                 {
                     Invoke((Action)(() =>
                         DisplayNotificationBalloon("Book Notification", Doctor.FullName + " had confirmed your booking")
+                    ));
+                }
+
+                if (msg.Equals("reject"))
+                {
+                    Invoke((Action)(() =>
+                        DisplayNotificationBalloon("Book Notification", Doctor.FullName + " had rejected your booking")
                     ));
                 }
             });

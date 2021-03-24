@@ -206,6 +206,7 @@
     <Compile Include="Views\IBookingHistory.cs" />
     <Compile Include="Views\IFeedback.cs" />
     <Compile Include="Views\IPassword.cs" />
+    <Compile Include="Views\IProfileDoctor.cs" />
     <Compile Include="Views\IViewBooking.cs" />
     <Compile Include="Views\ICustomer.cs" />
     <Compile Include="Views\IRegister.cs" />

@@ -3,4 +3,3 @@ C:\Users\HuynhBao\source\repos\HealthyCare\HealthyCare\DataProvider\bin\Debug\Da
 C:\Users\HuynhBao\source\repos\HealthyCare\HealthyCare\DataProvider\obj\Debug\DataProvider.csproj.CoreCompileInputs.cache
 C:\Users\HuynhBao\source\repos\HealthyCare\HealthyCare\DataProvider\obj\Debug\DataProvider.dll
 C:\Users\HuynhBao\source\repos\HealthyCare\HealthyCare\DataProvider\obj\Debug\DataProvider.pdb
-C:\Users\HuynhBao\source\repos\HealthyCare\HealthyCare\DataProvider\obj\Debug\DataProvider.csprojAssemblyReference.cache
