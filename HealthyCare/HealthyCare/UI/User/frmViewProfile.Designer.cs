@@ -38,20 +38,21 @@ namespace HealthyCare.UI.User
             this.lbFullName = new DarkUI.Controls.DarkLabel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnEdit = new FontAwesome.Sharp.IconButton();
+            this.lbCertificate = new DarkUI.Controls.DarkLabel();
+            this.pbCertificate = new FontAwesome.Sharp.IconPictureBox();
             this.iconPictureBox4 = new FontAwesome.Sharp.IconPictureBox();
             this.iconPictureBox3 = new FontAwesome.Sharp.IconPictureBox();
             this.iconPictureBox2 = new FontAwesome.Sharp.IconPictureBox();
             this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             this.elipsePanel1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
-            this.pbCertificate = new FontAwesome.Sharp.IconPictureBox();
-            this.lbCertificate = new DarkUI.Controls.DarkLabel();
+            this.btnUpdatePassword = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCertificate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbCertificate)).BeginInit();
             this.SuspendLayout();
             // 
             // lbEmail
@@ -127,6 +128,7 @@ namespace HealthyCare.UI.User
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.panel1.Controls.Add(this.btnUpdatePassword);
             this.panel1.Controls.Add(this.btnEdit);
             this.panel1.Controls.Add(this.lbAddress);
             this.panel1.Controls.Add(this.lbCertificate);
@@ -167,6 +169,33 @@ namespace HealthyCare.UI.User
             this.btnEdit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnEdit.UseVisualStyleBackColor = false;
             this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+            // 
+            // lbCertificate
+            // 
+            this.lbCertificate.AutoSize = true;
+            this.lbCertificate.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.lbCertificate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.lbCertificate.Location = new System.Drawing.Point(327, 405);
+            this.lbCertificate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbCertificate.Name = "lbCertificate";
+            this.lbCertificate.Size = new System.Drawing.Size(96, 21);
+            this.lbCertificate.TabIndex = 54;
+            this.lbCertificate.Text = "darkLabel7";
+            // 
+            // pbCertificate
+            // 
+            this.pbCertificate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.pbCertificate.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.pbCertificate.IconChar = FontAwesome.Sharp.IconChar.Certificate;
+            this.pbCertificate.IconColor = System.Drawing.SystemColors.ControlLightLight;
+            this.pbCertificate.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.pbCertificate.IconSize = 28;
+            this.pbCertificate.Location = new System.Drawing.Point(292, 405);
+            this.pbCertificate.Name = "pbCertificate";
+            this.pbCertificate.Size = new System.Drawing.Size(28, 30);
+            this.pbCertificate.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbCertificate.TabIndex = 78;
+            this.pbCertificate.TabStop = false;
             // 
             // iconPictureBox4
             // 
@@ -233,32 +262,28 @@ namespace HealthyCare.UI.User
             this.elipsePanel1.ElipseRadius = 25;
             this.elipsePanel1.TargetControl = this.panel1;
             // 
-            // pbCertificate
+            // btnUpdatePassword
             // 
-            this.pbCertificate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.pbCertificate.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.pbCertificate.IconChar = FontAwesome.Sharp.IconChar.Certificate;
-            this.pbCertificate.IconColor = System.Drawing.SystemColors.ControlLightLight;
-            this.pbCertificate.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.pbCertificate.IconSize = 28;
-            this.pbCertificate.Location = new System.Drawing.Point(292, 405);
-            this.pbCertificate.Name = "pbCertificate";
-            this.pbCertificate.Size = new System.Drawing.Size(28, 30);
-            this.pbCertificate.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbCertificate.TabIndex = 78;
-            this.pbCertificate.TabStop = false;
-            // 
-            // lbCertificate
-            // 
-            this.lbCertificate.AutoSize = true;
-            this.lbCertificate.Font = new System.Drawing.Font("Century Gothic", 12F);
-            this.lbCertificate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.lbCertificate.Location = new System.Drawing.Point(327, 405);
-            this.lbCertificate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbCertificate.Name = "lbCertificate";
-            this.lbCertificate.Size = new System.Drawing.Size(96, 21);
-            this.lbCertificate.TabIndex = 54;
-            this.lbCertificate.Text = "darkLabel7";
+            this.btnUpdatePassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(173)))), ((int)(((byte)(255)))));
+            this.btnUpdatePassword.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnUpdatePassword.FlatAppearance.BorderSize = 0;
+            this.btnUpdatePassword.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUpdatePassword.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdatePassword.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnUpdatePassword.IconChar = FontAwesome.Sharp.IconChar.PencilAlt;
+            this.btnUpdatePassword.IconColor = System.Drawing.Color.WhiteSmoke;
+            this.btnUpdatePassword.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnUpdatePassword.IconSize = 29;
+            this.btnUpdatePassword.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnUpdatePassword.Location = new System.Drawing.Point(642, 468);
+            this.btnUpdatePassword.Margin = new System.Windows.Forms.Padding(0);
+            this.btnUpdatePassword.Name = "btnUpdatePassword";
+            this.btnUpdatePassword.Size = new System.Drawing.Size(180, 33);
+            this.btnUpdatePassword.TabIndex = 79;
+            this.btnUpdatePassword.Text = "  Update Password";
+            this.btnUpdatePassword.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnUpdatePassword.UseVisualStyleBackColor = false;
+            this.btnUpdatePassword.Click += new System.EventHandler(this.btnUpdatePassword_Click);
             // 
             // frmViewProfile
             // 
@@ -275,11 +300,11 @@ namespace HealthyCare.UI.User
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCertificate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbCertificate)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -300,5 +325,6 @@ namespace HealthyCare.UI.User
         private FontAwesome.Sharp.IconButton btnEdit;
         private DarkUI.Controls.DarkLabel lbCertificate;
         private FontAwesome.Sharp.IconPictureBox pbCertificate;
+        private FontAwesome.Sharp.IconButton btnUpdatePassword;
     }
 }

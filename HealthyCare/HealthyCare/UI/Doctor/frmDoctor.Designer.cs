@@ -29,8 +29,10 @@ namespace HealthyCare.UI.Doctor
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDoctor));
             this.darkLabel1 = new DarkUI.Controls.DarkLabel();
             this.lbFullName = new DarkUI.Controls.DarkLabel();
             this.panelTitleBar = new System.Windows.Forms.Panel();
@@ -63,6 +65,7 @@ namespace HealthyCare.UI.Doctor
             this.btnLogout = new FontAwesome.Sharp.IconButton();
             this.btnFeedback = new FontAwesome.Sharp.IconButton();
             this.btnProfile = new FontAwesome.Sharp.IconButton();
+            this.notifyDoctor = new System.Windows.Forms.NotifyIcon(this.components);
             this.panelTitleBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pnView.SuspendLayout();
@@ -411,6 +414,7 @@ namespace HealthyCare.UI.Doctor
             this.btnRefresh.Size = new System.Drawing.Size(75, 23);
             this.btnRefresh.TabIndex = 1;
             this.btnRefresh.Text = "Refresh";
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // btnHistory
             // 
@@ -522,6 +526,12 @@ namespace HealthyCare.UI.Doctor
             this.btnProfile.UseVisualStyleBackColor = true;
             this.btnProfile.Click += new System.EventHandler(this.btnProfile_Click);
             // 
+            // notifyDoctor
+            // 
+            this.notifyDoctor.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyDoctor.Icon")));
+            this.notifyDoctor.Text = "notifyIcon1";
+            this.notifyDoctor.Visible = true;
+            // 
             // frmDoctor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -592,5 +602,6 @@ namespace HealthyCare.UI.Doctor
         private DarkUI.Controls.DarkLabel darkLabel11;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
         private FontAwesome.Sharp.IconButton btnProfile;
+        private System.Windows.Forms.NotifyIcon notifyDoctor;
     }
 }

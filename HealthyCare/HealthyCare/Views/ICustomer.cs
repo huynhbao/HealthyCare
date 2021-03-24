@@ -13,6 +13,6 @@ namespace HealthyCare.Views
         void GetDoctors(DataSet data);
         void GetDoctorByID(Doctor doctor);
         void GetNumOfBooking(DataSet data);
-        void BookDoctor(bool check);
+        void BookDoctor(bool check, Doctor doctor);
     }
 }

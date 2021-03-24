@@ -62,6 +62,7 @@ namespace HealthyCare.UI.Customer
             this.btnProfile = new FontAwesome.Sharp.IconButton();
             this.btnLogout = new FontAwesome.Sharp.IconButton();
             this.btnHome = new FontAwesome.Sharp.IconButton();
+            this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.pnView.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -479,6 +480,11 @@ namespace HealthyCare.UI.Customer
             this.btnHome.UseVisualStyleBackColor = true;
             this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
             // 
+            // notifyIcon1
+            // 
+            this.notifyIcon1.Text = "notifyIcon1";
+            this.notifyIcon1.Visible = true;
+            // 
             // frmCustomer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -547,5 +553,6 @@ namespace HealthyCare.UI.Customer
         private Bunifu.Framework.UI.BunifuElipse elipsePanel3;
         private FontAwesome.Sharp.IconButton btnRefresh;
         private FontAwesome.Sharp.IconButton btnViewDoctor;
+        private System.Windows.Forms.NotifyIcon notifyIcon1;
     }
 }

@@ -324,6 +324,7 @@ namespace HealthyCare.UI.Customer
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmDoctorDetail";
+            this.Load += new System.EventHandler(this.frmDoctorDetail_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panelTitleBar.ResumeLayout(false);
             this.panelTitleBar.PerformLayout();

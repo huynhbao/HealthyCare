@@ -48,6 +48,13 @@ namespace HealthyCare.UI.User
             frm.ShowDialog();
             LoadData();
         }
+
+        private void btnUpdatePassword_Click(object sender, EventArgs e)
+        {
+            frmEditPassword frm = new frmEditPassword();
+            frm.ShowDialog();
+            LoadData();
+        }
     }
 
     

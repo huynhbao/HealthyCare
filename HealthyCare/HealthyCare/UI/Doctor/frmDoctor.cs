@@ -18,6 +18,8 @@ namespace HealthyCare.UI.Doctor
     using HealthyCare.UI.User;
     using HealthyCare.Utils;
     using HealthyCare.Views;
+    using Microsoft.AspNet.SignalR.Client;
+    using System.Net.Http;
 
     public partial class frmDoctor : DarkForm, IViewBooking
     {
@@ -135,6 +137,7 @@ namespace HealthyCare.UI.Doctor
             if (dgvDoctor.SelectedRows.Count > 0)
             {
                 string BookingID = dgvDoctor.SelectedRows[0].Cells[0].Value.ToString();
+                string UserID = dgvDoctor.SelectedRows[0].Cells[1].Value.ToString();
                 DialogResult dialogResult = MessageBox.Show("Do you want to accept this booking?", "Confirm", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
                 {
@@ -224,6 +227,7 @@ namespace HealthyCare.UI.Doctor
         private void frmDoctor_Load(object sender, EventArgs e)
         {
             LoadData();
+            ConnectAsync();
         }
 
         private void btnHome_Click(object sender, EventArgs e)
@@ -259,6 +263,46 @@ namespace HealthyCare.UI.Doctor
             frmLogin frm = new frmLogin();
             frm.Show();
             Close();
+        }
+
+        private void ConnectAsync()
+        {
+            SignalR_Services.getInstance(LoginInfo.user);
+            SignalR_Services.HubProxy.On<User, Doctor, string>("AddMessage", (User, Doctor, msg) =>
+            {
+                if (msg.Equals("booking"))
+                {
+                    Invoke((Action)(() =>
+                        DisplayNotificationBalloon("You have a new book", "You have a new book from " + User.FullName)
+                    ));
+                }
+            });
+        }
+
+        private void DisplayNotificationBalloon(string header, string message)
+        {
+            NotifyIcon notifyIcon = new NotifyIcon
+            {
+                Visible = true,
+                Icon = Properties.Resources.app_logo1
+            };
+            if (header != null)
+            {
+                notifyIcon.BalloonTipTitle = header;
+            }
+            if (message != null)
+            {
+                notifyIcon.BalloonTipText = message;
+            }
+            //notifyIcon.BalloonTipClosed += (sender, args) => dispose(notifyIcon);
+            notifyIcon.BalloonTipClicked += (sender, args) => dispose(notifyIcon);
+            notifyIcon.ShowBalloonTip(0);
+        }
+
+        private void dispose(NotifyIcon notifyIcon)
+        {
+            LoadData()
+            notifyIcon.Dispose();
         }
     }
 }

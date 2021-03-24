@@ -164,6 +164,78 @@ namespace BussinessObject
             return result;
         }
 
+        public bool CheckPreviousFeedback(string UserID, int bookingID)
+        {
+            bool result = false;
+
+            string sql = "SELECT idFeedback from Feedback WHERE idUser =@idUser AND idBooking=@bookingID";
+            SqlParameter UserIDIDParam = new SqlParameter("@idUser", UserID);
+            SqlParameter idBooking = new SqlParameter("@bookingID", bookingID);
+            SqlDataReader rd = DataProvider.ExecuteQueryWithDataReader(sql, CommandType.Text, UserIDIDParam, idBooking);
+            while (rd.Read())
+            {
+                if(rd.HasRows)
+                {
+                    result = true;
+                }
+            }
+
+            return result;
+        }
+
+        public bool Feedback(String UserID, int bookingID, string comment, int value)
+        {
+            string SQL = "INSERT Feedback(comment, idUser, points, idBooking) VALUES(@comment, @idUser, @points, @idBooking)";
+
+            SqlParameter idUser = new SqlParameter("@idUser", UserID);
+            SqlParameter commentParam = new SqlParameter("@comment", comment);
+            SqlParameter pointsParam = new SqlParameter("@points", value);
+            SqlParameter idBookingParam = new SqlParameter("@idBooking", bookingID);
+            try
+            {
+                return DataProvider.ExecuteNonQuery(SQL, CommandType.Text, commentParam, idUser, pointsParam, idBookingParam);
+            }
+            catch (SqlException se)
+            {
+                throw new Exception(se.Message);
+            }
+        }
+
+        public bool CheckPassword(string UserID, String curPw)
+        {
+            bool result = false;
+
+            string sql = "SELECT idUser FROM Users WHERE idUser =@idUser AND password =@password";
+            SqlParameter UserIDIDParam = new SqlParameter("@idUser", UserID);
+            SqlParameter password = new SqlParameter("@password", curPw);
+            SqlDataReader rd = DataProvider.ExecuteQueryWithDataReader(sql, CommandType.Text, UserIDIDParam, password);
+            while (rd.Read())
+            {
+                if (rd.HasRows)
+                {
+                    result = true;
+                }
+            }
+
+            return result;
+        }
+
+        public bool ChangePassword(string UserID, String newPw)
+        {
+            string SQL = "Update Users set password=@password WHERE idUser=@idUser";
+
+            SqlParameter userID = new SqlParameter("@idUser", UserID);
+            SqlParameter password = new SqlParameter("@password", newPw);
+            try
+            {
+                return DataProvider.ExecuteNonQuery(SQL, CommandType.Text, userID, password);
+            }
+            catch (SqlException se)
+            {
+                throw new Exception(se.Message);
+            }
+        }
+
         public DataSet GetHistory(string UserID)
         {
             string sql = "SELECT idBooking, bookingDate, idDoctor, fullName, b.status FROM Booking b, Users u WHERE b.idUser=@idUser AND b.idDoctor=u.idUser ORDER BY status ASC";

@@ -25,7 +25,6 @@ namespace HealthyCare.UI.Customer
             InitializeComponent();
             this.doctor = doctor;
             doctorPresenter = new DoctorPresenter(this);
-            LoadData();
         }
 
         public string UserID { get; set; }
@@ -77,6 +76,11 @@ namespace HealthyCare.UI.Customer
         {
             MyUtils.ReleaseCapture();
             MyUtils.SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void frmDoctorDetail_Load(object sender, EventArgs e)
+        {
+            LoadData();
         }
     }
 }

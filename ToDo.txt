@@ -19,20 +19,10 @@ validate login, update
 				full @Nghiep
 		
 	User:
-		fix UI gender .done
-		UI profile @Bao
-		Feedback (button in tab history)  @Nghiep
-		Update Password
+		Feedback (button in tab history)  @Nghiep done
+		Update Password done
 		View Doctor In History Tab
 		Feedback In History Tab
-	Doctor:
-		Update Profile .done
-		History .done
-		Feedback .done
-		Logout .done
-	Discussion:
-		Admin can create doctor .done
-		Validate booking. done
 
 
 	Validate update profile when fail @Nghiep

@@ -18,6 +18,8 @@ namespace HealthyCare.UI.Customer
     using HealthyCare.UI.G;
     using HealthyCare.Utils;
     using FontAwesome.Sharp;
+    using Microsoft.AspNet.SignalR.Client;
+    using System.Net.Http;
 
     public partial class frmCustomer : DarkForm, ICustomer
     {
@@ -28,6 +30,7 @@ namespace HealthyCare.UI.Customer
         private Form activeForm = null;
         private IconButton activeButton = null;
         LoadingFormUtils loadingForm = new LoadingFormUtils();
+        //SignalR_Services signalR = new SignalR_Services();
 
         public frmCustomer()
         {
@@ -54,6 +57,7 @@ namespace HealthyCare.UI.Customer
             userPresenter.GetDoctors();
 
             lbFullName.Text = "Hi! " + user.FullName;
+
         }
 
         private void btnMyProfile_Click(object sender, EventArgs e)
@@ -92,7 +96,6 @@ namespace HealthyCare.UI.Customer
             childForm.Dock = DockStyle.Fill;
             pnView.Controls.Add(childForm);
             pnView.Tag = childForm;
-            childForm.Location = Location;
             childForm.BringToFront();
             childForm.Show();
             lbParentForm.Text = childForm.Text;
@@ -119,6 +122,7 @@ namespace HealthyCare.UI.Customer
                     userPresenter.BookDoctor(doctorID);
                 }
             }
+
         }
 
         private void btnViewDoctor_Click(object sender, EventArgs e)
@@ -139,7 +143,7 @@ namespace HealthyCare.UI.Customer
         }
 
 
-       
+
         private void panelTitleBar_MouseDown(object sender, MouseEventArgs e)
         {
             MyUtils.ReleaseCapture();
@@ -204,12 +208,14 @@ namespace HealthyCare.UI.Customer
             throw new NotImplementedException();
         }
 
-        public void BookDoctor(bool check)
+        public void BookDoctor(bool check, Doctor doctor)
         {
             if (check)
             {
+                SignalR_Services.HubProxy.Invoke("PushNotification", user.UserID, doctor.UserID, "booking");
                 MessageBox.Show("Booked successful!\nWaiting for doctor confirming...", "Message");
-            } else
+            }
+            else
             {
                 MessageBox.Show("You already have another booking!", "Message");
             }
@@ -218,6 +224,8 @@ namespace HealthyCare.UI.Customer
         private void frmCustomer_Load(object sender, EventArgs e)
         {
             LoadData();
+            ConnectAsync();
+
         }
 
         private void dgvDoctorList_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
@@ -249,6 +257,49 @@ namespace HealthyCare.UI.Customer
         {
             LoadData();
         }
+
+
+
+        private void ConnectAsync()
+        {
+            SignalR_Services.getInstance(LoginInfo.user);
+            //await SignalR_Services.HubProxy.Invoke("SetUserID", LoginInfo.user.UserID);
+            SignalR_Services.HubProxy.On<User, Doctor, string>("AddMessage", (User, Doctor, msg) =>
+            {
+                if (msg.Equals("confirm"))
+                {
+                    Invoke((Action)(() =>
+                        DisplayNotificationBalloon("Book Notification", Doctor.FullName + " had confirmed your booking")
+                    ));
+                }
+            });
+        }
+
+
+        private void DisplayNotificationBalloon(string header, string message)
+        {
+            NotifyIcon notifyIcon = new NotifyIcon
+            {
+                Visible = true,
+                Icon = Properties.Resources.app_logo1
+            };
+            if (header != null)
+            {
+                notifyIcon.BalloonTipTitle = header;
+            }
+            if (message != null)
+            {
+                notifyIcon.BalloonTipText = message;
+            }
+            notifyIcon.BalloonTipClosed += (sender, args) => dispose(notifyIcon);
+            notifyIcon.BalloonTipClicked += (sender, args) => dispose(notifyIcon);
+            notifyIcon.ShowBalloonTip(0);
+        }
+
+        private void dispose(NotifyIcon notifyIcon)
+        {
+            notifyIcon.Dispose();
+        }
     }
-    
+
 }
