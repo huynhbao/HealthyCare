@@ -40,7 +40,7 @@ namespace HealthyCare.UI.Doctor
             viewBookingPresenter.OnDataLoading += Presenter_OnDataLoading;
             viewBookingPresenter.OnDataLoadingCompleted += Presenter_OnDataLoadingCompleted;
             ActiveButton(btnHome);
-            
+
         }
         private void Presenter_OnDataLoadingCompleted()
         {
@@ -166,11 +166,12 @@ namespace HealthyCare.UI.Doctor
 
         public void AcceptBooking(bool check, string UserID)
         {
-            if(check)
+            if (check)
             {
                 SignalR_Services.HubProxy.Invoke("PushNotification", user.UserID, UserID, "confirm");
                 MessageBox.Show("Accept successfull.");
-            } else
+            }
+            else
             {
                 SignalR_Services.HubProxy.Invoke("PushNotification", user.UserID, UserID, "reject");
                 MessageBox.Show("ONLY accept 'Waiting' booking");
@@ -182,7 +183,8 @@ namespace HealthyCare.UI.Doctor
             if (check)
             {
                 MessageBox.Show("Reject successfull.");
-            } else
+            }
+            else
             {
                 MessageBox.Show("Cannot reject.");
             }
@@ -198,7 +200,8 @@ namespace HealthyCare.UI.Doctor
             if (user.Gender)
             {
                 lbGender.Text = "Male";
-            } else
+            }
+            else
             {
                 lbGender.Text = "Female";
             }
@@ -265,6 +268,7 @@ namespace HealthyCare.UI.Doctor
         private void btnLogout_Click(object sender, EventArgs e)
         {
             LoginInfo.user = null;
+            SignalR_Services.CloseConnection();
             frmLogin frm = new frmLogin();
             frm.Show();
             Close();
@@ -278,8 +282,10 @@ namespace HealthyCare.UI.Doctor
                 if (msg.Equals("booking"))
                 {
                     Invoke((Action)(() =>
-                        DisplayNotificationBalloon("You have a new book", "You have a new book from " + User.FullName)
-                    ));
+                    {
+                        DisplayNotificationBalloon("You have a new book", "You have a new book from " + User.FullName);
+                        LoadData();
+                    }));
                 }
             });
         }
@@ -299,15 +305,19 @@ namespace HealthyCare.UI.Doctor
             {
                 notifyIcon.BalloonTipText = message;
             }
-            //notifyIcon.BalloonTipClosed += (sender, args) => dispose(notifyIcon);
+            notifyIcon.BalloonTipClosed += (sender, args) => dispose(notifyIcon);
             notifyIcon.BalloonTipClicked += (sender, args) => dispose(notifyIcon);
             notifyIcon.ShowBalloonTip(0);
         }
 
         private void dispose(NotifyIcon notifyIcon)
         {
-            LoadData();
             notifyIcon.Dispose();
+        }
+
+        private void frmDoctor_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            SignalR_Services.CloseConnection();
         }
     }
 }

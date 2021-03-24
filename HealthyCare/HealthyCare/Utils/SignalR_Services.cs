@@ -42,6 +42,15 @@ namespace HealthyCare.Utils
             }
         }
 
+        public static void CloseConnection()
+        {
+            if (Connection != null)
+            {
+                Connection.Stop();
+                Connection.Dispose();
+            }
+        }
+
         private async void ConnectAsync(User user)
         {
             Connection = new HubConnection(ServerURI);

@@ -66,6 +66,7 @@ namespace SignalR_Server
         public void PushNotification(string UserID1, string UserID2, string message)
         {
             var keys = _users.FirstOrDefault(x => x.Value.UserID == UserID2).Key;
+            Program.WriteToConsole("User: " + UserID1 + "  Request notification");
             if (keys != null)
             {
                 var User1 = _users.FirstOrDefault(x => x.Value.UserID == UserID1).Value;
@@ -78,7 +79,7 @@ namespace SignalR_Server
         public void SetUser(User user)
         {
             _users[Context.ConnectionId] = user;
-            Console.WriteLine("Set " + Context.ConnectionId + " with UserID: " + _users[Context.ConnectionId].UserID);
+            Console.WriteLine("Set " + Context.ConnectionId + " with UserID: " + _users[Context.ConnectionId].UserID + " - Full Name: " + _users[Context.ConnectionId].FullName);
         }
 
         public void Send(string name, string message)

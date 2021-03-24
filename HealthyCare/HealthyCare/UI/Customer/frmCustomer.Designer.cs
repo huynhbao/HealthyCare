@@ -508,6 +508,7 @@ namespace HealthyCare.UI.Customer
             this.Name = "frmCustomer";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmCustomer";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmCustomer_FormClosing);
             this.Load += new System.EventHandler(this.frmCustomer_Load);
             this.pnView.ResumeLayout(false);
             this.panel3.ResumeLayout(false);

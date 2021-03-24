@@ -137,6 +137,7 @@ namespace HealthyCare.UI.Customer
         private void btnLogout_Click(object sender, EventArgs e)
         {
             LoginInfo.user = null;
+            SignalR_Services.CloseConnection();
             frmLogin frm = new frmLogin();
             frm.Show();
             Close();
@@ -305,6 +306,11 @@ namespace HealthyCare.UI.Customer
         private void dispose(NotifyIcon notifyIcon)
         {
             notifyIcon.Dispose();
+        }
+
+        private void frmCustomer_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            SignalR_Services.CloseConnection();
         }
     }
 
