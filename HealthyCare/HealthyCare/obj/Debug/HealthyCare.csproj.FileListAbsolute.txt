@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 D:\1_FPT_SEMESTER\3_Fpt_SPRING_2021\prn292(C#)_KIemHH\New folder\HealthyCare\HealthyCare\bin\Debug\HealthyCare.exe.config
 D:\1_FPT_SEMESTER\3_Fpt_SPRING_2021\prn292(C#)_KIemHH\New folder\HealthyCare\HealthyCare\bin\Debug\HealthyCare.exe
 D:\1_FPT_SEMESTER\3_Fpt_SPRING_2021\prn292(C#)_KIemHH\New folder\HealthyCare\HealthyCare\bin\Debug\HealthyCare.pdb
@@ -36,3 +37,205 @@ D:\1_FPT_SEMESTER\3_Fpt_SPRING_2021\prn292(C#)_KIemHH\New folder\HealthyCare\Hea
 D:\1_FPT_SEMESTER\3_Fpt_SPRING_2021\prn292(C#)_KIemHH\New folder\HealthyCare\HealthyCare\obj\Debug\HealthyCare.csproj.CopyComplete
 D:\1_FPT_SEMESTER\3_Fpt_SPRING_2021\prn292(C#)_KIemHH\New folder\HealthyCare\HealthyCare\obj\Debug\HealthyCare.exe
 D:\1_FPT_SEMESTER\3_Fpt_SPRING_2021\prn292(C#)_KIemHH\New folder\HealthyCare\HealthyCare\obj\Debug\HealthyCare.pdb
+=======
+C:\Users\HuynhBao\source\repos\HealthyCare\HealthyCare\HealthyCare\bin\Debug\Bunifu_UI_v1.52.dll
+C:\Users\HuynhBao\source\repos\HealthyCare\HealthyCare\HealthyCare\bin\Debug\BussinessObject.dll
+C:\Users\HuynhBao\source\repos\HealthyCare\HealthyCare\HealthyCare\bin\Debug\CircularProgressBar.dll
+C:\Users\HuynhBao\source\repos\HealthyCare\HealthyCare\HealthyCare\bin\Debug\FontAwesome.Sharp.dll
+C:\Users\HuynhBao\source\repos\HealthyCare\HealthyCare\HealthyCare\bin\Debug\Microsoft.AspNet.SignalR.Client.dll
+C:\Users\HuynhBao\source\repos\HealthyCare\HealthyCare\HealthyCare\bin\Debug\Newtonsoft.Json.dll
+C:\Users\HuynhBao\source\repos\HealthyCare\HealthyCare\HealthyCare\bin\Debug\WinFormAnimation.dll
+C:\Users\HuynhBao\source\repos\HealthyCare\HealthyCare\HealthyCare\bin\Debug\DataProvider.dll
+C:\Users\HuynhBao\source\repos\HealthyCare\HealthyCare\HealthyCare\bin\Debug\Microsoft.AspNet.SignalR.Client.pdb
+C:\Users\HuynhBao\source\repos\HealthyCare\HealthyCare\HealthyCare\bin\Debug\BussinessObject.pdb
+C:\Users\HuynhBao\source\repos\HealthyCare\HealthyCare\HealthyCare\bin\Debug\CircularProgressBar.xml
+C:\Users\HuynhBao\source\repos\HealthyCare\HealthyCare\HealthyCare\bin\Debug\Microsoft.AspNet.SignalR.Client.xml
+C:\Users\HuynhBao\source\repos\HealthyCare\HealthyCare\HealthyCare\bin\Debug\Newtonsoft.Json.xml
+C:\Users\HuynhBao\source\repos\HealthyCare\HealthyCare\HealthyCare\bin\Debug\DataProvider.pdb
+C:\Users\HuynhBao\source\repos\HealthyCare\HealthyCare\HealthyCare\obj\Debug\HealthyCare.csprojAssemblyReference.cache
+C:\Users\HuynhBao\source\repos\HealthyCare\HealthyCare\HealthyCare\obj\Debug\HealthyCare.Properties.Resources.resources
+C:\Users\HuynhBao\source\repos\HealthyCare\HealthyCare\HealthyCare\obj\Debug\HealthyCare.UI.Admin.frmAdmin.resources
+C:\Users\HuynhBao\source\repos\HealthyCare\HealthyCare\HealthyCare\obj\Debug\HealthyCare.UI.Admin.frmCreateDoctor.resources
+C:\Users\HuynhBao\source\repos\HealthyCare\HealthyCare\HealthyCare\obj\Debug\HealthyCare.UI.Admin.frmManageUser.resources
+C:\Users\HuynhBao\source\repos\HealthyCare\HealthyCare\HealthyCare\obj\Debug\HealthyCare.UI.Customer.frmCustomer.resources
+C:\Users\HuynhBao\source\repos\HealthyCare\HealthyCare\HealthyCare\obj\Debug\HealthyCare.UI.Customer.frmDoctorDetail.resources
+C:\Users\HuynhBao\source\repos\HealthyCare\HealthyCare\HealthyCare\obj\Debug\HealthyCare.UI.Customer.frmFeedback.resources
+C:\Users\HuynhBao\source\repos\HealthyCare\HealthyCare\HealthyCare\obj\Debug\HealthyCare.UI.Customer.frmHistory.resources
+C:\Users\HuynhBao\source\repos\HealthyCare\HealthyCare\HealthyCare\obj\Debug\HealthyCare.UI.Doctor.frmDoctor.resources
+C:\Users\HuynhBao\source\repos\HealthyCare\HealthyCare\HealthyCare\obj\Debug\HealthyCare.UI.Doctor.frmHistory.resources
+C:\Users\HuynhBao\source\repos\HealthyCare\HealthyCare\HealthyCare\obj\Debug\HealthyCare.UI.Doctor.frmViewFeedbacks.resources
+C:\Users\HuynhBao\source\repos\HealthyCare\HealthyCare\HealthyCare\obj\Debug\HealthyCare.UI.Guest.frmLoading.resources
+C:\Users\HuynhBao\source\repos\HealthyCare\HealthyCare\HealthyCare\obj\Debug\HealthyCare.UI.G.frmLogin.resources
+C:\Users\HuynhBao\source\repos\HealthyCare\HealthyCare\HealthyCare\obj\Debug\HealthyCare.frmRegister.resources
+C:\Users\HuynhBao\source\repos\HealthyCare\HealthyCare\HealthyCare\obj\Debug\HealthyCare.UI.User.frmEditPassword.resources
+C:\Users\HuynhBao\source\repos\HealthyCare\HealthyCare\HealthyCare\obj\Debug\HealthyCare.UI.User.frmEditProfile.resources
+C:\Users\HuynhBao\source\repos\HealthyCare\HealthyCare\HealthyCare\obj\Debug\HealthyCare.UI.User.frmViewProfile.resources
+C:\Users\HuynhBao\source\repos\HealthyCare\HealthyCare\HealthyCare\obj\Debug\HealthyCare.csproj.GenerateResource.cache
+C:\Users\HuynhBao\source\repos\HealthyCare\HealthyCare\HealthyCare\obj\Debug\HealthyCare.csproj.CoreCompileInputs.cache
+C:\Users\HuynhBao\source\repos\HealthyCare\HealthyCare\HealthyCare\obj\Debug\HealthyCare.exe
+C:\Users\HuynhBao\source\repos\HealthyCare\HealthyCare\HealthyCare\obj\Debug\HealthyCare.pdb
+C:\Users\HuynhBao\source\repos\HealthyCare\HealthyCare\HealthyCare\bin\Debug\HealthyCare.exe.config
+C:\Users\HuynhBao\source\repos\HealthyCare\HealthyCare\HealthyCare\bin\Debug\HealthyCare.exe
+C:\Users\HuynhBao\source\repos\HealthyCare\HealthyCare\HealthyCare\bin\Debug\HealthyCare.pdb
+C:\Users\HuynhBao\source\repos\HealthyCare\HealthyCare\HealthyCare\obj\Debug\HealthyCare.csproj.CopyComplete
+D:\fpt\PRN292\Project\HealthyCare\HealthyCare\HealthyCare\bin\Debug\HealthyCare.exe.config
+D:\fpt\PRN292\Project\HealthyCare\HealthyCare\HealthyCare\bin\Debug\HealthyCare.exe
+D:\fpt\PRN292\Project\HealthyCare\HealthyCare\HealthyCare\bin\Debug\HealthyCare.pdb
+D:\fpt\PRN292\Project\HealthyCare\HealthyCare\HealthyCare\bin\Debug\BussinessObject.dll
+D:\fpt\PRN292\Project\HealthyCare\HealthyCare\HealthyCare\bin\Debug\CircularProgressBar.dll
+D:\fpt\PRN292\Project\HealthyCare\HealthyCare\HealthyCare\bin\Debug\FontAwesome.Sharp.dll
+D:\fpt\PRN292\Project\HealthyCare\HealthyCare\HealthyCare\bin\Debug\Microsoft.AspNet.SignalR.Client.dll
+D:\fpt\PRN292\Project\HealthyCare\HealthyCare\HealthyCare\bin\Debug\Newtonsoft.Json.dll
+D:\fpt\PRN292\Project\HealthyCare\HealthyCare\HealthyCare\bin\Debug\WinFormAnimation.dll
+D:\fpt\PRN292\Project\HealthyCare\HealthyCare\HealthyCare\bin\Debug\DataProvider.dll
+D:\fpt\PRN292\Project\HealthyCare\HealthyCare\HealthyCare\bin\Debug\BussinessObject.pdb
+D:\fpt\PRN292\Project\HealthyCare\HealthyCare\HealthyCare\bin\Debug\CircularProgressBar.xml
+D:\fpt\PRN292\Project\HealthyCare\HealthyCare\HealthyCare\bin\Debug\Microsoft.AspNet.SignalR.Client.pdb
+D:\fpt\PRN292\Project\HealthyCare\HealthyCare\HealthyCare\bin\Debug\Microsoft.AspNet.SignalR.Client.xml
+D:\fpt\PRN292\Project\HealthyCare\HealthyCare\HealthyCare\bin\Debug\Newtonsoft.Json.xml
+D:\fpt\PRN292\Project\HealthyCare\HealthyCare\HealthyCare\bin\Debug\DataProvider.pdb
+D:\fpt\PRN292\Project\HealthyCare\HealthyCare\HealthyCare\obj\Debug\HealthyCare.csprojAssemblyReference.cache
+D:\fpt\PRN292\Project\HealthyCare\HealthyCare\HealthyCare\obj\Debug\HealthyCare.Properties.Resources.resources
+D:\fpt\PRN292\Project\HealthyCare\HealthyCare\HealthyCare\obj\Debug\HealthyCare.UI.Admin.frmAdmin.resources
+D:\fpt\PRN292\Project\HealthyCare\HealthyCare\HealthyCare\obj\Debug\HealthyCare.UI.Admin.frmCreateDoctor.resources
+D:\fpt\PRN292\Project\HealthyCare\HealthyCare\HealthyCare\obj\Debug\HealthyCare.UI.Admin.frmManageUser.resources
+D:\fpt\PRN292\Project\HealthyCare\HealthyCare\HealthyCare\obj\Debug\HealthyCare.UI.Customer.frmCustomer.resources
+D:\fpt\PRN292\Project\HealthyCare\HealthyCare\HealthyCare\obj\Debug\HealthyCare.UI.Customer.frmDoctorDetail.resources
+D:\fpt\PRN292\Project\HealthyCare\HealthyCare\HealthyCare\obj\Debug\HealthyCare.UI.Customer.frmFeedback.resources
+D:\fpt\PRN292\Project\HealthyCare\HealthyCare\HealthyCare\obj\Debug\HealthyCare.UI.Customer.frmHistory.resources
+D:\fpt\PRN292\Project\HealthyCare\HealthyCare\HealthyCare\obj\Debug\HealthyCare.UI.Doctor.frmDoctor.resources
+D:\fpt\PRN292\Project\HealthyCare\HealthyCare\HealthyCare\obj\Debug\HealthyCare.UI.Doctor.frmHistory.resources
+D:\fpt\PRN292\Project\HealthyCare\HealthyCare\HealthyCare\obj\Debug\HealthyCare.UI.Doctor.frmViewFeedbacks.resources
+D:\fpt\PRN292\Project\HealthyCare\HealthyCare\HealthyCare\obj\Debug\HealthyCare.UI.Guest.frmLoading.resources
+D:\fpt\PRN292\Project\HealthyCare\HealthyCare\HealthyCare\obj\Debug\HealthyCare.UI.G.frmLogin.resources
+D:\fpt\PRN292\Project\HealthyCare\HealthyCare\HealthyCare\obj\Debug\HealthyCare.frmRegister.resources
+D:\fpt\PRN292\Project\HealthyCare\HealthyCare\HealthyCare\obj\Debug\HealthyCare.UI.User.frmEditPassword.resources
+D:\fpt\PRN292\Project\HealthyCare\HealthyCare\HealthyCare\obj\Debug\HealthyCare.UI.User.frmEditProfile.resources
+D:\fpt\PRN292\Project\HealthyCare\HealthyCare\HealthyCare\obj\Debug\HealthyCare.UI.User.frmViewProfile.resources
+D:\fpt\PRN292\Project\HealthyCare\HealthyCare\HealthyCare\obj\Debug\HealthyCare.csproj.GenerateResource.cache
+D:\fpt\PRN292\Project\HealthyCare\HealthyCare\HealthyCare\obj\Debug\HealthyCare.csproj.CoreCompileInputs.cache
+D:\fpt\PRN292\Project\HealthyCare\HealthyCare\HealthyCare\obj\Debug\HealthyCare.csproj.CopyComplete
+D:\fpt\PRN292\Project\HealthyCare\HealthyCare\HealthyCare\obj\Debug\HealthyCare.exe
+D:\fpt\PRN292\Project\HealthyCare\HealthyCare\HealthyCare\obj\Debug\HealthyCare.pdb
+<<<<<<< HEAD
+C:\Users\ACER\Desktop\LangBam\HealthyCare\HealthyCare\HealthyCare\bin\Debug\HealthyCare.exe.config
+C:\Users\ACER\Desktop\LangBam\HealthyCare\HealthyCare\HealthyCare\bin\Debug\HealthyCare.exe
+C:\Users\ACER\Desktop\LangBam\HealthyCare\HealthyCare\HealthyCare\bin\Debug\HealthyCare.pdb
+C:\Users\ACER\Desktop\LangBam\HealthyCare\HealthyCare\HealthyCare\bin\Debug\BussinessObject.dll
+C:\Users\ACER\Desktop\LangBam\HealthyCare\HealthyCare\HealthyCare\bin\Debug\CircularProgressBar.dll
+C:\Users\ACER\Desktop\LangBam\HealthyCare\HealthyCare\HealthyCare\bin\Debug\FontAwesome.Sharp.dll
+C:\Users\ACER\Desktop\LangBam\HealthyCare\HealthyCare\HealthyCare\bin\Debug\Microsoft.AspNet.SignalR.Client.dll
+C:\Users\ACER\Desktop\LangBam\HealthyCare\HealthyCare\HealthyCare\bin\Debug\Newtonsoft.Json.dll
+C:\Users\ACER\Desktop\LangBam\HealthyCare\HealthyCare\HealthyCare\bin\Debug\WinFormAnimation.dll
+C:\Users\ACER\Desktop\LangBam\HealthyCare\HealthyCare\HealthyCare\bin\Debug\DataProvider.dll
+C:\Users\ACER\Desktop\LangBam\HealthyCare\HealthyCare\HealthyCare\bin\Debug\BussinessObject.pdb
+C:\Users\ACER\Desktop\LangBam\HealthyCare\HealthyCare\HealthyCare\bin\Debug\CircularProgressBar.xml
+C:\Users\ACER\Desktop\LangBam\HealthyCare\HealthyCare\HealthyCare\bin\Debug\Microsoft.AspNet.SignalR.Client.pdb
+C:\Users\ACER\Desktop\LangBam\HealthyCare\HealthyCare\HealthyCare\bin\Debug\Microsoft.AspNet.SignalR.Client.xml
+C:\Users\ACER\Desktop\LangBam\HealthyCare\HealthyCare\HealthyCare\bin\Debug\Newtonsoft.Json.xml
+C:\Users\ACER\Desktop\LangBam\HealthyCare\HealthyCare\HealthyCare\bin\Debug\DataProvider.pdb
+C:\Users\ACER\Desktop\LangBam\HealthyCare\HealthyCare\HealthyCare\obj\Debug\HealthyCare.csprojAssemblyReference.cache
+C:\Users\ACER\Desktop\LangBam\HealthyCare\HealthyCare\HealthyCare\obj\Debug\HealthyCare.Properties.Resources.resources
+C:\Users\ACER\Desktop\LangBam\HealthyCare\HealthyCare\HealthyCare\obj\Debug\HealthyCare.UI.Admin.frmAdmin.resources
+C:\Users\ACER\Desktop\LangBam\HealthyCare\HealthyCare\HealthyCare\obj\Debug\HealthyCare.UI.Admin.frmCreateDoctor.resources
+C:\Users\ACER\Desktop\LangBam\HealthyCare\HealthyCare\HealthyCare\obj\Debug\HealthyCare.UI.Admin.frmManageUser.resources
+C:\Users\ACER\Desktop\LangBam\HealthyCare\HealthyCare\HealthyCare\obj\Debug\HealthyCare.UI.Customer.frmCustomer.resources
+C:\Users\ACER\Desktop\LangBam\HealthyCare\HealthyCare\HealthyCare\obj\Debug\HealthyCare.UI.Customer.frmDoctorDetail.resources
+C:\Users\ACER\Desktop\LangBam\HealthyCare\HealthyCare\HealthyCare\obj\Debug\HealthyCare.UI.Customer.frmFeedback.resources
+C:\Users\ACER\Desktop\LangBam\HealthyCare\HealthyCare\HealthyCare\obj\Debug\HealthyCare.UI.Customer.frmHistory.resources
+C:\Users\ACER\Desktop\LangBam\HealthyCare\HealthyCare\HealthyCare\obj\Debug\HealthyCare.UI.Doctor.frmDoctor.resources
+C:\Users\ACER\Desktop\LangBam\HealthyCare\HealthyCare\HealthyCare\obj\Debug\HealthyCare.UI.Doctor.frmHistory.resources
+C:\Users\ACER\Desktop\LangBam\HealthyCare\HealthyCare\HealthyCare\obj\Debug\HealthyCare.UI.Doctor.frmViewFeedbacks.resources
+C:\Users\ACER\Desktop\LangBam\HealthyCare\HealthyCare\HealthyCare\obj\Debug\HealthyCare.UI.Guest.frmLoading.resources
+C:\Users\ACER\Desktop\LangBam\HealthyCare\HealthyCare\HealthyCare\obj\Debug\HealthyCare.UI.G.frmLogin.resources
+C:\Users\ACER\Desktop\LangBam\HealthyCare\HealthyCare\HealthyCare\obj\Debug\HealthyCare.frmRegister.resources
+C:\Users\ACER\Desktop\LangBam\HealthyCare\HealthyCare\HealthyCare\obj\Debug\HealthyCare.UI.User.frmEditPassword.resources
+C:\Users\ACER\Desktop\LangBam\HealthyCare\HealthyCare\HealthyCare\obj\Debug\HealthyCare.UI.User.frmEditProfile.resources
+C:\Users\ACER\Desktop\LangBam\HealthyCare\HealthyCare\HealthyCare\obj\Debug\HealthyCare.UI.User.frmViewProfile.resources
+C:\Users\ACER\Desktop\LangBam\HealthyCare\HealthyCare\HealthyCare\obj\Debug\HealthyCare.csproj.GenerateResource.cache
+C:\Users\ACER\Desktop\LangBam\HealthyCare\HealthyCare\HealthyCare\obj\Debug\HealthyCare.csproj.CoreCompileInputs.cache
+C:\Users\ACER\Desktop\LangBam\HealthyCare\HealthyCare\HealthyCare\obj\Debug\HealthyCare.csproj.CopyComplete
+C:\Users\ACER\Desktop\LangBam\HealthyCare\HealthyCare\HealthyCare\obj\Debug\HealthyCare.exe
+C:\Users\ACER\Desktop\LangBam\HealthyCare\HealthyCare\HealthyCare\obj\Debug\HealthyCare.pdb
+=======
+D:\Hung\PRN292\Projects\HealthyCare\HealthyCare\bin\Debug\HealthyCare.exe.config
+D:\Hung\PRN292\Projects\HealthyCare\HealthyCare\bin\Debug\HealthyCare.exe
+D:\Hung\PRN292\Projects\HealthyCare\HealthyCare\bin\Debug\HealthyCare.pdb
+D:\Hung\PRN292\Projects\HealthyCare\HealthyCare\bin\Debug\BussinessObject.dll
+D:\Hung\PRN292\Projects\HealthyCare\HealthyCare\bin\Debug\CircularProgressBar.dll
+D:\Hung\PRN292\Projects\HealthyCare\HealthyCare\bin\Debug\FontAwesome.Sharp.dll
+D:\Hung\PRN292\Projects\HealthyCare\HealthyCare\bin\Debug\Microsoft.AspNet.SignalR.Client.dll
+D:\Hung\PRN292\Projects\HealthyCare\HealthyCare\bin\Debug\Newtonsoft.Json.dll
+D:\Hung\PRN292\Projects\HealthyCare\HealthyCare\bin\Debug\WinFormAnimation.dll
+D:\Hung\PRN292\Projects\HealthyCare\HealthyCare\bin\Debug\DataProvider.dll
+D:\Hung\PRN292\Projects\HealthyCare\HealthyCare\bin\Debug\BussinessObject.pdb
+D:\Hung\PRN292\Projects\HealthyCare\HealthyCare\bin\Debug\CircularProgressBar.xml
+D:\Hung\PRN292\Projects\HealthyCare\HealthyCare\bin\Debug\Microsoft.AspNet.SignalR.Client.pdb
+D:\Hung\PRN292\Projects\HealthyCare\HealthyCare\bin\Debug\Microsoft.AspNet.SignalR.Client.xml
+D:\Hung\PRN292\Projects\HealthyCare\HealthyCare\bin\Debug\Newtonsoft.Json.xml
+D:\Hung\PRN292\Projects\HealthyCare\HealthyCare\bin\Debug\DataProvider.pdb
+D:\Hung\PRN292\Projects\HealthyCare\HealthyCare\obj\Debug\HealthyCare.csprojAssemblyReference.cache
+D:\Hung\PRN292\Projects\HealthyCare\HealthyCare\obj\Debug\HealthyCare.Properties.Resources.resources
+D:\Hung\PRN292\Projects\HealthyCare\HealthyCare\obj\Debug\HealthyCare.UI.Admin.frmAdmin.resources
+D:\Hung\PRN292\Projects\HealthyCare\HealthyCare\obj\Debug\HealthyCare.UI.Admin.frmCreateDoctor.resources
+D:\Hung\PRN292\Projects\HealthyCare\HealthyCare\obj\Debug\HealthyCare.UI.Admin.frmManageUser.resources
+D:\Hung\PRN292\Projects\HealthyCare\HealthyCare\obj\Debug\HealthyCare.UI.Customer.frmCustomer.resources
+D:\Hung\PRN292\Projects\HealthyCare\HealthyCare\obj\Debug\HealthyCare.UI.Customer.frmDoctorDetail.resources
+D:\Hung\PRN292\Projects\HealthyCare\HealthyCare\obj\Debug\HealthyCare.UI.Customer.frmFeedback.resources
+D:\Hung\PRN292\Projects\HealthyCare\HealthyCare\obj\Debug\HealthyCare.UI.Customer.frmHistory.resources
+D:\Hung\PRN292\Projects\HealthyCare\HealthyCare\obj\Debug\HealthyCare.UI.Doctor.frmDoctor.resources
+D:\Hung\PRN292\Projects\HealthyCare\HealthyCare\obj\Debug\HealthyCare.UI.Doctor.frmHistory.resources
+D:\Hung\PRN292\Projects\HealthyCare\HealthyCare\obj\Debug\HealthyCare.UI.Doctor.frmViewFeedbacks.resources
+D:\Hung\PRN292\Projects\HealthyCare\HealthyCare\obj\Debug\HealthyCare.UI.Guest.frmLoading.resources
+D:\Hung\PRN292\Projects\HealthyCare\HealthyCare\obj\Debug\HealthyCare.UI.G.frmLogin.resources
+D:\Hung\PRN292\Projects\HealthyCare\HealthyCare\obj\Debug\HealthyCare.frmRegister.resources
+D:\Hung\PRN292\Projects\HealthyCare\HealthyCare\obj\Debug\HealthyCare.UI.User.frmEditPassword.resources
+D:\Hung\PRN292\Projects\HealthyCare\HealthyCare\obj\Debug\HealthyCare.UI.User.frmEditProfile.resources
+D:\Hung\PRN292\Projects\HealthyCare\HealthyCare\obj\Debug\HealthyCare.UI.User.frmViewProfile.resources
+D:\Hung\PRN292\Projects\HealthyCare\HealthyCare\obj\Debug\HealthyCare.csproj.GenerateResource.cache
+D:\Hung\PRN292\Projects\HealthyCare\HealthyCare\obj\Debug\HealthyCare.csproj.CoreCompileInputs.cache
+D:\Hung\PRN292\Projects\HealthyCare\HealthyCare\obj\Debug\HealthyCare.csproj.CopyComplete
+D:\Hung\PRN292\Projects\HealthyCare\HealthyCare\obj\Debug\HealthyCare.exe
+D:\Hung\PRN292\Projects\HealthyCare\HealthyCare\obj\Debug\HealthyCare.pdb
+D:\Hung\PRN292\Projects - Copy\HealthyCare\HealthyCare\bin\Debug\HealthyCare.exe.config
+D:\Hung\PRN292\Projects - Copy\HealthyCare\HealthyCare\bin\Debug\HealthyCare.exe
+D:\Hung\PRN292\Projects - Copy\HealthyCare\HealthyCare\bin\Debug\HealthyCare.pdb
+D:\Hung\PRN292\Projects - Copy\HealthyCare\HealthyCare\bin\Debug\BussinessObject.dll
+D:\Hung\PRN292\Projects - Copy\HealthyCare\HealthyCare\bin\Debug\CircularProgressBar.dll
+D:\Hung\PRN292\Projects - Copy\HealthyCare\HealthyCare\bin\Debug\FontAwesome.Sharp.dll
+D:\Hung\PRN292\Projects - Copy\HealthyCare\HealthyCare\bin\Debug\Microsoft.AspNet.SignalR.Client.dll
+D:\Hung\PRN292\Projects - Copy\HealthyCare\HealthyCare\bin\Debug\Newtonsoft.Json.dll
+D:\Hung\PRN292\Projects - Copy\HealthyCare\HealthyCare\bin\Debug\WinFormAnimation.dll
+D:\Hung\PRN292\Projects - Copy\HealthyCare\HealthyCare\bin\Debug\DataProvider.dll
+D:\Hung\PRN292\Projects - Copy\HealthyCare\HealthyCare\bin\Debug\BussinessObject.pdb
+D:\Hung\PRN292\Projects - Copy\HealthyCare\HealthyCare\bin\Debug\CircularProgressBar.xml
+D:\Hung\PRN292\Projects - Copy\HealthyCare\HealthyCare\bin\Debug\Microsoft.AspNet.SignalR.Client.pdb
+D:\Hung\PRN292\Projects - Copy\HealthyCare\HealthyCare\bin\Debug\Microsoft.AspNet.SignalR.Client.xml
+D:\Hung\PRN292\Projects - Copy\HealthyCare\HealthyCare\bin\Debug\Newtonsoft.Json.xml
+D:\Hung\PRN292\Projects - Copy\HealthyCare\HealthyCare\bin\Debug\DataProvider.pdb
+D:\Hung\PRN292\Projects - Copy\HealthyCare\HealthyCare\obj\Debug\HealthyCare.csprojAssemblyReference.cache
+D:\Hung\PRN292\Projects - Copy\HealthyCare\HealthyCare\obj\Debug\HealthyCare.Properties.Resources.resources
+D:\Hung\PRN292\Projects - Copy\HealthyCare\HealthyCare\obj\Debug\HealthyCare.UI.Admin.frmAdmin.resources
+D:\Hung\PRN292\Projects - Copy\HealthyCare\HealthyCare\obj\Debug\HealthyCare.UI.Admin.frmCreateDoctor.resources
+D:\Hung\PRN292\Projects - Copy\HealthyCare\HealthyCare\obj\Debug\HealthyCare.UI.Admin.frmManageDoctor.resources
+D:\Hung\PRN292\Projects - Copy\HealthyCare\HealthyCare\obj\Debug\HealthyCare.UI.Admin.frmManageUser.resources
+D:\Hung\PRN292\Projects - Copy\HealthyCare\HealthyCare\obj\Debug\HealthyCare.UI.Customer.frmCustomer.resources
+D:\Hung\PRN292\Projects - Copy\HealthyCare\HealthyCare\obj\Debug\HealthyCare.UI.Customer.frmDoctorDetail.resources
+D:\Hung\PRN292\Projects - Copy\HealthyCare\HealthyCare\obj\Debug\HealthyCare.UI.Customer.frmFeedback.resources
+D:\Hung\PRN292\Projects - Copy\HealthyCare\HealthyCare\obj\Debug\HealthyCare.UI.Customer.frmHistory.resources
+D:\Hung\PRN292\Projects - Copy\HealthyCare\HealthyCare\obj\Debug\HealthyCare.UI.Doctor.frmDoctor.resources
+D:\Hung\PRN292\Projects - Copy\HealthyCare\HealthyCare\obj\Debug\HealthyCare.UI.Doctor.frmHistory.resources
+D:\Hung\PRN292\Projects - Copy\HealthyCare\HealthyCare\obj\Debug\HealthyCare.UI.Doctor.frmViewFeedbacks.resources
+D:\Hung\PRN292\Projects - Copy\HealthyCare\HealthyCare\obj\Debug\HealthyCare.UI.Guest.frmLoading.resources
+D:\Hung\PRN292\Projects - Copy\HealthyCare\HealthyCare\obj\Debug\HealthyCare.UI.G.frmLogin.resources
+D:\Hung\PRN292\Projects - Copy\HealthyCare\HealthyCare\obj\Debug\HealthyCare.frmRegister.resources
+D:\Hung\PRN292\Projects - Copy\HealthyCare\HealthyCare\obj\Debug\HealthyCare.UI.User.frmEditPassword.resources
+D:\Hung\PRN292\Projects - Copy\HealthyCare\HealthyCare\obj\Debug\HealthyCare.UI.User.frmEditProfile.resources
+D:\Hung\PRN292\Projects - Copy\HealthyCare\HealthyCare\obj\Debug\HealthyCare.UI.User.frmViewProfile.resources
+D:\Hung\PRN292\Projects - Copy\HealthyCare\HealthyCare\obj\Debug\HealthyCare.csproj.GenerateResource.cache
+D:\Hung\PRN292\Projects - Copy\HealthyCare\HealthyCare\obj\Debug\HealthyCare.csproj.CoreCompileInputs.cache
+D:\Hung\PRN292\Projects - Copy\HealthyCare\HealthyCare\obj\Debug\HealthyCare.csproj.CopyComplete
+D:\Hung\PRN292\Projects - Copy\HealthyCare\HealthyCare\obj\Debug\HealthyCare.exe
+D:\Hung\PRN292\Projects - Copy\HealthyCare\HealthyCare\obj\Debug\HealthyCare.pdb
+>>>>>>> 4db145f78b24856daad531f9831493a0b18bb235
+>>>>>>> 7c420efa3fdaef490d5b0fe5aa4aba7a5d6a8bca
