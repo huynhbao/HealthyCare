@@ -21,8 +21,8 @@ validate login, update
 	User:
 		Feedback (button in tab history)  @Nghiep done
 		Update Password done
-		View Doctor In History Tab
-		Feedback In History Tab
+		View Doctor In History Tab done
+		Feedback In History Tab   
 
 
 	Validate update profile when fail @Nghiep

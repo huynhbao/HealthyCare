@@ -29,8 +29,12 @@ namespace HealthyCare.UI.Doctor
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDoctor));
             this.darkLabel1 = new DarkUI.Controls.DarkLabel();
             this.lbFullName = new DarkUI.Controls.DarkLabel();
             this.panelTitleBar = new System.Windows.Forms.Panel();
@@ -39,35 +43,53 @@ namespace HealthyCare.UI.Doctor
             this.btnExit = new FontAwesome.Sharp.IconButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnView = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.dgvDoctor = new System.Windows.Forms.DataGridView();
+            this.darkLabel8 = new DarkUI.Controls.DarkLabel();
+            this.btnRefresh = new FontAwesome.Sharp.IconButton();
+            this.lbCount = new DarkUI.Controls.DarkLabel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.iconPictureBox2 = new FontAwesome.Sharp.IconPictureBox();
+            this.iconPictureBox4 = new FontAwesome.Sharp.IconPictureBox();
+            this.lbTotal = new DarkUI.Controls.DarkLabel();
+            this.iconPictureBox5 = new FontAwesome.Sharp.IconPictureBox();
+            this.iconPictureBox3 = new FontAwesome.Sharp.IconPictureBox();
+            this.lbPhone = new DarkUI.Controls.DarkLabel();
+            this.btnReject = new FontAwesome.Sharp.IconButton();
+            this.iconPictureBox6 = new FontAwesome.Sharp.IconPictureBox();
             this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             this.lbEmail = new DarkUI.Controls.DarkLabel();
-            this.lbPhone = new DarkUI.Controls.DarkLabel();
-            this.lbTotal = new DarkUI.Controls.DarkLabel();
+            this.darkLabel9 = new DarkUI.Controls.DarkLabel();
+            this.btnAccept = new FontAwesome.Sharp.IconButton();
+            this.darkLabel7 = new DarkUI.Controls.DarkLabel();
+            this.darkLabel6 = new DarkUI.Controls.DarkLabel();
+            this.darkLabel4 = new DarkUI.Controls.DarkLabel();
             this.lbGender = new DarkUI.Controls.DarkLabel();
             this.lbAddress = new DarkUI.Controls.DarkLabel();
-            this.lbFullNameCus = new DarkUI.Controls.DarkLabel();
-            this.darkLabel2 = new DarkUI.Controls.DarkLabel();
-            this.darkLabel6 = new DarkUI.Controls.DarkLabel();
-            this.darkLabel7 = new DarkUI.Controls.DarkLabel();
-            this.darkLabel5 = new DarkUI.Controls.DarkLabel();
-            this.darkLabel4 = new DarkUI.Controls.DarkLabel();
-            this.darkLabel3 = new DarkUI.Controls.DarkLabel();
             this.darkLabel11 = new DarkUI.Controls.DarkLabel();
-            this.lbCount = new DarkUI.Controls.DarkLabel();
-            this.dgvDoctor = new System.Windows.Forms.DataGridView();
-            this.btnReject = new DarkUI.Controls.DarkButton();
-            this.btnAccept = new DarkUI.Controls.DarkButton();
-            this.btnRefresh = new DarkUI.Controls.DarkButton();
+            this.lbFullNameCus = new DarkUI.Controls.DarkLabel();
+            this.darkLabel3 = new DarkUI.Controls.DarkLabel();
+            this.darkLabel5 = new DarkUI.Controls.DarkLabel();
             this.btnHistory = new FontAwesome.Sharp.IconButton();
             this.btnHome = new FontAwesome.Sharp.IconButton();
             this.btnLogout = new FontAwesome.Sharp.IconButton();
             this.btnFeedback = new FontAwesome.Sharp.IconButton();
             this.btnProfile = new FontAwesome.Sharp.IconButton();
+            this.notifyDoctor = new System.Windows.Forms.NotifyIcon(this.components);
+            this.elipsePanel1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.elipsePanel2 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.panelTitleBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pnView.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
+            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDoctor)).BeginInit();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // darkLabel1
@@ -113,7 +135,7 @@ namespace HealthyCare.UI.Doctor
             this.btnMinimize.IconColor = System.Drawing.Color.White;
             this.btnMinimize.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnMinimize.IconSize = 25;
-            this.btnMinimize.Location = new System.Drawing.Point(1061, 0);
+            this.btnMinimize.Location = new System.Drawing.Point(1069, 0);
             this.btnMinimize.Name = "btnMinimize";
             this.btnMinimize.Size = new System.Drawing.Size(28, 25);
             this.btnMinimize.TabIndex = 19;
@@ -135,10 +157,10 @@ namespace HealthyCare.UI.Doctor
             this.btnExit.FlatAppearance.BorderSize = 0;
             this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExit.IconChar = FontAwesome.Sharp.IconChar.WindowClose;
-            this.btnExit.IconColor = System.Drawing.Color.White;
+            this.btnExit.IconColor = System.Drawing.Color.Crimson;
             this.btnExit.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnExit.IconSize = 25;
-            this.btnExit.Location = new System.Drawing.Point(1092, 2);
+            this.btnExit.Location = new System.Drawing.Point(1095, 1);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(28, 25);
             this.btnExit.TabIndex = 20;
@@ -159,191 +181,25 @@ namespace HealthyCare.UI.Doctor
             // pnView
             // 
             this.pnView.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.pnView.Controls.Add(this.iconPictureBox1);
-            this.pnView.Controls.Add(this.lbEmail);
-            this.pnView.Controls.Add(this.lbPhone);
-            this.pnView.Controls.Add(this.lbTotal);
-            this.pnView.Controls.Add(this.lbGender);
-            this.pnView.Controls.Add(this.lbAddress);
-            this.pnView.Controls.Add(this.lbFullNameCus);
-            this.pnView.Controls.Add(this.darkLabel2);
-            this.pnView.Controls.Add(this.darkLabel6);
-            this.pnView.Controls.Add(this.darkLabel7);
-            this.pnView.Controls.Add(this.darkLabel5);
-            this.pnView.Controls.Add(this.darkLabel4);
-            this.pnView.Controls.Add(this.darkLabel3);
-            this.pnView.Controls.Add(this.darkLabel11);
-            this.pnView.Controls.Add(this.lbCount);
-            this.pnView.Controls.Add(this.dgvDoctor);
-            this.pnView.Controls.Add(this.btnReject);
-            this.pnView.Controls.Add(this.btnAccept);
-            this.pnView.Controls.Add(this.btnRefresh);
+            this.pnView.Controls.Add(this.panel1);
+            this.pnView.Controls.Add(this.panel2);
             this.pnView.Location = new System.Drawing.Point(172, -2);
             this.pnView.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.pnView.Name = "pnView";
             this.pnView.Size = new System.Drawing.Size(952, 617);
             this.pnView.TabIndex = 22;
             // 
-            // iconPictureBox1
+            // panel1
             // 
-            this.iconPictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.iconPictureBox1.ForeColor = System.Drawing.Color.Crimson;
-            this.iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.UserTie;
-            this.iconPictureBox1.IconColor = System.Drawing.Color.Crimson;
-            this.iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconPictureBox1.Location = new System.Drawing.Point(304, 45);
-            this.iconPictureBox1.Name = "iconPictureBox1";
-            this.iconPictureBox1.Size = new System.Drawing.Size(32, 32);
-            this.iconPictureBox1.TabIndex = 13;
-            this.iconPictureBox1.TabStop = false;
-            // 
-            // lbEmail
-            // 
-            this.lbEmail.AutoSize = true;
-            this.lbEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.lbEmail.Location = new System.Drawing.Point(718, 111);
-            this.lbEmail.Name = "lbEmail";
-            this.lbEmail.Size = new System.Drawing.Size(28, 16);
-            this.lbEmail.TabIndex = 12;
-            this.lbEmail.Text = "N/A";
-            // 
-            // lbPhone
-            // 
-            this.lbPhone.AutoSize = true;
-            this.lbPhone.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.lbPhone.Location = new System.Drawing.Point(718, 150);
-            this.lbPhone.Name = "lbPhone";
-            this.lbPhone.Size = new System.Drawing.Size(28, 16);
-            this.lbPhone.TabIndex = 12;
-            this.lbPhone.Text = "N/A";
-            // 
-            // lbTotal
-            // 
-            this.lbTotal.AutoSize = true;
-            this.lbTotal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.lbTotal.Location = new System.Drawing.Point(718, 189);
-            this.lbTotal.Name = "lbTotal";
-            this.lbTotal.Size = new System.Drawing.Size(28, 16);
-            this.lbTotal.TabIndex = 12;
-            this.lbTotal.Text = "N/A";
-            // 
-            // lbGender
-            // 
-            this.lbGender.AutoSize = true;
-            this.lbGender.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.lbGender.Location = new System.Drawing.Point(268, 197);
-            this.lbGender.Name = "lbGender";
-            this.lbGender.Size = new System.Drawing.Size(28, 16);
-            this.lbGender.TabIndex = 12;
-            this.lbGender.Text = "N/A";
-            // 
-            // lbAddress
-            // 
-            this.lbAddress.AutoSize = true;
-            this.lbAddress.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.lbAddress.Location = new System.Drawing.Point(268, 154);
-            this.lbAddress.Name = "lbAddress";
-            this.lbAddress.Size = new System.Drawing.Size(28, 16);
-            this.lbAddress.TabIndex = 12;
-            this.lbAddress.Text = "N/A";
-            // 
-            // lbFullNameCus
-            // 
-            this.lbFullNameCus.AutoSize = true;
-            this.lbFullNameCus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.lbFullNameCus.Location = new System.Drawing.Point(268, 111);
-            this.lbFullNameCus.Name = "lbFullNameCus";
-            this.lbFullNameCus.Size = new System.Drawing.Size(28, 16);
-            this.lbFullNameCus.TabIndex = 12;
-            this.lbFullNameCus.Text = "N/A";
-            // 
-            // darkLabel2
-            // 
-            this.darkLabel2.AutoSize = true;
-            this.darkLabel2.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.darkLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.darkLabel2.Location = new System.Drawing.Point(342, 46);
-            this.darkLabel2.Name = "darkLabel2";
-            this.darkLabel2.Size = new System.Drawing.Size(200, 28);
-            this.darkLabel2.TabIndex = 11;
-            this.darkLabel2.Text = "User Information";
-            // 
-            // darkLabel6
-            // 
-            this.darkLabel6.AutoSize = true;
-            this.darkLabel6.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
-            this.darkLabel6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.darkLabel6.Location = new System.Drawing.Point(578, 110);
-            this.darkLabel6.Name = "darkLabel6";
-            this.darkLabel6.Size = new System.Drawing.Size(52, 19);
-            this.darkLabel6.TabIndex = 11;
-            this.darkLabel6.Text = "Email";
-            // 
-            // darkLabel7
-            // 
-            this.darkLabel7.AutoSize = true;
-            this.darkLabel7.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
-            this.darkLabel7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.darkLabel7.Location = new System.Drawing.Point(578, 189);
-            this.darkLabel7.Name = "darkLabel7";
-            this.darkLabel7.Size = new System.Drawing.Size(112, 19);
-            this.darkLabel7.TabIndex = 11;
-            this.darkLabel7.Text = "Total Booking";
-            // 
-            // darkLabel5
-            // 
-            this.darkLabel5.AutoSize = true;
-            this.darkLabel5.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
-            this.darkLabel5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.darkLabel5.Location = new System.Drawing.Point(103, 194);
-            this.darkLabel5.Name = "darkLabel5";
-            this.darkLabel5.Size = new System.Drawing.Size(68, 19);
-            this.darkLabel5.TabIndex = 11;
-            this.darkLabel5.Text = "Gender";
-            // 
-            // darkLabel4
-            // 
-            this.darkLabel4.AutoSize = true;
-            this.darkLabel4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
-            this.darkLabel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.darkLabel4.Location = new System.Drawing.Point(578, 149);
-            this.darkLabel4.Name = "darkLabel4";
-            this.darkLabel4.Size = new System.Drawing.Size(58, 19);
-            this.darkLabel4.TabIndex = 11;
-            this.darkLabel4.Text = "Phone";
-            // 
-            // darkLabel3
-            // 
-            this.darkLabel3.AutoSize = true;
-            this.darkLabel3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
-            this.darkLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.darkLabel3.Location = new System.Drawing.Point(103, 150);
-            this.darkLabel3.Name = "darkLabel3";
-            this.darkLabel3.Size = new System.Drawing.Size(70, 19);
-            this.darkLabel3.TabIndex = 11;
-            this.darkLabel3.Text = "Address";
-            // 
-            // darkLabel11
-            // 
-            this.darkLabel11.AutoSize = true;
-            this.darkLabel11.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.darkLabel11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.darkLabel11.Location = new System.Drawing.Point(103, 111);
-            this.darkLabel11.Name = "darkLabel11";
-            this.darkLabel11.Size = new System.Drawing.Size(88, 19);
-            this.darkLabel11.TabIndex = 11;
-            this.darkLabel11.Text = "Full Name";
-            // 
-            // lbCount
-            // 
-            this.lbCount.AutoSize = true;
-            this.lbCount.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbCount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.lbCount.Location = new System.Drawing.Point(173, 586);
-            this.lbCount.Name = "lbCount";
-            this.lbCount.Size = new System.Drawing.Size(39, 16);
-            this.lbCount.TabIndex = 11;
-            this.lbCount.Text = "Total";
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.panel1.Controls.Add(this.dgvDoctor);
+            this.panel1.Controls.Add(this.darkLabel8);
+            this.panel1.Controls.Add(this.btnRefresh);
+            this.panel1.Controls.Add(this.lbCount);
+            this.panel1.Location = new System.Drawing.Point(25, 313);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(901, 280);
+            this.panel1.TabIndex = 15;
             // 
             // dgvDoctor
             // 
@@ -353,64 +209,402 @@ namespace HealthyCare.UI.Doctor
             this.dgvDoctor.AllowUserToResizeColumns = false;
             this.dgvDoctor.AllowUserToResizeRows = false;
             this.dgvDoctor.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvDoctor.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
+            this.dgvDoctor.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.dgvDoctor.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvDoctor.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dgvDoctor.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(36)))), ((int)(((byte)(36)))));
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.MenuBar;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(36)))), ((int)(((byte)(36)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.WhiteSmoke;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvDoctor.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvDoctor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDoctor.ColumnHeadersHeight = 35;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(39)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlLightLight;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvDoctor.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvDoctor.Location = new System.Drawing.Point(176, 269);
+            this.dgvDoctor.EnableHeadersVisualStyles = false;
+            this.dgvDoctor.Location = new System.Drawing.Point(0, 66);
             this.dgvDoctor.MultiSelect = false;
             this.dgvDoctor.Name = "dgvDoctor";
             this.dgvDoctor.ReadOnly = true;
+            this.dgvDoctor.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDoctor.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvDoctor.RowHeadersVisible = false;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.dgvDoctor.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvDoctor.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.dgvDoctor.RowTemplate.Height = 45;
+            this.dgvDoctor.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvDoctor.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDoctor.Size = new System.Drawing.Size(765, 311);
-            this.dgvDoctor.TabIndex = 10;
+            this.dgvDoctor.Size = new System.Drawing.Size(907, 261);
+            this.dgvDoctor.TabIndex = 14;
             this.dgvDoctor.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDoctor_CellClick);
             this.dgvDoctor.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvDoctor_CellFormatting);
             this.dgvDoctor.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgvDoctor_DataBindingComplete);
             // 
-            // btnReject
+            // darkLabel8
             // 
-            this.btnReject.Location = new System.Drawing.Point(31, 392);
-            this.btnReject.Name = "btnReject";
-            this.btnReject.Padding = new System.Windows.Forms.Padding(5);
-            this.btnReject.Size = new System.Drawing.Size(116, 23);
-            this.btnReject.TabIndex = 1;
-            this.btnReject.Text = "Reject Booking";
-            this.btnReject.Click += new System.EventHandler(this.btnReject_Click);
-            // 
-            // btnAccept
-            // 
-            this.btnAccept.Location = new System.Drawing.Point(31, 330);
-            this.btnAccept.Name = "btnAccept";
-            this.btnAccept.Padding = new System.Windows.Forms.Padding(5);
-            this.btnAccept.Size = new System.Drawing.Size(116, 23);
-            this.btnAccept.TabIndex = 1;
-            this.btnAccept.Text = "Accept Booking";
-            this.btnAccept.Click += new System.EventHandler(this.btnAccept_Click);
+            this.darkLabel8.AutoSize = true;
+            this.darkLabel8.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.darkLabel8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.darkLabel8.Location = new System.Drawing.Point(14, 18);
+            this.darkLabel8.Name = "darkLabel8";
+            this.darkLabel8.Size = new System.Drawing.Size(94, 21);
+            this.darkLabel8.TabIndex = 13;
+            this.darkLabel8.Text = "Patient List";
             // 
             // btnRefresh
             // 
-            this.btnRefresh.Location = new System.Drawing.Point(31, 454);
+            this.btnRefresh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(218)))), ((int)(((byte)(198)))));
+            this.btnRefresh.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRefresh.FlatAppearance.BorderSize = 0;
+            this.btnRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRefresh.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRefresh.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnRefresh.IconChar = FontAwesome.Sharp.IconChar.Redo;
+            this.btnRefresh.IconColor = System.Drawing.Color.WhiteSmoke;
+            this.btnRefresh.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnRefresh.IconSize = 29;
+            this.btnRefresh.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnRefresh.Location = new System.Drawing.Point(749, 14);
+            this.btnRefresh.Margin = new System.Windows.Forms.Padding(0);
             this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Padding = new System.Windows.Forms.Padding(5);
-            this.btnRefresh.Size = new System.Drawing.Size(75, 23);
-            this.btnRefresh.TabIndex = 1;
-            this.btnRefresh.Text = "Refresh";
+            this.btnRefresh.Size = new System.Drawing.Size(129, 33);
+            this.btnRefresh.TabIndex = 9;
+            this.btnRefresh.Text = "  Refresh";
+            this.btnRefresh.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnRefresh.UseVisualStyleBackColor = false;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            // 
+            // lbCount
+            // 
+            this.lbCount.AutoSize = true;
+            this.lbCount.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbCount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.lbCount.Location = new System.Drawing.Point(383, 22);
+            this.lbCount.Name = "lbCount";
+            this.lbCount.Size = new System.Drawing.Size(39, 17);
+            this.lbCount.TabIndex = 11;
+            this.lbCount.Text = "Total";
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.panel2.Controls.Add(this.iconPictureBox2);
+            this.panel2.Controls.Add(this.iconPictureBox4);
+            this.panel2.Controls.Add(this.lbTotal);
+            this.panel2.Controls.Add(this.iconPictureBox5);
+            this.panel2.Controls.Add(this.iconPictureBox3);
+            this.panel2.Controls.Add(this.lbPhone);
+            this.panel2.Controls.Add(this.btnReject);
+            this.panel2.Controls.Add(this.iconPictureBox6);
+            this.panel2.Controls.Add(this.iconPictureBox1);
+            this.panel2.Controls.Add(this.lbEmail);
+            this.panel2.Controls.Add(this.darkLabel9);
+            this.panel2.Controls.Add(this.btnAccept);
+            this.panel2.Controls.Add(this.darkLabel7);
+            this.panel2.Controls.Add(this.darkLabel6);
+            this.panel2.Controls.Add(this.darkLabel4);
+            this.panel2.Controls.Add(this.lbGender);
+            this.panel2.Controls.Add(this.lbAddress);
+            this.panel2.Controls.Add(this.darkLabel11);
+            this.panel2.Controls.Add(this.lbFullNameCus);
+            this.panel2.Controls.Add(this.darkLabel3);
+            this.panel2.Controls.Add(this.darkLabel5);
+            this.panel2.Location = new System.Drawing.Point(25, 47);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(901, 244);
+            this.panel2.TabIndex = 16;
+            // 
+            // iconPictureBox2
+            // 
+            this.iconPictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.iconPictureBox2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.iconPictureBox2.IconChar = FontAwesome.Sharp.IconChar.VenusMars;
+            this.iconPictureBox2.IconColor = System.Drawing.SystemColors.ControlLightLight;
+            this.iconPictureBox2.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconPictureBox2.IconSize = 22;
+            this.iconPictureBox2.Location = new System.Drawing.Point(47, 152);
+            this.iconPictureBox2.Name = "iconPictureBox2";
+            this.iconPictureBox2.Size = new System.Drawing.Size(22, 22);
+            this.iconPictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.iconPictureBox2.TabIndex = 81;
+            this.iconPictureBox2.TabStop = false;
+            // 
+            // iconPictureBox4
+            // 
+            this.iconPictureBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.iconPictureBox4.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.iconPictureBox4.IconChar = FontAwesome.Sharp.IconChar.Envelope;
+            this.iconPictureBox4.IconColor = System.Drawing.SystemColors.ControlLightLight;
+            this.iconPictureBox4.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconPictureBox4.IconSize = 22;
+            this.iconPictureBox4.Location = new System.Drawing.Point(522, 64);
+            this.iconPictureBox4.Name = "iconPictureBox4";
+            this.iconPictureBox4.Size = new System.Drawing.Size(22, 22);
+            this.iconPictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.iconPictureBox4.TabIndex = 79;
+            this.iconPictureBox4.TabStop = false;
+            // 
+            // lbTotal
+            // 
+            this.lbTotal.AutoSize = true;
+            this.lbTotal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.lbTotal.Location = new System.Drawing.Point(693, 151);
+            this.lbTotal.Name = "lbTotal";
+            this.lbTotal.Size = new System.Drawing.Size(28, 16);
+            this.lbTotal.TabIndex = 12;
+            this.lbTotal.Text = "N/A";
+            // 
+            // iconPictureBox5
+            // 
+            this.iconPictureBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.iconPictureBox5.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.iconPictureBox5.IconChar = FontAwesome.Sharp.IconChar.Wheelchair;
+            this.iconPictureBox5.IconColor = System.Drawing.SystemColors.ControlLightLight;
+            this.iconPictureBox5.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconPictureBox5.IconSize = 22;
+            this.iconPictureBox5.Location = new System.Drawing.Point(47, 62);
+            this.iconPictureBox5.Name = "iconPictureBox5";
+            this.iconPictureBox5.Size = new System.Drawing.Size(22, 22);
+            this.iconPictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.iconPictureBox5.TabIndex = 80;
+            this.iconPictureBox5.TabStop = false;
+            // 
+            // iconPictureBox3
+            // 
+            this.iconPictureBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.iconPictureBox3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.iconPictureBox3.IconChar = FontAwesome.Sharp.IconChar.AddressCard;
+            this.iconPictureBox3.IconColor = System.Drawing.SystemColors.ControlLightLight;
+            this.iconPictureBox3.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconPictureBox3.IconSize = 22;
+            this.iconPictureBox3.Location = new System.Drawing.Point(47, 108);
+            this.iconPictureBox3.Name = "iconPictureBox3";
+            this.iconPictureBox3.Size = new System.Drawing.Size(22, 22);
+            this.iconPictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.iconPictureBox3.TabIndex = 80;
+            this.iconPictureBox3.TabStop = false;
+            // 
+            // lbPhone
+            // 
+            this.lbPhone.AutoSize = true;
+            this.lbPhone.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.lbPhone.Location = new System.Drawing.Point(693, 110);
+            this.lbPhone.Name = "lbPhone";
+            this.lbPhone.Size = new System.Drawing.Size(28, 16);
+            this.lbPhone.TabIndex = 12;
+            this.lbPhone.Text = "N/A";
+            // 
+            // btnReject
+            // 
+            this.btnReject.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(96)))), ((int)(((byte)(112)))));
+            this.btnReject.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnReject.FlatAppearance.BorderSize = 0;
+            this.btnReject.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReject.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReject.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnReject.IconChar = FontAwesome.Sharp.IconChar.Ban;
+            this.btnReject.IconColor = System.Drawing.Color.WhiteSmoke;
+            this.btnReject.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnReject.IconSize = 29;
+            this.btnReject.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnReject.Location = new System.Drawing.Point(478, 198);
+            this.btnReject.Margin = new System.Windows.Forms.Padding(0);
+            this.btnReject.Name = "btnReject";
+            this.btnReject.Size = new System.Drawing.Size(129, 33);
+            this.btnReject.TabIndex = 9;
+            this.btnReject.Text = "  Reject";
+            this.btnReject.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnReject.UseVisualStyleBackColor = false;
+            this.btnReject.Click += new System.EventHandler(this.btnReject_Click);
+            // 
+            // iconPictureBox6
+            // 
+            this.iconPictureBox6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.iconPictureBox6.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.iconPictureBox6.IconChar = FontAwesome.Sharp.IconChar.Star;
+            this.iconPictureBox6.IconColor = System.Drawing.SystemColors.ControlLightLight;
+            this.iconPictureBox6.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconPictureBox6.IconSize = 22;
+            this.iconPictureBox6.Location = new System.Drawing.Point(522, 146);
+            this.iconPictureBox6.Name = "iconPictureBox6";
+            this.iconPictureBox6.Size = new System.Drawing.Size(22, 22);
+            this.iconPictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.iconPictureBox6.TabIndex = 82;
+            this.iconPictureBox6.TabStop = false;
+            // 
+            // iconPictureBox1
+            // 
+            this.iconPictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.iconPictureBox1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.PhoneAlt;
+            this.iconPictureBox1.IconColor = System.Drawing.SystemColors.ControlLightLight;
+            this.iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconPictureBox1.IconSize = 22;
+            this.iconPictureBox1.Location = new System.Drawing.Point(522, 103);
+            this.iconPictureBox1.Name = "iconPictureBox1";
+            this.iconPictureBox1.Size = new System.Drawing.Size(22, 22);
+            this.iconPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.iconPictureBox1.TabIndex = 82;
+            this.iconPictureBox1.TabStop = false;
+            // 
+            // lbEmail
+            // 
+            this.lbEmail.AutoSize = true;
+            this.lbEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.lbEmail.Location = new System.Drawing.Point(693, 66);
+            this.lbEmail.Name = "lbEmail";
+            this.lbEmail.Size = new System.Drawing.Size(28, 16);
+            this.lbEmail.TabIndex = 12;
+            this.lbEmail.Text = "N/A";
+            // 
+            // darkLabel9
+            // 
+            this.darkLabel9.AutoSize = true;
+            this.darkLabel9.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.darkLabel9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.darkLabel9.Location = new System.Drawing.Point(14, 14);
+            this.darkLabel9.Name = "darkLabel9";
+            this.darkLabel9.Size = new System.Drawing.Size(137, 21);
+            this.darkLabel9.TabIndex = 15;
+            this.darkLabel9.Text = "User Information";
+            // 
+            // btnAccept
+            // 
+            this.btnAccept.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(151)))), ((int)(((byte)(222)))));
+            this.btnAccept.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAccept.FlatAppearance.BorderSize = 0;
+            this.btnAccept.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAccept.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAccept.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnAccept.IconChar = FontAwesome.Sharp.IconChar.Check;
+            this.btnAccept.IconColor = System.Drawing.Color.WhiteSmoke;
+            this.btnAccept.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnAccept.IconSize = 29;
+            this.btnAccept.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnAccept.Location = new System.Drawing.Point(314, 198);
+            this.btnAccept.Margin = new System.Windows.Forms.Padding(0);
+            this.btnAccept.Name = "btnAccept";
+            this.btnAccept.Size = new System.Drawing.Size(129, 33);
+            this.btnAccept.TabIndex = 9;
+            this.btnAccept.Text = "  Accept";
+            this.btnAccept.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnAccept.UseVisualStyleBackColor = false;
+            this.btnAccept.Click += new System.EventHandler(this.btnAccept_Click);
+            // 
+            // darkLabel7
+            // 
+            this.darkLabel7.AutoSize = true;
+            this.darkLabel7.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold);
+            this.darkLabel7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.darkLabel7.Location = new System.Drawing.Point(553, 147);
+            this.darkLabel7.Name = "darkLabel7";
+            this.darkLabel7.Size = new System.Drawing.Size(107, 18);
+            this.darkLabel7.TabIndex = 11;
+            this.darkLabel7.Text = "Total Booking";
+            // 
+            // darkLabel6
+            // 
+            this.darkLabel6.AutoSize = true;
+            this.darkLabel6.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold);
+            this.darkLabel6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.darkLabel6.Location = new System.Drawing.Point(553, 63);
+            this.darkLabel6.Name = "darkLabel6";
+            this.darkLabel6.Size = new System.Drawing.Size(48, 18);
+            this.darkLabel6.TabIndex = 11;
+            this.darkLabel6.Text = "Email";
+            // 
+            // darkLabel4
+            // 
+            this.darkLabel4.AutoSize = true;
+            this.darkLabel4.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold);
+            this.darkLabel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.darkLabel4.Location = new System.Drawing.Point(553, 104);
+            this.darkLabel4.Name = "darkLabel4";
+            this.darkLabel4.Size = new System.Drawing.Size(54, 18);
+            this.darkLabel4.TabIndex = 11;
+            this.darkLabel4.Text = "Phone";
+            // 
+            // lbGender
+            // 
+            this.lbGender.AutoSize = true;
+            this.lbGender.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.lbGender.Location = new System.Drawing.Point(243, 153);
+            this.lbGender.Name = "lbGender";
+            this.lbGender.Size = new System.Drawing.Size(28, 16);
+            this.lbGender.TabIndex = 12;
+            this.lbGender.Text = "N/A";
+            // 
+            // lbAddress
+            // 
+            this.lbAddress.AutoSize = true;
+            this.lbAddress.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.lbAddress.Location = new System.Drawing.Point(243, 110);
+            this.lbAddress.Name = "lbAddress";
+            this.lbAddress.Size = new System.Drawing.Size(28, 16);
+            this.lbAddress.TabIndex = 12;
+            this.lbAddress.Text = "N/A";
+            // 
+            // darkLabel11
+            // 
+            this.darkLabel11.AutoSize = true;
+            this.darkLabel11.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.darkLabel11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.darkLabel11.Location = new System.Drawing.Point(78, 63);
+            this.darkLabel11.Name = "darkLabel11";
+            this.darkLabel11.Size = new System.Drawing.Size(81, 18);
+            this.darkLabel11.TabIndex = 11;
+            this.darkLabel11.Text = "Full Name";
+            // 
+            // lbFullNameCus
+            // 
+            this.lbFullNameCus.AutoSize = true;
+            this.lbFullNameCus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.lbFullNameCus.Location = new System.Drawing.Point(243, 66);
+            this.lbFullNameCus.Name = "lbFullNameCus";
+            this.lbFullNameCus.Size = new System.Drawing.Size(28, 16);
+            this.lbFullNameCus.TabIndex = 12;
+            this.lbFullNameCus.Text = "N/A";
+            // 
+            // darkLabel3
+            // 
+            this.darkLabel3.AutoSize = true;
+            this.darkLabel3.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold);
+            this.darkLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.darkLabel3.Location = new System.Drawing.Point(78, 107);
+            this.darkLabel3.Name = "darkLabel3";
+            this.darkLabel3.Size = new System.Drawing.Size(66, 18);
+            this.darkLabel3.TabIndex = 11;
+            this.darkLabel3.Text = "Address";
+            // 
+            // darkLabel5
+            // 
+            this.darkLabel5.AutoSize = true;
+            this.darkLabel5.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold);
+            this.darkLabel5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.darkLabel5.Location = new System.Drawing.Point(78, 150);
+            this.darkLabel5.Name = "darkLabel5";
+            this.darkLabel5.Size = new System.Drawing.Size(65, 18);
+            this.darkLabel5.TabIndex = 11;
+            this.darkLabel5.Text = "Gender";
             // 
             // btnHistory
             // 
@@ -421,7 +615,7 @@ namespace HealthyCare.UI.Doctor
             this.btnHistory.IconChar = FontAwesome.Sharp.IconChar.History;
             this.btnHistory.IconColor = System.Drawing.Color.Azure;
             this.btnHistory.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnHistory.IconSize = 35;
+            this.btnHistory.IconSize = 30;
             this.btnHistory.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnHistory.Location = new System.Drawing.Point(1, 390);
             this.btnHistory.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
@@ -443,7 +637,7 @@ namespace HealthyCare.UI.Doctor
             this.btnHome.IconChar = FontAwesome.Sharp.IconChar.Home;
             this.btnHome.IconColor = System.Drawing.Color.Azure;
             this.btnHome.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnHome.IconSize = 35;
+            this.btnHome.IconSize = 30;
             this.btnHome.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnHome.Location = new System.Drawing.Point(1, 267);
             this.btnHome.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
@@ -465,7 +659,7 @@ namespace HealthyCare.UI.Doctor
             this.btnLogout.IconChar = FontAwesome.Sharp.IconChar.SignOutAlt;
             this.btnLogout.IconColor = System.Drawing.Color.Azure;
             this.btnLogout.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnLogout.IconSize = 35;
+            this.btnLogout.IconSize = 30;
             this.btnLogout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnLogout.Location = new System.Drawing.Point(1, 513);
             this.btnLogout.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -487,7 +681,7 @@ namespace HealthyCare.UI.Doctor
             this.btnFeedback.IconChar = FontAwesome.Sharp.IconChar.Comments;
             this.btnFeedback.IconColor = System.Drawing.Color.Azure;
             this.btnFeedback.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnFeedback.IconSize = 35;
+            this.btnFeedback.IconSize = 30;
             this.btnFeedback.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnFeedback.Location = new System.Drawing.Point(1, 452);
             this.btnFeedback.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
@@ -509,7 +703,7 @@ namespace HealthyCare.UI.Doctor
             this.btnProfile.IconChar = FontAwesome.Sharp.IconChar.IdCard;
             this.btnProfile.IconColor = System.Drawing.Color.Azure;
             this.btnProfile.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnProfile.IconSize = 35;
+            this.btnProfile.IconSize = 30;
             this.btnProfile.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnProfile.Location = new System.Drawing.Point(1, 328);
             this.btnProfile.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -521,6 +715,22 @@ namespace HealthyCare.UI.Doctor
             this.btnProfile.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnProfile.UseVisualStyleBackColor = true;
             this.btnProfile.Click += new System.EventHandler(this.btnProfile_Click);
+            // 
+            // notifyDoctor
+            // 
+            this.notifyDoctor.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyDoctor.Icon")));
+            this.notifyDoctor.Text = "notifyIcon1";
+            this.notifyDoctor.Visible = true;
+            // 
+            // elipsePanel1
+            // 
+            this.elipsePanel1.ElipseRadius = 25;
+            this.elipsePanel1.TargetControl = this.panel1;
+            // 
+            // elipsePanel2
+            // 
+            this.elipsePanel2.ElipseRadius = 25;
+            this.elipsePanel2.TargetControl = this.panel2;
             // 
             // frmDoctor
             // 
@@ -545,14 +755,23 @@ namespace HealthyCare.UI.Doctor
             this.Name = "frmDoctor";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Main";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmDoctor_FormClosing);
             this.Load += new System.EventHandler(this.frmDoctor_Load);
             this.panelTitleBar.ResumeLayout(false);
             this.panelTitleBar.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.pnView.ResumeLayout(false);
-            this.pnView.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDoctor)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -572,12 +791,7 @@ namespace HealthyCare.UI.Doctor
         private FontAwesome.Sharp.IconButton btnHome;
         private FontAwesome.Sharp.IconButton btnLogout;
         private FontAwesome.Sharp.IconButton btnFeedback;
-        private DarkUI.Controls.DarkButton btnRefresh;
-        private System.Windows.Forms.DataGridView dgvDoctor;
-        private DarkUI.Controls.DarkButton btnReject;
-        private DarkUI.Controls.DarkButton btnAccept;
         private DarkUI.Controls.DarkLabel lbCount;
-        private DarkUI.Controls.DarkLabel darkLabel2;
         private DarkUI.Controls.DarkLabel darkLabel6;
         private DarkUI.Controls.DarkLabel darkLabel5;
         private DarkUI.Controls.DarkLabel darkLabel4;
@@ -590,7 +804,23 @@ namespace HealthyCare.UI.Doctor
         private DarkUI.Controls.DarkLabel lbFullNameCus;
         private DarkUI.Controls.DarkLabel darkLabel7;
         private DarkUI.Controls.DarkLabel darkLabel11;
-        private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
         private FontAwesome.Sharp.IconButton btnProfile;
+        private System.Windows.Forms.NotifyIcon notifyDoctor;
+        private System.Windows.Forms.DataGridView dgvDoctor;
+        private System.Windows.Forms.Panel panel1;
+        private DarkUI.Controls.DarkLabel darkLabel8;
+        private FontAwesome.Sharp.IconButton btnRefresh;
+        private FontAwesome.Sharp.IconButton btnAccept;
+        private Bunifu.Framework.UI.BunifuElipse elipsePanel1;
+        private System.Windows.Forms.Panel panel2;
+        private DarkUI.Controls.DarkLabel darkLabel9;
+        private Bunifu.Framework.UI.BunifuElipse elipsePanel2;
+        private FontAwesome.Sharp.IconButton btnReject;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBox2;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBox4;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBox5;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBox3;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBox6;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
     }
 }

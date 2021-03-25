@@ -20,6 +20,12 @@ namespace HealthyCare.Utils
             loadThread.Start(parent);
         }
 
+        public void Show()
+        {
+            loadThread = new Thread(new ThreadStart(LoadingProcess));
+            loadThread.Start();
+        }
+
         public void Close()
         {
             if (wait != null)
@@ -28,6 +34,12 @@ namespace HealthyCare.Utils
                 wait = null;
                 loadThread = null;
             }
+        }
+
+        private void LoadingProcess()
+        {
+            wait = new frmLoading();
+            wait.ShowDialog();
         }
 
         private void LoadingProcess(object parent)

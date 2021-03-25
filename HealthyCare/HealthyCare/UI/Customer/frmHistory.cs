@@ -15,17 +15,19 @@ using System.Windows.Forms;
 
 namespace HealthyCare.UI.Customer
 {
+    using BussinessObject.Entities;
+
     public partial class frmHistory : DarkForm, IHistory
     {
         UserPresenter userPresenter = null;
         DataSet dsHistory;
         LoadingFormUtils loadingForm = new LoadingFormUtils();
-
         public void GetHistory(DataSet dsHistory)
         {
             this.dsHistory = dsHistory;
             dgvHistory.DataSource = dsHistory.Tables[0];
         }
+
 
         public frmHistory()
         {
@@ -42,7 +44,7 @@ namespace HealthyCare.UI.Customer
 
         private void UserPresenter_OnDataLoading()
         {
-            loadingForm.Show(this);
+            loadingForm.Show();
         }
 
         void LoadData()
@@ -155,17 +157,21 @@ namespace HealthyCare.UI.Customer
 
         private void btnViewDoctor_Click(object sender, EventArgs e)
         {
-            if (dgvHistory.SelectedRows.Count > 0)
+            if (dgvHistory.SelectedRows.Count >= 0)
             {
-                string doctorID = dgvHistory.SelectedRows[0].Cells[0].Value.ToString();
+                string doctorID = dgvHistory.SelectedRows[0].Cells[2].Value.ToString();
                 userPresenter.GetDoctorByIDHistory(doctorID);
             }
         }
 
-        public void GetDoctorByID(BussinessObject.Entities.Doctor doctor)
+        public void GetDoctorByID(Doctor doctor)
         {
             frmDoctorDetail frm = new frmDoctorDetail(doctor);
             frm.ShowDialog();
+        }
+
+        private void frmHistory_LocationChanged(object sender, EventArgs e)
+        {
         }
     }
 }

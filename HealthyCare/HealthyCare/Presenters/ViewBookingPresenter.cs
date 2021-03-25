@@ -52,7 +52,7 @@ namespace HealthyCare.Presenters
             bookingView.GetBooking(data);
         }
 
-        public void AcceptBooking(string idBooking)
+        public void AcceptBooking(string idBooking, string UserID)
         {
             if (OnDataLoading != null)
             {
@@ -67,9 +67,9 @@ namespace HealthyCare.Presenters
             {
                 OnDataLoadingCompleted();
             }
-            bookingView.AcceptBooking(check);
+            bookingView.AcceptBooking(check, UserID);
         }
-        public void RejectBooking(string idBooking)
+        public void RejectBooking(string idBooking, string UserID)
         {
             if (OnDataLoading != null)
             {
@@ -80,7 +80,19 @@ namespace HealthyCare.Presenters
             {
                 OnDataLoadingCompleted();
             }
-            bookingView.RejectBooking(result);
+            bookingView.RejectBooking(result, UserID);
+        }public void FinishBooking(string idBooking)
+        {
+            if (OnDataLoading != null)
+            {
+                OnDataLoading();
+            }
+            bool result = doctorData.FinishBooking(idBooking);
+            if (OnDataLoadingCompleted != null)
+            {
+                OnDataLoadingCompleted();
+            }
+            historyView.FinishBooking(result);
         }
 
         public void GetUserInformationByID(string UserID)

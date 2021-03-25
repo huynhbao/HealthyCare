@@ -30,44 +30,20 @@ namespace HealthyCare.UI.User
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmEditPassword));
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.darkLabel1 = new DarkUI.Controls.DarkLabel();
             this.txtConfirm = new DarkUI.Controls.DarkTextBox();
             this.txtNewPassword = new DarkUI.Controls.DarkTextBox();
             this.btnExit = new FontAwesome.Sharp.IconButton();
-            this.txtCurrentPassword = new DarkUI.Controls.DarkTextBox();
             this.darkLabel10 = new DarkUI.Controls.DarkLabel();
             this.darkLabel8 = new DarkUI.Controls.DarkLabel();
             this.darkLabel6 = new DarkUI.Controls.DarkLabel();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.panelTitleBar = new System.Windows.Forms.Panel();
             this.lbParentForm = new DarkUI.Controls.DarkLabel();
-            this.btnSave = new DarkUI.Controls.DarkButton();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.txtCurrentPassword = new DarkUI.Controls.DarkTextBox();
+            this.btnSave = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.panelTitleBar.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::HealthyCare.Properties.Resources.app_logo;
-            this.pictureBox2.Location = new System.Drawing.Point(372, 6);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(70, 70);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 62;
-            this.pictureBox2.TabStop = false;
-            // 
-            // darkLabel1
-            // 
-            this.darkLabel1.AutoSize = true;
-            this.darkLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.darkLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.darkLabel1.Location = new System.Drawing.Point(334, 81);
-            this.darkLabel1.Name = "darkLabel1";
-            this.darkLabel1.Size = new System.Drawing.Size(149, 25);
-            this.darkLabel1.TabIndex = 61;
-            this.darkLabel1.Text = "Healthy Care";
             // 
             // txtConfirm
             // 
@@ -75,7 +51,7 @@ namespace HealthyCare.UI.User
             this.txtConfirm.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtConfirm.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.txtConfirm.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.txtConfirm.Location = new System.Drawing.Point(317, 308);
+            this.txtConfirm.Location = new System.Drawing.Point(224, 169);
             this.txtConfirm.Name = "txtConfirm";
             this.txtConfirm.PasswordChar = '*';
             this.txtConfirm.Size = new System.Drawing.Size(253, 23);
@@ -87,7 +63,7 @@ namespace HealthyCare.UI.User
             this.txtNewPassword.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNewPassword.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.txtNewPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.txtNewPassword.Location = new System.Drawing.Point(317, 223);
+            this.txtNewPassword.Location = new System.Drawing.Point(224, 118);
             this.txtNewPassword.Name = "txtNewPassword";
             this.txtNewPassword.PasswordChar = '*';
             this.txtNewPassword.Size = new System.Drawing.Size(253, 23);
@@ -101,30 +77,19 @@ namespace HealthyCare.UI.User
             this.btnExit.IconColor = System.Drawing.Color.White;
             this.btnExit.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnExit.IconSize = 25;
-            this.btnExit.Location = new System.Drawing.Point(773, 2);
+            this.btnExit.Location = new System.Drawing.Point(545, 1);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(28, 25);
             this.btnExit.TabIndex = 20;
             this.btnExit.UseVisualStyleBackColor = true;
-            // 
-            // txtCurrentPassword
-            // 
-            this.txtCurrentPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(73)))), ((int)(((byte)(74)))));
-            this.txtCurrentPassword.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtCurrentPassword.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.txtCurrentPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.txtCurrentPassword.Location = new System.Drawing.Point(317, 141);
-            this.txtCurrentPassword.Name = "txtCurrentPassword";
-            this.txtCurrentPassword.PasswordChar = '*';
-            this.txtCurrentPassword.Size = new System.Drawing.Size(253, 23);
-            this.txtCurrentPassword.TabIndex = 60;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // darkLabel10
             // 
             this.darkLabel10.AutoSize = true;
             this.darkLabel10.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.darkLabel10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.darkLabel10.Location = new System.Drawing.Point(210, 310);
+            this.darkLabel10.Location = new System.Drawing.Point(128, 171);
             this.darkLabel10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.darkLabel10.Name = "darkLabel10";
             this.darkLabel10.Size = new System.Drawing.Size(60, 17);
@@ -136,7 +101,7 @@ namespace HealthyCare.UI.User
             this.darkLabel8.AutoSize = true;
             this.darkLabel8.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.darkLabel8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.darkLabel8.Location = new System.Drawing.Point(202, 225);
+            this.darkLabel8.Location = new System.Drawing.Point(85, 120);
             this.darkLabel8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.darkLabel8.Name = "darkLabel8";
             this.darkLabel8.Size = new System.Drawing.Size(103, 17);
@@ -148,7 +113,7 @@ namespace HealthyCare.UI.User
             this.darkLabel6.AutoSize = true;
             this.darkLabel6.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.darkLabel6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.darkLabel6.Location = new System.Drawing.Point(190, 143);
+            this.darkLabel6.Location = new System.Drawing.Point(67, 70);
             this.darkLabel6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.darkLabel6.Name = "darkLabel6";
             this.darkLabel6.Size = new System.Drawing.Size(121, 17);
@@ -158,10 +123,10 @@ namespace HealthyCare.UI.User
             // pictureBox3
             // 
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(0, 420);
+            this.pictureBox3.Location = new System.Drawing.Point(0, 270);
             this.pictureBox3.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(801, 65);
+            this.pictureBox3.Size = new System.Drawing.Size(573, 65);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 52;
             this.pictureBox3.TabStop = false;
@@ -171,11 +136,12 @@ namespace HealthyCare.UI.User
             this.panelTitleBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(9)))), ((int)(((byte)(9)))));
             this.panelTitleBar.Controls.Add(this.lbParentForm);
             this.panelTitleBar.Controls.Add(this.btnExit);
-            this.panelTitleBar.Location = new System.Drawing.Point(0, -35);
+            this.panelTitleBar.Location = new System.Drawing.Point(0, 2);
             this.panelTitleBar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panelTitleBar.Name = "panelTitleBar";
-            this.panelTitleBar.Size = new System.Drawing.Size(801, 29);
+            this.panelTitleBar.Size = new System.Drawing.Size(573, 29);
             this.panelTitleBar.TabIndex = 51;
+            this.panelTitleBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelTitleBar_MouseDown);
             // 
             // lbParentForm
             // 
@@ -184,28 +150,52 @@ namespace HealthyCare.UI.User
             this.lbParentForm.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.lbParentForm.Location = new System.Drawing.Point(10, 6);
             this.lbParentForm.Name = "lbParentForm";
-            this.lbParentForm.Size = new System.Drawing.Size(75, 17);
+            this.lbParentForm.Size = new System.Drawing.Size(121, 17);
             this.lbParentForm.TabIndex = 1;
-            this.lbParentForm.Text = "Edit Profile";
+            this.lbParentForm.Text = "Update Password";
+            // 
+            // txtCurrentPassword
+            // 
+            this.txtCurrentPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(73)))), ((int)(((byte)(74)))));
+            this.txtCurrentPassword.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtCurrentPassword.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.txtCurrentPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.txtCurrentPassword.Location = new System.Drawing.Point(224, 68);
+            this.txtCurrentPassword.Name = "txtCurrentPassword";
+            this.txtCurrentPassword.PasswordChar = '*';
+            this.txtCurrentPassword.Size = new System.Drawing.Size(253, 23);
+            this.txtCurrentPassword.TabIndex = 60;
             // 
             // btnSave
             // 
-            this.btnSave.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.Location = new System.Drawing.Point(394, 356);
+            this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(151)))), ((int)(((byte)(222)))));
+            this.btnSave.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSave.FlatAppearance.BorderSize = 0;
+            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSave.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnSave.IconChar = FontAwesome.Sharp.IconChar.Check;
+            this.btnSave.IconColor = System.Drawing.Color.WhiteSmoke;
+            this.btnSave.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnSave.IconSize = 29;
+            this.btnSave.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSave.Location = new System.Drawing.Point(261, 215);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(0);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Padding = new System.Windows.Forms.Padding(5);
-            this.btnSave.Size = new System.Drawing.Size(89, 29);
-            this.btnSave.TabIndex = 50;
-            this.btnSave.Text = "Save";
+            this.btnSave.Size = new System.Drawing.Size(96, 33);
+            this.btnSave.TabIndex = 61;
+            this.btnSave.Text = " Save";
+            this.btnSave.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // frmEditPassword
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.darkLabel1);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
+            this.ClientSize = new System.Drawing.Size(574, 335);
+            this.Controls.Add(this.btnSave);
             this.Controls.Add(this.txtConfirm);
             this.Controls.Add(this.txtNewPassword);
             this.Controls.Add(this.txtCurrentPassword);
@@ -214,10 +204,11 @@ namespace HealthyCare.UI.User
             this.Controls.Add(this.darkLabel6);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.panelTitleBar);
-            this.Controls.Add(this.btnSave);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmEditPassword";
+            this.ShowInTaskbar = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmEditPassword";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.panelTitleBar.ResumeLayout(false);
             this.panelTitleBar.PerformLayout();
@@ -227,19 +218,16 @@ namespace HealthyCare.UI.User
         }
 
         #endregion
-
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private DarkUI.Controls.DarkLabel darkLabel1;
         private DarkUI.Controls.DarkTextBox txtConfirm;
         private DarkUI.Controls.DarkTextBox txtNewPassword;
         private FontAwesome.Sharp.IconButton btnExit;
-        private DarkUI.Controls.DarkTextBox txtCurrentPassword;
         private DarkUI.Controls.DarkLabel darkLabel10;
         private DarkUI.Controls.DarkLabel darkLabel8;
         private DarkUI.Controls.DarkLabel darkLabel6;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Panel panelTitleBar;
         private DarkUI.Controls.DarkLabel lbParentForm;
-        private DarkUI.Controls.DarkButton btnSave;
+        private DarkUI.Controls.DarkTextBox txtCurrentPassword;
+        private FontAwesome.Sharp.IconButton btnSave;
     }
 }
