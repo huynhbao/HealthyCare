@@ -14,6 +14,7 @@ using System.Windows.Forms;
 namespace HealthyCare.UI.Customer
 {
     using BussinessObject.Entities;
+    using HealthyCare.Utils;
     using HealthyCare.Views;
 
     public partial class frmFeedback : DarkForm, IFeedback
@@ -51,6 +52,17 @@ namespace HealthyCare.UI.Customer
             int value = int.Parse(txtRating.Value.ToString());
             userPresenter.Feedback(bookingID, comment, value);
             Close();
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            Dispose();
+        }
+
+        private void panelTitleBar_MouseDown(object sender, MouseEventArgs e)
+        {
+            MyUtils.ReleaseCapture();
+            MyUtils.SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
     }
 }

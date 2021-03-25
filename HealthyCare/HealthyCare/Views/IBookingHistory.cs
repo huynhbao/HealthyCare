@@ -10,5 +10,6 @@ namespace HealthyCare.Views
     public interface IBookingHistory
     {
         void GetHistory(DataSet dsHistory);
+        void FinishBooking(bool check);
     }
 }

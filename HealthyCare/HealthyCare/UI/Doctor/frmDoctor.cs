@@ -13,11 +13,14 @@ namespace HealthyCare.UI.Doctor
 {
     using BussinessObject.Entities;
     using DarkUI.Forms;
+    using FontAwesome.Sharp;
     using HealthyCare.Presenters;
     using HealthyCare.UI.G;
     using HealthyCare.UI.User;
     using HealthyCare.Utils;
     using HealthyCare.Views;
+    using Microsoft.AspNet.SignalR.Client;
+    using System.Net.Http;
 
     public partial class frmDoctor : DarkForm, IViewBooking
     {
@@ -26,7 +29,7 @@ namespace HealthyCare.UI.Doctor
         DataSet dsDoctor;
         DataTable dtDoctor;
         Form activeForm = null;
-        Button activeButton = null;
+        IconButton activeButton = null;
         LoadingFormUtils loadingFormUtils = new LoadingFormUtils();
 
         public frmDoctor()
@@ -37,7 +40,7 @@ namespace HealthyCare.UI.Doctor
             viewBookingPresenter.OnDataLoading += Presenter_OnDataLoading;
             viewBookingPresenter.OnDataLoadingCompleted += Presenter_OnDataLoadingCompleted;
             ActiveButton(btnHome);
-            
+
         }
         private void Presenter_OnDataLoadingCompleted()
         {
@@ -55,11 +58,12 @@ namespace HealthyCare.UI.Doctor
             lbFullName.Text = "Hi! " + user.FullName;
         }
 
-        private void ActiveButton(Button btn)
+        private void ActiveButton(IconButton btn)
         {
             DisableButton();
             activeButton = btn;
             activeButton.BackColor = Color.FromArgb(79, 79, 79);
+            activeButton.IconColor = Color.FromArgb(255, 63, 128);
             lbParentForm.Text = "Home";
         }
 
@@ -68,10 +72,11 @@ namespace HealthyCare.UI.Doctor
             if (activeButton != null)
             {
                 activeButton.BackColor = Color.FromArgb(45, 45, 45);
+                activeButton.IconColor = Color.FromArgb(230, 230, 230);
             }
         }
 
-        private void openChildForm(Form childForm, Button btn)
+        private void openChildForm(Form childForm, IconButton btn)
         {
             if (activeForm != null)
             {
@@ -95,7 +100,7 @@ namespace HealthyCare.UI.Doctor
             dsDoctor = data;
             dtDoctor = dsDoctor.Tables[0];
             dgvDoctor.DataSource = dtDoctor;
-            lbCount.Text = "You have: " + dtDoctor.Compute("COUNT(idBooking)", string.Empty).ToString() + "(s) request from customer";
+            lbCount.Text = "" + dtDoctor.Compute("COUNT(idBooking)", string.Empty).ToString() + "(s) request";
         }
         private void btnExit_Click(object sender, EventArgs e)
         {
@@ -135,10 +140,11 @@ namespace HealthyCare.UI.Doctor
             if (dgvDoctor.SelectedRows.Count > 0)
             {
                 string BookingID = dgvDoctor.SelectedRows[0].Cells[0].Value.ToString();
+                string UserID = dgvDoctor.SelectedRows[0].Cells[1].Value.ToString();
                 DialogResult dialogResult = MessageBox.Show("Do you want to accept this booking?", "Confirm", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
                 {
-                    viewBookingPresenter.AcceptBooking(BookingID);
+                    viewBookingPresenter.AcceptBooking(BookingID, UserID);
                     LoadData();
                 }
             }
@@ -158,14 +164,17 @@ namespace HealthyCare.UI.Doctor
             }
         }
 
-        public void AcceptBooking(bool check)
+        public void AcceptBooking(bool check, string UserID)
         {
-            if(check)
+            if (check)
             {
+                SignalR_Services.HubProxy.Invoke("PushNotification", user.UserID, UserID, "confirm");
                 MessageBox.Show("Accept successfull.");
-            } else
+            }
+            else
             {
-                MessageBox.Show("Just accept waiting booking");
+                SignalR_Services.HubProxy.Invoke("PushNotification", user.UserID, UserID, "reject");
+                MessageBox.Show("ONLY accept 'Waiting' booking");
             }
         }
 
@@ -174,7 +183,8 @@ namespace HealthyCare.UI.Doctor
             if (check)
             {
                 MessageBox.Show("Reject successfull.");
-            } else
+            }
+            else
             {
                 MessageBox.Show("Cannot reject.");
             }
@@ -190,7 +200,8 @@ namespace HealthyCare.UI.Doctor
             if (user.Gender)
             {
                 lbGender.Text = "Male";
-            } else
+            }
+            else
             {
                 lbGender.Text = "Female";
             }
@@ -224,6 +235,7 @@ namespace HealthyCare.UI.Doctor
         private void frmDoctor_Load(object sender, EventArgs e)
         {
             LoadData();
+            ConnectAsync();
         }
 
         private void btnHome_Click(object sender, EventArgs e)
@@ -249,16 +261,63 @@ namespace HealthyCare.UI.Doctor
 
         private void btnProfile_Click(object sender, EventArgs e)
         {
-            frmViewProfile frm = new frmViewProfile();
+            frmViewProfile frm = new frmViewProfile(user.UserID);
             openChildForm(frm, btnProfile);
         }
 
         private void btnLogout_Click(object sender, EventArgs e)
         {
             LoginInfo.user = null;
+            SignalR_Services.CloseConnection();
             frmLogin frm = new frmLogin();
             frm.Show();
             Close();
+        }
+
+        private void ConnectAsync()
+        {
+            SignalR_Services.getInstance(LoginInfo.user);
+            SignalR_Services.HubProxy.On<User, Doctor, string>("AddMessage", (User, Doctor, msg) =>
+            {
+                if (msg.Equals("booking"))
+                {
+                    Invoke((Action)(() =>
+                    {
+                        DisplayNotificationBalloon("You have a new book", "You have a new book from " + User.FullName);
+                        LoadData();
+                    }));
+                }
+            });
+        }
+
+        private void DisplayNotificationBalloon(string header, string message)
+        {
+            NotifyIcon notifyIcon = new NotifyIcon
+            {
+                Visible = true,
+                Icon = Properties.Resources.app_logo1
+            };
+            if (header != null)
+            {
+                notifyIcon.BalloonTipTitle = header;
+            }
+            if (message != null)
+            {
+                notifyIcon.BalloonTipText = message;
+            }
+            notifyIcon.BalloonTipClosed += (sender, args) => dispose(notifyIcon);
+            notifyIcon.BalloonTipClicked += (sender, args) => dispose(notifyIcon);
+            notifyIcon.ShowBalloonTip(0);
+        }
+
+        private void dispose(NotifyIcon notifyIcon)
+        {
+            notifyIcon.Dispose();
+        }
+
+        private void frmDoctor_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            SignalR_Services.CloseConnection();
         }
     }
 }

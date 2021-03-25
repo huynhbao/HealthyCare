@@ -28,7 +28,8 @@ namespace HealthyCare.UI.Guest
         public frmLoading()
         {
             InitializeComponent();
-            StartPosition = FormStartPosition.CenterParent;
+            Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 10, 10));
+            StartPosition = FormStartPosition.CenterScreen;
         }
 
         public frmLoading(Form parent)
@@ -37,11 +38,7 @@ namespace HealthyCare.UI.Guest
             Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 10, 10));
             if (parent != null)
             {
-                /*Console.WriteLine(parent.Text);
-                Console.WriteLine(parent.Location.X);
-                Console.WriteLine(parent.Location.Y);*/
                 StartPosition = FormStartPosition.Manual;
-                //Location = new Point(173 + parent.Width / 2 - Width / 2, 0 + parent.Height / 2 - Height / 2);
                 Location = new Point(parent.Location.X + parent.Width / 2 - Width / 2,
                     parent.Location.Y + parent.Height / 2 - Height / 2);
             }

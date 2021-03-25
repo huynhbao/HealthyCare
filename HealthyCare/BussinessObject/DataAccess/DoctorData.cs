@@ -59,6 +59,40 @@ namespace BussinessObject.DataAccess
 
             return certificate;
         }
+        public String GetCertificateById(string doctorID)
+        {
+            String certificate = null;
+
+            string sql = "Select c.name FROM Users u  JOIN Certificate c ON u.idCertificate = c.idCertificate WHERE idUser =@idUser";
+            SqlParameter idCertificateParam = new SqlParameter("@idUser", doctorID);
+            SqlDataReader rd = DataProvider.ExecuteQueryWithDataReader(sql, CommandType.Text, idCertificateParam);
+            if (rd.HasRows)
+            {
+                if (rd.Read())
+                {
+                    certificate = rd[0].ToString();
+                }
+            }
+
+            return certificate;
+        }
+        public String GetMajorById(string doctorID)
+        {
+            String major = null;
+
+            string sql = "Select m.name FROM Users u  JOIN Major m ON u.majorID = m.majorID WHERE idUser =@idUser";
+            SqlParameter idCertificateParam = new SqlParameter("@idUser", doctorID);
+            SqlDataReader rd = DataProvider.ExecuteQueryWithDataReader(sql, CommandType.Text, idCertificateParam);
+            if (rd.HasRows)
+            {
+                if (rd.Read())
+                {
+                    major = rd[0].ToString();
+                }
+            }
+
+            return major;
+        }
 
         private Major GetMajor(string majorID)
         {
@@ -201,6 +235,20 @@ namespace BussinessObject.DataAccess
                 throw new Exception(se.Message);
             }
         }
+        public bool FinishBooking(string idBooking)
+        {
+            string SQL = "Update Booking set status=3 WHERE idBooking=@idBooking";
+
+            SqlParameter idBookingParam = new SqlParameter("@idBooking", idBooking);
+            try
+            {
+                return DataProvider.ExecuteNonQuery(SQL, CommandType.Text, idBookingParam);
+            }
+            catch (SqlException se)
+            {
+                throw new Exception(se.Message);
+            }
+        }
 
         public bool CheckWaitingBooking(string UserID)
         {
@@ -224,11 +272,12 @@ namespace BussinessObject.DataAccess
 
         public DataSet GetHistory(string idDoctor)
         {
-            string sql = "SELECT idBooking,b.idDoctor, b.idUser, u.fullName as 'UserName', bookingDate, b.status from Booking b JOIN Users u on b.idUser = u.idUser where idDoctor =@idDoctor AND(b.status = 3 or b.status = 4) ORDER BY bookingDate DESC";
+            string sql = "SELECT idBooking, b.idUser, u.fullName as 'UserName', bookingDate, b.status from Booking b JOIN Users u on b.idUser = u.idUser where idDoctor =@idDoctor AND(b.status = 2 or b.status = 3 or b.status = 4) ORDER BY status ASC";
             SqlParameter DoctorIDParam = new SqlParameter("@idDoctor", idDoctor);
             DataSet dt = DataProvider.ExecuteQueryWithDataSet(sql, CommandType.Text, DoctorIDParam);
             return dt;
-        }public DataSet GetFeedback(string idDoctor)
+        }
+        public DataSet GetFeedback(string idDoctor)
         {
             string sql = "SELECT idFeedback,comment,points, f.idUser,(SELECT fullName from Users u  WHERE u.idUser =@idDoctor) as 'DoctorName', u.fullName as 'UserName', bookingDate  from Feedback f JOIN Users u on f.idUser = u.idUser JOIN Booking b on f.idBooking = b.idBooking where idDoctor =@idDoctor ORDER BY bookingDate DESC";
             SqlParameter DoctorIDParam = new SqlParameter("@idDoctor", idDoctor);

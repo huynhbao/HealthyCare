@@ -11,7 +11,7 @@ namespace HealthyCare.Views
     public interface IViewBooking
     {
         void GetBooking(DataSet data);
-        void AcceptBooking(bool check);
+        void AcceptBooking(bool check, string UserID);
         void RejectBooking(bool check);
         void GetUserInformationByID(User user);
     }

@@ -23,7 +23,18 @@ namespace HealthyCare.UI.Doctor
         {
             InitializeComponent();
             viewBookingPresenter = new ViewBookingPresenter(this);
-            LoadData();
+            viewBookingPresenter.OnDataLoading += ViewBookingPresenter_OnDataLoading;
+            viewBookingPresenter.OnDataLoadingCompleted += ViewBookingPresenter_OnDataLoadingCompleted; ;
+        }
+
+        private void ViewBookingPresenter_OnDataLoadingCompleted()
+        {
+            loadingForm.Close();
+        }
+
+        private void ViewBookingPresenter_OnDataLoading()
+        {
+            loadingForm.Show();
         }
 
         void IBookingHistory.GetHistory(DataSet dsHistory)
@@ -61,7 +72,33 @@ namespace HealthyCare.UI.Doctor
 
         private void frmHistory_Load(object sender, EventArgs e)
         {
+            LoadData();
+        }
 
+        private void btnDone_Click(object sender, EventArgs e)
+        {
+            if (dgvHistory.SelectedRows.Count > 0)
+            {
+                string BookingID = dgvHistory.SelectedRows[0].Cells[0].Value.ToString();
+                DialogResult dialogResult = MessageBox.Show("Do you want to finish this booking?", "Confirm", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    viewBookingPresenter.FinishBooking(BookingID);
+                    LoadData();
+                }
+            }
+        }
+
+        public void FinishBooking(bool check)
+        {
+            if (check)
+            {
+                MessageBox.Show("Finish successfull.");
+            }
+            else
+            {
+                MessageBox.Show("Cannot Finish.");
+            }
         }
     }
 }

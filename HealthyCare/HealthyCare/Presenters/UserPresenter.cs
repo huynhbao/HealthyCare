@@ -102,7 +102,6 @@ namespace HealthyCare.Presenters
         }
         public void GetDoctorByIDHistory(string doctorID)
         {
-            ;
             if (OnDataLoading != null)
             {
                 OnDataLoading();
@@ -132,12 +131,14 @@ namespace HealthyCare.Presenters
         public void BookDoctor(string DoctorID)
         {
             bool check = !userData.CheckPreviousBooking(user.UserID);
+            Doctor doctor = null;
             if (check)
             {
                 userData.BookDoctor(DoctorID, user.UserID, DateTime.Now);
+                doctor = doctorData.GetDoctorByID(DoctorID);
             }
 
-            customerView.BookDoctor(check);
+            customerView.BookDoctor(check, doctor);
         }
         public void Feedback(int bookingID, string comment, int value)
         {
