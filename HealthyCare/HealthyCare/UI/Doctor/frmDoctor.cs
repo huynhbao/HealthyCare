@@ -155,10 +155,11 @@ namespace HealthyCare.UI.Doctor
             if (dgvDoctor.SelectedRows.Count > 0)
             {
                 string BookingID = dgvDoctor.SelectedRows[0].Cells[0].Value.ToString();
+                string UserID = dgvDoctor.SelectedRows[0].Cells[1].Value.ToString();
                 DialogResult dialogResult = MessageBox.Show("Do you want to reject this booking?", "Confirm", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
                 {
-                    viewBookingPresenter.RejectBooking(BookingID);
+                    viewBookingPresenter.RejectBooking(BookingID, UserID);
                     LoadData();
                 }
             }
@@ -172,17 +173,17 @@ namespace HealthyCare.UI.Doctor
                 MessageBox.Show("Accept successfull.");
             }
             else
-            {
-                SignalR_Services.HubProxy.Invoke("PushNotification", user.UserID, UserID, "reject");
+            { 
                 MessageBox.Show("ONLY accept 'Waiting' booking");
             }
         }
 
-        public void RejectBooking(bool check)
+        public void RejectBooking(bool check, string UserID)
         {
             if (check)
             {
                 MessageBox.Show("Reject successfull.");
+                SignalR_Services.HubProxy.Invoke("PushNotification", user.UserID, UserID, "reject");
             }
             else
             {

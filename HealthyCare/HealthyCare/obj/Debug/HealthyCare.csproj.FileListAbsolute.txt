@@ -34,3 +34,7 @@ C:\Users\HuynhBao\source\repos\HealthyCare\HealthyCare\HealthyCare\obj\Debug\Hea
 C:\Users\HuynhBao\source\repos\HealthyCare\HealthyCare\HealthyCare\obj\Debug\HealthyCare.csproj.CoreCompileInputs.cache
 C:\Users\HuynhBao\source\repos\HealthyCare\HealthyCare\HealthyCare\obj\Debug\HealthyCare.exe
 C:\Users\HuynhBao\source\repos\HealthyCare\HealthyCare\HealthyCare\obj\Debug\HealthyCare.pdb
+C:\Users\HuynhBao\source\repos\HealthyCare\HealthyCare\HealthyCare\bin\Debug\HealthyCare.exe.config
+C:\Users\HuynhBao\source\repos\HealthyCare\HealthyCare\HealthyCare\bin\Debug\HealthyCare.exe
+C:\Users\HuynhBao\source\repos\HealthyCare\HealthyCare\HealthyCare\bin\Debug\HealthyCare.pdb
+C:\Users\HuynhBao\source\repos\HealthyCare\HealthyCare\HealthyCare\obj\Debug\HealthyCare.csproj.CopyComplete
