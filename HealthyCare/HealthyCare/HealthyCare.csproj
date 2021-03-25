@@ -112,6 +112,12 @@
     <Compile Include="UI\Admin\frmCreateDoctor.Designer.cs">
       <DependentUpon>frmCreateDoctor.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\Admin\frmManageDoctor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Admin\frmManageDoctor.Designer.cs">
+      <DependentUpon>frmManageDoctor.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Admin\frmManageUser.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -243,6 +249,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Admin\frmCreateDoctor.resx">
       <DependentUpon>frmCreateDoctor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Admin\frmManageDoctor.resx">
+      <DependentUpon>frmManageDoctor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Admin\frmManageUser.resx">
       <DependentUpon>frmManageUser.cs</DependentUpon>
