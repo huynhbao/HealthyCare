@@ -167,7 +167,7 @@ namespace HealthyCare.UI.Admin
 
         private void btnManageDoctors_Click(object sender, EventArgs e)
         {
-            frmManageUser frm = new frmManageUser();
+            frmManageDoctor frm = new frmManageDoctor();
             openChildForm(frm, btnManageDoctors);
         }
     }

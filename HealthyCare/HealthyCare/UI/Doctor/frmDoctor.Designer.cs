@@ -99,7 +99,7 @@ namespace HealthyCare.UI.Doctor
             this.darkLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.darkLabel1.Location = new System.Drawing.Point(54, 57);
             this.darkLabel1.Name = "darkLabel1";
-            this.darkLabel1.Size = new System.Drawing.Size(89, 28);
+            this.darkLabel1.Size = new System.Drawing.Size(71, 23);
             this.darkLabel1.TabIndex = 26;
             this.darkLabel1.Text = "Doctor";
             // 
@@ -148,7 +148,7 @@ namespace HealthyCare.UI.Doctor
             this.lbParentForm.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.lbParentForm.Location = new System.Drawing.Point(10, 6);
             this.lbParentForm.Name = "lbParentForm";
-            this.lbParentForm.Size = new System.Drawing.Size(86, 19);
+            this.lbParentForm.Size = new System.Drawing.Size(68, 16);
             this.lbParentForm.TabIndex = 1;
             this.lbParentForm.Text = "darkLabel3";
             // 
@@ -247,10 +247,6 @@ namespace HealthyCare.UI.Doctor
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvDoctor.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvDoctor.RowHeadersVisible = false;
-<<<<<<< HEAD
-            this.dgvDoctor.RowHeadersWidth = 51;
-=======
->>>>>>> 3d1e9844ec9b3ff38c25ffb69e81d857f8a9cac6
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
             this.dgvDoctor.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvDoctor.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
@@ -270,7 +266,7 @@ namespace HealthyCare.UI.Doctor
             this.darkLabel8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.darkLabel8.Location = new System.Drawing.Point(14, 18);
             this.darkLabel8.Name = "darkLabel8";
-            this.darkLabel8.Size = new System.Drawing.Size(111, 23);
+            this.darkLabel8.Size = new System.Drawing.Size(94, 21);
             this.darkLabel8.TabIndex = 13;
             this.darkLabel8.Text = "Patient List";
             // 
@@ -304,7 +300,7 @@ namespace HealthyCare.UI.Doctor
             this.lbCount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.lbCount.Location = new System.Drawing.Point(383, 22);
             this.lbCount.Name = "lbCount";
-            this.lbCount.Size = new System.Drawing.Size(51, 21);
+            this.lbCount.Size = new System.Drawing.Size(39, 17);
             this.lbCount.TabIndex = 11;
             this.lbCount.Text = "Total";
             // 
@@ -373,7 +369,7 @@ namespace HealthyCare.UI.Doctor
             this.lbTotal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.lbTotal.Location = new System.Drawing.Point(693, 151);
             this.lbTotal.Name = "lbTotal";
-            this.lbTotal.Size = new System.Drawing.Size(34, 19);
+            this.lbTotal.Size = new System.Drawing.Size(28, 16);
             this.lbTotal.TabIndex = 12;
             this.lbTotal.Text = "N/A";
             // 
@@ -413,7 +409,7 @@ namespace HealthyCare.UI.Doctor
             this.lbPhone.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.lbPhone.Location = new System.Drawing.Point(693, 110);
             this.lbPhone.Name = "lbPhone";
-            this.lbPhone.Size = new System.Drawing.Size(34, 19);
+            this.lbPhone.Size = new System.Drawing.Size(28, 16);
             this.lbPhone.TabIndex = 12;
             this.lbPhone.Text = "N/A";
             // 
@@ -476,7 +472,7 @@ namespace HealthyCare.UI.Doctor
             this.lbEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.lbEmail.Location = new System.Drawing.Point(693, 66);
             this.lbEmail.Name = "lbEmail";
-            this.lbEmail.Size = new System.Drawing.Size(34, 19);
+            this.lbEmail.Size = new System.Drawing.Size(28, 16);
             this.lbEmail.TabIndex = 12;
             this.lbEmail.Text = "N/A";
             // 
@@ -487,7 +483,7 @@ namespace HealthyCare.UI.Doctor
             this.darkLabel9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.darkLabel9.Location = new System.Drawing.Point(14, 14);
             this.darkLabel9.Name = "darkLabel9";
-            this.darkLabel9.Size = new System.Drawing.Size(166, 23);
+            this.darkLabel9.Size = new System.Drawing.Size(137, 21);
             this.darkLabel9.TabIndex = 15;
             this.darkLabel9.Text = "User Information";
             // 
@@ -521,7 +517,7 @@ namespace HealthyCare.UI.Doctor
             this.darkLabel7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.darkLabel7.Location = new System.Drawing.Point(553, 147);
             this.darkLabel7.Name = "darkLabel7";
-            this.darkLabel7.Size = new System.Drawing.Size(134, 23);
+            this.darkLabel7.Size = new System.Drawing.Size(107, 18);
             this.darkLabel7.TabIndex = 11;
             this.darkLabel7.Text = "Total Booking";
             // 
@@ -532,7 +528,7 @@ namespace HealthyCare.UI.Doctor
             this.darkLabel6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.darkLabel6.Location = new System.Drawing.Point(553, 63);
             this.darkLabel6.Name = "darkLabel6";
-            this.darkLabel6.Size = new System.Drawing.Size(61, 23);
+            this.darkLabel6.Size = new System.Drawing.Size(48, 18);
             this.darkLabel6.TabIndex = 11;
             this.darkLabel6.Text = "Email";
             // 
@@ -543,7 +539,7 @@ namespace HealthyCare.UI.Doctor
             this.darkLabel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.darkLabel4.Location = new System.Drawing.Point(553, 104);
             this.darkLabel4.Name = "darkLabel4";
-            this.darkLabel4.Size = new System.Drawing.Size(67, 23);
+            this.darkLabel4.Size = new System.Drawing.Size(54, 18);
             this.darkLabel4.TabIndex = 11;
             this.darkLabel4.Text = "Phone";
             // 
@@ -553,7 +549,7 @@ namespace HealthyCare.UI.Doctor
             this.lbGender.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.lbGender.Location = new System.Drawing.Point(243, 153);
             this.lbGender.Name = "lbGender";
-            this.lbGender.Size = new System.Drawing.Size(34, 19);
+            this.lbGender.Size = new System.Drawing.Size(28, 16);
             this.lbGender.TabIndex = 12;
             this.lbGender.Text = "N/A";
             // 
@@ -563,7 +559,7 @@ namespace HealthyCare.UI.Doctor
             this.lbAddress.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.lbAddress.Location = new System.Drawing.Point(243, 110);
             this.lbAddress.Name = "lbAddress";
-            this.lbAddress.Size = new System.Drawing.Size(34, 19);
+            this.lbAddress.Size = new System.Drawing.Size(28, 16);
             this.lbAddress.TabIndex = 12;
             this.lbAddress.Text = "N/A";
             // 
@@ -574,7 +570,7 @@ namespace HealthyCare.UI.Doctor
             this.darkLabel11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.darkLabel11.Location = new System.Drawing.Point(78, 63);
             this.darkLabel11.Name = "darkLabel11";
-            this.darkLabel11.Size = new System.Drawing.Size(102, 23);
+            this.darkLabel11.Size = new System.Drawing.Size(81, 18);
             this.darkLabel11.TabIndex = 11;
             this.darkLabel11.Text = "Full Name";
             // 
@@ -584,7 +580,7 @@ namespace HealthyCare.UI.Doctor
             this.lbFullNameCus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.lbFullNameCus.Location = new System.Drawing.Point(243, 66);
             this.lbFullNameCus.Name = "lbFullNameCus";
-            this.lbFullNameCus.Size = new System.Drawing.Size(34, 19);
+            this.lbFullNameCus.Size = new System.Drawing.Size(28, 16);
             this.lbFullNameCus.TabIndex = 12;
             this.lbFullNameCus.Text = "N/A";
             // 
@@ -595,7 +591,7 @@ namespace HealthyCare.UI.Doctor
             this.darkLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.darkLabel3.Location = new System.Drawing.Point(78, 107);
             this.darkLabel3.Name = "darkLabel3";
-            this.darkLabel3.Size = new System.Drawing.Size(84, 23);
+            this.darkLabel3.Size = new System.Drawing.Size(66, 18);
             this.darkLabel3.TabIndex = 11;
             this.darkLabel3.Text = "Address";
             // 
@@ -606,7 +602,7 @@ namespace HealthyCare.UI.Doctor
             this.darkLabel5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.darkLabel5.Location = new System.Drawing.Point(78, 150);
             this.darkLabel5.Name = "darkLabel5";
-            this.darkLabel5.Size = new System.Drawing.Size(80, 23);
+            this.darkLabel5.Size = new System.Drawing.Size(65, 18);
             this.darkLabel5.TabIndex = 11;
             this.darkLabel5.Text = "Gender";
             // 
@@ -738,7 +734,7 @@ namespace HealthyCare.UI.Doctor
             // 
             // frmDoctor
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
             this.ClientSize = new System.Drawing.Size(1125, 613);

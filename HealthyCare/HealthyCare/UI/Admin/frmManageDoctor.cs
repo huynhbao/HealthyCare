@@ -14,13 +14,12 @@ using System.Windows.Forms;
 
 namespace HealthyCare.UI.Admin
 {
-    public partial class frmManageUser : DarkForm, IAdmin
+    public partial class frmManageDoctor : DarkForm, IAdmin
     {
         AdminPresenter adminPresenter = null;
         private DataSet dsAdmin;
         private DataTable dtAdmin;
-
-        public frmManageUser()
+        public frmManageDoctor()
         {
             InitializeComponent();
             adminPresenter = new AdminPresenter(this);
@@ -30,38 +29,24 @@ namespace HealthyCare.UI.Admin
         {
             adminPresenter.GetData();
         }
-
-        void IAdmin.GetData(DataSet data)
+        public void GetData(DataSet data)
         {
             dsAdmin = data;
             dtAdmin = dsAdmin.Tables[0];
-            
+
             MyUtils.ConvertColumnType(ref dtAdmin, "status", typeof(int));
             MyUtils.ConvertColumnType(ref dtAdmin, "gender", typeof(int));
-            dgvUser.DataSource = dtAdmin;
+            dgvDoctor.DataSource = dtAdmin;
             DataView dv = dtAdmin.DefaultView;
-            string filter = "idRole = 3";
+            string filter = "idRole = 2";
             dv.RowFilter = filter;
-            dgvUser.Columns["idRole"].Visible = false;
-            dgvUser.CellFormatting += DgvUser_CellFormatting;
+            dgvDoctor.Columns["idRole"].Visible = false;
+            dgvDoctor.CellFormatting += DgvDoctor_CellFormatting;
         }
 
-        void IAdmin.DeleteUser(bool check)
+        private void DgvDoctor_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
-            if (check)
-            {
-                MessageBox.Show("Delete Sucessful", "Message");
-                LoadData();
-            }
-            else
-            {
-                MessageBox.Show("Cannot Delete", "Message");
-            }
-        }
-
-        private void DgvUser_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
-        {
-            if (dgvUser.Columns[e.ColumnIndex].Name.Equals("status"))
+            if (dgvDoctor.Columns[e.ColumnIndex].Name.Equals("status"))
             {
                 if (e.Value != null)
                 {
@@ -77,8 +62,7 @@ namespace HealthyCare.UI.Admin
                     }
                 }
             }
-
-            if (dgvUser.Columns[e.ColumnIndex].Name.Equals("gender"))
+            if (dgvDoctor.Columns[e.ColumnIndex].Name.Equals("gender"))
             {
                 if (e.Value != null)
                 {
@@ -95,16 +79,32 @@ namespace HealthyCare.UI.Admin
                 }
             }
         }
-
-        private void btnDeleteUser_Click(object sender, EventArgs e)
+        public void DeleteUser(bool check)
         {
-            if (dgvUser.SelectedRows.Count > 0)
+            if (check)
             {
-                String userId = dgvUser.SelectedRows[0].Cells[0].Value.ToString();
-                dtAdmin = dsAdmin.Tables[0];
-                DataRow dr = dtAdmin.Rows[dgvUser.SelectedRows[0].Index];
-                int status = int.Parse(dr["status"].ToString());
+                MessageBox.Show("Delete Sucessful", "Message");
+                LoadData();
+            }
+            else
+            {
+                MessageBox.Show("Cannot Delete", "Message");
+            }
+        }
 
+        private void btnCreateDoctor_Click(object sender, EventArgs e)
+        {
+            new frmCreateDoctor().ShowDialog();
+        }
+
+        private void btnDeleteDoctor_Click(object sender, EventArgs e)
+        {
+            if (dgvDoctor.SelectedRows.Count > 0)
+            {
+                String userId = dgvDoctor.SelectedRows[0].Cells[0].Value.ToString();
+                dtAdmin = dsAdmin.Tables[0];
+                DataRow dr = dtAdmin.Rows[dgvDoctor.SelectedRows[0].Index];
+                int status = int.Parse(dr["status"].ToString());
                 switch (status)
                 {
                     case 1:
@@ -121,10 +121,7 @@ namespace HealthyCare.UI.Admin
                         break;
 
                 }
-
             }
         }
-
-       
     }
 }
