@@ -56,7 +56,7 @@ namespace HealthyCare.UI.Customer
 
         private void DoctorPresenter_OnDataLoading()
         {
-            loadingForm.Show(this);
+            loadingForm.Show();
         }
 
         void LoadData()
@@ -113,7 +113,7 @@ namespace HealthyCare.UI.Customer
             if (check)
             {
                 MessageBox.Show("Canceled Sucessful", "Message");
-                Close();
+                Hide();
             }
             else
             {

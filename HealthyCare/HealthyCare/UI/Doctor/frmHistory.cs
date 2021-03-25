@@ -126,8 +126,27 @@ namespace HealthyCare.UI.Doctor
         {
             if (dgvHistory.SelectedRows.Count > 0)
             {
-                string BookingID = dgvHistory.SelectedRows[0].Cells[0].Value.ToString();
-                viewBookingPresenter.GetBookingInformation(BookingID);
+                DataTable dtHistory = dsHistory.Tables[0];
+                DataRow dr = dtHistory.Rows[dgvHistory.SelectedRows[0].Index];
+                int status = int.Parse(dr["status"].ToString());
+                switch (status)
+                {
+                    case 1:
+                        MessageBox.Show("This booking has not been comfirmed.", "Message");
+                        break;
+                    case 2:
+                        string BookingID = dgvHistory.SelectedRows[0].Cells[0].Value.ToString();
+                        viewBookingPresenter.GetBookingInformation(BookingID);
+                        break;
+                    case 3:
+                        MessageBox.Show("This booking has been done.", "Message");
+                        break;
+                    case 4:
+                        MessageBox.Show("This booking has been canceled", "Message");
+                        break;
+
+                }
+                
             }
         }
 

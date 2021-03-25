@@ -247,12 +247,10 @@ namespace HealthyCare.UI.Doctor
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvDoctor.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvDoctor.RowHeadersVisible = false;
-<<<<<<< HEAD
+
 
             this.dgvDoctor.RowHeadersWidth = 51;
 
-=======
->>>>>>> 7c420efa3fdaef490d5b0fe5aa4aba7a5d6a8bca
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
             this.dgvDoctor.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvDoctor.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));

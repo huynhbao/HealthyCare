@@ -26,6 +26,7 @@ namespace HealthyCare.UI.Doctor
         {
             InitializeComponent();
             this.booking = booking;
+            lbParentForm.Text = "Chatting with " + booking.User.FullName;
         }
 
         private void ConnectAsync()
@@ -45,7 +46,7 @@ namespace HealthyCare.UI.Doctor
         }
 
         private void frmChat_Load(object sender, EventArgs e)
-        {
+         {
             SignalR_Services.HubProxy.Invoke("AddGroup", booking);
             ConnectAsync();
         }
@@ -53,13 +54,16 @@ namespace HealthyCare.UI.Doctor
         private void btnSend_Click(object sender, EventArgs e)
         {
             string msg = txtContent.Text.Trim();
-            SignalR_Services.HubProxy.Invoke("ChatDoctorSend", booking, msg);
-            Invoke((Action)(() =>
+            if (msg.Length > 0)
             {
-                txtChat.AppendText(string.Format("You: {0} \r\n", msg));
-            }));
-            txtContent.Text = String.Empty;
-            txtContent.Focus();
+                SignalR_Services.HubProxy.Invoke("ChatDoctorSend", booking, msg);
+                Invoke((Action)(() =>
+                {
+                    txtChat.AppendText(string.Format("You: {0} \r\n", msg));
+                }));
+                txtContent.Text = String.Empty;
+                txtContent.Focus();
+            }
         }
 
         private void panelTitleBar_MouseDown(object sender, MouseEventArgs e)

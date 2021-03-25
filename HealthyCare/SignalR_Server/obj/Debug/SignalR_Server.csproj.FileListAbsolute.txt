@@ -56,3 +56,32 @@ D:\Hung\PRN292\Projects - Copy\HealthyCare\SignalR_Server\obj\Debug\SignalR_Serv
 D:\Hung\PRN292\Projects - Copy\HealthyCare\SignalR_Server\obj\Debug\SignalR_Server.csproj.CopyComplete
 D:\Hung\PRN292\Projects - Copy\HealthyCare\SignalR_Server\obj\Debug\SignalR_Server.exe
 D:\Hung\PRN292\Projects - Copy\HealthyCare\SignalR_Server\obj\Debug\SignalR_Server.pdb
+D:\fpt\PRN292\Project\HealthyCare\HealthyCare\SignalR_Server\bin\Debug\SignalR_Server.exe.config
+D:\fpt\PRN292\Project\HealthyCare\HealthyCare\SignalR_Server\bin\Debug\SignalR_Server.exe
+D:\fpt\PRN292\Project\HealthyCare\HealthyCare\SignalR_Server\bin\Debug\SignalR_Server.pdb
+D:\fpt\PRN292\Project\HealthyCare\HealthyCare\SignalR_Server\bin\Debug\BussinessObject.dll
+D:\fpt\PRN292\Project\HealthyCare\HealthyCare\SignalR_Server\bin\Debug\Microsoft.AspNet.SignalR.Core.dll
+D:\fpt\PRN292\Project\HealthyCare\HealthyCare\SignalR_Server\bin\Debug\Microsoft.Owin.Cors.dll
+D:\fpt\PRN292\Project\HealthyCare\HealthyCare\SignalR_Server\bin\Debug\Microsoft.Owin.dll
+D:\fpt\PRN292\Project\HealthyCare\HealthyCare\SignalR_Server\bin\Debug\Microsoft.Owin.Host.HttpListener.dll
+D:\fpt\PRN292\Project\HealthyCare\HealthyCare\SignalR_Server\bin\Debug\Microsoft.Owin.Hosting.dll
+D:\fpt\PRN292\Project\HealthyCare\HealthyCare\SignalR_Server\bin\Debug\Microsoft.Owin.Security.dll
+D:\fpt\PRN292\Project\HealthyCare\HealthyCare\SignalR_Server\bin\Debug\Newtonsoft.Json.dll
+D:\fpt\PRN292\Project\HealthyCare\HealthyCare\SignalR_Server\bin\Debug\Owin.dll
+D:\fpt\PRN292\Project\HealthyCare\HealthyCare\SignalR_Server\bin\Debug\System.Web.Cors.dll
+D:\fpt\PRN292\Project\HealthyCare\HealthyCare\SignalR_Server\bin\Debug\DataProvider.dll
+D:\fpt\PRN292\Project\HealthyCare\HealthyCare\SignalR_Server\bin\Debug\BussinessObject.pdb
+D:\fpt\PRN292\Project\HealthyCare\HealthyCare\SignalR_Server\bin\Debug\Microsoft.AspNet.SignalR.Core.pdb
+D:\fpt\PRN292\Project\HealthyCare\HealthyCare\SignalR_Server\bin\Debug\Microsoft.AspNet.SignalR.Core.xml
+D:\fpt\PRN292\Project\HealthyCare\HealthyCare\SignalR_Server\bin\Debug\Microsoft.Owin.xml
+D:\fpt\PRN292\Project\HealthyCare\HealthyCare\SignalR_Server\bin\Debug\Microsoft.Owin.Cors.xml
+D:\fpt\PRN292\Project\HealthyCare\HealthyCare\SignalR_Server\bin\Debug\Microsoft.Owin.Host.HttpListener.xml
+D:\fpt\PRN292\Project\HealthyCare\HealthyCare\SignalR_Server\bin\Debug\Microsoft.Owin.Hosting.xml
+D:\fpt\PRN292\Project\HealthyCare\HealthyCare\SignalR_Server\bin\Debug\Microsoft.Owin.Security.xml
+D:\fpt\PRN292\Project\HealthyCare\HealthyCare\SignalR_Server\bin\Debug\Newtonsoft.Json.xml
+D:\fpt\PRN292\Project\HealthyCare\HealthyCare\SignalR_Server\bin\Debug\DataProvider.pdb
+D:\fpt\PRN292\Project\HealthyCare\HealthyCare\SignalR_Server\obj\Debug\SignalR_Server.csprojAssemblyReference.cache
+D:\fpt\PRN292\Project\HealthyCare\HealthyCare\SignalR_Server\obj\Debug\SignalR_Server.csproj.CoreCompileInputs.cache
+D:\fpt\PRN292\Project\HealthyCare\HealthyCare\SignalR_Server\obj\Debug\SignalR_Server.csproj.CopyComplete
+D:\fpt\PRN292\Project\HealthyCare\HealthyCare\SignalR_Server\obj\Debug\SignalR_Server.exe
+D:\fpt\PRN292\Project\HealthyCare\HealthyCare\SignalR_Server\obj\Debug\SignalR_Server.pdb
