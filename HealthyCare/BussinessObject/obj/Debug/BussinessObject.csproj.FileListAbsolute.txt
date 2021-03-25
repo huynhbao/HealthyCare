@@ -25,3 +25,12 @@ D:\Hung\PRN292\Projects\HealthyCare\HealthyCare\BussinessObject\obj\Debug\Bussin
 D:\Hung\PRN292\Projects\HealthyCare\HealthyCare\BussinessObject\obj\Debug\BussinessObject.csproj.CopyComplete
 D:\Hung\PRN292\Projects\HealthyCare\HealthyCare\BussinessObject\obj\Debug\BussinessObject.dll
 D:\Hung\PRN292\Projects\HealthyCare\HealthyCare\BussinessObject\obj\Debug\BussinessObject.pdb
+D:\1_FPT_SEMESTER\3_Fpt_SPRING_2021\prn292(C#)_KIemHH\New folder\HealthyCare\BussinessObject\bin\Debug\BussinessObject.dll
+D:\1_FPT_SEMESTER\3_Fpt_SPRING_2021\prn292(C#)_KIemHH\New folder\HealthyCare\BussinessObject\bin\Debug\BussinessObject.pdb
+D:\1_FPT_SEMESTER\3_Fpt_SPRING_2021\prn292(C#)_KIemHH\New folder\HealthyCare\BussinessObject\bin\Debug\DataProvider.dll
+D:\1_FPT_SEMESTER\3_Fpt_SPRING_2021\prn292(C#)_KIemHH\New folder\HealthyCare\BussinessObject\bin\Debug\DataProvider.pdb
+D:\1_FPT_SEMESTER\3_Fpt_SPRING_2021\prn292(C#)_KIemHH\New folder\HealthyCare\BussinessObject\obj\Debug\BussinessObject.csprojAssemblyReference.cache
+D:\1_FPT_SEMESTER\3_Fpt_SPRING_2021\prn292(C#)_KIemHH\New folder\HealthyCare\BussinessObject\obj\Debug\BussinessObject.csproj.CoreCompileInputs.cache
+D:\1_FPT_SEMESTER\3_Fpt_SPRING_2021\prn292(C#)_KIemHH\New folder\HealthyCare\BussinessObject\obj\Debug\BussinessObject.csproj.CopyComplete
+D:\1_FPT_SEMESTER\3_Fpt_SPRING_2021\prn292(C#)_KIemHH\New folder\HealthyCare\BussinessObject\obj\Debug\BussinessObject.dll
+D:\1_FPT_SEMESTER\3_Fpt_SPRING_2021\prn292(C#)_KIemHH\New folder\HealthyCare\BussinessObject\obj\Debug\BussinessObject.pdb

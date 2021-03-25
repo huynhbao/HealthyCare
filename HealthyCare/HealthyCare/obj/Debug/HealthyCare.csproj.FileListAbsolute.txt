@@ -113,3 +113,37 @@ D:\Hung\PRN292\Projects\HealthyCare\HealthyCare\HealthyCare\obj\Debug\HealthyCar
 D:\Hung\PRN292\Projects\HealthyCare\HealthyCare\HealthyCare\obj\Debug\HealthyCare.UI.Guest.frmLoading.resources
 D:\Hung\PRN292\Projects\HealthyCare\HealthyCare\HealthyCare\obj\Debug\HealthyCare.UI.User.frmEditPassword.resources
 D:\Hung\PRN292\Projects\HealthyCare\HealthyCare\HealthyCare\obj\Debug\HealthyCare.csproj.CopyComplete
+D:\1_FPT_SEMESTER\3_Fpt_SPRING_2021\prn292(C#)_KIemHH\New folder\HealthyCare\HealthyCare\bin\Debug\HealthyCare.exe.config
+D:\1_FPT_SEMESTER\3_Fpt_SPRING_2021\prn292(C#)_KIemHH\New folder\HealthyCare\HealthyCare\bin\Debug\HealthyCare.exe
+D:\1_FPT_SEMESTER\3_Fpt_SPRING_2021\prn292(C#)_KIemHH\New folder\HealthyCare\HealthyCare\bin\Debug\HealthyCare.pdb
+D:\1_FPT_SEMESTER\3_Fpt_SPRING_2021\prn292(C#)_KIemHH\New folder\HealthyCare\HealthyCare\bin\Debug\BussinessObject.dll
+D:\1_FPT_SEMESTER\3_Fpt_SPRING_2021\prn292(C#)_KIemHH\New folder\HealthyCare\HealthyCare\bin\Debug\CircularProgressBar.dll
+D:\1_FPT_SEMESTER\3_Fpt_SPRING_2021\prn292(C#)_KIemHH\New folder\HealthyCare\HealthyCare\bin\Debug\FontAwesome.Sharp.dll
+D:\1_FPT_SEMESTER\3_Fpt_SPRING_2021\prn292(C#)_KIemHH\New folder\HealthyCare\HealthyCare\bin\Debug\WinFormAnimation.dll
+D:\1_FPT_SEMESTER\3_Fpt_SPRING_2021\prn292(C#)_KIemHH\New folder\HealthyCare\HealthyCare\bin\Debug\DataProvider.dll
+D:\1_FPT_SEMESTER\3_Fpt_SPRING_2021\prn292(C#)_KIemHH\New folder\HealthyCare\HealthyCare\bin\Debug\BussinessObject.pdb
+D:\1_FPT_SEMESTER\3_Fpt_SPRING_2021\prn292(C#)_KIemHH\New folder\HealthyCare\HealthyCare\bin\Debug\CircularProgressBar.xml
+D:\1_FPT_SEMESTER\3_Fpt_SPRING_2021\prn292(C#)_KIemHH\New folder\HealthyCare\HealthyCare\bin\Debug\DataProvider.pdb
+D:\1_FPT_SEMESTER\3_Fpt_SPRING_2021\prn292(C#)_KIemHH\New folder\HealthyCare\HealthyCare\obj\Debug\HealthyCare.csprojAssemblyReference.cache
+D:\1_FPT_SEMESTER\3_Fpt_SPRING_2021\prn292(C#)_KIemHH\New folder\HealthyCare\HealthyCare\obj\Debug\HealthyCare.Properties.Resources.resources
+D:\1_FPT_SEMESTER\3_Fpt_SPRING_2021\prn292(C#)_KIemHH\New folder\HealthyCare\HealthyCare\obj\Debug\HealthyCare.UI.Admin.frmAdmin.resources
+D:\1_FPT_SEMESTER\3_Fpt_SPRING_2021\prn292(C#)_KIemHH\New folder\HealthyCare\HealthyCare\obj\Debug\HealthyCare.UI.Admin.frmCreateDoctor.resources
+D:\1_FPT_SEMESTER\3_Fpt_SPRING_2021\prn292(C#)_KIemHH\New folder\HealthyCare\HealthyCare\obj\Debug\HealthyCare.UI.Admin.frmManageUser.resources
+D:\1_FPT_SEMESTER\3_Fpt_SPRING_2021\prn292(C#)_KIemHH\New folder\HealthyCare\HealthyCare\obj\Debug\HealthyCare.UI.Customer.frmCustomer.resources
+D:\1_FPT_SEMESTER\3_Fpt_SPRING_2021\prn292(C#)_KIemHH\New folder\HealthyCare\HealthyCare\obj\Debug\HealthyCare.UI.Customer.frmDoctorDetail.resources
+D:\1_FPT_SEMESTER\3_Fpt_SPRING_2021\prn292(C#)_KIemHH\New folder\HealthyCare\HealthyCare\obj\Debug\HealthyCare.UI.Customer.frmFeedback.resources
+D:\1_FPT_SEMESTER\3_Fpt_SPRING_2021\prn292(C#)_KIemHH\New folder\HealthyCare\HealthyCare\obj\Debug\HealthyCare.UI.Customer.frmHistory.resources
+D:\1_FPT_SEMESTER\3_Fpt_SPRING_2021\prn292(C#)_KIemHH\New folder\HealthyCare\HealthyCare\obj\Debug\HealthyCare.UI.Doctor.frmDoctor.resources
+D:\1_FPT_SEMESTER\3_Fpt_SPRING_2021\prn292(C#)_KIemHH\New folder\HealthyCare\HealthyCare\obj\Debug\HealthyCare.UI.Doctor.frmHistory.resources
+D:\1_FPT_SEMESTER\3_Fpt_SPRING_2021\prn292(C#)_KIemHH\New folder\HealthyCare\HealthyCare\obj\Debug\HealthyCare.UI.Doctor.frmViewFeedbacks.resources
+D:\1_FPT_SEMESTER\3_Fpt_SPRING_2021\prn292(C#)_KIemHH\New folder\HealthyCare\HealthyCare\obj\Debug\HealthyCare.UI.Guest.frmLoading.resources
+D:\1_FPT_SEMESTER\3_Fpt_SPRING_2021\prn292(C#)_KIemHH\New folder\HealthyCare\HealthyCare\obj\Debug\HealthyCare.UI.G.frmLogin.resources
+D:\1_FPT_SEMESTER\3_Fpt_SPRING_2021\prn292(C#)_KIemHH\New folder\HealthyCare\HealthyCare\obj\Debug\HealthyCare.frmRegister.resources
+D:\1_FPT_SEMESTER\3_Fpt_SPRING_2021\prn292(C#)_KIemHH\New folder\HealthyCare\HealthyCare\obj\Debug\HealthyCare.UI.User.frmEditPassword.resources
+D:\1_FPT_SEMESTER\3_Fpt_SPRING_2021\prn292(C#)_KIemHH\New folder\HealthyCare\HealthyCare\obj\Debug\HealthyCare.UI.User.frmEditProfile.resources
+D:\1_FPT_SEMESTER\3_Fpt_SPRING_2021\prn292(C#)_KIemHH\New folder\HealthyCare\HealthyCare\obj\Debug\HealthyCare.UI.User.frmViewProfile.resources
+D:\1_FPT_SEMESTER\3_Fpt_SPRING_2021\prn292(C#)_KIemHH\New folder\HealthyCare\HealthyCare\obj\Debug\HealthyCare.csproj.GenerateResource.cache
+D:\1_FPT_SEMESTER\3_Fpt_SPRING_2021\prn292(C#)_KIemHH\New folder\HealthyCare\HealthyCare\obj\Debug\HealthyCare.csproj.CoreCompileInputs.cache
+D:\1_FPT_SEMESTER\3_Fpt_SPRING_2021\prn292(C#)_KIemHH\New folder\HealthyCare\HealthyCare\obj\Debug\HealthyCare.csproj.CopyComplete
+D:\1_FPT_SEMESTER\3_Fpt_SPRING_2021\prn292(C#)_KIemHH\New folder\HealthyCare\HealthyCare\obj\Debug\HealthyCare.exe
+D:\1_FPT_SEMESTER\3_Fpt_SPRING_2021\prn292(C#)_KIemHH\New folder\HealthyCare\HealthyCare\obj\Debug\HealthyCare.pdb

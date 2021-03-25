@@ -4,3 +4,9 @@ C:\Users\HuynhBao\source\repos\HealthyCare\HealthyCare\DataProvider\obj\Debug\Da
 C:\Users\HuynhBao\source\repos\HealthyCare\HealthyCare\DataProvider\obj\Debug\DataProvider.csproj.CoreCompileInputs.cache
 C:\Users\HuynhBao\source\repos\HealthyCare\HealthyCare\DataProvider\obj\Debug\DataProvider.dll
 C:\Users\HuynhBao\source\repos\HealthyCare\HealthyCare\DataProvider\obj\Debug\DataProvider.pdb
+D:\1_FPT_SEMESTER\3_Fpt_SPRING_2021\prn292(C#)_KIemHH\New folder\HealthyCare\DataProvider\bin\Debug\DataProvider.dll
+D:\1_FPT_SEMESTER\3_Fpt_SPRING_2021\prn292(C#)_KIemHH\New folder\HealthyCare\DataProvider\bin\Debug\DataProvider.pdb
+D:\1_FPT_SEMESTER\3_Fpt_SPRING_2021\prn292(C#)_KIemHH\New folder\HealthyCare\DataProvider\obj\Debug\DataProvider.csprojAssemblyReference.cache
+D:\1_FPT_SEMESTER\3_Fpt_SPRING_2021\prn292(C#)_KIemHH\New folder\HealthyCare\DataProvider\obj\Debug\DataProvider.csproj.CoreCompileInputs.cache
+D:\1_FPT_SEMESTER\3_Fpt_SPRING_2021\prn292(C#)_KIemHH\New folder\HealthyCare\DataProvider\obj\Debug\DataProvider.dll
+D:\1_FPT_SEMESTER\3_Fpt_SPRING_2021\prn292(C#)_KIemHH\New folder\HealthyCare\DataProvider\obj\Debug\DataProvider.pdb
