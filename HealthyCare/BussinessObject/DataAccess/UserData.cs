@@ -1,4 +1,5 @@
-﻿using BussinessObject.Entities;
+﻿using BussinessObject.DataAccess;
+using BussinessObject.Entities;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -260,5 +261,59 @@ namespace BussinessObject
             }
         }
 
+        public Booking GetLatestBooking(User user)
+        {
+            Booking result = null;
+
+            string sql = "SELECT TOP 1 idBooking, status, idDoctor, bookingDate FROM Booking WHERE idUser=@idUser AND status != 3 AND status != 4";
+            SqlParameter UserIDIDParam = new SqlParameter("@idUser", user.UserID);
+            SqlDataReader rd = DataProvider.ExecuteQueryWithDataReader(sql, CommandType.Text, UserIDIDParam);
+            if (rd.Read())
+            {
+                if (rd.HasRows)
+                {
+                    DoctorData doctorData = new DoctorData();
+                    Doctor doctor = doctorData.GetDoctorByID(rd["idDoctor"].ToString());
+                    result = new Booking
+                    {
+                        BookingID = int.Parse(rd["idBooking"].ToString()),
+                        Status = int.Parse(rd["status"].ToString()),
+                        Time = DateTime.Parse(rd["bookingDate"].ToString()),
+                        User = user,
+                        Doctor = doctor
+                    };
+                }
+            }
+
+            return result;
+        }
+
+        public Booking GetBookingInformation(string BookingID)
+        {
+            Booking result = null;
+
+            string sql = "SELECT status, idDoctor, idUser, bookingDate FROM Booking WHERE idBooking=@idBooking";
+            SqlParameter UserIDIDParam = new SqlParameter("@idBooking", BookingID);
+            SqlDataReader rd = DataProvider.ExecuteQueryWithDataReader(sql, CommandType.Text, UserIDIDParam);
+            if (rd.Read())
+            {
+                if (rd.HasRows)
+                {
+                    DoctorData doctorData = new DoctorData();
+                    Doctor doctor = doctorData.GetDoctorByID(rd["idDoctor"].ToString());
+                    User user = doctorData.GetUserInformationByID(rd["idUser"].ToString());
+                    result = new Booking
+                    {
+                        BookingID = int.Parse(BookingID),
+                        Status = int.Parse(rd["status"].ToString()),
+                        Time = DateTime.Parse(rd["bookingDate"].ToString()),
+                        Doctor = doctor,
+                        User = user
+                    };
+                }
+            }
+
+            return result;
+        }
     }
 }

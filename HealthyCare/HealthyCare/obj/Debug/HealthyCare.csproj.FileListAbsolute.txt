@@ -118,6 +118,10 @@ D:\fpt\PRN292\Project\HealthyCare\HealthyCare\HealthyCare\obj\Debug\HealthyCare.
 D:\fpt\PRN292\Project\HealthyCare\HealthyCare\HealthyCare\obj\Debug\HealthyCare.exe
 D:\fpt\PRN292\Project\HealthyCare\HealthyCare\HealthyCare\obj\Debug\HealthyCare.pdb
 <<<<<<< HEAD
+C:\Users\HuynhBao\source\repos\HealthyCare\HealthyCare\HealthyCare\obj\Debug\HealthyCare.UI.Customer.frmBooking.resources
+C:\Users\HuynhBao\source\repos\HealthyCare\HealthyCare\HealthyCare\obj\Debug\HealthyCare.UI.Doctor.frmChat.resources
+=======
+<<<<<<< HEAD
 C:\Users\ACER\Desktop\LangBam\HealthyCare\HealthyCare\HealthyCare\bin\Debug\HealthyCare.exe.config
 C:\Users\ACER\Desktop\LangBam\HealthyCare\HealthyCare\HealthyCare\bin\Debug\HealthyCare.exe
 C:\Users\ACER\Desktop\LangBam\HealthyCare\HealthyCare\HealthyCare\bin\Debug\HealthyCare.pdb
@@ -239,3 +243,4 @@ D:\Hung\PRN292\Projects - Copy\HealthyCare\HealthyCare\obj\Debug\HealthyCare.exe
 D:\Hung\PRN292\Projects - Copy\HealthyCare\HealthyCare\obj\Debug\HealthyCare.pdb
 >>>>>>> 4db145f78b24856daad531f9831493a0b18bb235
 >>>>>>> 7c420efa3fdaef490d5b0fe5aa4aba7a5d6a8bca
+>>>>>>> 1db5c99eaa4214d06f379c41ad8d3d695dd9d8ef

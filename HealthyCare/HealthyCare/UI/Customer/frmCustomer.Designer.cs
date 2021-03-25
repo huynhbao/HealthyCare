@@ -41,6 +41,7 @@ namespace HealthyCare.UI.Customer
             this.btnBook = new FontAwesome.Sharp.IconButton();
             this.panel2 = new System.Windows.Forms.Panel();
             this.darkLabel3 = new DarkUI.Controls.DarkLabel();
+            this.cbMajor = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.darkLabel2 = new DarkUI.Controls.DarkLabel();
             this.btnRefresh = new FontAwesome.Sharp.IconButton();
@@ -62,7 +63,6 @@ namespace HealthyCare.UI.Customer
             this.btnLogout = new FontAwesome.Sharp.IconButton();
             this.btnHome = new FontAwesome.Sharp.IconButton();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
-            this.cbMajor = new System.Windows.Forms.ComboBox();
             this.pnView.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -148,6 +148,18 @@ namespace HealthyCare.UI.Customer
             this.darkLabel3.Size = new System.Drawing.Size(37, 17);
             this.darkLabel3.TabIndex = 13;
             this.darkLabel3.Text = "Filter";
+            // 
+            // cbMajor
+            // 
+            this.cbMajor.BackColor = System.Drawing.SystemColors.Window;
+            this.cbMajor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbMajor.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbMajor.FormattingEnabled = true;
+            this.cbMajor.Location = new System.Drawing.Point(56, 79);
+            this.cbMajor.Name = "cbMajor";
+            this.cbMajor.Size = new System.Drawing.Size(306, 23);
+            this.cbMajor.TabIndex = 8;
+            this.cbMajor.SelectedIndexChanged += new System.EventHandler(this.cbMajor_SelectedIndexChanged);
             // 
             // panel1
             // 
@@ -472,18 +484,6 @@ namespace HealthyCare.UI.Customer
             // 
             this.notifyIcon1.Text = "notifyIcon1";
             this.notifyIcon1.Visible = true;
-            // 
-            // cbMajor
-            // 
-            this.cbMajor.BackColor = System.Drawing.SystemColors.Window;
-            this.cbMajor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbMajor.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbMajor.FormattingEnabled = true;
-            this.cbMajor.Location = new System.Drawing.Point(56, 79);
-            this.cbMajor.Name = "cbMajor";
-            this.cbMajor.Size = new System.Drawing.Size(306, 23);
-            this.cbMajor.TabIndex = 8;
-            this.cbMajor.SelectedIndexChanged += new System.EventHandler(this.cbMajor_SelectedIndexChanged);
             // 
             // frmCustomer
             // 

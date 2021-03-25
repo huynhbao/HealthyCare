@@ -1,4 +1,5 @@
-﻿using DarkUI.Forms;
+﻿using BussinessObject.Entities;
+using DarkUI.Forms;
 using HealthyCare.Presenters;
 using HealthyCare.Utils;
 using HealthyCare.Views;
@@ -118,6 +119,32 @@ namespace HealthyCare.UI.Doctor
             else
             {
                 MessageBox.Show("Cannot Finish.");
+            }
+        }
+
+        private void btnChat_Click(object sender, EventArgs e)
+        {
+            if (dgvHistory.SelectedRows.Count > 0)
+            {
+                string BookingID = dgvHistory.SelectedRows[0].Cells[0].Value.ToString();
+                viewBookingPresenter.GetBookingInformation(BookingID);
+            }
+        }
+
+        void IBookingHistory.GetBookingInformation(Booking booking)
+        {
+            if (booking != null)
+            {
+                frmChat frm = new frmChat(booking);
+                if ((Application.OpenForms["frmChat"] as frmChat) == null)
+                {
+                    
+                    frm.Show();
+                } else
+                {
+                    frm.BringToFront();
+                }
+                
             }
         }
     }

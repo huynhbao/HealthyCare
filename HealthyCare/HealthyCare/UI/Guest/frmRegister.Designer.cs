@@ -307,6 +307,7 @@ namespace HealthyCare
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(253, 23);
             this.txtPassword.TabIndex = 29;
+            this.txtPassword.UseSystemPasswordChar = true;
             // 
             // txtConfirm
             // 
@@ -317,6 +318,7 @@ namespace HealthyCare
             this.txtConfirm.Name = "txtConfirm";
             this.txtConfirm.Size = new System.Drawing.Size(253, 23);
             this.txtConfirm.TabIndex = 29;
+            this.txtConfirm.UseSystemPasswordChar = true;
             // 
             // panelTitleBar
             // 
