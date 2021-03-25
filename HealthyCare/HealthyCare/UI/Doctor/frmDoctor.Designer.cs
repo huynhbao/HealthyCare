@@ -157,7 +157,7 @@ namespace HealthyCare.UI.Doctor
             this.btnExit.FlatAppearance.BorderSize = 0;
             this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExit.IconChar = FontAwesome.Sharp.IconChar.WindowClose;
-            this.btnExit.IconColor = System.Drawing.Color.White;
+            this.btnExit.IconColor = System.Drawing.Color.Crimson;
             this.btnExit.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnExit.IconSize = 25;
             this.btnExit.Location = new System.Drawing.Point(1095, 1);
@@ -247,7 +247,10 @@ namespace HealthyCare.UI.Doctor
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvDoctor.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvDoctor.RowHeadersVisible = false;
+<<<<<<< HEAD
             this.dgvDoctor.RowHeadersWidth = 51;
+=======
+>>>>>>> 3d1e9844ec9b3ff38c25ffb69e81d857f8a9cac6
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
             this.dgvDoctor.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvDoctor.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));

@@ -69,7 +69,7 @@ namespace HealthyCare.Presenters
             }
             bookingView.AcceptBooking(check, UserID);
         }
-        public void RejectBooking(string idBooking)
+        public void RejectBooking(string idBooking, string UserID)
         {
             if (OnDataLoading != null)
             {
@@ -80,7 +80,7 @@ namespace HealthyCare.Presenters
             {
                 OnDataLoadingCompleted();
             }
-            bookingView.RejectBooking(result);
+            bookingView.RejectBooking(result, UserID);
         }public void FinishBooking(string idBooking)
         {
             if (OnDataLoading != null)

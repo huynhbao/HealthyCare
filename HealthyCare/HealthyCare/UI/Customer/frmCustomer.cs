@@ -140,7 +140,7 @@ namespace HealthyCare.UI.Customer
             SignalR_Services.CloseConnection();
             frmLogin frm = new frmLogin();
             frm.Show();
-            Close();
+            Dispose();
         }
 
 

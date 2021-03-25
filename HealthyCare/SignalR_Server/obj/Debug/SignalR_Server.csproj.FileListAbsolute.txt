@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 D:\1_FPT_SEMESTER\3_Fpt_SPRING_2021\prn292(C#)_KIemHH\New folder\HealthyCare\SignalR_Server\bin\Debug\SignalR_Server.exe.config
 D:\1_FPT_SEMESTER\3_Fpt_SPRING_2021\prn292(C#)_KIemHH\New folder\HealthyCare\SignalR_Server\bin\Debug\SignalR_Server.exe
 D:\1_FPT_SEMESTER\3_Fpt_SPRING_2021\prn292(C#)_KIemHH\New folder\HealthyCare\SignalR_Server\bin\Debug\SignalR_Server.pdb
@@ -27,3 +28,34 @@ D:\1_FPT_SEMESTER\3_Fpt_SPRING_2021\prn292(C#)_KIemHH\New folder\HealthyCare\Sig
 D:\1_FPT_SEMESTER\3_Fpt_SPRING_2021\prn292(C#)_KIemHH\New folder\HealthyCare\SignalR_Server\obj\Debug\SignalR_Server.exe
 D:\1_FPT_SEMESTER\3_Fpt_SPRING_2021\prn292(C#)_KIemHH\New folder\HealthyCare\SignalR_Server\obj\Debug\SignalR_Server.pdb
 D:\1_FPT_SEMESTER\3_Fpt_SPRING_2021\prn292(C#)_KIemHH\New folder\HealthyCare\SignalR_Server\obj\Debug\SignalR_Server.csprojAssemblyReference.cache
+=======
+C:\Users\HuynhBao\source\repos\HealthyCare\HealthyCare\SignalR_Server\bin\Debug\SignalR_Server.exe.config
+C:\Users\HuynhBao\source\repos\HealthyCare\HealthyCare\SignalR_Server\bin\Debug\SignalR_Server.exe
+C:\Users\HuynhBao\source\repos\HealthyCare\HealthyCare\SignalR_Server\bin\Debug\SignalR_Server.pdb
+C:\Users\HuynhBao\source\repos\HealthyCare\HealthyCare\SignalR_Server\bin\Debug\BussinessObject.dll
+C:\Users\HuynhBao\source\repos\HealthyCare\HealthyCare\SignalR_Server\bin\Debug\Microsoft.AspNet.SignalR.Core.dll
+C:\Users\HuynhBao\source\repos\HealthyCare\HealthyCare\SignalR_Server\bin\Debug\Microsoft.Owin.Cors.dll
+C:\Users\HuynhBao\source\repos\HealthyCare\HealthyCare\SignalR_Server\bin\Debug\Microsoft.Owin.dll
+C:\Users\HuynhBao\source\repos\HealthyCare\HealthyCare\SignalR_Server\bin\Debug\Microsoft.Owin.Host.HttpListener.dll
+C:\Users\HuynhBao\source\repos\HealthyCare\HealthyCare\SignalR_Server\bin\Debug\Microsoft.Owin.Hosting.dll
+C:\Users\HuynhBao\source\repos\HealthyCare\HealthyCare\SignalR_Server\bin\Debug\Microsoft.Owin.Security.dll
+C:\Users\HuynhBao\source\repos\HealthyCare\HealthyCare\SignalR_Server\bin\Debug\Newtonsoft.Json.dll
+C:\Users\HuynhBao\source\repos\HealthyCare\HealthyCare\SignalR_Server\bin\Debug\Owin.dll
+C:\Users\HuynhBao\source\repos\HealthyCare\HealthyCare\SignalR_Server\bin\Debug\System.Web.Cors.dll
+C:\Users\HuynhBao\source\repos\HealthyCare\HealthyCare\SignalR_Server\bin\Debug\DataProvider.dll
+C:\Users\HuynhBao\source\repos\HealthyCare\HealthyCare\SignalR_Server\bin\Debug\BussinessObject.pdb
+C:\Users\HuynhBao\source\repos\HealthyCare\HealthyCare\SignalR_Server\bin\Debug\Microsoft.AspNet.SignalR.Core.pdb
+C:\Users\HuynhBao\source\repos\HealthyCare\HealthyCare\SignalR_Server\bin\Debug\Microsoft.AspNet.SignalR.Core.xml
+C:\Users\HuynhBao\source\repos\HealthyCare\HealthyCare\SignalR_Server\bin\Debug\Microsoft.Owin.xml
+C:\Users\HuynhBao\source\repos\HealthyCare\HealthyCare\SignalR_Server\bin\Debug\Microsoft.Owin.Cors.xml
+C:\Users\HuynhBao\source\repos\HealthyCare\HealthyCare\SignalR_Server\bin\Debug\Microsoft.Owin.Host.HttpListener.xml
+C:\Users\HuynhBao\source\repos\HealthyCare\HealthyCare\SignalR_Server\bin\Debug\Microsoft.Owin.Hosting.xml
+C:\Users\HuynhBao\source\repos\HealthyCare\HealthyCare\SignalR_Server\bin\Debug\Microsoft.Owin.Security.xml
+C:\Users\HuynhBao\source\repos\HealthyCare\HealthyCare\SignalR_Server\bin\Debug\Newtonsoft.Json.xml
+C:\Users\HuynhBao\source\repos\HealthyCare\HealthyCare\SignalR_Server\bin\Debug\DataProvider.pdb
+C:\Users\HuynhBao\source\repos\HealthyCare\HealthyCare\SignalR_Server\obj\Debug\SignalR_Server.csprojAssemblyReference.cache
+C:\Users\HuynhBao\source\repos\HealthyCare\HealthyCare\SignalR_Server\obj\Debug\SignalR_Server.csproj.CoreCompileInputs.cache
+C:\Users\HuynhBao\source\repos\HealthyCare\HealthyCare\SignalR_Server\obj\Debug\SignalR_Server.csproj.CopyComplete
+C:\Users\HuynhBao\source\repos\HealthyCare\HealthyCare\SignalR_Server\obj\Debug\SignalR_Server.exe
+C:\Users\HuynhBao\source\repos\HealthyCare\HealthyCare\SignalR_Server\obj\Debug\SignalR_Server.pdb
+>>>>>>> 3d1e9844ec9b3ff38c25ffb69e81d857f8a9cac6
