@@ -62,7 +62,7 @@ namespace SignalR_Server
     public class MyHub : Hub
     {
         static ConcurrentDictionary<string, User> _users = new ConcurrentDictionary<string, User>();
-
+        static BindingList<int> _groups = new BindingList<int>();
         public void PushNotification(string UserID1, string UserID2, string message)
         {
             var keys = _users.FirstOrDefault(x => x.Value.UserID == UserID2).Key;
@@ -82,9 +82,27 @@ namespace SignalR_Server
             Console.WriteLine("Set " + Context.ConnectionId + " with UserID: " + _users[Context.ConnectionId].UserID + " - Full Name: " + _users[Context.ConnectionId].FullName);
         }
 
-        public void Send(string name, string message)
+        public async void AddGroup(Booking booking)
         {
-            Clients.All.addMessage(name, message);
+            await Groups.Add(Context.ConnectionId, booking.BookingID.ToString());
+            int? group = _groups.FirstOrDefault(x => x == booking.BookingID);
+            if (group == null)
+            {
+                _groups.Add(booking.BookingID);
+            }
+            Program.WriteToConsole("Group: " + booking.BookingID + "  add: " + booking.BookingID);
+        }
+
+        public void ChatUserSend(Booking booking, string message)
+        {
+            Clients.Group(booking.BookingID.ToString()).Chat(booking, message, "ChatUserSend");
+            Program.WriteToConsole("Chat: User: " + booking.User.UserID + " send to "  + booking.Doctor.UserID + ":  " + message);
+        }
+
+        public void ChatDoctorSend(Booking booking, string message)
+        {
+            Clients.Group(booking.BookingID.ToString()).Chat(booking, message, "ChatDoctorSend");
+            Program.WriteToConsole("Chat: Doctor: " + booking.Doctor.UserID + " send to " + booking.User.UserID + ":  " + message);
         }
 
         public override Task OnConnected()

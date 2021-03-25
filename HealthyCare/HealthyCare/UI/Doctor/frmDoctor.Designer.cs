@@ -233,7 +233,7 @@ namespace HealthyCare.UI.Doctor
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvDoctor.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvDoctor.EnableHeadersVisualStyles = false;
-            this.dgvDoctor.Location = new System.Drawing.Point(0, 66);
+            this.dgvDoctor.Location = new System.Drawing.Point(0, 57);
             this.dgvDoctor.MultiSelect = false;
             this.dgvDoctor.Name = "dgvDoctor";
             this.dgvDoctor.ReadOnly = true;
@@ -253,7 +253,7 @@ namespace HealthyCare.UI.Doctor
             this.dgvDoctor.RowTemplate.Height = 45;
             this.dgvDoctor.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvDoctor.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDoctor.Size = new System.Drawing.Size(907, 261);
+            this.dgvDoctor.Size = new System.Drawing.Size(901, 223);
             this.dgvDoctor.TabIndex = 14;
             this.dgvDoctor.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDoctor_CellClick);
             this.dgvDoctor.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvDoctor_CellFormatting);

@@ -89,7 +89,7 @@ namespace HealthyCare.UI.Customer
                 switch (status)
                 {
                     case 1:
-                        userPresenter.CancelBooking(bookingID);
+                        userPresenter.CancelBookingHistory(bookingID);
                         break;
                     case 2:
                         MessageBox.Show("This booking has been confirmed.", "Message");

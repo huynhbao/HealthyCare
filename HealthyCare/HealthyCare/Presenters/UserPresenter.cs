@@ -23,6 +23,7 @@ namespace HealthyCare.Presenters
         ICustomer customerView;
         IFeedback feedbackView;
         IPassword passwordView;
+        IBooking bookingView;
         UserData userData = new UserData();
         DoctorData doctorData = new DoctorData();
 
@@ -55,6 +56,12 @@ namespace HealthyCare.Presenters
         {
             user = LoginInfo.user;
             feedbackView = view;
+        }
+
+        public UserPresenter(IBooking view)
+        {
+            user = LoginInfo.user;
+            bookingView = view;
         }
 
         public void ConnectModelAndView()
@@ -130,12 +137,20 @@ namespace HealthyCare.Presenters
 
         public void BookDoctor(string DoctorID)
         {
+            if (OnDataLoading != null)
+            {
+                OnDataLoading();
+            }
             bool check = !userData.CheckPreviousBooking(user.UserID);
             Doctor doctor = null;
             if (check)
             {
                 userData.BookDoctor(DoctorID, user.UserID, DateTime.Now);
                 doctor = doctorData.GetDoctorByID(DoctorID);
+            }
+            if (OnDataLoadingCompleted != null)
+            {
+                OnDataLoadingCompleted();
             }
 
             customerView.BookDoctor(check, doctor);
@@ -151,18 +166,62 @@ namespace HealthyCare.Presenters
         }
         public void ChangePassword(string curPw, string newPw)
         {
+            if (OnDataLoading != null)
+            {
+                OnDataLoading();
+            }
             Boolean check = userData.CheckPassword(user.UserID, curPw);
             if (check)
             {
                 userData.ChangePassword(user.UserID, newPw);
             }
+            if (OnDataLoadingCompleted != null)
+            {
+                OnDataLoadingCompleted();
+            }
             passwordView.ChangePassword(check);
+        }
+
+        public void CancelBookingHistory(int bookingID)
+        {
+            if (OnDataLoading != null)
+            {
+                OnDataLoading();
+            }
+            bool check = userData.SetStatusBooking(bookingID, 4);
+            if (OnDataLoadingCompleted != null)
+            {
+                OnDataLoadingCompleted();
+            }
+            historyView.CancelBooking(check);
         }
 
         public void CancelBooking(int bookingID)
         {
+            if (OnDataLoading != null)
+            {
+                OnDataLoading();
+            }
             bool check = userData.SetStatusBooking(bookingID, 4);
-            historyView.CancelBooking(check);
+            if (OnDataLoadingCompleted != null)
+            {
+                OnDataLoadingCompleted();
+            }
+            bookingView.CancelBooking(check);
+        }
+
+        public void GetLatestBooking()
+        {
+            if (OnDataLoading != null)
+            {
+                OnDataLoading();
+            }
+            Booking booking = userData.GetLatestBooking(user);
+            if (OnDataLoadingCompleted != null)
+            {
+                OnDataLoadingCompleted();
+            }
+            customerView.GetLatestBooking(booking);
         }
     }
 }

@@ -70,7 +70,7 @@ namespace HealthyCare.UI.G
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Padding = new System.Windows.Forms.Padding(5);
             this.btnLogin.Size = new System.Drawing.Size(248, 34);
-            this.btnLogin.TabIndex = 4;
+            this.btnLogin.TabIndex = 7;
             this.btnLogin.Text = "Login";
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
@@ -83,7 +83,7 @@ namespace HealthyCare.UI.G
             this.txtUsername.Location = new System.Drawing.Point(261, 223);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(248, 21);
-            this.txtUsername.TabIndex = 1;
+            this.txtUsername.TabIndex = 20;
             // 
             // txtPassword
             // 
@@ -94,7 +94,7 @@ namespace HealthyCare.UI.G
             this.txtPassword.Location = new System.Drawing.Point(261, 291);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(248, 21);
-            this.txtPassword.TabIndex = 2;
+            this.txtPassword.TabIndex = 30;
             this.txtPassword.UseSystemPasswordChar = true;
             // 
             // darkLabel2
@@ -105,7 +105,7 @@ namespace HealthyCare.UI.G
             this.darkLabel2.Location = new System.Drawing.Point(258, 272);
             this.darkLabel2.Name = "darkLabel2";
             this.darkLabel2.Size = new System.Drawing.Size(73, 17);
-            this.darkLabel2.TabIndex = 10;
+            this.darkLabel2.TabIndex = 3;
             this.darkLabel2.Text = "Password:";
             // 
             // darkLabel1
@@ -116,7 +116,7 @@ namespace HealthyCare.UI.G
             this.darkLabel1.Location = new System.Drawing.Point(258, 204);
             this.darkLabel1.Name = "darkLabel1";
             this.darkLabel1.Size = new System.Drawing.Size(75, 17);
-            this.darkLabel1.TabIndex = 9;
+            this.darkLabel1.TabIndex = 1;
             this.darkLabel1.Text = "Username:";
             // 
             // panelTitleBar
@@ -225,7 +225,7 @@ namespace HealthyCare.UI.G
             this.chkRemember.Location = new System.Drawing.Point(261, 324);
             this.chkRemember.Name = "chkRemember";
             this.chkRemember.Size = new System.Drawing.Size(20, 20);
-            this.chkRemember.TabIndex = 3;
+            this.chkRemember.TabIndex = 5;
             // 
             // lbRemember
             // 
@@ -236,7 +236,7 @@ namespace HealthyCare.UI.G
             this.lbRemember.Location = new System.Drawing.Point(282, 326);
             this.lbRemember.Name = "lbRemember";
             this.lbRemember.Size = new System.Drawing.Size(89, 17);
-            this.lbRemember.TabIndex = 10;
+            this.lbRemember.TabIndex = 6;
             this.lbRemember.Text = "Remeber Me";
             this.lbRemember.Click += new System.EventHandler(this.lbRemember_Click);
             // 

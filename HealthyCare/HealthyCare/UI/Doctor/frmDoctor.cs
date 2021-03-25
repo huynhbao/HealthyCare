@@ -15,6 +15,7 @@ namespace HealthyCare.UI.Doctor
     using DarkUI.Forms;
     using FontAwesome.Sharp;
     using HealthyCare.Presenters;
+    using HealthyCare.UI.Customer;
     using HealthyCare.UI.G;
     using HealthyCare.UI.User;
     using HealthyCare.Utils;
@@ -165,7 +166,7 @@ namespace HealthyCare.UI.Doctor
             }
         }
 
-        public void AcceptBooking(bool check, string UserID)
+        public void AcceptBooking(bool check, string UserID, string BookingID)
         {
             if (check)
             {

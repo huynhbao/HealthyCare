@@ -14,5 +14,6 @@ namespace HealthyCare.Views
         void GetDoctorByID(Doctor doctor);
         void GetNumOfBooking(DataSet data);
         void BookDoctor(bool check, Doctor doctor);
+        void GetLatestBooking(Booking booking);
     }
 }

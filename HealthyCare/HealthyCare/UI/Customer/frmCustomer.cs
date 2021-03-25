@@ -30,6 +30,7 @@ namespace HealthyCare.UI.Customer
         private Form activeForm = null;
         private IconButton activeButton = null;
         LoadingFormUtils loadingForm = new LoadingFormUtils();
+        frmBooking bookingForm = new frmBooking();
         //SignalR_Services signalR = new SignalR_Services();
 
         public frmCustomer()
@@ -88,7 +89,14 @@ namespace HealthyCare.UI.Customer
         {
             if (activeForm != null)
             {
-                activeForm.Close();
+                if (activeForm.Name.Equals("frmBooking"))
+                {
+                    activeForm.Hide();
+                } else
+                {
+                    activeForm.Close();
+                }
+                
             }
             activeForm = childForm;
             childForm.TopLevel = false;
@@ -109,6 +117,7 @@ namespace HealthyCare.UI.Customer
             {
                 activeForm.Close();
             }
+            LoadData();
         }
 
         private void btnBook_Click(object sender, EventArgs e)
@@ -196,6 +205,8 @@ namespace HealthyCare.UI.Customer
             cbMajor.DisplayMember = "name";
             cbMajor.ValueMember = "majorID";
             cbMajor.DataSource = dtMajor;
+
+            userPresenter.GetLatestBooking();
         }
 
         public void GetDoctorByID(Doctor doctor)
@@ -213,6 +224,7 @@ namespace HealthyCare.UI.Customer
         {
             if (check)
             {
+                LoadData();
                 SignalR_Services.HubProxy.Invoke("PushNotification", user.UserID, doctor.UserID, "booking");
                 MessageBox.Show("Booked successful!\nWaiting for doctor confirming...", "Message");
             }
@@ -224,9 +236,8 @@ namespace HealthyCare.UI.Customer
 
         private void frmCustomer_Load(object sender, EventArgs e)
         {
-            LoadData();
             ConnectAsync();
-
+            LoadData();
         }
 
         private void dgvDoctorList_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
@@ -259,8 +270,6 @@ namespace HealthyCare.UI.Customer
             LoadData();
         }
 
-
-
         private void ConnectAsync()
         {
             SignalR_Services.getInstance(LoginInfo.user);
@@ -268,20 +277,21 @@ namespace HealthyCare.UI.Customer
             {
                 if (msg.Equals("confirm"))
                 {
-                    Invoke((Action)(() =>
-                        DisplayNotificationBalloon("Book Notification", Doctor.FullName + " had confirmed your booking")
-                    ));
+                    Invoke((Action)(() => {
+                        DisplayNotificationBalloon("Book Notification", Doctor.FullName + " had confirmed your booking");
+                        bookingForm.SetStatus(2);
+                    }));
                 }
 
                 if (msg.Equals("reject"))
                 {
-                    Invoke((Action)(() =>
-                        DisplayNotificationBalloon("Book Notification", Doctor.FullName + " had rejected your booking")
-                    ));
+                    Invoke((Action)(() => {
+                        DisplayNotificationBalloon("Book Notification", Doctor.FullName + " had rejected your booking");
+                        LoadData();
+                    }));
                 }
             });
         }
-
 
         private void DisplayNotificationBalloon(string header, string message)
         {
@@ -311,6 +321,15 @@ namespace HealthyCare.UI.Customer
         private void frmCustomer_FormClosing(object sender, FormClosingEventArgs e)
         {
             SignalR_Services.CloseConnection();
+        }
+
+        void ICustomer.GetLatestBooking(Booking booking)
+        {
+            if (booking != null)
+            {
+                bookingForm.BookingInformation(booking);
+                openChildForm(bookingForm, btnHome);
+            }
         }
     }
 

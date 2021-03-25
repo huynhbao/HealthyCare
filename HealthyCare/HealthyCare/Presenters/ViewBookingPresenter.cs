@@ -1,4 +1,5 @@
-﻿using BussinessObject.DataAccess;
+﻿using BussinessObject;
+using BussinessObject.DataAccess;
 using BussinessObject.Entities;
 using HealthyCare.Views;
 using System;
@@ -67,7 +68,7 @@ namespace HealthyCare.Presenters
             {
                 OnDataLoadingCompleted();
             }
-            bookingView.AcceptBooking(check, UserID);
+            bookingView.AcceptBooking(check, UserID, idBooking);
         }
         public void RejectBooking(string idBooking, string UserID)
         {
@@ -106,7 +107,7 @@ namespace HealthyCare.Presenters
             {
                 OnDataLoadingCompleted();
             }
-            bookingView.GetUserInformationByID(user);
+            bookingView.GetUserInformationByID(userCus);
         }
         public void GetHistory()
         {
@@ -133,6 +134,21 @@ namespace HealthyCare.Presenters
                 OnDataLoadingCompleted();
             }
             feedbackView.GetFeedback(data);
+        }
+
+        public void GetBookingInformation(string BookingID)
+        {
+            if (OnDataLoading != null)
+            {
+                OnDataLoading();
+            }
+            UserData userData = new UserData();
+            Booking booking = userData.GetBookingInformation(BookingID);
+            if (OnDataLoadingCompleted != null)
+            {
+                OnDataLoadingCompleted();
+            }
+            historyView.GetBookingInformation(booking);
         }
     }
 }

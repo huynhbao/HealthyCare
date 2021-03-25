@@ -77,3 +77,5 @@ D:\fpt\PRN292\Project\HealthyCare\HealthyCare\HealthyCare\obj\Debug\HealthyCare.
 D:\fpt\PRN292\Project\HealthyCare\HealthyCare\HealthyCare\obj\Debug\HealthyCare.csproj.CopyComplete
 D:\fpt\PRN292\Project\HealthyCare\HealthyCare\HealthyCare\obj\Debug\HealthyCare.exe
 D:\fpt\PRN292\Project\HealthyCare\HealthyCare\HealthyCare\obj\Debug\HealthyCare.pdb
+C:\Users\HuynhBao\source\repos\HealthyCare\HealthyCare\HealthyCare\obj\Debug\HealthyCare.UI.Customer.frmBooking.resources
+C:\Users\HuynhBao\source\repos\HealthyCare\HealthyCare\HealthyCare\obj\Debug\HealthyCare.UI.Doctor.frmChat.resources
