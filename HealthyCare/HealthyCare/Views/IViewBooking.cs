@@ -12,7 +12,7 @@ namespace HealthyCare.Views
     {
         void GetBooking(DataSet data);
         void AcceptBooking(bool check, string UserID);
-        void RejectBooking(bool check);
+        void RejectBooking(bool check, string UserID);
         void GetUserInformationByID(User user);
     }
 }

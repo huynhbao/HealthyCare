@@ -36,5 +36,32 @@ namespace HealthyCare.UI.Doctor
         {
             viewBookingPresenter.GetFeedback();
         }
+
+        private void dgvFeedback_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (dgvFeedback.Columns[e.ColumnIndex].Name.Equals("points"))
+            {
+                int points = (int)e.Value;
+                switch (points)
+                {
+                    case 1:
+                        e.Value = "♥";
+                        break;
+                    case 2:
+                        e.Value = "♥♥";
+                        break;
+                    case 3:
+                        e.Value = "♥♥♥";
+                        break;
+                    case 4:
+                        e.Value = "♥♥♥♥";
+                        break;
+                    case 5:
+                        e.Value = "♥♥♥♥♥";
+                        break;
+
+                }
+            }
+        }
     }
 }
