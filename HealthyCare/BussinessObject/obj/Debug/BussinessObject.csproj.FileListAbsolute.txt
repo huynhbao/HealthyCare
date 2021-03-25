@@ -7,6 +7,7 @@ C:\Users\HuynhBao\source\repos\HealthyCare\HealthyCare\BussinessObject\obj\Debug
 C:\Users\HuynhBao\source\repos\HealthyCare\HealthyCare\BussinessObject\obj\Debug\BussinessObject.csproj.CopyComplete
 C:\Users\HuynhBao\source\repos\HealthyCare\HealthyCare\BussinessObject\obj\Debug\BussinessObject.dll
 C:\Users\HuynhBao\source\repos\HealthyCare\HealthyCare\BussinessObject\obj\Debug\BussinessObject.pdb
+<<<<<<< HEAD
 C:\Users\ACER\Desktop\LangBam\HealthyCare\HealthyCare\BussinessObject\bin\Debug\BussinessObject.dll
 C:\Users\ACER\Desktop\LangBam\HealthyCare\HealthyCare\BussinessObject\bin\Debug\BussinessObject.pdb
 C:\Users\ACER\Desktop\LangBam\HealthyCare\HealthyCare\BussinessObject\bin\Debug\DataProvider.dll
@@ -16,3 +17,14 @@ C:\Users\ACER\Desktop\LangBam\HealthyCare\HealthyCare\BussinessObject\obj\Debug\
 C:\Users\ACER\Desktop\LangBam\HealthyCare\HealthyCare\BussinessObject\obj\Debug\BussinessObject.csproj.CopyComplete
 C:\Users\ACER\Desktop\LangBam\HealthyCare\HealthyCare\BussinessObject\obj\Debug\BussinessObject.dll
 C:\Users\ACER\Desktop\LangBam\HealthyCare\HealthyCare\BussinessObject\obj\Debug\BussinessObject.pdb
+=======
+D:\Hung\PRN292\Projects\HealthyCare\BussinessObject\bin\Debug\BussinessObject.dll
+D:\Hung\PRN292\Projects\HealthyCare\BussinessObject\bin\Debug\BussinessObject.pdb
+D:\Hung\PRN292\Projects\HealthyCare\BussinessObject\bin\Debug\DataProvider.dll
+D:\Hung\PRN292\Projects\HealthyCare\BussinessObject\bin\Debug\DataProvider.pdb
+D:\Hung\PRN292\Projects\HealthyCare\BussinessObject\obj\Debug\BussinessObject.csprojAssemblyReference.cache
+D:\Hung\PRN292\Projects\HealthyCare\BussinessObject\obj\Debug\BussinessObject.csproj.CoreCompileInputs.cache
+D:\Hung\PRN292\Projects\HealthyCare\BussinessObject\obj\Debug\BussinessObject.csproj.CopyComplete
+D:\Hung\PRN292\Projects\HealthyCare\BussinessObject\obj\Debug\BussinessObject.dll
+D:\Hung\PRN292\Projects\HealthyCare\BussinessObject\obj\Debug\BussinessObject.pdb
+>>>>>>> 4db145f78b24856daad531f9831493a0b18bb235

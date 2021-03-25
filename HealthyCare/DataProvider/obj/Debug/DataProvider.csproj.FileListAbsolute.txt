@@ -3,3 +3,9 @@ C:\Users\HuynhBao\source\repos\HealthyCare\HealthyCare\DataProvider\bin\Debug\Da
 C:\Users\HuynhBao\source\repos\HealthyCare\HealthyCare\DataProvider\obj\Debug\DataProvider.csproj.CoreCompileInputs.cache
 C:\Users\HuynhBao\source\repos\HealthyCare\HealthyCare\DataProvider\obj\Debug\DataProvider.dll
 C:\Users\HuynhBao\source\repos\HealthyCare\HealthyCare\DataProvider\obj\Debug\DataProvider.pdb
+D:\Hung\PRN292\Projects\HealthyCare\DataProvider\bin\Debug\DataProvider.dll
+D:\Hung\PRN292\Projects\HealthyCare\DataProvider\bin\Debug\DataProvider.pdb
+D:\Hung\PRN292\Projects\HealthyCare\DataProvider\obj\Debug\DataProvider.csprojAssemblyReference.cache
+D:\Hung\PRN292\Projects\HealthyCare\DataProvider\obj\Debug\DataProvider.csproj.CoreCompileInputs.cache
+D:\Hung\PRN292\Projects\HealthyCare\DataProvider\obj\Debug\DataProvider.dll
+D:\Hung\PRN292\Projects\HealthyCare\DataProvider\obj\Debug\DataProvider.pdb
