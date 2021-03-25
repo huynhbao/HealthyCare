@@ -36,8 +36,6 @@ namespace HealthyCare.UI.Doctor
             viewBookingPresenter.GetFeedback();
         }
 
-<<<<<<< HEAD
-=======
         private void dgvFeedback_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
             if (dgvFeedback.Columns[e.ColumnIndex].Name.Equals("points"))
@@ -64,6 +62,5 @@ namespace HealthyCare.UI.Doctor
                 }
             }
         }
->>>>>>> 5d068b6aa3eccd0504b8c675d25bd6034eecfe1c
     }
 }

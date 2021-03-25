@@ -58,6 +58,16 @@ namespace HealthyCare.UI.G
             presenter.OnDataLoading += Presenter_OnDataLoading;
             presenter.OnDataLoadingCompleted += Presenter_OnDataLoadingCompleted;
             presenter.CheckLogin();
+            if (chkRemember.Checked)
+            {
+                Properties.Settings.Default.UserID = txtUsername.Text;
+                Properties.Settings.Default.Password = txtPassword.Text;
+                Properties.Settings.Default.checkbox = true;
+                Properties.Settings.Default.Save();
+            } else
+            {
+                Properties.Settings.Default.Reset();
+            }
         }
 
 
@@ -71,7 +81,6 @@ namespace HealthyCare.UI.G
 
         public void Login(User user)
         {
-            //loadingForm.Close();
             if (user != null)
             {
                 string roleID = user.Role.RoleID;
@@ -113,6 +122,18 @@ namespace HealthyCare.UI.G
         {
             MyUtils.ReleaseCapture();
             MyUtils.SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void lbRemember_Click(object sender, EventArgs e)
+        {
+            chkRemember.Checked = !chkRemember.Checked;
+        }
+
+        private void frmLogin_Load(object sender, EventArgs e)
+        {
+            chkRemember.Checked = Properties.Settings.Default.checkbox;
+            txtUsername.Text = Properties.Settings.Default.UserID;
+            txtPassword.Text = Properties.Settings.Default.Password;
         }
     }
 }

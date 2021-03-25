@@ -37,12 +37,14 @@ namespace HealthyCare.UI.G
             this.darkLabel2 = new DarkUI.Controls.DarkLabel();
             this.darkLabel1 = new DarkUI.Controls.DarkLabel();
             this.panelTitleBar = new System.Windows.Forms.Panel();
+            this.btnMinimize = new FontAwesome.Sharp.IconButton();
             this.lbParentForm = new DarkUI.Controls.DarkLabel();
             this.btnExit = new FontAwesome.Sharp.IconButton();
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.btnMinimize = new FontAwesome.Sharp.IconButton();
+            this.chkRemember = new Bunifu.Framework.UI.BunifuCheckbox();
+            this.lbRemember = new DarkUI.Controls.DarkLabel();
             this.panelTitleBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -56,7 +58,7 @@ namespace HealthyCare.UI.G
             this.darkLabel3.Location = new System.Drawing.Point(308, 136);
             this.darkLabel3.Name = "darkLabel3";
             this.darkLabel3.Size = new System.Drawing.Size(149, 25);
-            this.darkLabel3.TabIndex = 9;
+            this.darkLabel3.TabIndex = 0;
             this.darkLabel3.Text = "Healthy Care";
             // 
             // btnLogin
@@ -64,11 +66,11 @@ namespace HealthyCare.UI.G
             this.btnLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(36)))), ((int)(((byte)(177)))));
             this.btnLogin.ButtonStyle = DarkUI.Controls.DarkButtonStyle.Flat;
             this.btnLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogin.Location = new System.Drawing.Point(261, 339);
+            this.btnLogin.Location = new System.Drawing.Point(261, 357);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Padding = new System.Windows.Forms.Padding(5);
             this.btnLogin.Size = new System.Drawing.Size(248, 34);
-            this.btnLogin.TabIndex = 13;
+            this.btnLogin.TabIndex = 4;
             this.btnLogin.Text = "Login";
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
@@ -81,7 +83,7 @@ namespace HealthyCare.UI.G
             this.txtUsername.Location = new System.Drawing.Point(261, 223);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(248, 21);
-            this.txtUsername.TabIndex = 11;
+            this.txtUsername.TabIndex = 1;
             // 
             // txtPassword
             // 
@@ -92,7 +94,7 @@ namespace HealthyCare.UI.G
             this.txtPassword.Location = new System.Drawing.Point(261, 291);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(248, 21);
-            this.txtPassword.TabIndex = 12;
+            this.txtPassword.TabIndex = 2;
             this.txtPassword.UseSystemPasswordChar = true;
             // 
             // darkLabel2
@@ -129,6 +131,21 @@ namespace HealthyCare.UI.G
             this.panelTitleBar.Size = new System.Drawing.Size(745, 29);
             this.panelTitleBar.TabIndex = 24;
             this.panelTitleBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelTitleBar_MouseDown);
+            // 
+            // btnMinimize
+            // 
+            this.btnMinimize.FlatAppearance.BorderSize = 0;
+            this.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMinimize.IconChar = FontAwesome.Sharp.IconChar.WindowMinimize;
+            this.btnMinimize.IconColor = System.Drawing.Color.White;
+            this.btnMinimize.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnMinimize.IconSize = 25;
+            this.btnMinimize.Location = new System.Drawing.Point(687, 0);
+            this.btnMinimize.Name = "btnMinimize";
+            this.btnMinimize.Size = new System.Drawing.Size(28, 25);
+            this.btnMinimize.TabIndex = 19;
+            this.btnMinimize.UseVisualStyleBackColor = true;
+            this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
             // 
             // lbParentForm
             // 
@@ -197,20 +214,31 @@ namespace HealthyCare.UI.G
             this.pictureBox2.TabIndex = 17;
             this.pictureBox2.TabStop = false;
             // 
-            // btnMinimize
+            // chkRemember
             // 
-            this.btnMinimize.FlatAppearance.BorderSize = 0;
-            this.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMinimize.IconChar = FontAwesome.Sharp.IconChar.WindowMinimize;
-            this.btnMinimize.IconColor = System.Drawing.Color.White;
-            this.btnMinimize.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnMinimize.IconSize = 25;
-            this.btnMinimize.Location = new System.Drawing.Point(687, 0);
-            this.btnMinimize.Name = "btnMinimize";
-            this.btnMinimize.Size = new System.Drawing.Size(28, 25);
-            this.btnMinimize.TabIndex = 19;
-            this.btnMinimize.UseVisualStyleBackColor = true;
-            this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
+            this.chkRemember.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(205)))), ((int)(((byte)(117)))));
+            this.chkRemember.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
+            this.chkRemember.Checked = true;
+            this.chkRemember.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(205)))), ((int)(((byte)(117)))));
+            this.chkRemember.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.chkRemember.ForeColor = System.Drawing.Color.White;
+            this.chkRemember.Location = new System.Drawing.Point(261, 324);
+            this.chkRemember.Name = "chkRemember";
+            this.chkRemember.Size = new System.Drawing.Size(20, 20);
+            this.chkRemember.TabIndex = 3;
+            // 
+            // lbRemember
+            // 
+            this.lbRemember.AutoSize = true;
+            this.lbRemember.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lbRemember.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.lbRemember.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.lbRemember.Location = new System.Drawing.Point(282, 326);
+            this.lbRemember.Name = "lbRemember";
+            this.lbRemember.Size = new System.Drawing.Size(89, 17);
+            this.lbRemember.TabIndex = 10;
+            this.lbRemember.Text = "Remeber Me";
+            this.lbRemember.Click += new System.EventHandler(this.lbRemember_Click);
             // 
             // frmLogin
             // 
@@ -218,6 +246,7 @@ namespace HealthyCare.UI.G
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
             this.ClientSize = new System.Drawing.Size(740, 516);
+            this.Controls.Add(this.chkRemember);
             this.Controls.Add(this.panelTitleBar);
             this.Controls.Add(this.iconButton1);
             this.Controls.Add(this.pictureBox3);
@@ -226,6 +255,7 @@ namespace HealthyCare.UI.G
             this.Controls.Add(this.darkLabel3);
             this.Controls.Add(this.txtUsername);
             this.Controls.Add(this.btnLogin);
+            this.Controls.Add(this.lbRemember);
             this.Controls.Add(this.darkLabel2);
             this.Controls.Add(this.txtPassword);
             this.ForeColor = System.Drawing.SystemColors.GradientActiveCaption;
@@ -236,6 +266,7 @@ namespace HealthyCare.UI.G
             this.Name = "frmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
+            this.Load += new System.EventHandler(this.frmLogin_Load);
             this.panelTitleBar.ResumeLayout(false);
             this.panelTitleBar.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
@@ -259,6 +290,8 @@ namespace HealthyCare.UI.G
         private DarkUI.Controls.DarkLabel lbParentForm;
         private FontAwesome.Sharp.IconButton btnExit;
         private FontAwesome.Sharp.IconButton btnMinimize;
+        private Bunifu.Framework.UI.BunifuCheckbox chkRemember;
+        private DarkUI.Controls.DarkLabel lbRemember;
     }
 }
 
