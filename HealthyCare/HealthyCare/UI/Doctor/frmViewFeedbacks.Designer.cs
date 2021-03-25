@@ -111,6 +111,7 @@ namespace HealthyCare.UI.Doctor
             this.dgvFeedback.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvFeedback.Size = new System.Drawing.Size(899, 429);
             this.dgvFeedback.TabIndex = 81;
+            this.dgvFeedback.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvFeedback_CellFormatting);
             // 
             // darkLabel8
             // 

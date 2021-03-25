@@ -83,10 +83,30 @@ namespace HealthyCare.UI.Doctor
                 DialogResult dialogResult = MessageBox.Show("Do you want to finish this booking?", "Confirm", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
                 {
-                    viewBookingPresenter.FinishBooking(BookingID);
-                    LoadData();
+                    DataTable dtHistory = dsHistory.Tables[0];
+                    DataRow dr = dtHistory.Rows[dgvHistory.SelectedRows[0].Index];
+                    int status = int.Parse(dr["status"].ToString());
+                    switch (status)
+                    {
+                        case 1:
+                            MessageBox.Show("This booking has not been comfirmed.", "Message");
+                            break;
+                        case 2:
+                            viewBookingPresenter.FinishBooking(BookingID);
+                            LoadData();
+                            break;
+                        case 3:
+                            MessageBox.Show("This booking has been done.", "Message");
+                            break;
+                        case 4:
+                            MessageBox.Show("This booking has been canceled", "Message");
+                            break;
+
+                    }
+                    
                 }
             }
+
         }
 
         public void FinishBooking(bool check)
