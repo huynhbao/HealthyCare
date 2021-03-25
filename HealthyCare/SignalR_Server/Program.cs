@@ -111,5 +111,9 @@ namespace SignalR_Server
             Program.WriteToConsole("Client disconnected: " + Context.ConnectionId);
             return base.OnDisconnected(stopCalled);
         }
+
+        private void abc()
+        {
+        }
     }
 }

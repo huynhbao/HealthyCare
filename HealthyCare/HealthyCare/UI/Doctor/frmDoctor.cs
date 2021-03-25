@@ -182,8 +182,8 @@ namespace HealthyCare.UI.Doctor
         {
             if (check)
             {
-                MessageBox.Show("Reject successfull.");
                 SignalR_Services.HubProxy.Invoke("PushNotification", user.UserID, UserID, "reject");
+                MessageBox.Show("Reject successfull.");
             }
             else
             {

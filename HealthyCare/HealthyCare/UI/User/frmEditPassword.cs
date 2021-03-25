@@ -13,6 +13,7 @@ namespace HealthyCare.UI.User
 {
     using BussinessObject.Entities;
     using HealthyCare.Presenters;
+    using HealthyCare.Utils;
     using HealthyCare.Views;
 
     public partial class frmEditPassword : DarkForm, IPassword
@@ -53,6 +54,17 @@ namespace HealthyCare.UI.User
                 MessageBox.Show("Password does not match.", "Messasge");
             }
             
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            Dispose();
+        }
+
+        private void panelTitleBar_MouseDown(object sender, MouseEventArgs e)
+        {
+            MyUtils.ReleaseCapture();
+            MyUtils.SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
     }
 }

@@ -46,8 +46,10 @@ namespace HealthyCare.Utils
         {
             if (Connection != null)
             {
-                Connection.Stop();
+                Connection.Stop(new TimeSpan(1000));
                 Connection.Dispose();
+                Connection = null;
+                instance = null;
             }
         }
 

@@ -19,7 +19,6 @@ namespace HealthyCare.UI.Doctor
     {
         ViewBookingPresenter viewBookingPresenter = null;
         DataSet dsFeedback;
-        LoadingFormUtils loadingForm = new LoadingFormUtils();
         public frmViewFeedbacks()
         {
             InitializeComponent();
@@ -36,5 +35,6 @@ namespace HealthyCare.UI.Doctor
         {
             viewBookingPresenter.GetFeedback();
         }
+
     }
 }
